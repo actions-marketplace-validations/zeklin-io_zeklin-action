@@ -2,11 +2,10 @@ name: Lint Code Base
 
 on:
   pull_request:
+  push:
     branches:
       - main
-  push:
-    branches-ignore:
-      - main
+      - 'releases/*'
 
 jobs:
   lint:
@@ -21,7 +20,7 @@ jobs:
     steps:
       - name: Checkout
         id: checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4.1.1
 
       - uses: pnpm/action-setup@v2.4.0
         with:

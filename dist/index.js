@@ -1,7 +1,7 @@
 import { createRequire as __WEBPACK_EXTERNAL_createRequire } from "module";
 /******/ var __webpack_modules__ = ({
 
-/***/ 9483:
+/***/ 9484:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 
@@ -27,7 +27,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.issue = exports.issueCommand = void 0;
 const os = __importStar(__nccwpck_require__(2037));
-const utils_1 = __nccwpck_require__(2994);
+const utils_1 = __nccwpck_require__(5688);
 /**
  * Commands
  *
@@ -99,7 +99,7 @@ function escapeProperty(s) {
 
 /***/ }),
 
-/***/ 7733:
+/***/ 8434:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 
@@ -133,12 +133,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.getIDToken = exports.getState = exports.saveState = exports.group = exports.endGroup = exports.startGroup = exports.info = exports.notice = exports.warning = exports.error = exports.debug = exports.isDebug = exports.setFailed = exports.setCommandEcho = exports.setOutput = exports.getBooleanInput = exports.getMultilineInput = exports.getInput = exports.addPath = exports.setSecret = exports.exportVariable = exports.ExitCode = void 0;
-const command_1 = __nccwpck_require__(9483);
-const file_command_1 = __nccwpck_require__(8541);
-const utils_1 = __nccwpck_require__(2994);
+const command_1 = __nccwpck_require__(9484);
+const file_command_1 = __nccwpck_require__(9585);
+const utils_1 = __nccwpck_require__(5688);
 const os = __importStar(__nccwpck_require__(2037));
 const path = __importStar(__nccwpck_require__(1017));
-const oidc_utils_1 = __nccwpck_require__(2422);
+const oidc_utils_1 = __nccwpck_require__(3032);
 /**
  * The code to exit an action
  */
@@ -423,17 +423,17 @@ exports.getIDToken = getIDToken;
 /**
  * Summary exports
  */
-var summary_1 = __nccwpck_require__(513);
+var summary_1 = __nccwpck_require__(4591);
 Object.defineProperty(exports, "summary", ({ enumerable: true, get: function () { return summary_1.summary; } }));
 /**
  * @deprecated use core.summary
  */
-var summary_2 = __nccwpck_require__(513);
+var summary_2 = __nccwpck_require__(4591);
 Object.defineProperty(exports, "markdownSummary", ({ enumerable: true, get: function () { return summary_2.markdownSummary; } }));
 /**
  * Path exports
  */
-var path_utils_1 = __nccwpck_require__(3084);
+var path_utils_1 = __nccwpck_require__(5266);
 Object.defineProperty(exports, "toPosixPath", ({ enumerable: true, get: function () { return path_utils_1.toPosixPath; } }));
 Object.defineProperty(exports, "toWin32Path", ({ enumerable: true, get: function () { return path_utils_1.toWin32Path; } }));
 Object.defineProperty(exports, "toPlatformPath", ({ enumerable: true, get: function () { return path_utils_1.toPlatformPath; } }));
@@ -441,7 +441,7 @@ Object.defineProperty(exports, "toPlatformPath", ({ enumerable: true, get: funct
 
 /***/ }),
 
-/***/ 8541:
+/***/ 9585:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 
@@ -471,8 +471,8 @@ exports.prepareKeyValueMessage = exports.issueFileCommand = void 0;
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const fs = __importStar(__nccwpck_require__(7147));
 const os = __importStar(__nccwpck_require__(2037));
-const uuid_1 = __nccwpck_require__(2033);
-const utils_1 = __nccwpck_require__(2994);
+const uuid_1 = __nccwpck_require__(6529);
+const utils_1 = __nccwpck_require__(5688);
 function issueFileCommand(command, message) {
     const filePath = process.env[`GITHUB_${command}`];
     if (!filePath) {
@@ -505,7 +505,7 @@ exports.prepareKeyValueMessage = prepareKeyValueMessage;
 
 /***/ }),
 
-/***/ 2422:
+/***/ 3032:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 
@@ -520,9 +520,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.OidcClient = void 0;
-const http_client_1 = __nccwpck_require__(4284);
-const auth_1 = __nccwpck_require__(5479);
-const core_1 = __nccwpck_require__(7733);
+const http_client_1 = __nccwpck_require__(2228);
+const auth_1 = __nccwpck_require__(1565);
+const core_1 = __nccwpck_require__(8434);
 class OidcClient {
     static createHttpClient(allowRetry = true, maxRetry = 10) {
         const requestOptions = {
@@ -554,7 +554,7 @@ class OidcClient {
                 .catch(error => {
                 throw new Error(`Failed to get ID Token. \n 
         Error Code : ${error.statusCode}\n 
-        Error Message: ${error.result.message}`);
+        Error Message: ${error.message}`);
             });
             const id_token = (_a = res.result) === null || _a === void 0 ? void 0 : _a.value;
             if (!id_token) {
@@ -588,7 +588,7 @@ exports.OidcClient = OidcClient;
 
 /***/ }),
 
-/***/ 3084:
+/***/ 5266:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 
@@ -652,7 +652,7 @@ exports.toPlatformPath = toPlatformPath;
 
 /***/ }),
 
-/***/ 513:
+/***/ 4591:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 
@@ -941,7 +941,7 @@ exports.summary = _summary;
 
 /***/ }),
 
-/***/ 2994:
+/***/ 5688:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -987,7 +987,7 @@ exports.toCommandProperties = toCommandProperties;
 
 /***/ }),
 
-/***/ 1757:
+/***/ 8445:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 
@@ -1022,7 +1022,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.getExecOutput = exports.exec = void 0;
 const string_decoder_1 = __nccwpck_require__(1576);
-const tr = __importStar(__nccwpck_require__(4626));
+const tr = __importStar(__nccwpck_require__(8491));
 /**
  * Exec a command.
  * Output will be streamed to the live console.
@@ -1096,7 +1096,7 @@ exports.getExecOutput = getExecOutput;
 
 /***/ }),
 
-/***/ 4626:
+/***/ 8491:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 
@@ -1134,8 +1134,8 @@ const os = __importStar(__nccwpck_require__(2037));
 const events = __importStar(__nccwpck_require__(2361));
 const child = __importStar(__nccwpck_require__(2081));
 const path = __importStar(__nccwpck_require__(1017));
-const io = __importStar(__nccwpck_require__(8629));
-const ioUtil = __importStar(__nccwpck_require__(2548));
+const io = __importStar(__nccwpck_require__(6051));
+const ioUtil = __importStar(__nccwpck_require__(9003));
 const timers_1 = __nccwpck_require__(9512);
 /* eslint-disable @typescript-eslint/unbound-method */
 const IS_WINDOWS = process.platform === 'win32';
@@ -1720,7 +1720,7 @@ class ExecState extends events.EventEmitter {
 
 /***/ }),
 
-/***/ 6908:
+/***/ 5213:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
@@ -1780,7 +1780,7 @@ exports.Context = Context;
 
 /***/ }),
 
-/***/ 3695:
+/***/ 5248:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 
@@ -1805,8 +1805,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.getOctokit = exports.context = void 0;
-const Context = __importStar(__nccwpck_require__(6908));
-const utils_1 = __nccwpck_require__(552);
+const Context = __importStar(__nccwpck_require__(5213));
+const utils_1 = __nccwpck_require__(3027);
 exports.context = new Context.Context();
 /**
  * Returns a hydrated octokit ready to use for GitHub Actions
@@ -1823,7 +1823,7 @@ exports.getOctokit = getOctokit;
 
 /***/ }),
 
-/***/ 2730:
+/***/ 7873:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 
@@ -1848,7 +1848,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.getApiBaseUrl = exports.getProxyAgent = exports.getAuthString = void 0;
-const httpClient = __importStar(__nccwpck_require__(4284));
+const httpClient = __importStar(__nccwpck_require__(2228));
 function getAuthString(token, options) {
     if (!token && !options.auth) {
         throw new Error('Parameter token or opts.auth is required');
@@ -1872,7 +1872,7 @@ exports.getApiBaseUrl = getApiBaseUrl;
 
 /***/ }),
 
-/***/ 552:
+/***/ 3027:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 
@@ -1897,12 +1897,12 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.getOctokitOptions = exports.GitHub = exports.defaults = exports.context = void 0;
-const Context = __importStar(__nccwpck_require__(6908));
-const Utils = __importStar(__nccwpck_require__(2730));
+const Context = __importStar(__nccwpck_require__(5213));
+const Utils = __importStar(__nccwpck_require__(7873));
 // octokit + plugins
-const core_1 = __nccwpck_require__(7425);
-const plugin_rest_endpoint_methods_1 = __nccwpck_require__(8710);
-const plugin_paginate_rest_1 = __nccwpck_require__(9202);
+const core_1 = __nccwpck_require__(9573);
+const plugin_rest_endpoint_methods_1 = __nccwpck_require__(6477);
+const plugin_paginate_rest_1 = __nccwpck_require__(5409);
 exports.context = new Context.Context();
 const baseUrl = Utils.getApiBaseUrl();
 exports.defaults = {
@@ -1932,7 +1932,7 @@ exports.getOctokitOptions = getOctokitOptions;
 
 /***/ }),
 
-/***/ 5479:
+/***/ 1565:
 /***/ (function(__unused_webpack_module, exports) {
 
 
@@ -2019,7 +2019,7 @@ exports.PersonalAccessTokenCredentialHandler = PersonalAccessTokenCredentialHand
 
 /***/ }),
 
-/***/ 4284:
+/***/ 2228:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 
@@ -2056,8 +2056,8 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.HttpClient = exports.isHttps = exports.HttpClientResponse = exports.HttpClientError = exports.getProxyUrl = exports.MediaTypes = exports.Headers = exports.HttpCodes = void 0;
 const http = __importStar(__nccwpck_require__(3685));
 const https = __importStar(__nccwpck_require__(5687));
-const pm = __importStar(__nccwpck_require__(2923));
-const tunnel = __importStar(__nccwpck_require__(4249));
+const pm = __importStar(__nccwpck_require__(9889));
+const tunnel = __importStar(__nccwpck_require__(4798));
 var HttpCodes;
 (function (HttpCodes) {
     HttpCodes[HttpCodes["OK"] = 200] = "OK";
@@ -2643,7 +2643,7 @@ const lowercaseKeys = (obj) => Object.keys(obj).reduce((c, k) => ((c[k.toLowerCa
 
 /***/ }),
 
-/***/ 2923:
+/***/ 9889:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -2731,7 +2731,7 @@ function isLoopbackAddress(host) {
 
 /***/ }),
 
-/***/ 2548:
+/***/ 9003:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 
@@ -2920,7 +2920,7 @@ exports.getCmdPath = getCmdPath;
 
 /***/ }),
 
-/***/ 8629:
+/***/ 6051:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 
@@ -2956,7 +2956,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.findInPath = exports.which = exports.mkdirP = exports.rmRF = exports.mv = exports.cp = void 0;
 const assert_1 = __nccwpck_require__(9491);
 const path = __importStar(__nccwpck_require__(1017));
-const ioUtil = __importStar(__nccwpck_require__(2548));
+const ioUtil = __importStar(__nccwpck_require__(9003));
 /**
  * Copies a file or folder.
  * Based off of shelljs - https://github.com/shelljs/shelljs/blob/9237f66c52e5daa40458f94f9565e18e8132f5a6/src/cp.js
@@ -3225,7 +3225,7 @@ function copyFile(srcFile, destFile, force) {
 
 /***/ }),
 
-/***/ 9780:
+/***/ 8286:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -3287,18 +3287,18 @@ exports.createTokenAuth = createTokenAuth;
 
 /***/ }),
 
-/***/ 7425:
+/***/ 9573:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 
-var universalUserAgent = __nccwpck_require__(4930);
-var beforeAfterHook = __nccwpck_require__(4910);
-var request = __nccwpck_require__(8291);
-var graphql = __nccwpck_require__(5986);
-var authToken = __nccwpck_require__(9780);
+var universalUserAgent = __nccwpck_require__(3537);
+var beforeAfterHook = __nccwpck_require__(2003);
+var request = __nccwpck_require__(454);
+var graphql = __nccwpck_require__(1333);
+var authToken = __nccwpck_require__(8286);
 
 function _objectWithoutPropertiesLoose(source, excluded) {
   if (source == null) return {};
@@ -3470,15 +3470,15 @@ exports.Octokit = Octokit;
 
 /***/ }),
 
-/***/ 9960:
+/***/ 8639:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 
-var isPlainObject = __nccwpck_require__(366);
-var universalUserAgent = __nccwpck_require__(4930);
+var isPlainObject = __nccwpck_require__(9723);
+var universalUserAgent = __nccwpck_require__(3537);
 
 function lowercaseKeys(object) {
   if (!object) {
@@ -3867,15 +3867,15 @@ exports.endpoint = endpoint;
 
 /***/ }),
 
-/***/ 5986:
+/***/ 1333:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 
-var request = __nccwpck_require__(8291);
-var universalUserAgent = __nccwpck_require__(4930);
+var request = __nccwpck_require__(454);
+var universalUserAgent = __nccwpck_require__(3537);
 
 const VERSION = "4.8.0";
 
@@ -3992,7 +3992,7 @@ exports.withCustomRequest = withCustomRequest;
 
 /***/ }),
 
-/***/ 9202:
+/***/ 5409:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -4204,7 +4204,7 @@ exports.paginatingEndpoints = paginatingEndpoints;
 
 /***/ }),
 
-/***/ 8710:
+/***/ 6477:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -5318,7 +5318,7 @@ exports.restEndpointMethods = restEndpointMethods;
 
 /***/ }),
 
-/***/ 9913:
+/***/ 2845:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
@@ -5327,8 +5327,8 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var deprecation = __nccwpck_require__(3595);
-var once = _interopDefault(__nccwpck_require__(9873));
+var deprecation = __nccwpck_require__(8943);
+var once = _interopDefault(__nccwpck_require__(9141));
 
 const logOnceCode = once(deprecation => console.warn(deprecation));
 const logOnceHeaders = once(deprecation => console.warn(deprecation));
@@ -5399,7 +5399,7 @@ exports.RequestError = RequestError;
 
 /***/ }),
 
-/***/ 8291:
+/***/ 454:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
@@ -5408,11 +5408,11 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var endpoint = __nccwpck_require__(9960);
-var universalUserAgent = __nccwpck_require__(4930);
-var isPlainObject = __nccwpck_require__(366);
-var nodeFetch = _interopDefault(__nccwpck_require__(976));
-var requestError = __nccwpck_require__(9913);
+var endpoint = __nccwpck_require__(8639);
+var universalUserAgent = __nccwpck_require__(3537);
+var isPlainObject = __nccwpck_require__(9723);
+var nodeFetch = _interopDefault(__nccwpck_require__(2837));
+var requestError = __nccwpck_require__(2845);
 
 const VERSION = "5.6.3";
 
@@ -5583,12 +5583,12 @@ exports.request = request;
 
 /***/ }),
 
-/***/ 4910:
+/***/ 2003:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var register = __nccwpck_require__(3272);
-var addHook = __nccwpck_require__(2090);
-var removeHook = __nccwpck_require__(9544);
+var register = __nccwpck_require__(18);
+var addHook = __nccwpck_require__(1771);
+var removeHook = __nccwpck_require__(2901);
 
 // bind with array of arguments: https://stackoverflow.com/a/21792913
 var bind = Function.bind;
@@ -5651,7 +5651,7 @@ module.exports.Collection = Hook.Collection;
 
 /***/ }),
 
-/***/ 2090:
+/***/ 1771:
 /***/ ((module) => {
 
 module.exports = addHook;
@@ -5704,7 +5704,7 @@ function addHook(state, kind, name, hook) {
 
 /***/ }),
 
-/***/ 3272:
+/***/ 18:
 /***/ ((module) => {
 
 module.exports = register;
@@ -5738,7 +5738,7 @@ function register(state, name, method, options) {
 
 /***/ }),
 
-/***/ 9544:
+/***/ 2901:
 /***/ ((module) => {
 
 module.exports = removeHook;
@@ -5764,7 +5764,7 @@ function removeHook(state, name, method) {
 
 /***/ }),
 
-/***/ 3595:
+/***/ 8943:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -5791,7 +5791,7 @@ exports.Deprecation = Deprecation;
 
 /***/ }),
 
-/***/ 366:
+/***/ 9723:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -5836,7 +5836,7 @@ exports.isPlainObject = isPlainObject;
 
 /***/ }),
 
-/***/ 1351:
+/***/ 2749:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 /*! node-domexception. MIT License. Jimmy Wärting <https://jimmy.warting.se/opensource> */
@@ -5859,7 +5859,7 @@ module.exports = globalThis.DOMException
 
 /***/ }),
 
-/***/ 976:
+/***/ 2837:
 /***/ ((module, exports, __nccwpck_require__) => {
 
 
@@ -5871,7 +5871,7 @@ function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'defau
 var Stream = _interopDefault(__nccwpck_require__(2781));
 var http = _interopDefault(__nccwpck_require__(3685));
 var Url = _interopDefault(__nccwpck_require__(7310));
-var whatwgUrl = _interopDefault(__nccwpck_require__(9501));
+var whatwgUrl = _interopDefault(__nccwpck_require__(8533));
 var https = _interopDefault(__nccwpck_require__(5687));
 var zlib = _interopDefault(__nccwpck_require__(9796));
 
@@ -6024,7 +6024,7 @@ FetchError.prototype.name = 'FetchError';
 
 let convert;
 try {
-	convert = (__nccwpck_require__(326).convert);
+	convert = (__nccwpck_require__(5543).convert);
 } catch (e) {}
 
 const INTERNALS = Symbol('Body internals');
@@ -7653,10 +7653,10 @@ exports.AbortError = AbortError;
 
 /***/ }),
 
-/***/ 9873:
+/***/ 9141:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var wrappy = __nccwpck_require__(2509)
+var wrappy = __nccwpck_require__(5145)
 module.exports = wrappy(once)
 module.exports.strict = wrappy(onceStrict)
 
@@ -7702,7 +7702,7 @@ function onceStrict (fn) {
 
 /***/ }),
 
-/***/ 8684:
+/***/ 930:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
@@ -7902,15 +7902,15 @@ module.exports.PROCESSING_OPTIONS = PROCESSING_OPTIONS;
 
 /***/ }),
 
-/***/ 4249:
+/***/ 4798:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-module.exports = __nccwpck_require__(709);
+module.exports = __nccwpck_require__(8517);
 
 
 /***/ }),
 
-/***/ 709:
+/***/ 8517:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
@@ -8181,7 +8181,7 @@ exports.debug = debug; // for test
 
 /***/ }),
 
-/***/ 4930:
+/***/ 3537:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -8206,7 +8206,7 @@ exports.getUserAgent = getUserAgent;
 
 /***/ }),
 
-/***/ 2033:
+/***/ 6529:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
@@ -8269,29 +8269,29 @@ Object.defineProperty(exports, "parse", ({
   }
 }));
 
-var _v = _interopRequireDefault(__nccwpck_require__(9370));
+var _v = _interopRequireDefault(__nccwpck_require__(1243));
 
-var _v2 = _interopRequireDefault(__nccwpck_require__(8638));
+var _v2 = _interopRequireDefault(__nccwpck_require__(5054));
 
-var _v3 = _interopRequireDefault(__nccwpck_require__(3519));
+var _v3 = _interopRequireDefault(__nccwpck_require__(1051));
 
-var _v4 = _interopRequireDefault(__nccwpck_require__(8239));
+var _v4 = _interopRequireDefault(__nccwpck_require__(682));
 
-var _nil = _interopRequireDefault(__nccwpck_require__(680));
+var _nil = _interopRequireDefault(__nccwpck_require__(6376));
 
-var _version = _interopRequireDefault(__nccwpck_require__(3609));
+var _version = _interopRequireDefault(__nccwpck_require__(2146));
 
-var _validate = _interopRequireDefault(__nccwpck_require__(6009));
+var _validate = _interopRequireDefault(__nccwpck_require__(1702));
 
-var _stringify = _interopRequireDefault(__nccwpck_require__(9729));
+var _stringify = _interopRequireDefault(__nccwpck_require__(3122));
 
-var _parse = _interopRequireDefault(__nccwpck_require__(8951));
+var _parse = _interopRequireDefault(__nccwpck_require__(6882));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
 
-/***/ 7276:
+/***/ 1539:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
@@ -8320,7 +8320,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 680:
+/***/ 6376:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -8334,7 +8334,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 8951:
+/***/ 6882:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
@@ -8344,7 +8344,7 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports["default"] = void 0;
 
-var _validate = _interopRequireDefault(__nccwpck_require__(6009));
+var _validate = _interopRequireDefault(__nccwpck_require__(1702));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -8385,7 +8385,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 646:
+/***/ 7972:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -8399,7 +8399,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 7548:
+/***/ 2543:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
@@ -8429,7 +8429,7 @@ function rng() {
 
 /***/ }),
 
-/***/ 3557:
+/***/ 85:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
@@ -8458,7 +8458,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 9729:
+/***/ 3122:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
@@ -8468,7 +8468,7 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports["default"] = void 0;
 
-var _validate = _interopRequireDefault(__nccwpck_require__(6009));
+var _validate = _interopRequireDefault(__nccwpck_require__(1702));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -8503,7 +8503,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 9370:
+/***/ 1243:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
@@ -8513,9 +8513,9 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports["default"] = void 0;
 
-var _rng = _interopRequireDefault(__nccwpck_require__(7548));
+var _rng = _interopRequireDefault(__nccwpck_require__(2543));
 
-var _stringify = _interopRequireDefault(__nccwpck_require__(9729));
+var _stringify = _interopRequireDefault(__nccwpck_require__(3122));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -8616,7 +8616,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 8638:
+/***/ 5054:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
@@ -8626,9 +8626,9 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports["default"] = void 0;
 
-var _v = _interopRequireDefault(__nccwpck_require__(6694));
+var _v = _interopRequireDefault(__nccwpck_require__(7598));
 
-var _md = _interopRequireDefault(__nccwpck_require__(7276));
+var _md = _interopRequireDefault(__nccwpck_require__(1539));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -8638,7 +8638,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 6694:
+/***/ 7598:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
@@ -8649,9 +8649,9 @@ Object.defineProperty(exports, "__esModule", ({
 exports["default"] = _default;
 exports.URL = exports.DNS = void 0;
 
-var _stringify = _interopRequireDefault(__nccwpck_require__(9729));
+var _stringify = _interopRequireDefault(__nccwpck_require__(3122));
 
-var _parse = _interopRequireDefault(__nccwpck_require__(8951));
+var _parse = _interopRequireDefault(__nccwpck_require__(6882));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -8722,7 +8722,7 @@ function _default(name, version, hashfunc) {
 
 /***/ }),
 
-/***/ 3519:
+/***/ 1051:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
@@ -8732,9 +8732,9 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports["default"] = void 0;
 
-var _rng = _interopRequireDefault(__nccwpck_require__(7548));
+var _rng = _interopRequireDefault(__nccwpck_require__(2543));
 
-var _stringify = _interopRequireDefault(__nccwpck_require__(9729));
+var _stringify = _interopRequireDefault(__nccwpck_require__(3122));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -8765,7 +8765,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 8239:
+/***/ 682:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
@@ -8775,9 +8775,9 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports["default"] = void 0;
 
-var _v = _interopRequireDefault(__nccwpck_require__(6694));
+var _v = _interopRequireDefault(__nccwpck_require__(7598));
 
-var _sha = _interopRequireDefault(__nccwpck_require__(3557));
+var _sha = _interopRequireDefault(__nccwpck_require__(85));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -8787,7 +8787,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 6009:
+/***/ 1702:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
@@ -8797,7 +8797,7 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports["default"] = void 0;
 
-var _regex = _interopRequireDefault(__nccwpck_require__(646));
+var _regex = _interopRequireDefault(__nccwpck_require__(7972));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -8810,7 +8810,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 3609:
+/***/ 2146:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
@@ -8820,7 +8820,7 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports["default"] = void 0;
 
-var _validate = _interopRequireDefault(__nccwpck_require__(6009));
+var _validate = _interopRequireDefault(__nccwpck_require__(1702));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -8837,7 +8837,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 6484:
+/***/ 6214:
 /***/ (function(__unused_webpack_module, exports) {
 
 /**
@@ -13056,7 +13056,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 7027:
+/***/ 9588:
 /***/ ((module) => {
 
 
@@ -13252,11 +13252,11 @@ conversions["RegExp"] = function (V, opts) {
 
 /***/ }),
 
-/***/ 7516:
+/***/ 6088:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
-const usm = __nccwpck_require__(4422);
+const usm = __nccwpck_require__(7122);
 
 exports.implementation = class URLImpl {
   constructor(constructorArgs) {
@@ -13459,14 +13459,14 @@ exports.implementation = class URLImpl {
 
 /***/ }),
 
-/***/ 2932:
+/***/ 9786:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 
-const conversions = __nccwpck_require__(7027);
-const utils = __nccwpck_require__(8494);
-const Impl = __nccwpck_require__(7516);
+const conversions = __nccwpck_require__(9588);
+const utils = __nccwpck_require__(9978);
+const Impl = __nccwpck_require__(6088);
 
 const impl = utils.implSymbol;
 
@@ -13662,30 +13662,30 @@ module.exports = {
 
 /***/ }),
 
-/***/ 9501:
+/***/ 8533:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-exports.URL = __nccwpck_require__(2932)["interface"];
-exports.serializeURL = __nccwpck_require__(4422).serializeURL;
-exports.serializeURLOrigin = __nccwpck_require__(4422).serializeURLOrigin;
-exports.basicURLParse = __nccwpck_require__(4422).basicURLParse;
-exports.setTheUsername = __nccwpck_require__(4422).setTheUsername;
-exports.setThePassword = __nccwpck_require__(4422).setThePassword;
-exports.serializeHost = __nccwpck_require__(4422).serializeHost;
-exports.serializeInteger = __nccwpck_require__(4422).serializeInteger;
-exports.parseURL = __nccwpck_require__(4422).parseURL;
+exports.URL = __nccwpck_require__(9786)["interface"];
+exports.serializeURL = __nccwpck_require__(7122).serializeURL;
+exports.serializeURLOrigin = __nccwpck_require__(7122).serializeURLOrigin;
+exports.basicURLParse = __nccwpck_require__(7122).basicURLParse;
+exports.setTheUsername = __nccwpck_require__(7122).setTheUsername;
+exports.setThePassword = __nccwpck_require__(7122).setThePassword;
+exports.serializeHost = __nccwpck_require__(7122).serializeHost;
+exports.serializeInteger = __nccwpck_require__(7122).serializeInteger;
+exports.parseURL = __nccwpck_require__(7122).parseURL;
 
 
 /***/ }),
 
-/***/ 4422:
+/***/ 7122:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 
 const punycode = __nccwpck_require__(5477);
-const tr46 = __nccwpck_require__(8684);
+const tr46 = __nccwpck_require__(930);
 
 const specialSchemes = {
   ftp: 21,
@@ -14984,7 +14984,7 @@ module.exports.parseURL = function (input, options) {
 
 /***/ }),
 
-/***/ 8494:
+/***/ 9978:
 /***/ ((module) => {
 
 
@@ -15011,7 +15011,7 @@ module.exports.implForWrapper = function (wrapper) {
 
 /***/ }),
 
-/***/ 2509:
+/***/ 5145:
 /***/ ((module) => {
 
 // Returns a wrapper function that returns a wrapped callback
@@ -15051,7 +15051,7 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
-/***/ 326:
+/***/ 5543:
 /***/ ((module) => {
 
 module.exports = eval("require")("encoding");
@@ -15213,7 +15213,7 @@ module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("zlib");
 
 /***/ }),
 
-/***/ 4348:
+/***/ 3497:
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __nccwpck_require__) => {
 
 /* c8 ignore start */
@@ -15237,7 +15237,7 @@ if (!globalThis.ReadableStream) {
     }
   } catch (error) {
     // fallback to polyfill implementation
-    Object.assign(globalThis, __nccwpck_require__(6484))
+    Object.assign(globalThis, __nccwpck_require__(6214))
   }
 }
 
@@ -15271,14 +15271,14 @@ try {
 
 /***/ }),
 
-/***/ 1564:
+/***/ 7273:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __nccwpck_require__) => {
 
 /* harmony export */ __nccwpck_require__.d(__webpack_exports__, {
 /* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* unused harmony export File */
-/* harmony import */ var _index_js__WEBPACK_IMPORTED_MODULE_0__ = __nccwpck_require__(8967);
+/* harmony import */ var _index_js__WEBPACK_IMPORTED_MODULE_0__ = __nccwpck_require__(5797);
 
 
 const _File = class File extends _index_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z {
@@ -15332,7 +15332,7 @@ const File = _File
 
 /***/ }),
 
-/***/ 7253:
+/***/ 4320:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __nccwpck_require__) => {
 
 
@@ -15348,11 +15348,11 @@ const external_node_fs_namespaceObject = __WEBPACK_EXTERNAL_createRequire(import
 ;// CONCATENATED MODULE: external "node:path"
 const external_node_path_namespaceObject = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:path");
 // EXTERNAL MODULE: ./node_modules/.pnpm/node-domexception@1.0.0/node_modules/node-domexception/index.js
-var node_domexception = __nccwpck_require__(1351);
+var node_domexception = __nccwpck_require__(2749);
 // EXTERNAL MODULE: ./node_modules/.pnpm/fetch-blob@3.2.0/node_modules/fetch-blob/file.js
-var file = __nccwpck_require__(1564);
+var file = __nccwpck_require__(7273);
 // EXTERNAL MODULE: ./node_modules/.pnpm/fetch-blob@3.2.0/node_modules/fetch-blob/index.js
-var fetch_blob = __nccwpck_require__(8967);
+var fetch_blob = __nccwpck_require__(5797);
 ;// CONCATENATED MODULE: ./node_modules/.pnpm/fetch-blob@3.2.0/node_modules/fetch-blob/from.js
 
 
@@ -15458,14 +15458,14 @@ class BlobDataItem {
 
 /***/ }),
 
-/***/ 8967:
+/***/ 5797:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __nccwpck_require__) => {
 
 /* harmony export */ __nccwpck_require__.d(__webpack_exports__, {
 /* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* unused harmony export Blob */
-/* harmony import */ var _streams_cjs__WEBPACK_IMPORTED_MODULE_0__ = __nccwpck_require__(4348);
+/* harmony import */ var _streams_cjs__WEBPACK_IMPORTED_MODULE_0__ = __nccwpck_require__(3497);
 /*! fetch-blob. MIT License. Jimmy Wärting <https://jimmy.warting.se/opensource> */
 
 // TODO (jimmywarting): in the feature use conditional loading with top level await (requires 14.x)
@@ -15720,7 +15720,7 @@ const Blob = _Blob
 
 /***/ }),
 
-/***/ 2000:
+/***/ 4900:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __nccwpck_require__) => {
 
 /* harmony export */ __nccwpck_require__.d(__webpack_exports__, {
@@ -15728,8 +15728,8 @@ const Blob = _Blob
 /* harmony export */   "au": () => (/* binding */ formDataToBlob)
 /* harmony export */ });
 /* unused harmony export File */
-/* harmony import */ var fetch_blob__WEBPACK_IMPORTED_MODULE_0__ = __nccwpck_require__(8967);
-/* harmony import */ var fetch_blob_file_js__WEBPACK_IMPORTED_MODULE_1__ = __nccwpck_require__(1564);
+/* harmony import */ var fetch_blob__WEBPACK_IMPORTED_MODULE_0__ = __nccwpck_require__(5797);
+/* harmony import */ var fetch_blob_file_js__WEBPACK_IMPORTED_MODULE_1__ = __nccwpck_require__(7273);
 /*! formdata-polyfill. MIT License. Jimmy Wärting <https://jimmy.warting.se/opensource> */
 
 
@@ -15941,9 +15941,9 @@ __nccwpck_require__.d(__webpack_exports__, {
   "D": () => (/* binding */ main)
 });
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/@actions+core@1.10.0/node_modules/@actions/core/lib/core.js
-var lib_core = __nccwpck_require__(7733);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.3/node_modules/@effect/data/mjs/GlobalValue.mjs
+// EXTERNAL MODULE: ./node_modules/.pnpm/@actions+core@1.10.1/node_modules/@actions/core/lib/core.js
+var lib_core = __nccwpck_require__(8434);
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/GlobalValue.mjs
 /**
  * @since 1.0.0
  */
@@ -15963,7 +15963,7 @@ const globalValue = (id, compute) => {
   return globalStore.get(id);
 };
 //# sourceMappingURL=GlobalValue.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.3/node_modules/@effect/data/mjs/Function.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/Function.mjs
 /**
  * Tests if a value is a `function`.
  *
@@ -16369,7 +16369,7 @@ const hole = /*#__PURE__*/(/* unused pure expression or super */ null && (Functi
  */
 const SK = (_, b) => b;
 //# sourceMappingURL=Function.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.3/node_modules/@effect/data/mjs/Predicate.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/Predicate.mjs
 /**
  * @since 1.0.0
  */
@@ -16410,7 +16410,7 @@ const mapInput = /*#__PURE__*/(/* unused pure expression or super */ null && (du
  * @category guards
  * @since 1.0.0
  */
-const Predicate_isString = input => typeof input === "string";
+const isString = input => typeof input === "string";
 /**
  * Tests if a value is a `number`.
  *
@@ -16426,7 +16426,7 @@ const Predicate_isString = input => typeof input === "string";
  * @category guards
  * @since 1.0.0
  */
-const Predicate_isNumber = input => typeof input === "number";
+const isNumber = input => typeof input === "number";
 /**
  * Tests if a value is a `boolean`.
  *
@@ -16474,7 +16474,7 @@ const isBigint = input => typeof input === "bigint";
  * @category guards
  * @since 1.0.0
  */
-const Predicate_isSymbol = input => typeof input === "symbol";
+const isSymbol = input => typeof input === "symbol";
 /**
  * Tests if a value is a `function`.
  *
@@ -16611,7 +16611,7 @@ const isUnknown = _ => true;
  * @category guards
  * @since 1.0.0
  */
-const Predicate_isObject = input => typeof input === "object" && input != null || Predicate_isFunction(input);
+const isObject = input => typeof input === "object" && input != null || Predicate_isFunction(input);
 /**
  * Tests if a value is an `object` with a property `_tag` that matches the given tag.
  *
@@ -16631,7 +16631,7 @@ const Predicate_isObject = input => typeof input === "object" && input != null |
  * @category guards
  * @since 1.0.0
  */
-const isTagged = /*#__PURE__*/Function_dual(2, (self, tag) => Predicate_isObject(self) && "_tag" in self && self["_tag"] === tag);
+const isTagged = /*#__PURE__*/Function_dual(2, (self, tag) => isObject(self) && "_tag" in self && self["_tag"] === tag);
 /**
  * A guard that succeeds when the input is `null` or `undefined`.
  *
@@ -16686,6 +16686,23 @@ const isNotNullable = input => input !== null && input !== undefined;
  */
 const isError = input => input instanceof Error;
 /**
+ * A guard that succeeds when the input is a `Uint8Array`.
+ *
+ * @param input - The value to test.
+ *
+ * @example
+ * import { isUint8Array } from "@effect/data/Predicate"
+ *
+ * assert.deepStrictEqual(isUint8Array(new Uint8Array()), true)
+ *
+ * assert.deepStrictEqual(isUint8Array(null), false)
+ * assert.deepStrictEqual(isUint8Array({}), false)
+ *
+ * @category guards
+ * @since 1.0.0
+ */
+const isUint8Array = input => input instanceof Uint8Array;
+/**
  * A guard that succeeds when the input is a `Date`.
  *
  * @param input - The value to test.
@@ -16719,7 +16736,7 @@ const isDate = input => input instanceof Date;
  * @category guards
  * @since 1.0.0
  */
-const isIterable = input => Predicate_isObject(input) && Symbol.iterator in input;
+const isIterable = input => isObject(input) && Symbol.iterator in input;
 /**
  * A guard that succeeds when the input is a record.
  *
@@ -16739,7 +16756,7 @@ const isIterable = input => Predicate_isObject(input) && Symbol.iterator in inpu
  * @category guards
  * @since 1.0.0
  */
-const isRecord = input => Predicate_isObject(input) && !Array.isArray(input);
+const isRecord = input => isObject(input) && !Array.isArray(input);
 /**
  * A guard that succeeds when the input is a readonly record.
  *
@@ -16931,7 +16948,7 @@ const some = collection => a => {
   return false;
 };
 //# sourceMappingURL=Predicate.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.3/node_modules/@effect/data/mjs/PCGRandom.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/PCGRandom.mjs
 /*
  * Copyright 2014 Thom Chiovoloni, released under the MIT license.
  *
@@ -17089,7 +17106,7 @@ function add64(out, aHi, aLo, bHi, bLo) {
   out[1] = lo;
 }
 //# sourceMappingURL=PCGRandom.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.3/node_modules/@effect/data/mjs/Hash.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/Hash.mjs
 /**
  * @since 1.0.0
  */
@@ -17235,7 +17252,7 @@ const array = arr => {
   return optimize(h);
 };
 //# sourceMappingURL=Hash.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.3/node_modules/@effect/data/mjs/Equal.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/Equal.mjs
 
 /**
  * @since 1.0.0
@@ -17272,9 +17289,9 @@ const isEqual = u => typeof u === "object" && u !== null && Equal_symbol in u;
  * @since 1.0.0
  * @category instances
  */
-const equivalence = () => (self, that) => Hash_hash(self) === Hash_hash(that) && equals(self, that);
+const equivalence = () => (self, that) => equals(self, that);
 //# sourceMappingURL=Equal.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.3/node_modules/@effect/data/mjs/Data.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/Data.mjs
 /**
  * @since 1.0.0
  */
@@ -17438,7 +17455,7 @@ const Class = Structural;
  */
 const taggedEnum = () => tagged;
 //# sourceMappingURL=Data.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.3/node_modules/@effect/data/mjs/Equivalence.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/Equivalence.mjs
 /**
  * This module provides an implementation of the `Equivalence` type class, which defines a binary relation
  * that is reflexive, symmetric, and transitive. In other words, it defines a notion of equivalence between values of a certain type.
@@ -17605,7 +17622,7 @@ const Equivalence_struct = fields => {
   });
 };
 //# sourceMappingURL=Equivalence.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.3/node_modules/@effect/data/mjs/Inspectable.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/Inspectable.mjs
 /**
  * @since 1.0.0
  */
@@ -17614,8 +17631,23 @@ const Equivalence_struct = fields => {
  * @category symbols
  */
 const NodeInspectSymbol = /*#__PURE__*/Symbol.for("nodejs.util.inspect.custom");
+/**
+ * @since 1.0.0
+ */
+const toJSON = x => {
+  if (typeof x === "object" && x !== null && "toJSON" in x && typeof x["toJSON"] === "function" && x["toJSON"].length === 0) {
+    return x.toJSON();
+  } else if (Array.isArray(x)) {
+    return x.map(toJSON);
+  }
+  return x;
+};
+/**
+ * @since 1.0.0
+ */
+const Inspectable_toString = x => JSON.stringify(x, null, 2);
 //# sourceMappingURL=Inspectable.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.3/node_modules/@effect/data/mjs/internal/Effect.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/internal/Effect.mjs
 /** @internal */
 const EffectTypeId = /*#__PURE__*/Symbol.for("@effect/io/Effect");
 /** @internal */
@@ -17625,7 +17657,7 @@ const effectVariance = {
   _A: _ => _
 };
 //# sourceMappingURL=Effect.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.3/node_modules/@effect/data/mjs/Pipeable.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/Pipeable.mjs
 /**
  * @since 1.0.0
  */
@@ -17663,7 +17695,7 @@ const Pipeable_pipeArguments = (self, args) => {
   }
 };
 //# sourceMappingURL=Pipeable.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.3/node_modules/@effect/data/mjs/internal/Option.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/internal/Option.mjs
 /**
  * @since 1.0.0
  */
@@ -17685,7 +17717,7 @@ const CommonProto = {
     return Pipeable_pipeArguments(this, arguments);
   },
   toString() {
-    return JSON.stringify(this, null, 2);
+    return Inspectable_toString(this.toJSON());
   }
 };
 const SomeProto = /*#__PURE__*/Object.assign( /*#__PURE__*/Object.create(CommonProto), {
@@ -17698,8 +17730,9 @@ const SomeProto = /*#__PURE__*/Object.assign( /*#__PURE__*/Object.create(CommonP
   },
   toJSON() {
     return {
+      _id: "Option",
       _tag: this._tag,
-      value: this.value
+      value: toJSON(this.value)
     };
   }
 });
@@ -17713,6 +17746,7 @@ const NoneProto = /*#__PURE__*/Object.assign( /*#__PURE__*/Object.create(CommonP
   },
   toJSON() {
     return {
+      _id: "Option",
       _tag: this._tag
     };
   }
@@ -17732,7 +17766,7 @@ const Option_some = value => {
   return a;
 };
 //# sourceMappingURL=Option.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.3/node_modules/@effect/data/mjs/internal/Either.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/internal/Either.mjs
 /**
  * @since 1.0.0
  */
@@ -17759,7 +17793,7 @@ const Either_CommonProto = {
     return Pipeable_pipeArguments(this, arguments);
   },
   toString() {
-    return JSON.stringify(this, null, 2);
+    return Inspectable_toString(this.toJSON());
   }
 };
 const RightProto = /*#__PURE__*/Object.assign( /*#__PURE__*/Object.create(Either_CommonProto), {
@@ -17772,8 +17806,9 @@ const RightProto = /*#__PURE__*/Object.assign( /*#__PURE__*/Object.create(Either
   },
   toJSON() {
     return {
+      _id: "Either",
       _tag: this._tag,
-      right: this.right
+      right: toJSON(this.right)
     };
   }
 });
@@ -17787,8 +17822,9 @@ const LeftProto = /*#__PURE__*/Object.assign( /*#__PURE__*/Object.create(Either_
   },
   toJSON() {
     return {
+      _id: "Either",
       _tag: this._tag,
-      left: this.left
+      left: toJSON(this.left)
     };
   }
 });
@@ -17817,7 +17853,7 @@ const getRight = self => isLeft(self) ? none : Option_some(self.right);
 /** @internal */
 const fromOption = /*#__PURE__*/Function_dual(2, (self, onNone) => isNone(self) ? left(onNone()) : right(self.value));
 //# sourceMappingURL=Either.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.3/node_modules/@effect/data/mjs/Order.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/Order.mjs
 /**
  * @since 1.0.0
  */
@@ -18043,7 +18079,7 @@ const clamp = O => dual(3, (self, minimum, maximum) => min(O)(maximum, max(O)(mi
  */
 const between = O => dual(3, (self, minimum, maximum) => !lessThan(O)(self, minimum) && !greaterThan(O)(self, maximum));
 //# sourceMappingURL=Order.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.3/node_modules/@effect/data/mjs/Number.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/Number.mjs
 /**
  * This module provides utility functions and type class instances for working with the `number` type in TypeScript.
  * It includes functions for basic arithmetic operations, as well as type class instances for
@@ -18069,7 +18105,7 @@ const between = O => dual(3, (self, minimum, maximum) => !lessThan(O)(self, mini
  * @category guards
  * @since 1.0.0
  */
-const Number_isNumber = Predicate_isNumber;
+const Number_isNumber = isNumber;
 /**
  * Provides an addition operation on `number`s.
  *
@@ -18390,7 +18426,7 @@ const remainder = /*#__PURE__*/(/* unused pure expression or super */ null && (d
   return selfInt % divisorInt / Math.pow(10, decCount);
 })));
 //# sourceMappingURL=Number.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.3/node_modules/@effect/data/mjs/Option.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/Option.mjs
 
 
 
@@ -19361,14 +19397,14 @@ const gen = f => {
   }
 };
 //# sourceMappingURL=Option.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.3/node_modules/@effect/data/mjs/internal/ReadonlyArray.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/internal/ReadonlyArray.mjs
 /**
  * @since 1.0.0
  */
 /** @internal */
 const isNonEmptyArray = self => self.length > 0;
 //# sourceMappingURL=ReadonlyArray.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.3/node_modules/@effect/data/mjs/ReadonlyRecord.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/ReadonlyRecord.mjs
 /**
  * This module provides utility functions for working with records in TypeScript.
  *
@@ -19848,7 +19884,7 @@ const partition = /*#__PURE__*/(/* unused pure expression or super */ null && (d
   return [left, right];
 })));
 //# sourceMappingURL=ReadonlyRecord.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.3/node_modules/@effect/data/mjs/ReadonlyArray.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/ReadonlyArray.mjs
 /**
  * This module provides utility functions for working with arrays in TypeScript.
  *
@@ -21142,7 +21178,7 @@ const cartesianWith = /*#__PURE__*/(/* unused pure expression or super */ null &
  */
 const cartesian = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, that) => cartesianWith(self, that, (a, b) => [a, b]))));
 //# sourceMappingURL=ReadonlyArray.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.3/node_modules/@effect/data/mjs/Chunk.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/Chunk.mjs
 
 
 
@@ -21174,12 +21210,12 @@ const ChunkProto = {
     _A: _ => _
   },
   toString() {
-    return `Chunk(${toReadonlyArray(this).map(String).join(", ")})`;
+    return Inspectable_toString(this.toJSON());
   },
   toJSON() {
     return {
-      _tag: "Chunk",
-      values: toReadonlyArray(this)
+      _id: "Chunk",
+      values: toReadonlyArray(this).map(toJSON)
     };
   },
   [NodeInspectSymbol]() {
@@ -21264,7 +21300,7 @@ const makeChunk = backing => {
  * @category constructors
  * @since 1.0.0
  */
-const isChunk = u => Predicate_isObject(u) && Chunk_TypeId in u;
+const isChunk = u => isObject(u) && Chunk_TypeId in u;
 const _empty = /*#__PURE__*/makeChunk({
   _tag: "IEmpty"
 });
@@ -22121,7 +22157,7 @@ const Chunk_reduce = reduce;
  */
 const Chunk_reduceRight = reduceRight;
 //# sourceMappingURL=Chunk.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.3/node_modules/@effect/data/mjs/Either.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/Either.mjs
 /**
  * @since 1.0.0
  */
@@ -22390,12 +22426,12 @@ const Either_getOrUndefined = /*#__PURE__*/(/* unused pure expression or super *
  * @category getters
  * @since 1.0.0
  */
-const Either_getOrThrowWith = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, onLeft) => {
+const Either_getOrThrowWith = /*#__PURE__*/Function_dual(2, (self, onLeft) => {
   if (Either_isRight(self)) {
     return self.right;
   }
   throw onLeft(self.left);
-})));
+});
 /**
  * Extracts the value of an `Either` or throws if the `Either` is `Left`.
  *
@@ -22413,7 +22449,7 @@ const Either_getOrThrowWith = /*#__PURE__*/(/* unused pure expression or super *
  * @category getters
  * @since 1.0.0
  */
-const Either_getOrThrow = /*#__PURE__*/(/* unused pure expression or super */ null && (Either_getOrThrowWith(() => new Error("getOrThrow called on a Left"))));
+const Either_getOrThrow = /*#__PURE__*/Either_getOrThrowWith(() => new Error("getOrThrow called on a Left"));
 /**
  * @category combining
  * @since 1.0.0
@@ -22492,7 +22528,473 @@ const Either_gen = f => {
   }
 };
 //# sourceMappingURL=Either.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.3/node_modules/@effect/data/mjs/internal/Context.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+match@0.35.2_@effect+data@0.18.5/node_modules/@effect/match/mjs/internal/matcher.mjs
+
+
+
+
+/** @internal */
+const matcher_TypeId = /*#__PURE__*/Symbol.for("@effect/matcher/Matcher");
+const TypeMatcherProto = {
+  [matcher_TypeId]: {
+    _input: Function_identity,
+    _filters: Function_identity,
+    _remaining: Function_identity,
+    _result: Function_identity
+  },
+  _tag: "TypeMatcher",
+  add(_case) {
+    return makeTypeMatcher([...this.cases, _case]);
+  },
+  pipe() {
+    return Pipeable_pipeArguments(this, arguments);
+  }
+};
+function makeTypeMatcher(cases) {
+  const matcher = Object.create(TypeMatcherProto);
+  matcher.cases = cases;
+  return matcher;
+}
+const ValueMatcherProto = {
+  [matcher_TypeId]: {
+    _input: Function_identity,
+    _filters: Function_identity,
+    _result: Function_identity
+  },
+  _tag: "ValueMatcher",
+  add(_case) {
+    if (this.value._tag === "Right") {
+      return this;
+    }
+    if (_case._tag === "When" && _case.guard(this.provided) === true) {
+      return makeValueMatcher(this.provided, Either_right(_case.evaluate(this.provided)));
+    } else if (_case._tag === "Not" && _case.guard(this.provided) === false) {
+      return makeValueMatcher(this.provided, Either_right(_case.evaluate(this.provided)));
+    }
+    return this;
+  },
+  pipe() {
+    return Pipeable_pipeArguments(this, arguments);
+  }
+};
+function makeValueMatcher(provided, value) {
+  const matcher = Object.create(ValueMatcherProto);
+  matcher.provided = provided;
+  matcher.value = value;
+  return matcher;
+}
+const makeWhen = (guard, evaluate) => ({
+  _tag: "When",
+  guard,
+  evaluate
+});
+const makeNot = (guard, evaluate) => ({
+  _tag: "Not",
+  guard,
+  evaluate
+});
+const makePredicate = pattern => {
+  if (typeof pattern === "function") {
+    return pattern;
+  } else if (Array.isArray(pattern)) {
+    const predicates = pattern.map(makePredicate);
+    const len = predicates.length;
+    return u => {
+      if (!Array.isArray(u)) {
+        return false;
+      }
+      for (let i = 0; i < len; i++) {
+        if (predicates[i](u[i]) === false) {
+          return false;
+        }
+      }
+      return true;
+    };
+  } else if (pattern !== null && typeof pattern === "object") {
+    const keysAndPredicates = Object.entries(pattern).map(([k, p]) => [k, makePredicate(p)]);
+    const len = keysAndPredicates.length;
+    return u => {
+      if (typeof u !== "object" || u === null) {
+        return false;
+      }
+      for (let i = 0; i < len; i++) {
+        const [key, predicate] = keysAndPredicates[i];
+        if (!(key in u) || predicate(u[key]) === false) {
+          return false;
+        }
+      }
+      return true;
+    };
+  }
+  return u => u === pattern;
+};
+const makeOrPredicate = patterns => {
+  const predicates = patterns.map(makePredicate);
+  const len = predicates.length;
+  return u => {
+    for (let i = 0; i < len; i++) {
+      if (predicates[i](u) === true) {
+        return true;
+      }
+    }
+    return false;
+  };
+};
+const makeAndPredicate = patterns => {
+  const predicates = patterns.map(makePredicate);
+  const len = predicates.length;
+  return u => {
+    for (let i = 0; i < len; i++) {
+      if (predicates[i](u) === false) {
+        return false;
+      }
+    }
+    return true;
+  };
+};
+/** @internal */
+const type = () => makeTypeMatcher([]);
+/** @internal */
+const value = i => makeValueMatcher(i, Either_left(i));
+/** @internal */
+const valueTags = fields => {
+  const match = tagsExhaustive(fields)(makeTypeMatcher([]));
+  return input => match(input);
+};
+/** @internal */
+const typeTags = () => fields => {
+  const match = tagsExhaustive(fields)(makeTypeMatcher([]));
+  return input => match(input);
+};
+/** @internal */
+const when = (pattern, f) => self => self.add(makeWhen(makePredicate(pattern), f));
+/** @internal */
+const whenOr = (...args) => self => {
+  const onMatch = args[args.length - 1];
+  const patterns = args.slice(0, -1);
+  return self.add(makeWhen(makeOrPredicate(patterns), onMatch));
+};
+/** @internal */
+const whenAnd = (...args) => self => {
+  const onMatch = args[args.length - 1];
+  const patterns = args.slice(0, -1);
+  return self.add(makeWhen(makeAndPredicate(patterns), onMatch));
+};
+/** @internal */
+const discriminator = field => (...pattern) => {
+  const f = pattern[pattern.length - 1];
+  const values = pattern.slice(0, -1);
+  const pred = values.length === 1 ? _ => _[field] === values[0] : _ => values.includes(_[field]);
+  return self => self.add(makeWhen(pred, f));
+};
+/** @internal */
+const discriminatorStartsWith = field => (pattern, f) => {
+  const pred = _ => typeof _[field] === "string" && _[field].startsWith(pattern);
+  return self => self.add(makeWhen(pred, f));
+};
+/** @internal */
+const discriminators = field => fields => {
+  const predicates = [];
+  for (const key in fields) {
+    const pred = _ => _[field] === key;
+    const f = fields[key];
+    if (f) {
+      predicates.push(makeWhen(pred, f));
+    }
+  }
+  const len = predicates.length;
+  return self => {
+    let matcher = self;
+    for (let i = 0; i < len; i++) {
+      matcher = matcher.add(predicates[i]);
+    }
+    return matcher;
+  };
+};
+/** @internal */
+const discriminatorsExhaustive = field => fields => {
+  const addCases = discriminators(field)(fields);
+  return matcher => exhaustive(addCases(matcher));
+};
+/** @internal */
+const tag = /*#__PURE__*/discriminator("_tag");
+/** @internal */
+const tagStartsWith = /*#__PURE__*/discriminatorStartsWith("_tag");
+/** @internal */
+const tags = /*#__PURE__*/discriminators("_tag");
+/** @internal */
+const tagsExhaustive = /*#__PURE__*/discriminatorsExhaustive("_tag");
+/** @internal */
+const matcher_not = (pattern, f) => self => self.add(makeNot(makePredicate(pattern), f));
+/** @internal */
+const nonEmptyString = u => typeof u === "string" && u.length > 0;
+/** @internal */
+const is = (...literals) => {
+  const len = literals.length;
+  return u => {
+    for (let i = 0; i < len; i++) {
+      if (u === literals[i]) {
+        return true;
+      }
+    }
+    return false;
+  };
+};
+/** @internal */
+const any = () => true;
+/** @internal */
+const defined = u => u !== undefined && u !== null;
+/** @internal */
+const instanceOf = constructor => u => u instanceof constructor;
+/** @internal */
+const instanceOfUnsafe = (/* unused pure expression or super */ null && (instanceOf));
+/** @internal */
+const matcher_orElse = f => self => {
+  const result = matcher_either(self);
+  if (Either_isEither(result)) {
+    // @ts-expect-error
+    return result._tag === "Right" ? result.right : f(result.left);
+  }
+  // @ts-expect-error
+  return input => {
+    const a = result(input);
+    return a._tag === "Right" ? a.right : f(a.left);
+  };
+};
+/** @internal */
+const orElseAbsurd = self => matcher_orElse(() => {
+  throw new Error("absurd");
+})(self);
+/** @internal */
+const matcher_either = self => {
+  if (self._tag === "ValueMatcher") {
+    return self.value;
+  }
+  const len = self.cases.length;
+  return input => {
+    for (let i = 0; i < len; i++) {
+      const _case = self.cases[i];
+      if (_case._tag === "When" && _case.guard(input) === true) {
+        return Either_right(_case.evaluate(input));
+      } else if (_case._tag === "Not" && _case.guard(input) === false) {
+        return Either_right(_case.evaluate(input));
+      }
+    }
+    return Either_left(input);
+  };
+};
+/** @internal */
+const matcher_option = self => {
+  const toEither = matcher_either(self);
+  if (Either_isEither(toEither)) {
+    return Either_match(toEither, {
+      onLeft: () => Option_none(),
+      onRight: mjs_Option_some
+    });
+  }
+  return input => Either_match(toEither(input), {
+    onLeft: () => Option_none(),
+    onRight: mjs_Option_some
+  });
+};
+/** @internal */
+const exhaustive = self => {
+  const toEither = matcher_either(self);
+  if (Either_isEither(toEither)) {
+    if (toEither._tag === "Right") {
+      return toEither.right;
+    }
+    throw new Error("@effect/match: exhaustive absurd");
+  }
+  return u => {
+    // @ts-expect-error
+    const result = toEither(u);
+    if (result._tag === "Right") {
+      return result.right;
+    }
+    throw new Error("@effect/match: exhaustive absurd");
+  };
+};
+//# sourceMappingURL=matcher.mjs.map
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+match@0.35.2_@effect+data@0.18.5/node_modules/@effect/match/mjs/index.mjs
+
+
+/**
+ * @category type ids
+ * @since 1.0.0
+ */
+const MatcherTypeId = matcher_TypeId;
+/**
+ * @category constructors
+ * @since 1.0.0
+ */
+const mjs_type = type;
+/**
+ * @category constructors
+ * @since 1.0.0
+ */
+const mjs_value = value;
+/**
+ * @category constructors
+ * @since 1.0.0
+ */
+const mjs_valueTags = valueTags;
+/**
+ * @category constructors
+ * @since 1.0.0
+ */
+const mjs_typeTags = typeTags;
+/**
+ * @category combinators
+ * @since 1.0.0
+ */
+const mjs_when = when;
+/**
+ * @category combinators
+ * @since 1.0.0
+ */
+const mjs_whenOr = whenOr;
+/**
+ * @category combinators
+ * @since 1.0.0
+ */
+const mjs_whenAnd = whenAnd;
+/**
+ * @category combinators
+ * @since 1.0.0
+ */
+const mjs_discriminator = discriminator;
+/**
+ * @category combinators
+ * @since 1.0.0
+ */
+const mjs_discriminatorStartsWith = discriminatorStartsWith;
+/**
+ * @category combinators
+ * @since 1.0.0
+ */
+const mjs_discriminators = discriminators;
+/**
+ * @category combinators
+ * @since 1.0.0
+ */
+const mjs_discriminatorsExhaustive = discriminatorsExhaustive;
+/**
+ * @category combinators
+ * @since 1.0.0
+ */
+const mjs_tag = tag;
+/**
+ * @category combinators
+ * @since 1.0.0
+ */
+const mjs_tagStartsWith = tagStartsWith;
+/**
+ * @category combinators
+ * @since 1.0.0
+ */
+const mjs_tags = tags;
+/**
+ * @category combinators
+ * @since 1.0.0
+ */
+const mjs_tagsExhaustive = tagsExhaustive;
+/**
+ * @category combinators
+ * @since 1.0.0
+ */
+const mjs_not = matcher_not;
+/**
+ * @category predicates
+ * @since 1.0.0
+ */
+const mjs_nonEmptyString = nonEmptyString;
+/**
+ * @category predicates
+ * @since 1.0.0
+ */
+const mjs_is = is;
+/**
+ * @category predicates
+ * @since 1.0.0
+ */
+const mjs_string = isString;
+/**
+ * @category predicates
+ * @since 1.0.0
+ */
+const mjs_number = isNumber;
+/**
+ * @category predicates
+ * @since 1.0.0
+ */
+const mjs_any = any;
+/**
+ * @category predicates
+ * @since 1.0.0
+ */
+const mjs_defined = defined;
+/**
+ * @category predicates
+ * @since 1.0.0
+ */
+const mjs_boolean = isBoolean;
+const _undefined = isUndefined;
+
+const _null = isNull;
+
+/**
+ * @category predicates
+ * @since 1.0.0
+ */
+const mjs_bigint = isBigint;
+/**
+ * @category predicates
+ * @since 1.0.0
+ */
+const date = isDate;
+/**
+ * @category predicates
+ * @since 1.0.0
+ */
+const record = isRecord;
+/**
+ * @category predicates
+ * @since 1.0.0
+ */
+const mjs_instanceOf = instanceOf;
+/**
+ * @category predicates
+ * @since 1.0.0
+ */
+const mjs_instanceOfUnsafe = instanceOf;
+/**
+ * @category conversions
+ * @since 1.0.0
+ */
+const mjs_orElse = matcher_orElse;
+/**
+ * @category conversions
+ * @since 1.0.0
+ */
+const mjs_orElseAbsurd = orElseAbsurd;
+/**
+ * @category conversions
+ * @since 1.0.0
+ */
+const mjs_either = matcher_either;
+/**
+ * @category conversions
+ * @since 1.0.0
+ */
+const mjs_option = matcher_option;
+/**
+ * @category conversions
+ * @since 1.0.0
+ */
+const mjs_exhaustive = exhaustive;
+//# sourceMappingURL=index.mjs.map
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/internal/Context.mjs
 
 
 
@@ -22518,11 +23020,11 @@ const TagProto = {
     return random(this);
   },
   toString() {
-    return JSON.stringify(this, null, 2);
+    return Inspectable_toString(this.toJSON());
   },
   toJSON() {
     return {
-      _tag: "Tag",
+      _id: "Tag",
       identifier: this.identifier,
       stack: this.stack
     };
@@ -22589,12 +23091,12 @@ const ContextProto = {
     return Pipeable_pipeArguments(this, arguments);
   },
   toString() {
-    return JSON.stringify(this, null, 2);
+    return Inspectable_toString(this.toJSON());
   },
   toJSON() {
     return {
-      _tag: "Context",
-      services: Array.from(this.unsafeMap)
+      _id: "Context",
+      services: Array.from(this.unsafeMap).map(toJSON)
     };
   },
   [NodeInspectSymbol]() {
@@ -22684,7 +23186,7 @@ const omit = (...tags) => self => {
   return makeContext(newEnv);
 };
 //# sourceMappingURL=Context.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.3/node_modules/@effect/data/mjs/Context.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/Context.mjs
 
 const Context_TagTypeId = TagTypeId;
 /**
@@ -22919,7 +23421,7 @@ const Context_pick = pick;
  */
 const Context_omit = omit;
 //# sourceMappingURL=Context.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.3/node_modules/@effect/data/mjs/internal/Differ/ChunkPatch.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/internal/Differ/ChunkPatch.mjs
 
 
 
@@ -23045,7 +23547,7 @@ const ChunkPatch_patch = /*#__PURE__*/Function_dual(3, (self, oldValue, differ) 
   return chunk;
 });
 //# sourceMappingURL=ChunkPatch.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.3/node_modules/@effect/data/mjs/internal/Differ/ContextPatch.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/internal/Differ/ContextPatch.mjs
 
 
 
@@ -23185,7 +23687,7 @@ const ContextPatch_patch = /*#__PURE__*/Function_dual(2, (self, context) => {
   return makeContext(map);
 });
 //# sourceMappingURL=ContextPatch.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.3/node_modules/@effect/data/mjs/internal/HashMap/config.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/internal/HashMap/config.mjs
 /** @internal */
 const SIZE = 5;
 /** @internal */
@@ -23197,7 +23699,7 @@ const MAX_INDEX_NODE = BUCKET_SIZE / 2;
 /** @internal */
 const MIN_ARRAY_NODE = BUCKET_SIZE / 4;
 //# sourceMappingURL=config.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.3/node_modules/@effect/data/mjs/internal/HashMap/bitwise.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/internal/HashMap/bitwise.mjs
 
 /**
  * Hamming weight.
@@ -23227,7 +23729,7 @@ function fromBitmap(bitmap, bit) {
   return popcount(bitmap & bit - 1);
 }
 //# sourceMappingURL=bitwise.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.3/node_modules/@effect/data/mjs/internal/HashMap/array.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/internal/HashMap/array.mjs
 /** @internal */
 function arrayUpdate(mutate, at, v, arr) {
   let out = arr;
@@ -23277,7 +23779,7 @@ function arraySpliceIn(mutate, at, v, arr) {
   return out;
 }
 //# sourceMappingURL=array.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.3/node_modules/@effect/data/mjs/internal/Stack.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/internal/Stack.mjs
 /** @internal */
 class Stack {
   constructor(value, previous) {
@@ -23286,7 +23788,7 @@ class Stack {
   }
 }
 //# sourceMappingURL=Stack.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.3/node_modules/@effect/data/mjs/internal/HashMap/node.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/internal/HashMap/node.mjs
 
 
 
@@ -23535,7 +24037,7 @@ function mergeLeaves(edit, shift, h1, n1, h2, n2) {
   }
 }
 //# sourceMappingURL=node.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.3/node_modules/@effect/data/mjs/internal/HashMap.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/internal/HashMap.mjs
 
 
 
@@ -23581,12 +24083,12 @@ const HashMapProto = {
     return false;
   },
   toString() {
-    return `HashMap(${Array.from(this).map(([k, v]) => `[${String(k)}, ${String(v)}]`).join(", ")})`;
+    return Inspectable_toString(this.toJSON());
   },
   toJSON() {
     return {
-      _tag: "HashMap",
-      values: Array.from(this)
+      _id: "HashMap",
+      values: Array.from(this).map(toJSON)
     };
   },
   [NodeInspectSymbol]() {
@@ -23677,7 +24179,7 @@ const HashMap_fromIterable = entries => {
   return endMutation(map);
 };
 /** @internal */
-const isHashMap = u => Predicate_isObject(u) && HashMapTypeId in u;
+const isHashMap = u => isObject(u) && HashMapTypeId in u;
 /** @internal */
 const HashMap_isEmpty = self => self && isEmptyNode(self._root);
 /** @internal */
@@ -23868,7 +24370,7 @@ const HashMap_findFirst = /*#__PURE__*/Function_dual(2, (self, predicate) => {
   return Option_none();
 });
 //# sourceMappingURL=HashMap.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.3/node_modules/@effect/data/mjs/internal/HashSet.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/internal/HashSet.mjs
 
 
 
@@ -23893,12 +24395,12 @@ const HashSetProto = {
     return false;
   },
   toString() {
-    return `HashSet(${Array.from(this).map(String).join(", ")})`;
+    return Inspectable_toString(this.toJSON());
   },
   toJSON() {
     return {
-      _tag: "HashSet",
-      values: Array.from(this)
+      _id: "HashSet",
+      values: Array.from(this).map(toJSON)
     };
   },
   [NodeInspectSymbol]() {
@@ -23915,7 +24417,7 @@ const HashSet_makeImpl = keyMap => {
   return set;
 };
 /** @internal */
-const isHashSet = u => Predicate_isObject(u) && HashSetTypeId in u;
+const isHashSet = u => isObject(u) && HashSetTypeId in u;
 const HashSet_empty = /*#__PURE__*/HashSet_makeImpl( /*#__PURE__*/internal_HashMap_empty());
 /** @internal */
 const internal_HashSet_empty = () => HashSet_empty;
@@ -24050,14 +24552,14 @@ const HashSet_partition = /*#__PURE__*/Function_dual(2, (self, f) => {
   return [HashSet_endMutation(left), HashSet_endMutation(right)];
 });
 //# sourceMappingURL=HashSet.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.3/node_modules/@effect/data/mjs/internal/HashMap/keySet.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/internal/HashMap/keySet.mjs
 
 /** @internal */
 function keySet(self) {
   return HashSet_makeImpl(self);
 }
 //# sourceMappingURL=keySet.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.3/node_modules/@effect/data/mjs/HashMap.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/HashMap.mjs
 /**
  * @since 1.0.0
  */
@@ -24298,7 +24800,7 @@ const mjs_HashMap_filterMap = HashMap_filterMap;
  */
 const mjs_HashMap_findFirst = HashMap_findFirst;
 //# sourceMappingURL=HashMap.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.3/node_modules/@effect/data/mjs/internal/Differ/HashMapPatch.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/internal/Differ/HashMapPatch.mjs
 
 
 
@@ -24425,7 +24927,7 @@ const HashMapPatch_patch = /*#__PURE__*/Function_dual(3, (self, oldValue, differ
   return map;
 });
 //# sourceMappingURL=HashMapPatch.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.3/node_modules/@effect/data/mjs/HashSet.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/HashSet.mjs
 /**
  * @since 1.0.0
  */
@@ -24617,7 +25119,7 @@ const mjs_HashSet_filter = HashSet_filter;
  */
 const mjs_HashSet_partition = HashSet_partition;
 //# sourceMappingURL=HashSet.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.3/node_modules/@effect/data/mjs/internal/Differ/HashSetPatch.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/internal/Differ/HashSetPatch.mjs
 
 
 
@@ -24715,7 +25217,7 @@ const HashSetPatch_patch = /*#__PURE__*/Function_dual(2, (self, oldValue) => {
   return set;
 });
 //# sourceMappingURL=HashSetPatch.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.3/node_modules/@effect/data/mjs/internal/Differ/OrPatch.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/internal/Differ/OrPatch.mjs
 
 
 
@@ -24882,7 +25384,7 @@ const OrPatch_patch = /*#__PURE__*/Function_dual(2, (self, {
   return result;
 });
 //# sourceMappingURL=OrPatch.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.3/node_modules/@effect/data/mjs/internal/Differ.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/internal/Differ.mjs
 
 
 
@@ -25001,7 +25503,7 @@ const Differ_zip = /*#__PURE__*/Function_dual(2, (self, that) => Differ_make({
   patch: (patch, oldValue) => [self.patch(patch[0], oldValue[0]), that.patch(patch[1], oldValue[1])]
 }));
 //# sourceMappingURL=Differ.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.3/node_modules/@effect/data/mjs/Differ.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/Differ.mjs
 
 
 
@@ -25125,7 +25627,7 @@ const Differ_updateWith = updateWith;
  */
 const mjs_Differ_zip = Differ_zip;
 //# sourceMappingURL=Differ.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.3/node_modules/@effect/data/mjs/List.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/List.mjs
 /**
  * A data type for immutable linked lists representing ordered collections of elements of type `A`.
  *
@@ -25181,12 +25683,13 @@ const ConsProto = {
   [List_TypeId]: List_TypeId,
   _tag: "Cons",
   toString() {
-    return `List.Cons(${List_toReadonlyArray(this).map(String).join(", ")})`;
+    return Inspectable_toString(this.toJSON());
   },
   toJSON() {
     return {
-      _tag: "List.Cons",
-      values: List_toReadonlyArray(this)
+      _id: "List",
+      _tag: "Cons",
+      values: List_toReadonlyArray(this).map(toJSON)
     };
   },
   [NodeInspectSymbol]() {
@@ -25243,11 +25746,12 @@ const NilProto = {
   [List_TypeId]: List_TypeId,
   _tag: "Nil",
   toString() {
-    return `List.Nil`;
+    return Inspectable_toString(this.toJSON());
   },
   toJSON() {
     return {
-      _tag: "List.Nil"
+      _id: "List",
+      _tag: "Nil"
     };
   },
   [NodeInspectSymbol]() {
@@ -25280,7 +25784,7 @@ const _Nil = /*#__PURE__*/Object.create(NilProto);
  * @since 1.0.0
  * @category refinements
  */
-const isList = u => Predicate_isObject(u) && List_TypeId in u;
+const isList = u => isObject(u) && List_TypeId in u;
 /**
  * Returns `true` if the specified value is a `List.Nil<A>`, `false` otherwise.
  *
@@ -25870,7 +26374,7 @@ const unsafeTail = self => {
   return self.tail;
 };
 //# sourceMappingURL=List.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.3/node_modules/@effect/data/mjs/MutableRef.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/MutableRef.mjs
 /**
  * @since 1.0.0
  */
@@ -25882,12 +26386,12 @@ const MutableRef_TypeId = /*#__PURE__*/Symbol.for("@effect/data/MutableRef");
 const MutableRefProto = {
   [MutableRef_TypeId]: MutableRef_TypeId,
   toString() {
-    return `MutableRef(${String(this.current)})`;
+    return Inspectable_toString(this.toJSON());
   },
   toJSON() {
     return {
-      _tag: "MutableRef",
-      current: this.current
+      _id: "MutableRef",
+      current: toJSON(this.current)
     };
   },
   [NodeInspectSymbol]() {
@@ -25998,8 +26502,9 @@ const updateAndGet = /*#__PURE__*/Function_dual(2, (self, f) => setAndGet(self, 
  */
 const MutableRef_toggle = self => MutableRef_update(self, _ => !_);
 //# sourceMappingURL=MutableRef.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/fiberId.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/fiberId.mjs
 var _a, _b, _c;
+
 
 
 
@@ -26029,6 +26534,18 @@ class None {
   [Equal_symbol](that) {
     return isFiberId(that) && that._tag === OP_NONE;
   }
+  toString() {
+    return Inspectable_toString(this.toJSON());
+  }
+  toJSON() {
+    return {
+      _id: "FiberId",
+      _tag: this._tag
+    };
+  }
+  [NodeInspectSymbol]() {
+    return this.toJSON();
+  }
 }
 /** @internal */
 class Runtime {
@@ -26044,6 +26561,20 @@ class Runtime {
   [Equal_symbol](that) {
     return isFiberId(that) && that._tag === OP_RUNTIME && this.id === that.id && this.startTimeMillis === that.startTimeMillis;
   }
+  toString() {
+    return Inspectable_toString(this.toJSON());
+  }
+  toJSON() {
+    return {
+      _id: "FiberId",
+      _tag: this._tag,
+      id: this.id,
+      startTimeMillis: this.startTimeMillis
+    };
+  }
+  [NodeInspectSymbol]() {
+    return this.toJSON();
+  }
 }
 /** @internal */
 class Composite {
@@ -26058,6 +26589,20 @@ class Composite {
   }
   [Equal_symbol](that) {
     return isFiberId(that) && that._tag === OP_COMPOSITE && equals(this.left, that.left) && equals(this.right, that.right);
+  }
+  toString() {
+    return Inspectable_toString(this.toJSON());
+  }
+  toJSON() {
+    return {
+      _id: "FiberId",
+      _tag: this._tag,
+      left: toJSON(this.left),
+      right: toJSON(this.right)
+    };
+  }
+  [NodeInspectSymbol]() {
+    return this.toJSON();
   }
 }
 /** @internal */
@@ -26173,7 +26718,7 @@ const fiberId_unsafeMake = () => {
   return new Runtime(id, new Date().getTime());
 };
 //# sourceMappingURL=fiberId.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/FiberId.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/FiberId.mjs
 
 /**
  * @since 1.0.0
@@ -26289,7 +26834,7 @@ const FiberId_toSet = toSet;
  */
 const FiberId_unsafeMake = fiberId_unsafeMake;
 //# sourceMappingURL=FiberId.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/opCodes/cause.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/opCodes/cause.mjs
 /** @internal */
 const OP_DIE = "Die";
 /** @internal */
@@ -26305,7 +26850,8 @@ const OP_PARALLEL = "Parallel";
 /** @internal */
 const OP_SEQUENTIAL = "Sequential";
 //# sourceMappingURL=cause.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/cause.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/cause.mjs
+
 
 
 
@@ -26342,15 +26888,50 @@ const proto = {
     return Pipeable_pipeArguments(this, arguments);
   },
   toJSON() {
-    return {
-      _tag: "Cause",
-      errors: prettyErrors(this)
-    };
+    switch (this._tag) {
+      case "Empty":
+        return {
+          _id: "Cause",
+          _tag: this._tag
+        };
+      case "Die":
+        return {
+          _id: "Cause",
+          _tag: this._tag,
+          defect: toJSON(this.defect)
+        };
+      case "Interrupt":
+        return {
+          _id: "Cause",
+          _tag: this._tag,
+          fiberId: this.fiberId.toJSON()
+        };
+      case "Fail":
+        return {
+          _id: "Cause",
+          _tag: this._tag,
+          failure: toJSON(this.error)
+        };
+      case "Annotated":
+        return {
+          _id: "Cause",
+          _tag: this._tag,
+          cause: this.cause.toJSON(),
+          annotation: toJSON(this.annotation)
+        };
+      case "Sequential":
+      case "Parallel":
+        return {
+          _id: "Cause",
+          _tag: this._tag,
+          errors: toJSON(cause_prettyErrors(this))
+        };
+    }
   },
   toString() {
-    return cause_pretty(this);
+    return pretty(this);
   },
-  [Symbol.for("nodejs.util.inspect.custom")]() {
+  [NodeInspectSymbol]() {
     return this.toJSON();
   }
 };
@@ -26416,17 +26997,17 @@ const isCause = u => typeof u === "object" && u != null && CauseTypeId in u;
 /** @internal */
 const isEmptyType = self => self._tag === OP_EMPTY;
 /** @internal */
-const isFailType = self => self._tag === OP_FAIL;
+const isFailType = self => self._tag === OpCodes.OP_FAIL;
 /** @internal */
 const isDieType = self => self._tag === OP_DIE;
 /** @internal */
-const isInterruptType = self => self._tag === OP_INTERRUPT;
+const isInterruptType = self => self._tag === OpCodes.OP_INTERRUPT;
 /** @internal */
-const isAnnotatedType = self => self._tag === OP_ANNOTATED;
+const isAnnotatedType = self => self._tag === OpCodes.OP_ANNOTATED;
 /** @internal */
-const isSequentialType = self => self._tag === OP_SEQUENTIAL;
+const isSequentialType = self => self._tag === OpCodes.OP_SEQUENTIAL;
 /** @internal */
-const isParallelType = self => self._tag === OP_PARALLEL;
+const isParallelType = self => self._tag === OpCodes.OP_PARALLEL;
 // -----------------------------------------------------------------------------
 // Getters
 // -----------------------------------------------------------------------------
@@ -26457,9 +27038,9 @@ const cause_isEmpty = self => {
   });
 };
 /** @internal */
-const isFailure = self => Option_isSome(failureOption(self));
+const isFailure = self => Option.isSome(failureOption(self));
 /** @internal */
-const isDie = self => Option_isSome(dieOption(self));
+const isDie = self => Option.isSome(dieOption(self));
 /** @internal */
 const isInterrupted = self => Option_isSome(interruptOption(self));
 /** @internal */
@@ -26488,37 +27069,37 @@ const failureOrCause = self => {
   }
 };
 /** @internal */
-const dieOption = self => find(self, cause => cause._tag === OP_DIE ? mjs_Option_some(cause.defect) : Option_none());
+const dieOption = self => find(self, cause => cause._tag === OpCodes.OP_DIE ? Option.some(cause.defect) : Option.none());
 /** @internal */
 const flipCauseOption = self => cause_match(self, {
-  onEmpty: mjs_Option_some(cause_empty),
-  onFail: failureOption => map(fail)(failureOption),
-  onDie: defect => mjs_Option_some(die(defect)),
-  onInterrupt: fiberId => mjs_Option_some(interrupt(fiberId)),
-  onAnnotated: (causeOption, annotation) => map(cause => annotated(cause, annotation))(causeOption),
+  onEmpty: Option.some(cause_empty),
+  onFail: failureOption => Option.map(fail)(failureOption),
+  onDie: defect => Option.some(die(defect)),
+  onInterrupt: fiberId => Option.some(interrupt(fiberId)),
+  onAnnotated: (causeOption, annotation) => Option.map(cause => annotated(cause, annotation))(causeOption),
   onSequential: (left, right) => {
-    if (Option_isSome(left) && Option_isSome(right)) {
-      return mjs_Option_some(sequential(left.value, right.value));
+    if (Option.isSome(left) && Option.isSome(right)) {
+      return Option.some(sequential(left.value, right.value));
     }
-    if (Option_isNone(left) && Option_isSome(right)) {
-      return mjs_Option_some(right.value);
+    if (Option.isNone(left) && Option.isSome(right)) {
+      return Option.some(right.value);
     }
-    if (Option_isSome(left) && Option_isNone(right)) {
-      return mjs_Option_some(left.value);
+    if (Option.isSome(left) && Option.isNone(right)) {
+      return Option.some(left.value);
     }
-    return Option_none();
+    return Option.none();
   },
   onParallel: (left, right) => {
-    if (Option_isSome(left) && Option_isSome(right)) {
-      return mjs_Option_some(parallel(left.value, right.value));
+    if (Option.isSome(left) && Option.isSome(right)) {
+      return Option.some(parallel(left.value, right.value));
     }
-    if (Option_isNone(left) && Option_isSome(right)) {
-      return mjs_Option_some(right.value);
+    if (Option.isNone(left) && Option.isSome(right)) {
+      return Option.some(right.value);
     }
-    if (Option_isSome(left) && Option_isNone(right)) {
-      return mjs_Option_some(left.value);
+    if (Option.isSome(left) && Option.isNone(right)) {
+      return Option.some(left.value);
     }
-    return Option_none();
+    return Option.none();
   }
 });
 /** @internal */
@@ -26589,13 +27170,13 @@ const keepDefectsAndElectFailures = self => cause_match(self, {
 });
 /** @internal */
 const linearize = self => cause_match(self, {
-  onEmpty: mjs_HashSet_empty(),
-  onFail: error => mjs_HashSet_make(fail(error)),
-  onDie: defect => mjs_HashSet_make(die(defect)),
-  onInterrupt: fiberId => mjs_HashSet_make(interrupt(fiberId)),
-  onAnnotated: (set, annotation) => mjs_HashSet_map(cause => annotated(cause, annotation))(set),
-  onSequential: (leftSet, rightSet) => mjs_HashSet_flatMap(leftCause => mjs_HashSet_map(rightCause => sequential(leftCause, rightCause))(rightSet))(leftSet),
-  onParallel: (leftSet, rightSet) => mjs_HashSet_flatMap(leftCause => mjs_HashSet_map(rightCause => parallel(leftCause, rightCause))(rightSet))(leftSet)
+  onEmpty: HashSet.empty(),
+  onFail: error => HashSet.make(fail(error)),
+  onDie: defect => HashSet.make(die(defect)),
+  onInterrupt: fiberId => HashSet.make(interrupt(fiberId)),
+  onAnnotated: (set, annotation) => HashSet.map(cause => annotated(cause, annotation))(set),
+  onSequential: (leftSet, rightSet) => HashSet.flatMap(leftCause => HashSet.map(rightCause => sequential(leftCause, rightCause))(rightSet))(leftSet),
+  onParallel: (leftSet, rightSet) => HashSet.flatMap(leftCause => HashSet.map(rightCause => parallel(leftCause, rightCause))(rightSet))(leftSet)
 });
 /** @internal */
 const stripFailures = self => cause_match(self, {
@@ -26618,45 +27199,45 @@ const electFailures = self => cause_match(self, {
   onParallel: (left, right) => parallel(left, right)
 });
 /** @internal */
-const stripSomeDefects = /*#__PURE__*/Function_dual(2, (self, pf) => cause_match(self, {
-  onEmpty: mjs_Option_some(cause_empty),
-  onFail: error => mjs_Option_some(fail(error)),
+const stripSomeDefects = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, pf) => cause_match(self, {
+  onEmpty: Option.some(cause_empty),
+  onFail: error => Option.some(fail(error)),
   onDie: defect => {
     const option = pf(defect);
-    return Option_isSome(option) ? Option_none() : mjs_Option_some(die(defect));
+    return Option.isSome(option) ? Option.none() : Option.some(die(defect));
   },
-  onInterrupt: fiberId => mjs_Option_some(interrupt(fiberId)),
-  onAnnotated: (option, annotation) => map(cause => annotated(cause, annotation))(option),
+  onInterrupt: fiberId => Option.some(interrupt(fiberId)),
+  onAnnotated: (option, annotation) => Option.map(cause => annotated(cause, annotation))(option),
   onSequential: (left, right) => {
-    if (Option_isSome(left) && Option_isSome(right)) {
-      return mjs_Option_some(sequential(left.value, right.value));
+    if (Option.isSome(left) && Option.isSome(right)) {
+      return Option.some(sequential(left.value, right.value));
     }
-    if (Option_isSome(left) && Option_isNone(right)) {
-      return mjs_Option_some(left.value);
+    if (Option.isSome(left) && Option.isNone(right)) {
+      return Option.some(left.value);
     }
-    if (Option_isNone(left) && Option_isSome(right)) {
-      return mjs_Option_some(right.value);
+    if (Option.isNone(left) && Option.isSome(right)) {
+      return Option.some(right.value);
     }
-    return Option_none();
+    return Option.none();
   },
   onParallel: (left, right) => {
-    if (Option_isSome(left) && Option_isSome(right)) {
-      return mjs_Option_some(parallel(left.value, right.value));
+    if (Option.isSome(left) && Option.isSome(right)) {
+      return Option.some(parallel(left.value, right.value));
     }
-    if (Option_isSome(left) && Option_isNone(right)) {
-      return mjs_Option_some(left.value);
+    if (Option.isSome(left) && Option.isNone(right)) {
+      return Option.some(left.value);
     }
-    if (Option_isNone(left) && Option_isSome(right)) {
-      return mjs_Option_some(right.value);
+    if (Option.isNone(left) && Option.isSome(right)) {
+      return Option.some(right.value);
     }
-    return Option_none();
+    return Option.none();
   }
-}));
+}))));
 // -----------------------------------------------------------------------------
 // Mapping
 // -----------------------------------------------------------------------------
 /** @internal */
-const cause_as = /*#__PURE__*/Function_dual(2, (self, error) => cause_map(self, () => error));
+const cause_as = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, error) => cause_map(self, () => error))));
 /** @internal */
 const cause_map = /*#__PURE__*/Function_dual(2, (self, f) => cause_flatMap(self, e => fail(f(e))));
 // -----------------------------------------------------------------------------
@@ -26678,14 +27259,14 @@ const cause_flatten = self => cause_flatMap(self, Function_identity);
 // Equality
 // -----------------------------------------------------------------------------
 /** @internal */
-const cause_contains = /*#__PURE__*/Function_dual(2, (self, that) => {
-  if (that._tag === OP_EMPTY || self === that) {
+const cause_contains = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, that) => {
+  if (that._tag === OpCodes.OP_EMPTY || self === that) {
     return true;
   }
   return cause_reduce(self, false, (accumulator, cause) => {
-    return mjs_Option_some(accumulator || causeEquals(cause, that));
+    return Option.some(accumulator || causeEquals(cause, that));
   });
-});
+})));
 /** @internal */
 const causeEquals = (left, right) => {
   let leftStack = Chunk_of(left);
@@ -26742,28 +27323,28 @@ const flattenCauseLoop = (causes, flattened) => {
 // -----------------------------------------------------------------------------
 /** @internal */
 const squash = self => {
-  return squashWith(Function_identity)(self);
+  return squashWith(identity)(self);
 };
 /** @internal */
-const squashWith = /*#__PURE__*/Function_dual(2, (self, f) => {
-  const option = map(f)(failureOption(self));
+const squashWith = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, f) => {
+  const option = Option.map(f)(failureOption(self));
   switch (option._tag) {
     case "None":
       {
-        return match({
+        return Option.match({
           onNone: () => {
-            const interrupts = Array.from(interruptors(self)).flatMap(fiberId => Array.from(FiberId_ids(fiberId)).map(id => `#${id}`));
+            const interrupts = Array.from(interruptors(self)).flatMap(fiberId => Array.from(FiberId.ids(fiberId)).map(id => `#${id}`));
             return InterruptedException(interrupts ? `Interrupted by fibers: ${interrupts.join(", ")}` : void 0);
           },
-          onSome: Function_identity
-        })(Chunk_head(cause_defects(self)));
+          onSome: identity
+        })(Chunk.head(cause_defects(self)));
       }
     case "Some":
       {
         return option.value;
       }
   }
-});
+})));
 // -----------------------------------------------------------------------------
 // Finding
 // -----------------------------------------------------------------------------
@@ -26804,7 +27385,7 @@ const find = /*#__PURE__*/Function_dual(2, (self, pf) => {
 // Filtering
 // -----------------------------------------------------------------------------
 /** @internal */
-const cause_filter = /*#__PURE__*/Function_dual(2, (self, predicate) => reduceWithContext(self, void 0, FilterCauseReducer(predicate)));
+const cause_filter = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, predicate) => reduceWithContext(self, void 0, FilterCauseReducer(predicate)))));
 // -----------------------------------------------------------------------------
 // Evaluation
 // -----------------------------------------------------------------------------
@@ -27206,7 +27787,7 @@ const makeSpanAnnotation = span => ({
   span
 });
 /** @internal */
-const globalErrorSeq = /*#__PURE__*/MutableRef_make(0);
+const globalErrorSeq = /*#__PURE__*/(/* unused pure expression or super */ null && (MRef.make(0)));
 /** @internal */
 const UnAnnotateCauseReducer = () => ({
   emptyCase: () => cause_empty,
@@ -27222,42 +27803,6 @@ const unannotate = self => reduceWithContext(self, void 0, UnAnnotateCauseReduce
 // -----------------------------------------------------------------------------
 // Pretty Printing
 // -----------------------------------------------------------------------------
-/** @internal */
-const renderToString = u => {
-  if (typeof u === "object" && u != null && "toString" in u && typeof u["toString"] === "function" && u["toString"] !== Object.prototype.toString) {
-    return u["toString"]();
-  }
-  if (typeof u === "string") {
-    return `Error: ${u}`;
-  }
-  if (typeof u === "object" && u !== null) {
-    if ("message" in u && typeof u["message"] === "string") {
-      const raw = JSON.parse(JSON.stringify(u));
-      const keys = new Set(Object.keys(raw));
-      keys.delete("name");
-      keys.delete("message");
-      keys.delete("_tag");
-      if (keys.size === 0) {
-        return `${"name" in u && typeof u.name === "string" ? u.name : "Error"}${"_tag" in u && typeof u["_tag"] === "string" ? `(${u._tag})` : ``}: ${u.message}`;
-      }
-    }
-  }
-  return `Error: ${JSON.stringify(u)}`;
-};
-/** @internal */
-const defaultErrorToLines = error => {
-  if (error instanceof Error) {
-    return [renderToString(error), error.stack?.split("\n").filter(_ => !_.startsWith("Error")).join("\n")];
-  }
-  return [renderToString(error), void 0];
-};
-class RenderError {
-  constructor(message, stack, span) {
-    this.message = message;
-    this.stack = stack;
-    this.span = span;
-  }
-}
 const filterStack = stack => {
   const lines = stack.split("\n");
   const out = [];
@@ -27271,11 +27816,11 @@ const filterStack = stack => {
   return out.join("\n");
 };
 /** @internal */
-const cause_pretty = cause => {
+const pretty = cause => {
   if (isInterruptedOnly(cause)) {
     return "All fibers interrupted without errors.";
   }
-  const final = prettyErrors(cause).map(e => {
+  const final = cause_prettyErrors(cause).map(e => {
     let message = e.message;
     if (e.stack) {
       message += `\r\n${filterStack(e.stack)}`;
@@ -27290,505 +27835,97 @@ const cause_pretty = cause => {
       }
     }
     return message;
-  }).join("\r\n\r\n");
-  if (!final.includes("\r\n")) {
-    return final;
+  }).join("\r\n");
+  return final;
+};
+class PrettyError {
+  constructor(message, stack, span) {
+    this.message = message;
+    this.stack = stack;
+    this.span = span;
   }
-  return `\r\n${final}\r\n`;
+  toJSON() {
+    const out = {
+      message: this.message
+    };
+    if (this.stack) {
+      out.stack = this.stack;
+    }
+    if (this.span) {
+      out.span = this.span;
+    }
+    return out;
+  }
+}
+/**
+ * A utility function for generating human-readable error messages from a generic error of type `unknown`.
+ *
+ * Rules:
+ *
+ * 1) If the input `u` is already a string, it's considered a message, and "Error" is added as a prefix.
+ * 2) If `u` has a user-defined `toString()` method, it uses that method and adds "Error" as a prefix.
+ * 3) If `u` is an object and its only (optional) properties are "name", "message", or "_tag", it constructs
+ *    an error message based on those properties.
+ * 4) Otherwise, it uses `JSON.stringify` to produce a string representation and uses it as the error message,
+ *   with "Error" added as a prefix.
+ *
+ * @internal
+ */
+const prettyErrorMessage = u => {
+  // 1)
+  if (typeof u === "string") {
+    return `Error: ${u}`;
+  }
+  // 2)
+  if (typeof u === "object" && u != null && "toString" in u && typeof u["toString"] === "function" && u["toString"] !== Object.prototype.toString) {
+    return `Error: ${u["toString"]()}`;
+  }
+  // 3)
+  if (typeof u === "object" && u !== null) {
+    if ("message" in u && typeof u["message"] === "string") {
+      const raw = JSON.parse(JSON.stringify(u));
+      const keys = new Set(Object.keys(raw));
+      keys.delete("name");
+      keys.delete("message");
+      keys.delete("_tag");
+      if (keys.size === 0) {
+        const name = "name" in u && typeof u.name === "string" ? u.name : "Error";
+        const tag = "_tag" in u && typeof u["_tag"] === "string" ? `(${u._tag})` : ``;
+        return `${name}${tag}: ${u.message}`;
+      }
+    }
+  }
+  // 4)
+  return `Error: ${JSON.stringify(u)}`;
+};
+const defaultRenderError = error => {
+  if (error instanceof Error) {
+    return new PrettyError(prettyErrorMessage(error), error.stack?.split("\n").filter(_ => !_.startsWith("Error")).join("\n"), void 0);
+  }
+  return new PrettyError(prettyErrorMessage(error), void 0, void 0);
 };
 /** @internal */
-const prettyErrors = cause => reduceWithContext(cause, void 0, {
+const cause_prettyErrors = cause => reduceWithContext(cause, void 0, {
   emptyCase: () => [],
-  dieCase: (_, err) => {
-    const rendered = defaultErrorToLines(err);
-    return [{
-      message: rendered[0],
-      stack: rendered[1],
-      span: undefined
-    }];
+  dieCase: (_, unknownError) => {
+    return [defaultRenderError(unknownError)];
   },
-  failCase: (_, err) => {
-    const rendered = defaultErrorToLines(err);
-    return [{
-      message: rendered[0],
-      stack: rendered[1],
-      span: undefined
-    }];
+  failCase: (_, error) => {
+    return [defaultRenderError(error)];
   },
   interruptCase: () => [],
   parallelCase: (_, l, r) => [...l, ...r],
   sequentialCase: (_, l, r) => [...l, ...r],
-  annotatedCase: (_, v, annotation) => isSpanAnnotation(annotation) ? v.map(error => ({
-    ...error,
-    span: error.span ?? annotation.span
-  })) : v
+  annotatedCase: (_, renderErrors, annotation) => isSpanAnnotation(annotation) ? renderErrors.map(error => new PrettyError(error.message, error.stack, error.span ?? annotation.span)) : renderErrors
 });
 //# sourceMappingURL=cause.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/Cause.mjs
-
-/**
- * @since 1.0.0
- * @category symbols
- */
-const Cause_CauseTypeId = CauseTypeId;
-/**
- * @since 1.0.0
- * @category symbols
- */
-const Cause_RuntimeExceptionTypeId = RuntimeExceptionTypeId;
-/**
- * @since 1.0.0
- * @category symbols
- */
-const Cause_InterruptedExceptionTypeId = InterruptedExceptionTypeId;
-/**
- * @since 1.0.0
- * @category symbols
- */
-const Cause_IllegalArgumentExceptionTypeId = IllegalArgumentExceptionTypeId;
-/**
- * @since 1.0.0
- * @category symbols
- */
-const Cause_NoSuchElementExceptionTypeId = NoSuchElementExceptionTypeId;
-/**
- * @since 1.0.0
- * @category symbols
- */
-const Cause_InvalidHubCapacityExceptionTypeId = InvalidHubCapacityExceptionTypeId;
-/**
- * @since 1.0.0
- * @category symbols
- */
-const Cause_SpanAnnotationTypeId = SpanAnnotationTypeId;
-/**
- * @since 1.0.0
- * @category stack
- */
-const Cause_globalErrorSeq = globalErrorSeq;
-/**
- * Constructs a new `Empty` cause.
- *
- * @since 1.0.0
- * @category constructors
- */
-const Cause_empty = cause_empty;
-/**
- * Constructs a new `Fail` cause from the specified `error`.
- *
- * @since 1.0.0
- * @category constructors
- */
-const Cause_fail = fail;
-/**
- * Constructs a new `Die` cause from the specified `defect`.
- *
- * @since 1.0.0
- * @category constructors
- */
-const Cause_die = die;
-/**
- * Constructs a new `Interrupt` cause from the specified `fiberId`.
- *
- * @since 1.0.0
- * @category constructors
- */
-const Cause_interrupt = interrupt;
-/**
- * Constructs a new `Annotated` cause from the specified `annotation`.
- *
- * @since 1.0.0
- * @category constructors
- */
-const Cause_annotated = annotated;
-/**
- * Constructs a new `Parallel` cause from the specified `left` and `right`
- * causes.
- *
- * @since 1.0.0
- * @category constructors
- */
-const Cause_parallel = parallel;
-/**
- * Constructs a new `Sequential` cause from the specified pecified `left` and
- * `right` causes.
- *
- * @since 1.0.0
- * @category constructors
- */
-const Cause_sequential = sequential;
-/**
- * Returns `true` if the specified value is a `Cause`, `false` otherwise.
- *
- * @since 1.0.0
- * @category refinements
- */
-const Cause_isCause = isCause;
-/**
- * Returns `true` if the specified `Cause` is an `Empty` type, `false`
- * otherwise.
- *
- * @since 1.0.0
- * @category refinements
- */
-const Cause_isEmptyType = isEmptyType;
-/**
- * Returns `true` if the specified `Cause` is a `Fail` type, `false`
- * otherwise.
- *
- * @since 1.0.0
- * @category refinements
- */
-const Cause_isFailType = isFailType;
-/**
- * Returns `true` if the specified `Cause` is a `Die` type, `false`
- * otherwise.
- *
- * @since 1.0.0
- * @category refinements
- */
-const Cause_isDieType = isDieType;
-/**
- * Returns `true` if the specified `Cause` is an `Interrupt` type, `false`
- * otherwise.
- *
- * @since 1.0.0
- * @category refinements
- */
-const Cause_isInterruptType = isInterruptType;
-/**
- * Returns `true` if the specified `Cause` is an `Annotated` type, `false`
- * otherwise.
- *
- * @since 1.0.0
- * @category refinements
- */
-const Cause_isAnnotatedType = isAnnotatedType;
-/**
- * Returns `true` if the specified `Cause` is a `Sequential` type, `false`
- * otherwise.
- *
- * @since 1.0.0
- * @category refinements
- */
-const Cause_isSequentialType = isSequentialType;
-/**
- * Returns `true` if the specified `Cause` is a `Parallel` type, `false`
- * otherwise.
- *
- * @since 1.0.0
- * @category refinements
- */
-const Cause_isParallelType = isParallelType;
-/**
- * Returns the size of the cause, calculated as the number of individual `Cause`
- * nodes found in the `Cause` semiring structure.
- *
- * @since 1.0.0
- * @category getters
- */
-const Cause_size = cause_size;
-/**
- * Returns `true` if the specified cause is empty, `false` otherwise.
- *
- * @since 1.0.0
- * @category getters
- */
-const Cause_isEmpty = cause_isEmpty;
-/**
- * Returns `true` if the specified cause contains a failure, `false` otherwise.
- *
- * @since 1.0.0
- * @category getters
- */
-const Cause_isFailure = isFailure;
-/**
- * Returns `true` if the specified cause contains a defect, `false` otherwise.
- *
- * @since 1.0.0
- * @category getters
- */
-const Cause_isDie = isDie;
-/**
- * Returns `true` if the specified cause contains an interruption, `false`
- * otherwise.
- *
- * @since 1.0.0
- * @category getters
- */
-const Cause_isInterrupted = isInterrupted;
-/**
- * Returns `true` if the specified cause contains only interruptions (without
- * any `Die` or `Fail` causes), `false` otherwise.
- *
- * @since 1.0.0
- * @category getters
- */
-const Cause_isInterruptedOnly = isInterruptedOnly;
-/**
- * Returns a `List` of all recoverable errors of type `E` in the specified
- * cause.
- *
- * @since 1.0.0
- * @category getters
- */
-const failures = cause_failures;
-/**
- * Returns a `List` of all unrecoverable defects in the specified cause.
- *
- * @since 1.0.0
- * @category getters
- */
-const defects = cause_defects;
-/**
- * Returns a `HashSet` of `FiberId`s for all fibers that interrupted the fiber
- * described by the specified cause.
- *
- * @since 1.0.0
- * @category getters
- */
-const Cause_interruptors = interruptors;
-/**
- * Returns the `E` associated with the first `Fail` in this `Cause`, if one
- * exists.
- *
- * @since 1.0.0
- * @category getters
- */
-const Cause_failureOption = failureOption;
-/**
- * Returns the first checked error on the `Left` if available, if there are
- * no checked errors return the rest of the `Cause` that is known to contain
- * only `Die` or `Interrupt` causes.
- *
- * @since 1.0.0
- * @category getters
- */
-const Cause_failureOrCause = failureOrCause;
-/**
- * Converts the specified `Cause<Option<E>>` to an `Option<Cause<E>>` by
- * recursively stripping out any failures with the error `None`.
- *
- * @since 1.0.0
- * @category getters
- */
-const Cause_flipCauseOption = flipCauseOption;
-/**
- * Returns the defect associated with the first `Die` in this `Cause`, if one
- * exists.
- *
- * @since 1.0.0
- * @category getters
- */
-const Cause_dieOption = dieOption;
-/**
- * Returns the `FiberId` associated with the first `Interrupt` in the specified
- * cause, if one exists.
- *
- * @since 1.0.0
- * @category getters
- */
-const Cause_interruptOption = interruptOption;
-/**
- * Remove all `Fail` and `Interrupt` nodes from the specified cause, and return
- * a cause containing only `Die` cause/finalizer defects.
- *
- * @since 1.0.0
- * @category getters
- */
-const Cause_keepDefects = keepDefects;
-/**
- * Linearizes the specified cause into a `HashSet` of parallel causes where each
- * parallel cause contains a linear sequence of failures.
- *
- * @since 1.0.0
- * @category getters
- */
-const Cause_linearize = linearize;
-/**
- * Remove all `Fail` and `Interrupt` nodes from the specified cause, and return
- * a cause containing only `Die` cause/finalizer defects.
- *
- * @since 1.0.0
- * @category getters
- */
-const Cause_stripFailures = stripFailures;
-/**
- * Remove all `Die` causes that the specified partial function is defined at,
- * returning `Some` with the remaining causes or `None` if there are no
- * remaining causes.
- *
- * @since 1.0.0
- * @category getters
- */
-const Cause_stripSomeDefects = stripSomeDefects;
-/**
- * @since 1.0.0
- * @category mapping
- */
-const Cause_as = cause_as;
-/**
- * @since 1.0.0
- * @category mapping
- */
-const Cause_map = cause_map;
-/**
- * @since 1.0.0
- * @category sequencing
- */
-const Cause_flatMap = cause_flatMap;
-/**
- * @since 1.0.0
- * @category sequencing
- */
-const Cause_flatten = cause_flatten;
-/**
- * Returns `true` if the `self` cause contains or is equal to `that` cause,
- * `false` otherwise.
- *
- * @since 1.0.0
- * @category elements
- */
-const Cause_contains = cause_contains;
-/**
- * Squashes a `Cause` down to a single defect, chosen to be the "most important"
- * defect.
- *
- * @since 1.0.0
- * @category destructors
- */
-const Cause_squash = squash;
-/**
- * Squashes a `Cause` down to a single defect, chosen to be the "most important"
- * defect. If a recoverable error is found, the provided function will be used
- * to map the error a defect, and the resulting value will be returned.
- *
- * @since 1.0.0
- * @category destructors
- */
-const Cause_squashWith = squashWith;
-/**
- * Uses the provided partial function to search the specified cause and attempt
- * to extract information from it.
- *
- * @since 1.0.0
- * @category elements
- */
-const Cause_find = find;
-/**
- * Filters causes which match the provided predicate out of the specified cause.
- *
- * @since 1.0.0
- * @category filtering
- */
-const Cause_filter = cause_filter;
-/**
- * Folds the specified cause into a value of type `Z`.
- *
- * @since 1.0.0
- * @category folding
- */
-const Cause_match = cause_match;
-/**
- * Reduces the specified cause into a value of type `Z`, beginning with the
- * provided `zero` value.
- *
- * @since 1.0.0
- * @category folding
- */
-const Cause_reduce = cause_reduce;
-/**
- * Reduces the specified cause into a value of type `Z` using a `Cause.Reducer`.
- * Also allows for accessing the provided context during reduction.
- *
- * @since 1.0.0
- * @category folding
- */
-const Cause_reduceWithContext = reduceWithContext;
-/**
- * Represents a checked exception which occurs when a `Fiber` is interrupted.
- *
- * @since 1.0.0
- * @category errors
- */
-const Cause_InterruptedException = InterruptedException;
-/**
- * Returns `true` if the specified value is an `InterruptedException`, `false`
- * otherwise.
- *
- * @since 1.0.0
- * @category refinements
- */
-const Cause_isInterruptedException = isInterruptedException;
-/**
- * Represents a checked exception which occurs when an invalid argument is
- * provided to a method.
- *
- * @since 1.0.0
- * @category errors
- */
-const Cause_IllegalArgumentException = IllegalArgumentException;
-/**
- * Returns `true` if the specified value is an `IllegalArgumentException`, `false`
- * otherwise.
- *
- * @since 1.0.0
- * @category refinements
- */
-const Cause_isIllegalArgumentException = isIllegalArgumentException;
-/**
- * Represents a checked exception which occurs when an expected element was
- * unable to be found.
- *
- * @since 1.0.0
- * @category errors
- */
-const Cause_NoSuchElementException = NoSuchElementException;
-/**
- * Returns `true` if the specified value is an `NoSuchElementException`, `false`
- * otherwise.
- *
- * @since 1.0.0
- * @category refinements
- */
-const Cause_isNoSuchElementException = isNoSuchElementException;
-/**
- * Represents a generic checked exception which occurs at runtime.
- *
- * @since 1.0.0
- * @category errors
- */
-const Cause_RuntimeException = RuntimeException;
-/**
- * Returns `true` if the specified value is an `RuntimeException`, `false`
- * otherwise.
- *
- * @since 1.0.0
- * @category refinements
- */
-const Cause_isRuntimeException = isRuntimeException;
-/**
- * Returns the specified `Cause` as a pretty-printed string.
- *
- * @since 1.0.0
- * @category rendering
- */
-const pretty = cause_pretty;
-/**
- * Removes any annotation from the cause
- *
- * @since 1.0.0
- * @category filtering
- */
-const Cause_unannotate = unannotate;
-//# sourceMappingURL=Cause.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/opCodes/deferred.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/opCodes/deferred.mjs
 /** @internal */
 const OP_STATE_PENDING = "Pending";
 /** @internal */
 const OP_STATE_DONE = "Done";
 //# sourceMappingURL=deferred.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/deferred.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/deferred.mjs
 
 /** @internal */
 const DeferredSymbolKey = "@effect/io/Deferred";
@@ -27814,7 +27951,7 @@ const done = effect => {
   };
 };
 //# sourceMappingURL=deferred.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/opCodes/effect.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/opCodes/effect.mjs
 /** @internal */
 const OP_ASYNC = "Async";
 /** @internal */
@@ -27846,7 +27983,7 @@ const OP_YIELD = "Yield";
 /** @internal */
 const OP_REVERT_FLAGS = "RevertFlags";
 //# sourceMappingURL=effect.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/runtimeFlagsPatch.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/runtimeFlagsPatch.mjs
 
 /** @internal */
 const BIT_MASK = 0xff;
@@ -27885,7 +28022,7 @@ const inverse = patch => runtimeFlagsPatch_make(enabled(patch), invert(active(pa
 /** @internal */
 const invert = n => ~n >>> 0 & BIT_MASK;
 //# sourceMappingURL=runtimeFlagsPatch.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/runtimeFlags.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/runtimeFlags.mjs
 
 
 
@@ -27993,7 +28130,7 @@ const differ = /*#__PURE__*/mjs_Differ_make({
   patch: (_patch, oldValue) => runtimeFlags_patch(oldValue, _patch)
 });
 //# sourceMappingURL=runtimeFlags.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/RuntimeFlagsPatch.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/RuntimeFlagsPatch.mjs
 /**
  * @since 1.0.0
  */
@@ -28128,263 +28265,8 @@ const RuntimeFlagsPatch_disabledSet = disabledSet;
  */
 const RuntimeFlagsPatch_render = renderPatch;
 //# sourceMappingURL=RuntimeFlagsPatch.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/Scheduler.mjs
-/**
- * @since 1.0.0
- */
-
-/**
- * @since 1.0.0
- * @category utils
- */
-class PriorityBuckets {
-  constructor() {
-    /**
-     * @since 1.0.0
-     */
-    this.buckets = [];
-  }
-  /**
-   * @since 1.0.0
-   */
-  scheduleTask(task, priority) {
-    let bucket = undefined;
-    let index;
-    for (index = 0; index < this.buckets.length; index++) {
-      if (this.buckets[index][0] <= priority) {
-        bucket = this.buckets[index];
-      } else {
-        break;
-      }
-    }
-    if (bucket) {
-      bucket[1].push(task);
-    } else {
-      const newBuckets = [];
-      for (let i = 0; i < index; i++) {
-        newBuckets.push(this.buckets[i]);
-      }
-      newBuckets.push([priority, [task]]);
-      for (let i = index; i < this.buckets.length; i++) {
-        newBuckets.push(this.buckets[i]);
-      }
-      this.buckets = newBuckets;
-    }
-  }
-}
-/**
- * @since 1.0.0
- * @category constructors
- */
-class MixedScheduler {
-  constructor(
-  /**
-   * @since 1.0.0
-   */
-  maxNextTickBeforeTimer) {
-    this.maxNextTickBeforeTimer = maxNextTickBeforeTimer;
-    /**
-     * @since 1.0.0
-     */
-    this.running = false;
-    /**
-     * @since 1.0.0
-     */
-    this.tasks = new PriorityBuckets();
-  }
-  /**
-   * @since 1.0.0
-   */
-  starveInternal(depth) {
-    const tasks = this.tasks.buckets;
-    this.tasks.buckets = [];
-    for (const [_, toRun] of tasks) {
-      for (let i = 0; i < toRun.length; i++) {
-        toRun[i]();
-      }
-    }
-    if (this.tasks.buckets.length === 0) {
-      this.running = false;
-    } else {
-      this.starve(depth);
-    }
-  }
-  /**
-   * @since 1.0.0
-   */
-  starve(depth = 0) {
-    if (depth >= this.maxNextTickBeforeTimer) {
-      setTimeout(() => this.starveInternal(0), 0);
-    } else {
-      Promise.resolve(void 0).then(() => this.starveInternal(depth + 1));
-    }
-  }
-  /**
-   * @since 1.0.0
-   */
-  scheduleTask(task, priority) {
-    this.tasks.scheduleTask(task, priority);
-    if (!this.running) {
-      this.running = true;
-      this.starve();
-    }
-  }
-}
-/**
- * @since 1.0.0
- * @category schedulers
- */
-const defaultScheduler = /*#__PURE__*/globalValue( /*#__PURE__*/Symbol.for("@effect/io/Scheduler/defaultScheduler"), () => new MixedScheduler(2048));
-/**
- * @since 1.0.0
- * @category constructors
- */
-class SyncScheduler {
-  constructor() {
-    /**
-     * @since 1.0.0
-     */
-    this.tasks = new PriorityBuckets();
-    /**
-     * @since 1.0.0
-     */
-    this.deferred = false;
-  }
-  /**
-   * @since 1.0.0
-   */
-  scheduleTask(task, priority) {
-    if (this.deferred) {
-      defaultScheduler.scheduleTask(task, priority);
-    } else {
-      this.tasks.scheduleTask(task, priority);
-    }
-  }
-  /**
-   * @since 1.0.0
-   */
-  flush() {
-    while (this.tasks.buckets.length > 0) {
-      const tasks = this.tasks.buckets;
-      this.tasks.buckets = [];
-      for (const [_, toRun] of tasks) {
-        for (let i = 0; i < toRun.length; i++) {
-          toRun[i]();
-        }
-      }
-    }
-    this.deferred = true;
-  }
-}
-/**
- * @since 1.0.0
- * @category constructors
- */
-class ControlledScheduler {
-  constructor() {
-    /**
-     * @since 1.0.0
-     */
-    this.tasks = new PriorityBuckets();
-    /**
-     * @since 1.0.0
-     */
-    this.deferred = false;
-  }
-  /**
-   * @since 1.0.0
-   */
-  scheduleTask(task, priority) {
-    if (this.deferred) {
-      defaultScheduler.scheduleTask(task, priority);
-    } else {
-      this.tasks.scheduleTask(task, priority);
-    }
-  }
-  /**
-   * @since 1.0.0
-   */
-  step() {
-    const tasks = this.tasks.buckets;
-    this.tasks.buckets = [];
-    for (const [_, toRun] of tasks) {
-      for (let i = 0; i < toRun.length; i++) {
-        toRun[i]();
-      }
-    }
-  }
-}
-/**
- * @since 1.0.0
- * @category constructors
- */
-const makeMatrix = (...record) => {
-  const index = record.sort(([p0], [p1]) => p0 < p1 ? -1 : p0 > p1 ? 1 : 0);
-  return {
-    scheduleTask(task, priority) {
-      let scheduler = undefined;
-      for (const i of index) {
-        if (priority >= i[0]) {
-          scheduler = i[1];
-        } else {
-          return (scheduler ?? defaultScheduler).scheduleTask(task, priority);
-        }
-      }
-      return (scheduler ?? defaultScheduler).scheduleTask(task, priority);
-    }
-  };
-};
-/**
- * @since 1.0.0
- * @category constructors
- */
-const Scheduler_make = scheduleTask => ({
-  scheduleTask
-});
-/**
- * @since 1.0.0
- * @category constructors
- */
-const makeBatched = callback => {
-  let running = false;
-  const tasks = new PriorityBuckets();
-  const starveInternal = () => {
-    const tasksToRun = tasks.buckets;
-    tasks.buckets = [];
-    for (const [_, toRun] of tasksToRun) {
-      for (let i = 0; i < toRun.length; i++) {
-        toRun[i]();
-      }
-    }
-    if (tasks.buckets.length === 0) {
-      running = false;
-    } else {
-      starve();
-    }
-  };
-  const starve = () => callback(starveInternal);
-  return Scheduler_make((task, priority) => {
-    tasks.scheduleTask(task, priority);
-    if (!running) {
-      running = true;
-      starve();
-    }
-  });
-};
-/**
- * @since 1.0.0
- * @category constructors
- */
-const timer = ms => Scheduler_make(task => setTimeout(task, ms));
-/**
- * @since 1.0.0
- * @category constructors
- */
-const timerBatched = ms => makeBatched(task => setTimeout(task, ms));
-//# sourceMappingURL=Scheduler.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/core.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/core.mjs
 var core_a, core_b, core_c, _d;
-
 
 
 
@@ -28470,6 +28352,21 @@ class EffectPrimitive {
   pipe() {
     return Pipeable_pipeArguments(this, arguments);
   }
+  toJSON() {
+    return {
+      _id: "Effect",
+      _tag: this._tag,
+      i0: toJSON(this.i0),
+      i1: toJSON(this.i1),
+      i2: toJSON(this.i2)
+    };
+  }
+  toString() {
+    return Inspectable_toString(this.toJSON());
+  }
+  [NodeInspectSymbol]() {
+    return this.toJSON();
+  }
 }
 /** @internal */
 class EffectPrimitiveFailure {
@@ -28495,14 +28392,15 @@ class EffectPrimitiveFailure {
   }
   toJSON() {
     return {
+      _id: "Exit",
       _tag: this._tag,
       cause: this.cause.toJSON()
     };
   }
   toString() {
-    return pretty(this.cause);
+    return Inspectable_toString(this.toJSON());
   }
-  [Symbol.for("nodejs.util.inspect.custom")]() {
+  [NodeInspectSymbol]() {
     return this.toJSON();
   }
 }
@@ -28530,14 +28428,15 @@ class EffectPrimitiveSuccess {
   }
   toJSON() {
     return {
+      _id: "Exit",
       _tag: this._tag,
-      value: this.value
+      value: toJSON(this.value)
     };
   }
   toString() {
-    return `Success: ${String(this.value)}`;
+    return Inspectable_toString(this.toJSON());
   }
-  [Symbol.for("nodejs.util.inspect.custom")]() {
+  [NodeInspectSymbol]() {
     return this.toJSON();
   }
 }
@@ -29272,7 +29171,7 @@ const currentContext = /*#__PURE__*/fiberRefUnsafeMakeContext( /*#__PURE__*/mjs_
 /** @internal */
 const currentSchedulingPriority = /*#__PURE__*/fiberRefUnsafeMake(0);
 /** @internal */
-const currentMaxFiberOps = /*#__PURE__*/fiberRefUnsafeMake(2048);
+const currentMaxOpsBeforeYield = /*#__PURE__*/fiberRefUnsafeMake(2048);
 /** @internal */
 const currentLogAnnotations = /*#__PURE__*/globalValue( /*#__PURE__*/Symbol.for("@effect/io/FiberRef/currentLogAnnotation"), () => fiberRefUnsafeMake(mjs_HashMap_empty()));
 /** @internal */
@@ -29280,13 +29179,9 @@ const currentLogLevel = /*#__PURE__*/fiberRefUnsafeMake(logLevelInfo);
 /** @internal */
 const currentLogSpan = /*#__PURE__*/globalValue( /*#__PURE__*/Symbol.for("@effect/io/FiberRef/currentLogSpan"), () => fiberRefUnsafeMake(List_empty()));
 /** @internal */
-const currentScheduler = /*#__PURE__*/globalValue( /*#__PURE__*/Symbol.for("@effect/io/FiberRef/currentScheduler"), () => fiberRefUnsafeMake(defaultScheduler));
-/** @internal */
-const withScheduler = /*#__PURE__*/Function_dual(2, (self, scheduler) => fiberRefLocally(self, currentScheduler, scheduler));
-/** @internal */
 const withSchedulingPriority = /*#__PURE__*/Function_dual(2, (self, scheduler) => fiberRefLocally(self, currentSchedulingPriority, scheduler));
 /** @internal */
-const withMaxFiberOps = /*#__PURE__*/Function_dual(2, (self, ops) => fiberRefLocally(self, currentMaxFiberOps, ops));
+const withMaxOpsBeforeYield = /*#__PURE__*/Function_dual(2, (self, scheduler) => fiberRefLocally(self, currentMaxOpsBeforeYield, scheduler));
 /** @internal */
 const currentConcurrency = /*#__PURE__*/globalValue( /*#__PURE__*/Symbol.for("@effect/io/FiberRef/currentConcurrency"), () => fiberRefUnsafeMake("unbounded"));
 /**
@@ -29843,7 +29738,7 @@ const deferredInterruptJoiner = (self, joiner) => sync(() => {
   }
 });
 //# sourceMappingURL=core.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.3/node_modules/@effect/data/mjs/Duration.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/Duration.mjs
 /**
  * @since 1.0.0
  */
@@ -29865,7 +29760,7 @@ const DURATION_REGEX = /^(-?\d+(?:\.\d+)?)\s+(nanos|micros|millis|seconds|minute
 const decode = input => {
   if (isDuration(input)) {
     return input;
-  } else if (Predicate_isNumber(input)) {
+  } else if (isNumber(input)) {
     return millis(input);
   } else if (isBigint(input)) {
     return Duration_nanos(input);
@@ -29913,29 +29808,28 @@ const DurationProto = {
     return isDuration(that) && Duration_equals(this, that);
   },
   toString() {
-    switch (this.value._tag) {
-      case "Millis":
-        return `Duration("${this.value.millis} millis")`;
-      case "Nanos":
-        return `Duration("${this.value.nanos} nanos")`;
-      case "Infinity":
-        return "Duration(Infinity)";
-    }
+    return Inspectable_toString(this.toJSON());
   },
   toJSON() {
-    if (this.value._tag === "Nanos") {
-      return {
-        _tag: "Duration",
-        value: {
+    switch (this.value._tag) {
+      case "Millis":
+        return {
+          _id: "Duration",
+          _tag: "Millis",
+          millis: this.value.millis
+        };
+      case "Nanos":
+        return {
+          _id: "Duration",
           _tag: "Nanos",
           hrtime: toHrTime(this)
-        }
-      };
+        };
+      case "Infinity":
+        return {
+          _id: "Duration",
+          _tag: "Infinity"
+        };
     }
-    return {
-      _tag: "Duration",
-      value: this.value
-    };
   },
   [NodeInspectSymbol]() {
     return this.toJSON();
@@ -29946,7 +29840,7 @@ const DurationProto = {
 };
 const Duration_make = input => {
   const duration = Object.create(DurationProto);
-  if (Predicate_isNumber(input)) {
+  if (isNumber(input)) {
     if (isNaN(input) || input < 0) {
       duration.value = zeroValue;
     } else if (!Number.isFinite(input)) {
@@ -30099,7 +29993,7 @@ const toHrTime = self => {
  * @since 1.0.0
  * @category pattern matching
  */
-const Duration_match = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, options) => {
+const Duration_match = /*#__PURE__*/Function_dual(2, (self, options) => {
   const _self = decode(self);
   switch (_self.value._tag) {
     case "Nanos":
@@ -30109,7 +30003,7 @@ const Duration_match = /*#__PURE__*/(/* unused pure expression or super */ null 
     case "Millis":
       return options.onMillis(_self.value.millis);
   }
-})));
+});
 /**
  * @since 1.0.0
  * @category pattern matching
@@ -30168,26 +30062,26 @@ const Duration_clamp = /*#__PURE__*/(/* unused pure expression or super */ null 
  * @since 1.0.0
  * @category math
  */
-const times = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, times) => Duration_match(self, {
+const times = /*#__PURE__*/Function_dual(2, (self, times) => Duration_match(self, {
   onMillis: millis => Duration_make(millis * times),
   onNanos: nanos => Duration_make(nanos * BigInt(times))
-}))));
+}));
 /**
  * @since 1.0.0
  * @category math
  */
-const Duration_sum = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, that) => matchWith(self, that, {
+const Duration_sum = /*#__PURE__*/Function_dual(2, (self, that) => matchWith(self, that, {
   onMillis: (self, that) => Duration_make(self + that),
   onNanos: (self, that) => Duration_make(self + that)
-}))));
+}));
 /**
  * @since 1.0.0
  * @category predicates
  */
-const Duration_lessThan = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, that) => matchWith(self, that, {
+const Duration_lessThan = /*#__PURE__*/Function_dual(2, (self, that) => matchWith(self, that, {
   onMillis: (self, that) => self < that,
   onNanos: (self, that) => self < that
-}))));
+}));
 /**
  * @since 1.0.0
  * @category predicates
@@ -30218,7 +30112,7 @@ const Duration_greaterThanOrEqualTo = /*#__PURE__*/Function_dual(2, (self, that)
  */
 const Duration_equals = /*#__PURE__*/Function_dual(2, (self, that) => Duration_Equivalence(decode(self), decode(that)));
 //# sourceMappingURL=Duration.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/clock.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/clock.mjs
 var clock_a;
 
 
@@ -30296,7 +30190,7 @@ clock_a = ClockTypeId;
 /** @internal */
 const clock_make = () => new ClockImpl();
 //# sourceMappingURL=clock.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/opCodes/configError.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/opCodes/configError.mjs
 /** @internal */
 const OP_AND = "And";
 /** @internal */
@@ -30310,7 +30204,7 @@ const OP_SOURCE_UNAVAILABLE = "SourceUnavailable";
 /** @internal */
 const OP_UNSUPPORTED = "Unsupported";
 //# sourceMappingURL=configError.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/configError.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/configError.mjs
 
 
 
@@ -30560,7 +30454,7 @@ const configError_reduceWithContext = /*#__PURE__*/(/* unused pure expression or
 /** @internal */
 const isMissingDataOnly = self => configError_reduceWithContext(self, void 0, IsMissingDataOnlyReducer);
 //# sourceMappingURL=configError.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/config.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/config.mjs
 
 
 
@@ -30623,7 +30517,7 @@ const config_chunk = (config, name) => {
   return config_map(name === undefined ? repeat(config) : nested(name)(repeat(config)), Chunk.unsafeFromArray);
 };
 /** @internal */
-const date = name => {
+const config_date = name => {
   const config = primitive("a date property", text => {
     const result = Date.parse(text);
     if (Number.isNaN(result)) {
@@ -30871,7 +30765,7 @@ const config_zipWith = /*#__PURE__*/(/* unused pure expression or super */ null 
   return zipWith;
 })));
 //# sourceMappingURL=config.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/configProvider/pathPatch.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/configProvider/pathPatch.mjs
 
 
 
@@ -30948,7 +30842,7 @@ const pathPatch_patch = /*#__PURE__*/Function_dual(2, (path, patch) => {
   return Either_right(output);
 });
 //# sourceMappingURL=pathPatch.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/opCodes/config.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/opCodes/config.mjs
 /** @internal */
 const OP_CONSTANT = "Constant";
 /** @internal */
@@ -30972,7 +30866,7 @@ const OP_HASHMAP = "HashMap";
 /** @internal */
 const OP_ZIP_WITH = "ZipWith";
 //# sourceMappingURL=config.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/configProvider.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/configProvider.mjs
 
 
 
@@ -31316,7 +31210,7 @@ const parseInteger = str => {
   return Number.isNaN(parsedIndex) ? Option_none() : mjs_Option_some(parsedIndex);
 };
 //# sourceMappingURL=configProvider.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/defaultServices/console.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/defaultServices/console.mjs
 
 
 /** @internal */
@@ -31409,7 +31303,7 @@ const defaultConsole = {
   unsafe: console
 };
 //# sourceMappingURL=console.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/random.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/random.mjs
 var random_a;
 
 
@@ -31465,7 +31359,7 @@ const swap = (buffer, index1, index2) => {
 };
 const random_make = seed => new RandomImpl(seed);
 //# sourceMappingURL=random.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/tracer.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/tracer.mjs
 /**
  * @since 1.0.0
  */
@@ -31521,7 +31415,7 @@ const nativeTracer = /*#__PURE__*/tracer_make({
   context: f => f()
 });
 //# sourceMappingURL=tracer.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/defaultServices.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/defaultServices.mjs
 
 
 
@@ -31567,11 +31461,11 @@ const configOrDie = config => core.orDie(configProviderWith(_ => _.load(config))
 /** @internal */
 const randomWith = f => fiberRefGetWith(currentServices, services => f(mjs_Context_get(services, randomTag)));
 /** @internal */
-const next = /*#__PURE__*/(/* unused pure expression or super */ null && (randomWith(random => random.next())));
+const next = /*#__PURE__*/randomWith(random => random.next());
 /** @internal */
-const nextInt = /*#__PURE__*/(/* unused pure expression or super */ null && (randomWith(random => random.nextInt())));
+const nextInt = /*#__PURE__*/randomWith(random => random.nextInt());
 /** @internal */
-const nextBoolean = /*#__PURE__*/(/* unused pure expression or super */ null && (randomWith(random => random.nextBoolean())));
+const nextBoolean = /*#__PURE__*/randomWith(random => random.nextBoolean());
 /** @internal */
 const nextRange = (min, max) => randomWith(random => random.nextRange(min, max));
 /** @internal */
@@ -31584,7 +31478,7 @@ const tracerWith = f => fiberRefGetWith(currentServices, services => f(mjs_Conte
 /** @internal */
 const withTracer = /*#__PURE__*/Function_dual(2, (effect, value) => fiberRefLocallyWith(currentServices, Context_add(tracerTag, value))(effect));
 //# sourceMappingURL=defaultServices.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/Clock.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/Clock.mjs
 
 
 /**
@@ -31623,7 +31517,7 @@ const Clock_clockWith = clockWith;
  */
 const Clock_Clock = clock_clockTag;
 //# sourceMappingURL=Clock.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/fiberRefs.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/fiberRefs.mjs
 var fiberRefs_a;
 
 
@@ -31635,6 +31529,10 @@ var fiberRefs_a;
 /** @internal */
 function fiberRefs_unsafeMake(fiberRefLocals) {
   return new FiberRefsImpl(fiberRefLocals);
+}
+/** @internal */
+function fiberRefs_empty() {
+  return fiberRefs_unsafeMake(new Map());
 }
 /** @internal */
 const FiberRefsSym = /*#__PURE__*/Symbol.for("@effect/io/FiberRefs");
@@ -31777,7 +31675,7 @@ const updatedAs = /*#__PURE__*/Function_dual(2, (self, {
   return new FiberRefsImpl(locals.set(fiberRef, newStack));
 });
 //# sourceMappingURL=fiberRefs.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/FiberRefs.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/FiberRefs.mjs
 
 /**
  * @since 1.0.0
@@ -31848,8 +31746,15 @@ const FiberRefs_updatedAs = updatedAs;
  * @category unsafe
  */
 const FiberRefs_unsafeMake = fiberRefs_unsafeMake;
+/**
+ * The empty collection of `FiberRef` values.
+ *
+ * @category constructors
+ * @since 1.0.0
+ */
+const FiberRefs_empty = fiberRefs_empty;
 //# sourceMappingURL=FiberRefs.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/fiberRefs/patch.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/fiberRefs/patch.mjs
 
 
 
@@ -31957,7 +31862,7 @@ const patch_patch = /*#__PURE__*/Function_dual(3, (self, fiberId, oldValue) => {
   return fiberRefs;
 });
 //# sourceMappingURL=patch.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/metric/label.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/metric/label.mjs
 var label_a;
 
 
@@ -31992,7 +31897,7 @@ const isMetricLabel = u => {
   return typeof u === "object" && u != null && MetricLabelTypeId in u;
 };
 //# sourceMappingURL=label.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/singleShotGen.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/singleShotGen.mjs
 /** @internal */
 class SingleShotGen {
   constructor(self) {
@@ -32022,7 +31927,7 @@ class SingleShotGen {
   }
 }
 //# sourceMappingURL=singleShotGen.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/LogLevel.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/LogLevel.mjs
 /**
  * @since 1.0.0
  */
@@ -32149,7 +32054,7 @@ const fromLiteral = _ => {
   }
 };
 //# sourceMappingURL=LogLevel.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/logSpan.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/logSpan.mjs
 /** @internal */
 const logSpan_make = (label, startTime) => ({
   label,
@@ -32163,7 +32068,7 @@ const logSpan_render = now => {
   };
 };
 //# sourceMappingURL=logSpan.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/LogSpan.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/LogSpan.mjs
 /**
  * @since 1.0.0
  */
@@ -32179,7 +32084,7 @@ const LogSpan_make = logSpan_make;
  */
 const LogSpan_render = logSpan_render;
 //# sourceMappingURL=LogSpan.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/ref.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/ref.mjs
 var ref_a;
 
 
@@ -32285,7 +32190,7 @@ const updateSomeAndGet = /*#__PURE__*/Function_dual(2, (self, pf) => self.modify
 /** @internal */
 const ref_unsafeGet = self => MutableRef.get(self.ref);
 //# sourceMappingURL=ref.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/Ref.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/Ref.mjs
 
 /**
  * @since 1.0.0
@@ -32363,7 +32268,7 @@ const Ref_updateSomeAndGet = updateSomeAndGet;
  */
 const Ref_unsafeMake = ref_unsafeMake;
 //# sourceMappingURL=Ref.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/Tracer.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/Tracer.mjs
 
 
 /**
@@ -32386,7 +32291,7 @@ const Tracer_make = tracer_make;
  */
 const Tracer_tracerWith = tracerWith;
 //# sourceMappingURL=Tracer.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/effect.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/effect.mjs
 
 
 
@@ -32515,7 +32420,7 @@ const catchTags = /*#__PURE__*/Function_dual(2, (self, cases) => {
   let keys;
   return catchIf(self, e => {
     keys ??= Object.keys(cases);
-    return Predicate_isObject(e) && "_tag" in e && keys.includes(e["_tag"]);
+    return isObject(e) && "_tag" in e && keys.includes(e["_tag"]);
   }, e => cases[e["_tag"]](e));
 });
 /* @internal */
@@ -32686,7 +32591,7 @@ const effect_gen = f => suspend(() => {
   return run(state);
 });
 /* @internal */
-const effect_fiberRefs = /*#__PURE__*/withFiberRuntime(state => succeed(state.unsafeGetFiberRefs()));
+const effect_fiberRefs = /*#__PURE__*/withFiberRuntime(state => succeed(state.getFiberRefs()));
 /* @internal */
 const effect_head = self => matchEffect(self, {
   onFailure: e => core_fail(mjs_Option_some(e)),
@@ -33027,13 +32932,13 @@ const unlessEffect = /*#__PURE__*/Function_dual(2, (self, predicate) => core_fla
 const unsandbox = self => mapErrorCause(self, cause_flatten);
 /* @internal */
 const updateFiberRefs = f => withFiberRuntime(state => {
-  state.setFiberRefs(f(state.id(), state.unsafeGetFiberRefs()));
+  state.setFiberRefs(f(state.id(), state.getFiberRefs()));
   return core_unit;
 });
 /* @internal */
 const updateService = /*#__PURE__*/Function_dual(3, (self, tag, f) => mapInputContext(self, context => Context_add(context, tag, f(mjs_Context_unsafeGet(context, tag)))));
 /* @internal */
-const when = /*#__PURE__*/Function_dual(2, (self, predicate) => suspend(() => predicate() ? core_map(self, mjs_Option_some) : succeed(Option_none())));
+const effect_when = /*#__PURE__*/Function_dual(2, (self, predicate) => suspend(() => predicate() ? core_map(self, mjs_Option_some) : succeed(Option_none())));
 /* @internal */
 const whenFiberRef = /*#__PURE__*/Function_dual(3, (self, fiberRef, predicate) => core_flatMap(fiberRefGet(fiberRef), s => predicate(s) ? core_map(self, a => [s, mjs_Option_some(a)]) : succeed([s, Option_none()])));
 /* @internal */
@@ -33125,7 +33030,7 @@ const effect_fromNullable = value => value == null ? core_fail(NoSuchElementExce
 /* @internal */
 const optionFromOptional = self => catchAll(core_map(self, mjs_Option_some), error => isNoSuchElementException(error) ? succeedNone : core_fail(error));
 //# sourceMappingURL=effect.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.3/node_modules/@effect/data/mjs/MutableHashMap.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/MutableHashMap.mjs
 /**
  * @since 1.0.0
  */
@@ -33142,12 +33047,12 @@ const MutableHashMapProto = {
     return this.backingMap.current[Symbol.iterator]();
   },
   toString() {
-    return `MutableHashMap(${Array.from(this).map(([k, v]) => `[${String(k)}, ${String(v)}]`).join(", ")})`;
+    return Inspectable_toString(this.toJSON());
   },
   toJSON() {
     return {
-      _tag: "MutableHashMap",
-      values: Array.from(this)
+      _id: "MutableHashMap",
+      values: Array.from(this).map(toJSON)
     };
   },
   [NodeInspectSymbol]() {
@@ -33231,7 +33136,7 @@ const MutableHashMap_set = /*#__PURE__*/Function_dual(3, (self, key, value) => {
  */
 const MutableHashMap_size = self => mjs_HashMap_size(MutableRef_get(self.backingMap));
 //# sourceMappingURL=MutableHashMap.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/Exit.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/Exit.mjs
 
 /**
  * Returns `true` if the specified value is an `Exit`, `false` otherwise.
@@ -33494,7 +33399,7 @@ const zipParRight = exitZipParRight;
  */
 const Exit_zipWith = exitZipWith;
 //# sourceMappingURL=Exit.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/executionStrategy.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/executionStrategy.mjs
 
 /** @internal */
 const executionStrategy_OP_SEQUENTIAL = "Sequential";
@@ -33539,7 +33444,7 @@ const executionStrategy_match = /*#__PURE__*/(/* unused pure expression or super
   }
 })));
 //# sourceMappingURL=executionStrategy.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/fiberStatus.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/fiberStatus.mjs
 var fiberStatus_a, fiberStatus_b, fiberStatus_c;
 
 
@@ -33609,7 +33514,7 @@ const isRunning = self => self._tag === OP_RUNNING;
 /** @internal */
 const isSuspended = self => self._tag === OP_SUSPENDED;
 //# sourceMappingURL=fiberStatus.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/FiberStatus.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/FiberStatus.mjs
 
 /**
  * @since 1.0.0
@@ -33662,7 +33567,7 @@ const FiberStatus_isRunning = isRunning;
  */
 const FiberStatus_isSuspended = isSuspended;
 //# sourceMappingURL=FiberStatus.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/fiberMessage.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/fiberMessage.mjs
 /** @internal */
 const OP_INTERRUPT_SIGNAL = "InterruptSignal";
 /** @internal */
@@ -33691,7 +33596,7 @@ const fiberMessage_yieldNow = () => ({
   _tag: OP_YIELD_NOW
 });
 //# sourceMappingURL=fiberMessage.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/fiberScope.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/fiberScope.mjs
 var fiberScope_a, fiberScope_b;
 
 
@@ -33709,7 +33614,7 @@ class Global {
   }
   add(_runtimeFlags, child) {
     this.roots.add(child);
-    child.unsafeAddObserver(() => {
+    child.addObserver(() => {
       this.roots.delete(child);
     });
   }
@@ -33725,7 +33630,7 @@ class Local {
   add(_runtimeFlags, child) {
     this.parent.tell(stateful(parentFiber => {
       parentFiber.addChild(child);
-      child.unsafeAddObserver(() => {
+      child.addObserver(() => {
         parentFiber.removeChild(child);
       });
     }));
@@ -33739,7 +33644,7 @@ const fiberScope_unsafeMake = fiber => {
 /** @internal */
 const globalScope = /*#__PURE__*/globalValue( /*#__PURE__*/Symbol.for("@effect/io/FiberScope/Global"), () => new Global());
 //# sourceMappingURL=fiberScope.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/fiber.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/fiber.mjs
 
 
 
@@ -33954,7 +33859,7 @@ const currentFiberURI = "@effect/io/FiberCurrent";
 /** @internal */
 const getCurrentFiber = () => fromNullable(globalThis[currentFiberURI]);
 //# sourceMappingURL=fiber.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.3/node_modules/@effect/data/mjs/Boolean.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/Boolean.mjs
 /**
  * This module provides utility functions and type class instances for working with the `boolean` type in TypeScript.
  * It includes functions for basic boolean operations, as well as type class instances for
@@ -34169,7 +34074,7 @@ const Boolean_some = collection => {
   return false;
 };
 //# sourceMappingURL=Boolean.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/Deferred.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/Deferred.mjs
 
 
 /**
@@ -34331,7 +34236,7 @@ const Deferred_unsafeMake = deferredUnsafeMake;
  */
 const unsafeDone = deferredUnsafeDone;
 //# sourceMappingURL=Deferred.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/FiberRefsPatch.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/FiberRefsPatch.mjs
 
 /**
  * @since 1.0.0
@@ -34364,7 +34269,7 @@ const FiberRefsPatch_combine = patch_combine;
  */
 const FiberRefsPatch_patch = patch_patch;
 //# sourceMappingURL=FiberRefsPatch.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/blockedRequests.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/blockedRequests.mjs
 var blockedRequests_a, blockedRequests_b, blockedRequests_c;
 
 
@@ -34697,13 +34602,13 @@ const sequentialCollectionKeys = self => Array.from(HashMap_keys(self.map));
 /** @internal */
 const sequentialCollectionToChunk = self => Array.from(self.map);
 //# sourceMappingURL=blockedRequests.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/completedRequestMap.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/completedRequestMap.mjs
 
 
 /** @internal */
 const completedRequestMap_currentRequestMap = /*#__PURE__*/globalValue( /*#__PURE__*/Symbol.for("@effect/io/FiberRef/currentRequestMap"), () => fiberRefUnsafeMake(new Map()));
 //# sourceMappingURL=completedRequestMap.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/concurrency.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/concurrency.mjs
 
 /** @internal */
 const concurrency_match = (options, sequential, unbounded, bounded) => {
@@ -34748,7 +34653,7 @@ const matchSimple = (options, sequential, concurrent) => {
   }
 };
 //# sourceMappingURL=concurrency.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/logger.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/logger.mjs
 
 
 
@@ -34835,7 +34740,7 @@ const stringLogger = /*#__PURE__*/makeLogger(({
   }
   if (cause != null && cause != cause_empty) {
     output = output + " cause=";
-    output = appendQuoted(cause_pretty(cause), output);
+    output = appendQuoted(pretty(cause), output);
   }
   if (isCons(spans)) {
     output = output + " ";
@@ -34939,7 +34844,7 @@ const renderLogSpanLogfmt = now => self => {
   return `${label}=${now - self.startTime}ms`;
 };
 //# sourceMappingURL=logger.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/metric/keyType.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/metric/keyType.mjs
 var keyType_a, keyType_b, keyType_c, keyType_d, _e, _f, _g, _h, _j, _k;
 
 
@@ -35134,7 +35039,7 @@ const isSummaryKey = u => {
   return typeof u === "object" && u != null && SummaryKeyTypeTypeId in u;
 };
 //# sourceMappingURL=keyType.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/metric/key.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/metric/key.mjs
 var key_a;
 
 
@@ -35190,7 +35095,7 @@ const taggedWithLabels = /*#__PURE__*/(/* unused pure expression or super */ nul
 /** @internal */
 const taggedWithLabelSet = /*#__PURE__*/Function_dual(2, (self, extraTags) => mjs_HashSet_size(extraTags) === 0 ? self : new MetricKeyImpl(self.name, self.keyType, self.description, mjs_HashSet_union(extraTags)(self.tags)));
 //# sourceMappingURL=key.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/metric/state.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/metric/state.mjs
 var state_a, state_b, state_c, state_d, state_e, state_f, state_g, state_h, state_j, state_k;
 
 
@@ -35370,7 +35275,7 @@ const isSummaryState = u => {
   return typeof u === "object" && u != null && SummaryStateTypeId in u;
 };
 //# sourceMappingURL=state.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/metric/hook.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/metric/hook.mjs
 
 
 
@@ -35718,7 +35623,7 @@ const resolveQuantile = (error, sampleCount, current, consumed, quantile, rest) 
   throw new Error("BUG: MetricHook.resolveQuantiles - please report an issue at https://github.com/Effect-TS/io/issues");
 };
 //# sourceMappingURL=hook.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/metric/pair.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/metric/pair.mjs
 
 /** @internal */
 const MetricPairSymbolKey = "@effect/io/MetricPair";
@@ -35751,7 +35656,7 @@ const pair_unsafeMake = (metricKey, metricState) => {
   };
 };
 //# sourceMappingURL=pair.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/metric/registry.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/metric/registry.mjs
 var registry_a;
 
 
@@ -35861,7 +35766,7 @@ const registry_make = () => {
   return new MetricRegistryImpl();
 };
 //# sourceMappingURL=registry.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/metric.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/metric.mjs
 
 
 
@@ -35949,7 +35854,7 @@ const metric_taggedWithLabels = /*#__PURE__*/Function_dual(2, (self, extraTagsIt
   return metric_make(self.keyType, (input, extraTags1) => self.unsafeUpdate(input, mjs_HashSet_union(extraTags1)(extraTags)), extraTags1 => self.unsafeValue(mjs_HashSet_union(extraTags1)(extraTags)));
 });
 /** @internal */
-const metric_timer = name => {
+const timer = name => {
   const boundaries = metricBoundaries.exponential({
     start: 1,
     factor: 2,
@@ -36010,7 +35915,7 @@ const trackSuccessWith = /*#__PURE__*/(/* unused pure expression or super */ nul
 /* @internal */
 const metric_update = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, input) => core.fiberRefGetWith(core.currentMetricLabels, tags => core.sync(() => self.unsafeUpdate(input, tags))))));
 /* @internal */
-const value = self => core.fiberRefGetWith(core.currentMetricLabels, tags => core.sync(() => self.unsafeValue(tags)));
+const metric_value = self => core.fiberRefGetWith(core.currentMetricLabels, tags => core.sync(() => self.unsafeValue(tags)));
 /** @internal */
 const withNow = self => metric_mapInput(self, input => [input, Date.now()]);
 /** @internal */
@@ -36024,7 +35929,7 @@ const unsafeSnapshot = () => globalMetricRegistry.snapshot();
 /** @internal */
 const snapshot = /*#__PURE__*/(/* unused pure expression or super */ null && (core.sync(unsafeSnapshot)));
 //# sourceMappingURL=metric.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/metric/boundaries.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/metric/boundaries.mjs
 var boundaries_a;
 
 
@@ -36065,7 +35970,7 @@ const linear = options => fromChunk(Chunk.unsafeFromArray(ReadonlyArray.makeBy(o
 /** @internal */
 const exponential = options => fromChunk(unsafeFromArray(makeBy(options.count - 1, i => options.start * Math.pow(options.factor, i))));
 //# sourceMappingURL=boundaries.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/request.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/request.mjs
 
 
 
@@ -36141,7 +36046,7 @@ class Listeners {
  */
 const filterOutCompleted = requests => core.fiberRefGetWith(completedRequestMap.currentRequestMap, map => core.succeed(requests.filter(request => !(map.get(request)?.state.completed === true))));
 //# sourceMappingURL=request.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/supervisor.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/supervisor.mjs
 var supervisor_a, supervisor_b, supervisor_c, supervisor_d, supervisor_e;
 
 
@@ -36342,7 +36247,7 @@ const supervisor_none = /*#__PURE__*/supervisor_fromEffect(core_unit);
 /** @internal */
 const fibersIn = ref => core.sync(() => new FibersIn(ref));
 //# sourceMappingURL=supervisor.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/supervisor/patch.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/supervisor/patch.mjs
 
 
 
@@ -36467,8 +36372,304 @@ const patch_differ = /*#__PURE__*/mjs_Differ_make({
   diff: supervisor_patch_diff
 });
 //# sourceMappingURL=patch.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/fiberRuntime.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/Scheduler.mjs
+/**
+ * @since 1.0.0
+ */
+
+
+
+/**
+ * @since 1.0.0
+ * @category utils
+ */
+class PriorityBuckets {
+  constructor() {
+    /**
+     * @since 1.0.0
+     */
+    this.buckets = [];
+  }
+  /**
+   * @since 1.0.0
+   */
+  scheduleTask(task, priority) {
+    let bucket = undefined;
+    let index;
+    for (index = 0; index < this.buckets.length; index++) {
+      if (this.buckets[index][0] <= priority) {
+        bucket = this.buckets[index];
+      } else {
+        break;
+      }
+    }
+    if (bucket) {
+      bucket[1].push(task);
+    } else {
+      const newBuckets = [];
+      for (let i = 0; i < index; i++) {
+        newBuckets.push(this.buckets[i]);
+      }
+      newBuckets.push([priority, [task]]);
+      for (let i = index; i < this.buckets.length; i++) {
+        newBuckets.push(this.buckets[i]);
+      }
+      this.buckets = newBuckets;
+    }
+  }
+}
+/**
+ * @since 1.0.0
+ * @category constructors
+ */
+class MixedScheduler {
+  constructor(
+  /**
+   * @since 1.0.0
+   */
+  maxNextTickBeforeTimer) {
+    this.maxNextTickBeforeTimer = maxNextTickBeforeTimer;
+    /**
+     * @since 1.0.0
+     */
+    this.running = false;
+    /**
+     * @since 1.0.0
+     */
+    this.tasks = new PriorityBuckets();
+  }
+  /**
+   * @since 1.0.0
+   */
+  starveInternal(depth) {
+    const tasks = this.tasks.buckets;
+    this.tasks.buckets = [];
+    for (const [_, toRun] of tasks) {
+      for (let i = 0; i < toRun.length; i++) {
+        toRun[i]();
+      }
+    }
+    if (this.tasks.buckets.length === 0) {
+      this.running = false;
+    } else {
+      this.starve(depth);
+    }
+  }
+  /**
+   * @since 1.0.0
+   */
+  starve(depth = 0) {
+    if (depth >= this.maxNextTickBeforeTimer) {
+      setTimeout(() => this.starveInternal(0), 0);
+    } else {
+      Promise.resolve(void 0).then(() => this.starveInternal(depth + 1));
+    }
+  }
+  /**
+   * @since 1.0.0
+   */
+  shouldYield(fiber) {
+    return fiber.currentOpCount > fiber.getFiberRef(currentMaxOpsBeforeYield) ? fiber.getFiberRef(currentSchedulingPriority) : false;
+  }
+  /**
+   * @since 1.0.0
+   */
+  scheduleTask(task, priority) {
+    this.tasks.scheduleTask(task, priority);
+    if (!this.running) {
+      this.running = true;
+      this.starve();
+    }
+  }
+}
+/**
+ * @since 1.0.0
+ * @category schedulers
+ */
+const defaultScheduler = /*#__PURE__*/globalValue( /*#__PURE__*/Symbol.for("@effect/io/Scheduler/defaultScheduler"), () => new MixedScheduler(2048));
+/**
+ * @since 1.0.0
+ * @category constructors
+ */
+class SyncScheduler {
+  constructor() {
+    /**
+     * @since 1.0.0
+     */
+    this.tasks = new PriorityBuckets();
+    /**
+     * @since 1.0.0
+     */
+    this.deferred = false;
+  }
+  /**
+   * @since 1.0.0
+   */
+  scheduleTask(task, priority) {
+    if (this.deferred) {
+      defaultScheduler.scheduleTask(task, priority);
+    } else {
+      this.tasks.scheduleTask(task, priority);
+    }
+  }
+  /**
+   * @since 1.0.0
+   */
+  shouldYield(fiber) {
+    return fiber.currentOpCount > fiber.getFiberRef(currentMaxOpsBeforeYield) ? fiber.getFiberRef(currentSchedulingPriority) : false;
+  }
+  /**
+   * @since 1.0.0
+   */
+  flush() {
+    while (this.tasks.buckets.length > 0) {
+      const tasks = this.tasks.buckets;
+      this.tasks.buckets = [];
+      for (const [_, toRun] of tasks) {
+        for (let i = 0; i < toRun.length; i++) {
+          toRun[i]();
+        }
+      }
+    }
+    this.deferred = true;
+  }
+}
+/**
+ * @since 1.0.0
+ * @category constructors
+ */
+class ControlledScheduler {
+  constructor() {
+    /**
+     * @since 1.0.0
+     */
+    this.tasks = new PriorityBuckets();
+    /**
+     * @since 1.0.0
+     */
+    this.deferred = false;
+  }
+  /**
+   * @since 1.0.0
+   */
+  scheduleTask(task, priority) {
+    if (this.deferred) {
+      defaultScheduler.scheduleTask(task, priority);
+    } else {
+      this.tasks.scheduleTask(task, priority);
+    }
+  }
+  /**
+   * @since 1.0.0
+   */
+  shouldYield(fiber) {
+    return fiber.currentOpCount > fiber.getFiberRef(core.currentMaxOpsBeforeYield) ? fiber.getFiberRef(core.currentSchedulingPriority) : false;
+  }
+  /**
+   * @since 1.0.0
+   */
+  step() {
+    const tasks = this.tasks.buckets;
+    this.tasks.buckets = [];
+    for (const [_, toRun] of tasks) {
+      for (let i = 0; i < toRun.length; i++) {
+        toRun[i]();
+      }
+    }
+  }
+}
+/**
+ * @since 1.0.0
+ * @category constructors
+ */
+const makeMatrix = (...record) => {
+  const index = record.sort(([p0], [p1]) => p0 < p1 ? -1 : p0 > p1 ? 1 : 0);
+  return {
+    shouldYield(fiber) {
+      for (const scheduler of record) {
+        const priority = scheduler[1].shouldYield(fiber);
+        if (priority !== false) {
+          return priority;
+        }
+      }
+      return false;
+    },
+    scheduleTask(task, priority) {
+      let scheduler = undefined;
+      for (const i of index) {
+        if (priority >= i[0]) {
+          scheduler = i[1];
+        } else {
+          return (scheduler ?? defaultScheduler).scheduleTask(task, priority);
+        }
+      }
+      return (scheduler ?? defaultScheduler).scheduleTask(task, priority);
+    }
+  };
+};
+/**
+ * @since 1.0.0
+ * @category utilities
+ */
+const defaultShouldYield = fiber => {
+  return fiber.currentOpCount > fiber.getFiberRef(core.currentMaxOpsBeforeYield) ? fiber.getFiberRef(core.currentSchedulingPriority) : false;
+};
+/**
+ * @since 1.0.0
+ * @category constructors
+ */
+const Scheduler_make = (scheduleTask, shouldYield = defaultShouldYield) => ({
+  scheduleTask,
+  shouldYield
+});
+/**
+ * @since 1.0.0
+ * @category constructors
+ */
+const makeBatched = (callback, shouldYield = defaultShouldYield) => {
+  let running = false;
+  const tasks = new PriorityBuckets();
+  const starveInternal = () => {
+    const tasksToRun = tasks.buckets;
+    tasks.buckets = [];
+    for (const [_, toRun] of tasksToRun) {
+      for (let i = 0; i < toRun.length; i++) {
+        toRun[i]();
+      }
+    }
+    if (tasks.buckets.length === 0) {
+      running = false;
+    } else {
+      starve();
+    }
+  };
+  const starve = () => callback(starveInternal);
+  return Scheduler_make((task, priority) => {
+    tasks.scheduleTask(task, priority);
+    if (!running) {
+      running = true;
+      starve();
+    }
+  }, shouldYield);
+};
+/**
+ * @since 1.0.0
+ * @category constructors
+ */
+const Scheduler_timer = (ms, shouldYield = defaultShouldYield) => Scheduler_make(task => setTimeout(task, ms), shouldYield);
+/**
+ * @since 1.0.0
+ * @category constructors
+ */
+const timerBatched = (ms, shouldYield = defaultShouldYield) => makeBatched(task => setTimeout(task, ms), shouldYield);
+/** @internal */
+const currentScheduler = /*#__PURE__*/globalValue( /*#__PURE__*/Symbol.for("@effect/io/FiberRef/currentScheduler"), () => fiberRefUnsafeMake(defaultScheduler));
+/** @internal */
+const withScheduler = /*#__PURE__*/Function_dual(2, (self, scheduler) => fiberRefLocally(self, currentScheduler, scheduler));
+//# sourceMappingURL=Scheduler.mjs.map
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/fiberRuntime.mjs
 var fiberRuntime_a, fiberRuntime_b;
+
 
 
 
@@ -36615,6 +36816,7 @@ class FiberRuntime {
     this._asyncBlockingOn = null;
     this._exitValue = null;
     this._steps = [false];
+    this.currentOpCount = 0;
     this.run = () => {
       this.drainQueueOnCurrentThread();
     };
@@ -36622,6 +36824,7 @@ class FiberRuntime {
     this._fiberId = fiberId;
     this._fiberRefs = fiberRefs0;
     this._supervisor = this.getFiberRef(currentSupervisor);
+    this._scheduler = this.getFiberRef(currentScheduler);
     if (runtimeMetrics(runtimeFlags0)) {
       const tags = this.getFiberRef(currentMetricLabels);
       fiberStarted.unsafeUpdate(1, tags);
@@ -36696,7 +36899,7 @@ class FiberRuntime {
    * Retrieves the whole set of fiber refs.
    */
   fiberRefs() {
-    return this.ask(fiber => fiber.unsafeGetFiberRefs());
+    return this.ask(fiber => fiber.getFiberRefs());
   }
   /**
    * Returns an effect that will contain information computed from the fiber
@@ -36731,20 +36934,20 @@ class FiberRuntime {
         if (fiber._exitValue !== null) {
           cb(this._exitValue);
         } else {
-          fiber.unsafeAddObserver(cb);
+          fiber.addObserver(cb);
         }
       }));
       return sync(() => this.tell(stateful((fiber, _) => {
-        fiber.unsafeRemoveObserver(cb);
+        fiber.removeObserver(cb);
       })));
     }, this.id());
   }
   inheritAll() {
     return withFiberRuntime((parentFiber, parentStatus) => {
       const parentFiberId = parentFiber.id();
-      const parentFiberRefs = parentFiber.unsafeGetFiberRefs();
+      const parentFiberRefs = parentFiber.getFiberRefs();
       const parentRuntimeFlags = parentStatus.runtimeFlags;
-      const childFiberRefs = this.unsafeGetFiberRefs();
+      const childFiberRefs = this.getFiberRefs();
       const updatedFiberRefs = joinAs(parentFiberRefs, parentFiberId, childFiberRefs);
       parentFiber.setFiberRefs(updatedFiberRefs);
       const updatedRuntimeFlags = parentFiber.getFiberRef(currentRuntimeFlags);
@@ -36779,7 +36982,7 @@ class FiberRuntime {
    *
    * **NOTE**: This method must be invoked by the fiber itself.
    */
-  unsafeAddObserver(observer) {
+  addObserver(observer) {
     if (this._exitValue !== null) {
       observer(this._exitValue);
     } else {
@@ -36792,7 +36995,7 @@ class FiberRuntime {
    *
    * **NOTE**: This method must be invoked by the fiber itself.
    */
-  unsafeRemoveObserver(observer) {
+  removeObserver(observer) {
     this._observers = this._observers.filter(o => o !== observer);
   }
   /**
@@ -36802,7 +37005,7 @@ class FiberRuntime {
    * on this fiber, then values derived from the fiber's state (including the
    * log annotations and log level) may not be up-to-date.
    */
-  unsafeGetFiberRefs() {
+  getFiberRefs() {
     this.setFiberRef(currentRuntimeFlags, this._runtimeFlags);
     return this._fiberRefs;
   }
@@ -36843,6 +37046,7 @@ class FiberRuntime {
   refreshRefCache() {
     this._tracer = mjs_Context_get(this.getFiberRef(currentServices), tracerTag);
     this._supervisor = this.getFiberRef(currentSupervisor);
+    this._scheduler = this.getFiberRef(currentScheduler);
   }
   /**
    * Wholesale replaces all fiber refs of this fiber.
@@ -36916,7 +37120,7 @@ class FiberRuntime {
    * **NOTE**: This method must be invoked by the fiber itself.
    */
   drainQueueLaterOnExecutor() {
-    this.getFiberRef(currentScheduler).scheduleTask(this.run, this.getFiberRef(currentSchedulingPriority));
+    this._scheduler.scheduleTask(this.run, this.getFiberRef(currentSchedulingPriority));
   }
   /**
    * Drains the fiber's message queue while the fiber is actively running,
@@ -37062,7 +37266,7 @@ class FiberRuntime {
     const spans = this.getFiberRef(currentLogSpan);
     const annotations = this.getFiberRef(currentLogAnnotations);
     const loggers = this.getLoggers();
-    const contextMap = this.unsafeGetFiberRefs();
+    const contextMap = this.getFiberRefs();
     if (mjs_HashSet_size(loggers) > 0) {
       const clockService = mjs_Context_get(this.getFiberRef(currentServices), clock_clockTag);
       const date = new Date(clockService.unsafeCurrentTimeMillis());
@@ -37503,7 +37707,7 @@ class FiberRuntime {
    */
   runLoop(effect0) {
     let cur = effect0;
-    let ops = 0;
+    this.currentOpCount = 0;
     // eslint-disable-next-line no-constant-condition
     while (true) {
       if ((this._runtimeFlags & OpSupervision) !== 0) {
@@ -37512,11 +37716,14 @@ class FiberRuntime {
       if (this._queue.length > 0) {
         cur = this.drainQueueWhileRunning(this._runtimeFlags, cur);
       }
-      ops += 1;
-      if (ops >= this.getFiberRef(currentMaxFiberOps)) {
-        ops = 0;
+      this.currentOpCount += 1;
+      const shouldYield = this._scheduler.shouldYield(this);
+      if (shouldYield !== false) {
+        this.currentOpCount = 0;
         const oldCur = cur;
-        cur = core_flatMap(yieldNow(), () => oldCur);
+        cur = core_flatMap(yieldNow({
+          priority: shouldYield
+        }), () => oldCur);
       }
       try {
         if (!(cur._tag in this)) {
@@ -37593,7 +37800,7 @@ const tracerLogger = /*#__PURE__*/makeLogger(({
   attributes["effect.fiberId"] = FiberId_threadName(fiberId);
   attributes["effect.logLevel"] = logLevel.label;
   if (cause !== null && cause !== cause_empty) {
-    attributes["effect.cause"] = cause_pretty(cause);
+    attributes["effect.cause"] = pretty(cause);
   }
   span.value.event(String(message), clockService.value.unsafeCurrentTimeNanos(), attributes);
 });
@@ -37610,14 +37817,14 @@ const acquireReleaseInterruptible = /*#__PURE__*/Function_dual(args => isEffect(
 });
 /* @internal */
 const addFinalizer = finalizer => withFiberRuntime(runtime => {
-  const acquireRefs = runtime.unsafeGetFiberRefs();
+  const acquireRefs = runtime.getFiberRefs();
   return core_flatMap(scope, scope => scopeAddFinalizerExit(scope, exit => withFiberRuntime(runtimeFinalizer => {
-    const pre = runtimeFinalizer.unsafeGetFiberRefs();
+    const pre = runtimeFinalizer.getFiberRefs();
     const patch = FiberRefsPatch_diff(pre, acquireRefs);
     const inverse = FiberRefsPatch_diff(acquireRefs, pre);
     runtimeFinalizer.setFiberRefs(FiberRefsPatch_patch(patch, runtimeFinalizer.id(), acquireRefs));
     return ensuring(finalizer(exit), sync(() => {
-      runtimeFinalizer.setFiberRefs(FiberRefsPatch_patch(inverse, runtimeFinalizer.id(), runtimeFinalizer.unsafeGetFiberRefs()));
+      runtimeFinalizer.setFiberRefs(FiberRefsPatch_patch(inverse, runtimeFinalizer.id(), runtimeFinalizer.getFiberRefs()));
     }));
   })));
 });
@@ -37732,7 +37939,7 @@ const fiberRuntime_replicate = /*#__PURE__*/Function_dual(2, (self, n) => Array.
   length: n
 }, () => self));
 /* @internal */
-const replicateEffect = /*#__PURE__*/Function_dual(args => isEffect(args[0]), (self, n, options) => fiberRuntime_all(fiberRuntime_replicate(n)(self), options));
+const replicateEffect = /*#__PURE__*/Function_dual(args => isEffect(args[0]), (self, n, options) => fiberRuntime_all(fiberRuntime_replicate(self, n), options));
 // @ts-expect-error
 const forEachOptions = /*#__PURE__*/Function_dual(args => isIterable(args[0]), (self, f, options) => withFiberRuntime(r => {
   const requestBatchingEnabled = options?.batching === true || options?.batching === "inherit" && r.getFiberRef(currentRequestBatching);
@@ -37797,7 +38004,7 @@ const forEachParUnboundedDiscard = (self, f, batching) => suspend(() => {
     const residual = [];
     const joinOrder = [];
     const process = transplant(graft => forEachSequential(as, (a, i) => core_map(fiber => {
-      fiber.unsafeAddObserver(() => {
+      fiber.addObserver(() => {
         joinOrder.push(fiber);
       });
       return fiber;
@@ -37923,13 +38130,13 @@ const unsafeFork = (effect, parentFiber, parentRuntimeFlags, overrideScope = nul
 /** @internal */
 const unsafeMakeChildFiber = (effect, parentFiber, parentRuntimeFlags, overrideScope = null) => {
   const childId = FiberId_unsafeMake();
-  const parentFiberRefs = parentFiber.unsafeGetFiberRefs();
+  const parentFiberRefs = parentFiber.getFiberRefs();
   const childFiberRefs = forkAs(parentFiberRefs, childId);
   const childFiber = new FiberRuntime(childId, childFiberRefs, parentRuntimeFlags);
   const childContext = getOrDefault(childFiberRefs, currentContext);
   const supervisor = childFiber._supervisor;
   supervisor.onStart(childContext, effect, mjs_Option_some(parentFiber), childFiber);
-  childFiber.unsafeAddObserver(exit => supervisor.onEnd(exit, childFiber));
+  childFiber.addObserver(exit => supervisor.onEnd(exit, childFiber));
   const parentScope = overrideScope !== null ? overrideScope : getOrElse(() => parentFiber.scope())(parentFiber.getFiberRef(currentForkScopeOverride));
   parentScope.add(parentRuntimeFlags, childFiber);
   return childFiber;
@@ -38209,8 +38416,8 @@ const raceFibersWith = /*#__PURE__*/Function_dual(3, (self, other, options) => w
   const leftFiber = unsafeMakeChildFiber(self, parentFiber, parentRuntimeFlags, options.selfScope);
   const rightFiber = unsafeMakeChildFiber(other, parentFiber, parentRuntimeFlags, options.otherScope);
   return core_async(cb => {
-    leftFiber.unsafeAddObserver(() => completeRace(leftFiber, rightFiber, options.onSelfWin, raceIndicator, cb));
-    rightFiber.unsafeAddObserver(() => completeRace(rightFiber, leftFiber, options.onOtherWin, raceIndicator, cb));
+    leftFiber.addObserver(() => completeRace(leftFiber, rightFiber, options.onSelfWin, raceIndicator, cb));
+    rightFiber.addObserver(() => completeRace(rightFiber, leftFiber, options.onOtherWin, raceIndicator, cb));
     leftFiber.startFork(self);
     rightFiber.startFork(other);
   }, FiberId_combine(leftFiber.id(), rightFiber.id()));
@@ -38237,7 +38444,7 @@ const invokeWithInterrupt = (dataSource, all) => fiberIdWith(id => core_flatMap(
       cb(interruptFiber(processing));
     }
   };
-  processing.unsafeAddObserver(exit => {
+  processing.addObserver(exit => {
     cleanup.forEach(f => f());
     cb(exit);
   });
@@ -38277,7 +38484,68 @@ const withTracerScoped = value => fiberRefLocallyScopedWith(currentServices, Con
 /* @internal */
 const withParentSpanScoped = span => fiberRefLocallyScopedWith(currentTracerSpan, List_prepend(span));
 //# sourceMappingURL=fiberRuntime.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/schedule/interval.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/Random.mjs
+
+
+/**
+ * @since 1.0.0
+ * @category symbols
+ */
+const Random_RandomTypeId = RandomTypeId;
+/**
+ * Returns the next numeric value from the pseudo-random number generator.
+ *
+ * @since 1.0.0
+ * @category constructors
+ */
+const Random_next = next;
+/**
+ * Returns the next integer value from the pseudo-random number generator.
+ *
+ * @since 1.0.0
+ * @category constructors
+ */
+const Random_nextInt = nextInt;
+/**
+ * Returns the next boolean value from the pseudo-random number generator.
+ *
+ * @since 1.0.0
+ * @category constructors
+ */
+const Random_nextBoolean = nextBoolean;
+/**
+ * Returns the next numeric value in the specified range from the
+ * pseudo-random number generator.
+ *
+ * @since 1.0.0
+ * @category constructors
+ */
+const Random_nextRange = nextRange;
+/**
+ * Returns the next integer value in the specified range from the
+ * pseudo-random number generator.
+ *
+ * @since 1.0.0
+ * @category constructors
+ */
+const Random_nextIntBetween = nextIntBetween;
+/**
+ * Uses the pseudo-random number generator to shuffle the specified iterable.
+ *
+ * @since 1.0.0
+ * @category constructors
+ */
+const Random_shuffle = shuffle;
+/**
+ * Retreives the `Random` service from the context and uses it to run the
+ * specified workflow.
+ *
+ * @since 1.0.0
+ * @category constructors
+ */
+const Random_randomWith = randomWith;
+//# sourceMappingURL=Random.mjs.map
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/schedule/interval.mjs
 
 
 
@@ -38348,7 +38616,7 @@ const before = endMilliseconds => {
   return interval_make(Number.NEGATIVE_INFINITY, endMilliseconds);
 };
 //# sourceMappingURL=interval.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/ScheduleInterval.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/ScheduleInterval.mjs
 
 /**
  * @since 1.0.0
@@ -38449,7 +38717,7 @@ const ScheduleInterval_after = after;
  */
 const ScheduleInterval_before = before;
 //# sourceMappingURL=ScheduleInterval.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/schedule/intervals.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/schedule/intervals.mjs
 
 
 
@@ -38571,7 +38839,7 @@ const intervals_isNonEmpty = self => {
 /** @internal */
 const intervals_max = /*#__PURE__*/Function_dual(2, (self, that) => intervals_lessThan(self, that) ? that : self);
 //# sourceMappingURL=intervals.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/ScheduleIntervals.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/ScheduleIntervals.mjs
 
 /**
  * @since 1.0.0
@@ -38650,7 +38918,7 @@ const ScheduleIntervals_isNonEmpty = intervals_isNonEmpty;
  */
 const ScheduleIntervals_max = intervals_max;
 //# sourceMappingURL=ScheduleIntervals.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/schedule/decision.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/schedule/decision.mjs
 
 
 /** @internal */
@@ -38684,7 +38952,7 @@ const decision_isDone = self => {
   return self._tag === decision_OP_DONE;
 };
 //# sourceMappingURL=decision.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/ScheduleDecision.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/ScheduleDecision.mjs
 /**
  * @since 1.0.0
  */
@@ -38712,7 +38980,7 @@ const ScheduleDecision_isContinue = isContinue;
  */
 const ScheduleDecision_isDone = decision_isDone;
 //# sourceMappingURL=ScheduleDecision.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/schedule.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/schedule.mjs
 var schedule_a, schedule_b;
 
 
@@ -38758,7 +39026,7 @@ class ScheduleImpl {
     this[schedule_a] = scheduleVariance;
   }
   pipe() {
-    return pipeArguments(this, arguments);
+    return Pipeable_pipeArguments(this, arguments);
   }
 }
 schedule_a = ScheduleTypeId;
@@ -38797,43 +39065,43 @@ schedule_b = ScheduleDriverTypeId;
 /** @internal */
 const makeWithState = (initial, step) => new ScheduleImpl(initial, step);
 /** @internal */
-const addDelay = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, f) => addDelayEffect(self, out => core.sync(() => f(out))))));
+const addDelay = /*#__PURE__*/Function_dual(2, (self, f) => addDelayEffect(self, out => sync(() => f(out))));
 /** @internal */
-const addDelayEffect = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, f) => modifyDelayEffect(self, (out, duration) => core.map(f(out), delay => Duration.sum(duration, Duration.decode(delay)))))));
+const addDelayEffect = /*#__PURE__*/Function_dual(2, (self, f) => modifyDelayEffect(self, (out, duration) => core_map(f(out), delay => Duration_sum(duration, decode(delay)))));
 /** @internal */
-const schedule_andThen = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, that) => schedule_map(andThenEither(self, that), Either.merge))));
+const schedule_andThen = /*#__PURE__*/Function_dual(2, (self, that) => schedule_map(andThenEither(self, that), merge));
 /** @internal */
-const andThenEither = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, that) => makeWithState([self.initial, that.initial, true], (now, input, state) => state[2] ? core.flatMap(self.step(now, input, state[0]), ([lState, out, decision]) => {
-  if (ScheduleDecision.isDone(decision)) {
-    return core.map(that.step(now, input, state[1]), ([rState, out, decision]) => [[lState, rState, false], Either.right(out), decision]);
+const andThenEither = /*#__PURE__*/Function_dual(2, (self, that) => makeWithState([self.initial, that.initial, true], (now, input, state) => state[2] ? core_flatMap(self.step(now, input, state[0]), ([lState, out, decision]) => {
+  if (ScheduleDecision_isDone(decision)) {
+    return core_map(that.step(now, input, state[1]), ([rState, out, decision]) => [[lState, rState, false], Either_right(out), decision]);
   }
-  return core.succeed([[lState, state[1], true], Either.left(out), decision]);
-}) : core.map(that.step(now, input, state[1]), ([rState, out, decision]) => [[state[0], rState, false], Either.right(out), decision])))));
+  return succeed([[lState, state[1], true], Either_left(out), decision]);
+}) : core_map(that.step(now, input, state[1]), ([rState, out, decision]) => [[state[0], rState, false], Either_right(out), decision])));
 /** @internal */
-const schedule_as = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, out) => schedule_map(self, () => out))));
+const schedule_as = /*#__PURE__*/Function_dual(2, (self, out) => schedule_map(self, () => out));
 /** @internal */
-const schedule_asUnit = self => schedule_map(self, constVoid);
+const schedule_asUnit = self => schedule_map(self, Function_constVoid);
 /** @internal */
-const bothInOut = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, that) => makeWithState([self.initial, that.initial], (now, [in1, in2], state) => core.zipWith(self.step(now, in1, state[0]), that.step(now, in2, state[1]), ([lState, out, lDecision], [rState, out2, rDecision]) => {
-  if (ScheduleDecision.isContinue(lDecision) && ScheduleDecision.isContinue(rDecision)) {
-    const interval = Intervals.union(rDecision.intervals)(lDecision.intervals);
-    return [[lState, rState], [out, out2], ScheduleDecision.continue(interval)];
+const bothInOut = /*#__PURE__*/Function_dual(2, (self, that) => makeWithState([self.initial, that.initial], (now, [in1, in2], state) => core_zipWith(self.step(now, in1, state[0]), that.step(now, in2, state[1]), ([lState, out, lDecision], [rState, out2, rDecision]) => {
+  if (ScheduleDecision_isContinue(lDecision) && ScheduleDecision_isContinue(rDecision)) {
+    const interval = ScheduleIntervals_union(rDecision.intervals)(lDecision.intervals);
+    return [[lState, rState], [out, out2], ScheduleDecision_continue(interval)];
   }
-  return [[lState, rState], [out, out2], ScheduleDecision.done];
-})))));
+  return [[lState, rState], [out, out2], ScheduleDecision_done];
+})));
 /** @internal */
-const check = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, test) => checkEffect(self, (input, out) => core.sync(() => test(input, out))))));
+const check = /*#__PURE__*/Function_dual(2, (self, test) => checkEffect(self, (input, out) => sync(() => test(input, out))));
 /** @internal */
-const checkEffect = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, test) => makeWithState(self.initial, (now, input, state) => core.flatMap(self.step(now, input, state), ([state, out, decision]) => {
-  if (ScheduleDecision.isDone(decision)) {
-    return core.succeed([state, out, ScheduleDecision.done]);
+const checkEffect = /*#__PURE__*/Function_dual(2, (self, test) => makeWithState(self.initial, (now, input, state) => core_flatMap(self.step(now, input, state), ([state, out, decision]) => {
+  if (ScheduleDecision_isDone(decision)) {
+    return succeed([state, out, ScheduleDecision_done]);
   }
-  return core.map(test(input, out), cont => cont ? [state, out, decision] : [state, out, ScheduleDecision.done]);
-})))));
+  return core_map(test(input, out), cont => cont ? [state, out, decision] : [state, out, ScheduleDecision_done]);
+})));
 /** @internal */
 const collectAllInputs = () => collectAllOutputs(schedule_identity());
 /** @internal */
-const collectAllOutputs = self => schedule_reduce(self, Chunk.empty(), (outs, out) => Chunk.append(out)(outs));
+const collectAllOutputs = self => schedule_reduce(self, Chunk_empty(), (outs, out) => Chunk_append(out)(outs));
 /** @internal */
 const collectUntil = f => collectAllOutputs(recurUntil(f));
 /** @internal */
@@ -38843,108 +39111,108 @@ const collectWhile = f => collectAllOutputs(recurWhile(f));
 /** @internal */
 const collectWhileEffect = f => collectAllOutputs(recurWhileEffect(f));
 /** @internal */
-const schedule_compose = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, that) => makeWithState([self.initial, that.initial], (now, input, state) => core.flatMap(self.step(now, input, state[0]), ([lState, out, lDecision]) => core.map(that.step(now, out, state[1]), ([rState, out2, rDecision]) => ScheduleDecision.isDone(lDecision) ? [[lState, rState], out2, ScheduleDecision.done] : ScheduleDecision.isDone(rDecision) ? [[lState, rState], out2, ScheduleDecision.done] : [[lState, rState], out2, ScheduleDecision.continue(Intervals.max(rDecision.intervals)(lDecision.intervals))]))))));
+const schedule_compose = /*#__PURE__*/Function_dual(2, (self, that) => makeWithState([self.initial, that.initial], (now, input, state) => core_flatMap(self.step(now, input, state[0]), ([lState, out, lDecision]) => core_map(that.step(now, out, state[1]), ([rState, out2, rDecision]) => ScheduleDecision_isDone(lDecision) ? [[lState, rState], out2, ScheduleDecision_done] : ScheduleDecision_isDone(rDecision) ? [[lState, rState], out2, ScheduleDecision_done] : [[lState, rState], out2, ScheduleDecision_continue(ScheduleIntervals_max(rDecision.intervals)(lDecision.intervals))]))));
 /** @internal */
-const schedule_mapInput = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, f) => mapInputEffect(self, input2 => core.sync(() => f(input2))))));
+const schedule_mapInput = /*#__PURE__*/Function_dual(2, (self, f) => mapInputEffect(self, input2 => sync(() => f(input2))));
 /** @internal */
-const schedule_mapInputContext = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, f) => makeWithState(self.initial, (now, input, state) => core.mapInputContext(self.step(now, input, state), f)))));
+const schedule_mapInputContext = /*#__PURE__*/Function_dual(2, (self, f) => makeWithState(self.initial, (now, input, state) => mapInputContext(self.step(now, input, state), f)));
 /** @internal */
-const mapInputEffect = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, f) => makeWithState(self.initial, (now, input2, state) => core.flatMap(f(input2), input => self.step(now, input, state))))));
+const mapInputEffect = /*#__PURE__*/Function_dual(2, (self, f) => makeWithState(self.initial, (now, input2, state) => core_flatMap(f(input2), input => self.step(now, input, state))));
 /** @internal */
 const dayOfMonth = day => {
   return makeWithState([Number.NEGATIVE_INFINITY, 0], (now, _, state) => {
     if (!Number.isInteger(day) || day < 1 || 31 < day) {
-      return core.dieSync(() => internalCause.IllegalArgumentException(`Invalid argument in: dayOfMonth(${day}). Must be in range 1...31`));
+      return dieSync(() => IllegalArgumentException(`Invalid argument in: dayOfMonth(${day}). Must be in range 1...31`));
     }
     const n = state[1];
     const initial = n === 0;
     const day0 = nextDayOfMonth(now, day, initial);
     const start = beginningOfDay(day0);
     const end = endOfDay(day0);
-    const interval = Interval.make(start, end);
-    return core.succeed([[end, n + 1], n, ScheduleDecision.continueWith(interval)]);
+    const interval = ScheduleInterval_make(start, end);
+    return succeed([[end, n + 1], n, ScheduleDecision_continueWith(interval)]);
   });
 };
 /** @internal */
 const dayOfWeek = day => {
   return makeWithState([Number.MIN_SAFE_INTEGER, 0], (now, _, state) => {
     if (!Number.isInteger(day) || day < 1 || 7 < day) {
-      return core.dieSync(() => internalCause.IllegalArgumentException(`Invalid argument in: dayOfWeek(${day}). Must be in range 1 (Monday)...7 (Sunday)`));
+      return dieSync(() => IllegalArgumentException(`Invalid argument in: dayOfWeek(${day}). Must be in range 1 (Monday)...7 (Sunday)`));
     }
     const n = state[1];
     const initial = n === 0;
     const day0 = nextDay(now, day, initial);
     const start = beginningOfDay(day0);
     const end = endOfDay(day0);
-    const interval = Interval.make(start, end);
-    return core.succeed([[end, n + 1], n, ScheduleDecision.continueWith(interval)]);
+    const interval = ScheduleInterval_make(start, end);
+    return succeed([[end, n + 1], n, ScheduleDecision_continueWith(interval)]);
   });
 };
 /** @internal */
-const delayed = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, f) => delayedEffect(self, duration => core.sync(() => f(duration))))));
+const delayed = /*#__PURE__*/Function_dual(2, (self, f) => delayedEffect(self, duration => sync(() => f(duration))));
 /** @internal */
-const delayedEffect = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, f) => modifyDelayEffect(self, (_, delay) => f(delay)))));
+const delayedEffect = /*#__PURE__*/Function_dual(2, (self, f) => modifyDelayEffect(self, (_, delay) => f(delay)));
 /** @internal */
 const delayedSchedule = schedule => addDelay(schedule, x => x);
 /** @internal */
-const delays = self => makeWithState(self.initial, (now, input, state) => core.flatMap(([state, _, decision]) => {
-  if (ScheduleDecision.isDone(decision)) {
-    return core.succeed([state, Duration.zero, decision]);
+const delays = self => makeWithState(self.initial, (now, input, state) => core_flatMap(([state, _, decision]) => {
+  if (ScheduleDecision_isDone(decision)) {
+    return succeed([state, zero, decision]);
   }
-  return core.succeed([state, Duration.millis(Intervals.start(decision.intervals) - now), decision]);
+  return succeed([state, millis(ScheduleIntervals_start(decision.intervals) - now), decision]);
 })(self.step(now, input, state)));
 /** @internal */
-const schedule_mapBoth = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, {
+const schedule_mapBoth = /*#__PURE__*/Function_dual(2, (self, {
   onInput,
   onOutput
-}) => schedule_map(schedule_mapInput(self, onInput), onOutput))));
+}) => schedule_map(schedule_mapInput(self, onInput), onOutput));
 /** @internal */
-const mapBothEffect = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, {
+const mapBothEffect = /*#__PURE__*/Function_dual(2, (self, {
   onInput,
   onOutput
-}) => schedule_mapEffect(mapInputEffect(self, onInput), onOutput))));
+}) => schedule_mapEffect(mapInputEffect(self, onInput), onOutput));
 /** @internal */
 const driver = self => core_map(ref => new ScheduleDriverImpl(self, ref))(ref_make([Option_none(), self.initial]));
 /** @internal */
 const duration = durationInput => {
-  const duration = Duration.decode(durationInput);
-  const durationMillis = Duration.toMillis(duration);
-  return makeWithState(true, (now, _, state) => core.succeed(state ? [false, duration, ScheduleDecision.continueWith(Interval.after(now + durationMillis))] : [false, Duration.zero, ScheduleDecision.done]));
+  const duration = decode(durationInput);
+  const durationMillis = toMillis(duration);
+  return makeWithState(true, (now, _, state) => succeed(state ? [false, duration, ScheduleDecision_continueWith(ScheduleInterval_after(now + durationMillis))] : [false, zero, ScheduleDecision_done]));
 };
 /** @internal */
-const schedule_either = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, that) => schedule_union(self, that))));
+const schedule_either = /*#__PURE__*/Function_dual(2, (self, that) => schedule_union(self, that));
 /** @internal */
-const eitherWith = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(3, (self, that, f) => schedule_unionWith(self, that, f))));
+const eitherWith = /*#__PURE__*/Function_dual(3, (self, that, f) => schedule_unionWith(self, that, f));
 /** @internal */
-const schedule_ensuring = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, finalizer) => makeWithState(self.initial, (now, input, state) => core.flatMap(self.step(now, input, state), ([state, out, decision]) => ScheduleDecision.isDone(decision) ? core.as(finalizer, [state, out, decision]) : core.succeed([state, out, decision]))))));
+const schedule_ensuring = /*#__PURE__*/Function_dual(2, (self, finalizer) => makeWithState(self.initial, (now, input, state) => core_flatMap(self.step(now, input, state), ([state, out, decision]) => ScheduleDecision_isDone(decision) ? core_as(finalizer, [state, out, decision]) : succeed([state, out, decision]))));
 /** @internal */
 const schedule_exponential = (baseInput, factor = 2.0) => {
-  const base = Duration.decode(baseInput);
-  return delayedSchedule(schedule_map(schedule_forever, i => Duration.times(base, Math.pow(factor, i))));
+  const base = decode(baseInput);
+  return delayedSchedule(schedule_map(schedule_forever, i => times(base, Math.pow(factor, i))));
 };
 /** @internal */
 const fibonacci = oneInput => {
-  const one = Duration.decode(oneInput);
-  return delayedSchedule(schedule_map(out => out[0])(schedule_unfold([one, one], ([a, b]) => [b, Duration.sum(a, b)])));
+  const one = decode(oneInput);
+  return delayedSchedule(schedule_map(out => out[0])(schedule_unfold([one, one], ([a, b]) => [b, Duration_sum(a, b)])));
 };
 /** @internal */
 const fixed = intervalInput => {
-  const interval = Duration.decode(intervalInput);
-  const intervalMillis = Duration.toMillis(interval);
-  return makeWithState([Option.none(), 0], (now, _, [option, n]) => core.sync(() => {
+  const interval = decode(intervalInput);
+  const intervalMillis = toMillis(interval);
+  return makeWithState([Option_none(), 0], (now, _, [option, n]) => sync(() => {
     switch (option._tag) {
       case "None":
         {
-          return [[Option.some([now, now + intervalMillis]), n + 1], n, ScheduleDecision.continueWith(Interval.after(now + intervalMillis))];
+          return [[mjs_Option_some([now, now + intervalMillis]), n + 1], n, ScheduleDecision_continueWith(ScheduleInterval_after(now + intervalMillis))];
         }
       case "Some":
         {
           const [startMillis, lastRun] = option.value;
           const runningBehind = now > lastRun + intervalMillis;
-          const boundary = Equal.equals(interval, Duration.zero) ? interval : Duration.millis(intervalMillis - (now - startMillis) % intervalMillis);
-          const sleepTime = Equal.equals(boundary, Duration.zero) ? interval : boundary;
-          const nextRun = runningBehind ? now : now + Duration.toMillis(sleepTime);
-          return [[Option.some([startMillis, nextRun]), n + 1], n, ScheduleDecision.continueWith(Interval.after(nextRun))];
+          const boundary = equals(interval, zero) ? interval : millis(intervalMillis - (now - startMillis) % intervalMillis);
+          const sleepTime = equals(boundary, zero) ? interval : boundary;
+          const nextRun = runningBehind ? now : now + toMillis(sleepTime);
+          return [[mjs_Option_some([startMillis, nextRun]), n + 1], n, ScheduleDecision_continueWith(ScheduleInterval_after(nextRun))];
         }
     }
   }));
@@ -38952,61 +39220,61 @@ const fixed = intervalInput => {
 /** @internal */
 const fromDelay = delay => duration(delay);
 /** @internal */
-const fromDelays = (delay, ...delays) => makeWithState([[delay, ...delays].map(_ => Duration.decode(_)), true], (now, _, [durations, cont]) => core.sync(() => {
+const fromDelays = (delay, ...delays) => makeWithState([[delay, ...delays].map(_ => decode(_)), true], (now, _, [durations, cont]) => sync(() => {
   if (cont) {
     const x = durations[0];
-    const interval = Interval.after(now + Duration.toMillis(x));
+    const interval = ScheduleInterval_after(now + toMillis(x));
     if (durations.length >= 2) {
-      return [[durations.slice(1), true], x, ScheduleDecision.continueWith(interval)];
+      return [[durations.slice(1), true], x, ScheduleDecision_continueWith(interval)];
     }
     const y = durations.slice(1);
-    return [[[x, ...y], false], x, ScheduleDecision.continueWith(interval)];
+    return [[[x, ...y], false], x, ScheduleDecision_continueWith(interval)];
   }
-  return [[durations, false], Duration.zero, ScheduleDecision.done];
+  return [[durations, false], zero, ScheduleDecision_done];
 }));
 /** @internal */
 const fromFunction = f => schedule_map(schedule_identity(), f);
 /** @internal */
 const hourOfDay = hour => makeWithState([Number.NEGATIVE_INFINITY, 0], (now, _, state) => {
   if (!Number.isInteger(hour) || hour < 0 || 23 < hour) {
-    return core.dieSync(() => internalCause.IllegalArgumentException(`Invalid argument in: hourOfDay(${hour}). Must be in range 0...23`));
+    return dieSync(() => IllegalArgumentException(`Invalid argument in: hourOfDay(${hour}). Must be in range 0...23`));
   }
   const n = state[1];
   const initial = n === 0;
   const hour0 = nextHour(now, hour, initial);
   const start = beginningOfHour(hour0);
   const end = endOfHour(hour0);
-  const interval = Interval.make(start, end);
-  return core.succeed([[end, n + 1], n, ScheduleDecision.continueWith(interval)]);
+  const interval = ScheduleInterval_make(start, end);
+  return succeed([[end, n + 1], n, ScheduleDecision_continueWith(interval)]);
 });
 /** @internal */
-const schedule_identity = () => makeWithState(void 0, (now, input, state) => core.succeed([state, input, ScheduleDecision.continueWith(Interval.after(now))]));
+const schedule_identity = () => makeWithState(void 0, (now, input, state) => succeed([state, input, ScheduleDecision_continueWith(ScheduleInterval_after(now))]));
 /** @internal */
-const schedule_intersect = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, that) => intersectWith(self, that, Intervals.intersect))));
+const schedule_intersect = /*#__PURE__*/Function_dual(2, (self, that) => intersectWith(self, that, ScheduleIntervals_intersect));
 /** @internal */
-const intersectWith = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(3, (self, that, f) => makeWithState([self.initial, that.initial], (now, input, state) => core.flatMap(([[lState, out, lDecision], [rState, out2, rDecision]]) => {
-  if (ScheduleDecision.isContinue(lDecision) && ScheduleDecision.isContinue(rDecision)) {
+const intersectWith = /*#__PURE__*/Function_dual(3, (self, that, f) => makeWithState([self.initial, that.initial], (now, input, state) => core_flatMap(([[lState, out, lDecision], [rState, out2, rDecision]]) => {
+  if (ScheduleDecision_isContinue(lDecision) && ScheduleDecision_isContinue(rDecision)) {
     return intersectWithLoop(self, that, input, lState, out, lDecision.intervals, rState, out2, rDecision.intervals, f);
   }
-  return core.succeed([[lState, rState], [out, out2], ScheduleDecision.done]);
-})(core.zipWith(self.step(now, input, state[0]), that.step(now, input, state[1]), (a, b) => [a, b]))))));
+  return succeed([[lState, rState], [out, out2], ScheduleDecision_done]);
+})(core_zipWith(self.step(now, input, state[0]), that.step(now, input, state[1]), (a, b) => [a, b]))));
 /** @internal */
 const intersectWithLoop = (self, that, input, lState, out, lInterval, rState, out2, rInterval, f) => {
   const combined = f(lInterval, rInterval);
-  if (Intervals.isNonEmpty(combined)) {
-    return core.succeed([[lState, rState], [out, out2], ScheduleDecision.continue(combined)]);
+  if (ScheduleIntervals_isNonEmpty(combined)) {
+    return succeed([[lState, rState], [out, out2], ScheduleDecision_continue(combined)]);
   }
-  if (Intervals.lessThan(rInterval)(lInterval)) {
-    return core.flatMap(self.step(Intervals.end(lInterval), input, lState), ([lState, out, decision]) => {
-      if (ScheduleDecision.isDone(decision)) {
-        return core.succeed([[lState, rState], [out, out2], ScheduleDecision.done]);
+  if (ScheduleIntervals_lessThan(rInterval)(lInterval)) {
+    return core_flatMap(self.step(ScheduleIntervals_end(lInterval), input, lState), ([lState, out, decision]) => {
+      if (ScheduleDecision_isDone(decision)) {
+        return succeed([[lState, rState], [out, out2], ScheduleDecision_done]);
       }
       return intersectWithLoop(self, that, input, lState, out, decision.intervals, rState, out2, rInterval, f);
     });
   }
-  return core.flatMap(that.step(Intervals.end(rInterval), input, rState), ([rState, out2, decision]) => {
-    if (ScheduleDecision.isDone(decision)) {
-      return core.succeed([[lState, rState], [out, out2], ScheduleDecision.done]);
+  return core_flatMap(that.step(ScheduleIntervals_end(rInterval), input, rState), ([rState, out2, decision]) => {
+    if (ScheduleDecision_isDone(decision)) {
+      return succeed([[lState, rState], [out, out2], ScheduleDecision_done]);
     }
     return intersectWithLoop(self, that, input, lState, out, lInterval, rState, out2, decision.intervals, f);
   });
@@ -39017,7 +39285,7 @@ const jittered = self => jitteredWith(self, {
   max: 1.2
 });
 /** @internal */
-const jitteredWith = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, options) => {
+const jitteredWith = /*#__PURE__*/Function_dual(2, (self, options) => {
   const {
     max,
     min
@@ -39025,73 +39293,73 @@ const jitteredWith = /*#__PURE__*/(/* unused pure expression or super */ null &&
     min: 0.8,
     max: 1.2
   }, options);
-  return delayedEffect(self, duration => core.map(Random.next, random => {
-    const d = Duration.toMillis(duration);
+  return delayedEffect(self, duration => core_map(Random_next, random => {
+    const d = toMillis(duration);
     const jittered = d * min * (1 - random) + d * max * random;
-    return Duration.millis(jittered);
+    return millis(jittered);
   }));
-})));
+});
 /** @internal */
 const schedule_linear = baseInput => {
-  const base = Duration.decode(baseInput);
-  return delayedSchedule(schedule_map(schedule_forever, i => Duration.times(base, i + 1)));
+  const base = decode(baseInput);
+  return delayedSchedule(schedule_map(schedule_forever, i => times(base, i + 1)));
 };
 /** @internal */
-const schedule_map = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, f) => schedule_mapEffect(self, out => core.sync(() => f(out))))));
+const schedule_map = /*#__PURE__*/Function_dual(2, (self, f) => schedule_mapEffect(self, out => sync(() => f(out))));
 /** @internal */
-const schedule_mapEffect = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, f) => makeWithState(self.initial, (now, input, state) => core.flatMap(self.step(now, input, state), ([state, out, decision]) => core.map(f(out), out2 => [state, out2, decision]))))));
+const schedule_mapEffect = /*#__PURE__*/Function_dual(2, (self, f) => makeWithState(self.initial, (now, input, state) => core_flatMap(self.step(now, input, state), ([state, out, decision]) => core_map(f(out), out2 => [state, out2, decision]))));
 /** @internal */
 const minuteOfHour = minute => makeWithState([Number.MIN_SAFE_INTEGER, 0], (now, _, state) => {
   if (!Number.isInteger(minute) || minute < 0 || 59 < minute) {
-    return core.dieSync(() => internalCause.IllegalArgumentException(`Invalid argument in: minuteOfHour(${minute}). Must be in range 0...59`));
+    return dieSync(() => IllegalArgumentException(`Invalid argument in: minuteOfHour(${minute}). Must be in range 0...59`));
   }
   const n = state[1];
   const initial = n === 0;
   const minute0 = nextMinute(now, minute, initial);
   const start = beginningOfMinute(minute0);
   const end = endOfMinute(minute0);
-  const interval = Interval.make(start, end);
-  return core.succeed([[end, n + 1], n, ScheduleDecision.continueWith(interval)]);
+  const interval = ScheduleInterval_make(start, end);
+  return succeed([[end, n + 1], n, ScheduleDecision_continueWith(interval)]);
 });
 /** @internal */
-const modifyDelay = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, f) => modifyDelayEffect(self, (out, duration) => core.sync(() => f(out, duration))))));
+const modifyDelay = /*#__PURE__*/Function_dual(2, (self, f) => modifyDelayEffect(self, (out, duration) => sync(() => f(out, duration))));
 /** @internal */
-const modifyDelayEffect = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, f) => makeWithState(self.initial, (now, input, state) => core.flatMap(self.step(now, input, state), ([state, out, decision]) => {
-  if (ScheduleDecision.isDone(decision)) {
-    return core.succeed([state, out, decision]);
+const modifyDelayEffect = /*#__PURE__*/Function_dual(2, (self, f) => makeWithState(self.initial, (now, input, state) => core_flatMap(self.step(now, input, state), ([state, out, decision]) => {
+  if (ScheduleDecision_isDone(decision)) {
+    return succeed([state, out, decision]);
   }
   const intervals = decision.intervals;
-  const delay = Interval.size(Interval.make(now, Intervals.start(intervals)));
-  return core.map(f(out, delay), durationInput => {
-    const duration = Duration.decode(durationInput);
-    const oldStart = Intervals.start(intervals);
-    const newStart = now + Duration.toMillis(duration);
+  const delay = ScheduleInterval_size(ScheduleInterval_make(now, ScheduleIntervals_start(intervals)));
+  return core_map(f(out, delay), durationInput => {
+    const duration = decode(durationInput);
+    const oldStart = ScheduleIntervals_start(intervals);
+    const newStart = now + toMillis(duration);
     const delta = newStart - oldStart;
-    const newEnd = Math.min(Math.max(0, Intervals.end(intervals) + delta), Number.MAX_SAFE_INTEGER);
-    const newInterval = Interval.make(newStart, newEnd);
-    return [state, out, ScheduleDecision.continueWith(newInterval)];
+    const newEnd = Math.min(Math.max(0, ScheduleIntervals_end(intervals) + delta), Number.MAX_SAFE_INTEGER);
+    const newInterval = ScheduleInterval_make(newStart, newEnd);
+    return [state, out, ScheduleDecision_continueWith(newInterval)];
   });
-})))));
+})));
 /** @internal */
-const onDecision = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, f) => makeWithState(self.initial, (now, input, state) => core.flatMap(self.step(now, input, state), ([state, out, decision]) => core.as(f(out, decision), [state, out, decision]))))));
+const onDecision = /*#__PURE__*/Function_dual(2, (self, f) => makeWithState(self.initial, (now, input, state) => core_flatMap(self.step(now, input, state), ([state, out, decision]) => core_as(f(out, decision), [state, out, decision]))));
 /** @internal */
-const passthrough = self => makeWithState(self.initial, (now, input, state) => core.map(([state, _, decision]) => [state, input, decision])(self.step(now, input, state)));
+const passthrough = self => makeWithState(self.initial, (now, input, state) => core_map(([state, _, decision]) => [state, input, decision])(self.step(now, input, state)));
 /** @internal */
-const schedule_provideContext = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, context) => makeWithState(self.initial, (now, input, state) => core.provideContext(self.step(now, input, state), context)))));
+const schedule_provideContext = /*#__PURE__*/Function_dual(2, (self, context) => makeWithState(self.initial, (now, input, state) => provideContext(self.step(now, input, state), context)));
 /** @internal */
-const schedule_provideService = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(3, (self, tag, service) => makeWithState(self.initial, (now, input, state) => core.contextWithEffect(env => core.provideContext(
+const schedule_provideService = /*#__PURE__*/Function_dual(3, (self, tag, service) => makeWithState(self.initial, (now, input, state) => contextWithEffect(env => provideContext(
 // @ts-expect-error
-self.step(now, input, state), Context.add(env, tag, service)))))));
+self.step(now, input, state), Context_add(env, tag, service)))));
 /** @internal */
 const recurUntil = f => untilInput(schedule_identity(), f);
 /** @internal */
 const recurUntilEffect = f => untilInputEffect(schedule_identity(), f);
 /** @internal */
-const recurUntilOption = pf => untilOutput(schedule_map(schedule_identity(), pf), Option.isSome);
+const recurUntilOption = pf => untilOutput(schedule_map(schedule_identity(), pf), Option_isSome);
 /** @internal */
 const recurUpTo = durationInput => {
-  const duration = Duration.decode(durationInput);
-  return whileOutput(elapsed, elapsed => Duration.lessThan(elapsed, duration));
+  const duration = decode(durationInput);
+  return whileOutput(elapsed, elapsed => Duration_lessThan(elapsed, duration));
 };
 /** @internal */
 const recurWhile = f => whileInput(schedule_identity(), f);
@@ -39100,9 +39368,9 @@ const recurWhileEffect = f => whileInputEffect(schedule_identity(), f);
 /** @internal */
 const recurs = n => whileOutput(schedule_forever, out => out < n);
 /** @internal */
-const schedule_reduce = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(3, (self, zero, f) => schedule_reduceEffect(self, zero, (z, out) => core.sync(() => f(z, out))))));
+const schedule_reduce = /*#__PURE__*/Function_dual(3, (self, zero, f) => schedule_reduceEffect(self, zero, (z, out) => sync(() => f(z, out))));
 /** @internal */
-const schedule_reduceEffect = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(3, (self, zero, f) => makeWithState([self.initial, zero], (now, input, [s, z]) => core.flatMap(self.step(now, input, s), ([s, out, decision]) => ScheduleDecision.isDone(decision) ? core.succeed([[s, z], z, decision]) : core.map(f(z, out), z2 => [[s, z2], z, decision]))))));
+const schedule_reduceEffect = /*#__PURE__*/Function_dual(3, (self, zero, f) => makeWithState([self.initial, zero], (now, input, [s, z]) => core_flatMap(self.step(now, input, s), ([s, out, decision]) => ScheduleDecision_isDone(decision) ? succeed([[s, z], z, decision]) : core_map(f(z, out), z2 => [[s, z2], z, decision]))));
 /** @internal */
 const repeatForever = self => makeWithState(self.initial, (now, input, state) => {
   const step = (now, input, state) => core.flatMap(self.step(now, input, state), ([state, out, decision]) => ScheduleDecision.isDone(decision) ? step(now, input, self.initial) : core.succeed([state, out, decision]));
@@ -39111,40 +39379,40 @@ const repeatForever = self => makeWithState(self.initial, (now, input, state) =>
 /** @internal */
 const repetitions = self => schedule_reduce(self, 0, (n, _) => n + 1);
 /** @internal */
-const resetAfter = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, durationInput) => {
-  const duration = Duration.decode(durationInput);
-  return schedule_map(out => out[0])(resetWhen(([, time]) => Duration.greaterThanOrEqualTo(time, duration))(schedule_intersect(elapsed)(self)));
-})));
+const resetAfter = /*#__PURE__*/Function_dual(2, (self, durationInput) => {
+  const duration = decode(durationInput);
+  return schedule_map(out => out[0])(resetWhen(([, time]) => Duration_greaterThanOrEqualTo(time, duration))(schedule_intersect(elapsed)(self)));
+});
 /** @internal */
-const resetWhen = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, f) => makeWithState(self.initial, (now, input, state) => core.flatMap(self.step(now, input, state), ([state, out, decision]) => f(out) ? self.step(now, input, self.initial) : core.succeed([state, out, decision]))))));
+const resetWhen = /*#__PURE__*/Function_dual(2, (self, f) => makeWithState(self.initial, (now, input, state) => core_flatMap(self.step(now, input, state), ([state, out, decision]) => f(out) ? self.step(now, input, self.initial) : succeed([state, out, decision]))));
 /** @internal */
-const run = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(3, (self, now, input) => core.map(list => Chunk.reverse(list))(runLoop(self, now, Chunk.fromIterable(input), self.initial, Chunk.empty())))));
+const run = /*#__PURE__*/Function_dual(3, (self, now, input) => core_map(list => Chunk_reverse(list))(runLoop(self, now, Chunk_fromIterable(input), self.initial, Chunk_empty())));
 /** @internal */
 const runLoop = (self, now, inputs, state, acc) => {
-  if (!Chunk.isNonEmpty(inputs)) {
-    return core.succeed(acc);
+  if (!isNonEmpty(inputs)) {
+    return succeed(acc);
   }
-  const input = Chunk.headNonEmpty(inputs);
-  const nextInputs = Chunk.tailNonEmpty(inputs);
-  return core.flatMap(self.step(now, input, state), ([state, out, decision]) => {
-    if (ScheduleDecision.isDone(decision)) {
-      return core.sync(() => Chunk.prepend(out)(acc));
+  const input = Chunk_headNonEmpty(inputs);
+  const nextInputs = Chunk_tailNonEmpty(inputs);
+  return core_flatMap(self.step(now, input, state), ([state, out, decision]) => {
+    if (ScheduleDecision_isDone(decision)) {
+      return sync(() => Chunk_prepend(out)(acc));
     }
-    return runLoop(self, Intervals.start(decision.intervals), nextInputs, state, Chunk.prepend(acc, out));
+    return runLoop(self, ScheduleIntervals_start(decision.intervals), nextInputs, state, Chunk_prepend(acc, out));
   });
 };
 /** @internal */
 const secondOfMinute = second => makeWithState([Number.NEGATIVE_INFINITY, 0], (now, _, state) => {
   if (!Number.isInteger(second) || second < 0 || 59 < second) {
-    return core.dieSync(() => internalCause.IllegalArgumentException(`Invalid argument in: secondOfMinute(${second}). Must be in range 0...59`));
+    return dieSync(() => IllegalArgumentException(`Invalid argument in: secondOfMinute(${second}). Must be in range 0...59`));
   }
   const n = state[1];
   const initial = n === 0;
   const second0 = nextSecond(now, second, initial);
   const start = beginningOfSecond(second0);
   const end = endOfSecond(second0);
-  const interval = Interval.make(start, end);
-  return core.succeed([[end, n + 1], n, ScheduleDecision.continueWith(interval)]);
+  const interval = ScheduleInterval_make(start, end);
+  return succeed([[end, n + 1], n, ScheduleDecision_continueWith(interval)]);
 });
 /** @internal */
 const spaced = duration => addDelay(schedule_forever, () => duration);
@@ -39153,71 +39421,71 @@ const schedule_succeed = value => schedule_map(schedule_forever, () => value);
 /** @internal */
 const schedule_sync = evaluate => schedule_map(schedule_forever, evaluate);
 /** @internal */
-const tapInput = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, f) => makeWithState(self.initial, (now, input, state) => core.zipRight(f(input), self.step(now, input, state))))));
+const tapInput = /*#__PURE__*/Function_dual(2, (self, f) => makeWithState(self.initial, (now, input, state) => core_zipRight(f(input), self.step(now, input, state))));
 /** @internal */
-const tapOutput = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, f) => makeWithState(self.initial, (now, input, state) => core.tap(self.step(now, input, state), ([, out]) => f(out))))));
+const tapOutput = /*#__PURE__*/Function_dual(2, (self, f) => makeWithState(self.initial, (now, input, state) => core_tap(self.step(now, input, state), ([, out]) => f(out))));
 /** @internal */
-const schedule_unfold = (initial, f) => makeWithState(initial, (now, _, state) => core.sync(() => [f(state), state, ScheduleDecision.continueWith(Interval.after(now))]));
+const schedule_unfold = (initial, f) => makeWithState(initial, (now, _, state) => sync(() => [f(state), state, ScheduleDecision_continueWith(ScheduleInterval_after(now))]));
 /** @internal */
-const schedule_union = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, that) => schedule_unionWith(self, that, Intervals.union))));
+const schedule_union = /*#__PURE__*/Function_dual(2, (self, that) => schedule_unionWith(self, that, ScheduleIntervals_union));
 /** @internal */
-const schedule_unionWith = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(3, (self, that, f) => makeWithState([self.initial, that.initial], (now, input, state) => core.zipWith(self.step(now, input, state[0]), that.step(now, input, state[1]), ([lState, l, lDecision], [rState, r, rDecision]) => {
-  if (ScheduleDecision.isDone(lDecision) && ScheduleDecision.isDone(rDecision)) {
-    return [[lState, rState], [l, r], ScheduleDecision.done];
+const schedule_unionWith = /*#__PURE__*/Function_dual(3, (self, that, f) => makeWithState([self.initial, that.initial], (now, input, state) => core_zipWith(self.step(now, input, state[0]), that.step(now, input, state[1]), ([lState, l, lDecision], [rState, r, rDecision]) => {
+  if (ScheduleDecision_isDone(lDecision) && ScheduleDecision_isDone(rDecision)) {
+    return [[lState, rState], [l, r], ScheduleDecision_done];
   }
-  if (ScheduleDecision.isDone(lDecision) && ScheduleDecision.isContinue(rDecision)) {
-    return [[lState, rState], [l, r], ScheduleDecision.continue(rDecision.intervals)];
+  if (ScheduleDecision_isDone(lDecision) && ScheduleDecision_isContinue(rDecision)) {
+    return [[lState, rState], [l, r], ScheduleDecision_continue(rDecision.intervals)];
   }
-  if (ScheduleDecision.isContinue(lDecision) && ScheduleDecision.isDone(rDecision)) {
-    return [[lState, rState], [l, r], ScheduleDecision.continue(lDecision.intervals)];
+  if (ScheduleDecision_isContinue(lDecision) && ScheduleDecision_isDone(rDecision)) {
+    return [[lState, rState], [l, r], ScheduleDecision_continue(lDecision.intervals)];
   }
-  if (ScheduleDecision.isContinue(lDecision) && ScheduleDecision.isContinue(rDecision)) {
+  if (ScheduleDecision_isContinue(lDecision) && ScheduleDecision_isContinue(rDecision)) {
     const combined = f(lDecision.intervals, rDecision.intervals);
-    return [[lState, rState], [l, r], ScheduleDecision.continue(combined)];
+    return [[lState, rState], [l, r], ScheduleDecision_continue(combined)];
   }
   throw new Error("BUG: Schedule.unionWith - please report an issue at https://github.com/Effect-TS/io/issues");
-})))));
+})));
 /** @internal */
-const untilInput = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, f) => check(self, (input, _) => !f(input)))));
+const untilInput = /*#__PURE__*/Function_dual(2, (self, f) => check(self, (input, _) => !f(input)));
 /** @internal */
-const untilInputEffect = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, f) => checkEffect(self, (input, _) => effect.negate(f(input))))));
+const untilInputEffect = /*#__PURE__*/Function_dual(2, (self, f) => checkEffect(self, (input, _) => negate(f(input))));
 /** @internal */
-const untilOutput = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, f) => check(self, (_, out) => !f(out)))));
+const untilOutput = /*#__PURE__*/Function_dual(2, (self, f) => check(self, (_, out) => !f(out)));
 /** @internal */
-const untilOutputEffect = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, f) => checkEffect(self, (_, out) => effect.negate(f(out))))));
+const untilOutputEffect = /*#__PURE__*/Function_dual(2, (self, f) => checkEffect(self, (_, out) => negate(f(out))));
 /** @internal */
-const upTo = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, duration) => schedule_zipLeft(self, recurUpTo(duration)))));
+const upTo = /*#__PURE__*/Function_dual(2, (self, duration) => schedule_zipLeft(self, recurUpTo(duration)));
 /** @internal */
-const whileInput = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, f) => check(self, (input, _) => f(input)))));
+const whileInput = /*#__PURE__*/Function_dual(2, (self, f) => check(self, (input, _) => f(input)));
 /** @internal */
-const whileInputEffect = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, f) => checkEffect(self, (input, _) => f(input)))));
+const whileInputEffect = /*#__PURE__*/Function_dual(2, (self, f) => checkEffect(self, (input, _) => f(input)));
 /** @internal */
-const whileOutput = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, f) => check(self, (_, out) => f(out)))));
+const whileOutput = /*#__PURE__*/Function_dual(2, (self, f) => check(self, (_, out) => f(out)));
 /** @internal */
-const whileOutputEffect = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, f) => checkEffect(self, (_, out) => f(out)))));
+const whileOutputEffect = /*#__PURE__*/Function_dual(2, (self, f) => checkEffect(self, (_, out) => f(out)));
 /** @internal */
 const windowed = intervalInput => {
-  const interval = Duration.decode(intervalInput);
-  const millis = Duration.toMillis(interval);
-  return makeWithState([Option.none(), 0], (now, _, [option, n]) => {
+  const interval = decode(intervalInput);
+  const millis = toMillis(interval);
+  return makeWithState([Option_none(), 0], (now, _, [option, n]) => {
     switch (option._tag) {
       case "None":
         {
-          return core.succeed([[Option.some(now), n + 1], n, ScheduleDecision.continueWith(Interval.after(now + millis))]);
+          return succeed([[mjs_Option_some(now), n + 1], n, ScheduleDecision_continueWith(ScheduleInterval_after(now + millis))]);
         }
       case "Some":
         {
-          return core.succeed([[Option.some(option.value), n + 1], n, ScheduleDecision.continueWith(Interval.after(now + (millis - (now - option.value) % millis)))]);
+          return succeed([[mjs_Option_some(option.value), n + 1], n, ScheduleDecision_continueWith(ScheduleInterval_after(now + (millis - (now - option.value) % millis)))]);
         }
     }
   });
 };
 /** @internal */
-const schedule_zipLeft = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, that) => schedule_map(schedule_intersect(self, that), out => out[0]))));
+const schedule_zipLeft = /*#__PURE__*/Function_dual(2, (self, that) => schedule_map(schedule_intersect(self, that), out => out[0]));
 /** @internal */
-const schedule_zipRight = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, that) => schedule_map(schedule_intersect(self, that), out => out[1]))));
+const schedule_zipRight = /*#__PURE__*/Function_dual(2, (self, that) => schedule_map(schedule_intersect(self, that), out => out[1]));
 /** @internal */
-const schedule_zipWith = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(3, (self, that, f) => schedule_map(schedule_intersect(self, that), ([out, out2]) => f(out, out2)))));
+const schedule_zipWith = /*#__PURE__*/Function_dual(3, (self, that, f) => schedule_map(schedule_intersect(self, that), ([out, out2]) => f(out, out2)));
 // -----------------------------------------------------------------------------
 // Seconds
 // -----------------------------------------------------------------------------
@@ -39402,29 +39670,30 @@ const scheduleFrom_EffectLoop = (self, initial, driver) => matchEffect(driver.ne
   onSuccess: () => core_flatMap(self, a => scheduleFrom_EffectLoop(self, a, driver))
 });
 /** @internal */
-const count = /*#__PURE__*/(/* unused pure expression or super */ null && (schedule_unfold(0, n => n + 1)));
+const count = /*#__PURE__*/schedule_unfold(0, n => n + 1);
 /** @internal */
-const elapsed = /*#__PURE__*/(/* unused pure expression or super */ null && (makeWithState( /*#__PURE__*/Option.none(), (now, _, state) => {
+const elapsed = /*#__PURE__*/makeWithState( /*#__PURE__*/Option_none(), (now, _, state) => {
   switch (state._tag) {
     case "None":
       {
-        return core.succeed([Option.some(now), Duration.zero, ScheduleDecision.continueWith(Interval.after(now))]);
+        return succeed([mjs_Option_some(now), zero, ScheduleDecision_continueWith(ScheduleInterval_after(now))]);
       }
     case "Some":
       {
-        return core.succeed([Option.some(state.value), Duration.millis(now - state.value), ScheduleDecision.continueWith(Interval.after(now))]);
+        return succeed([mjs_Option_some(state.value), millis(now - state.value), ScheduleDecision_continueWith(ScheduleInterval_after(now))]);
       }
   }
-})));
+});
 /** @internal */
-const schedule_forever = /*#__PURE__*/(/* unused pure expression or super */ null && (schedule_unfold(0, n => n + 1)));
+const schedule_forever = /*#__PURE__*/schedule_unfold(0, n => n + 1);
 /** @internal */
-const schedule_once = /*#__PURE__*/(/* unused pure expression or super */ null && (schedule_asUnit( /*#__PURE__*/recurs(1))));
+const schedule_once = /*#__PURE__*/schedule_asUnit( /*#__PURE__*/recurs(1));
 /** @internal */
-const stop = /*#__PURE__*/(/* unused pure expression or super */ null && (schedule_asUnit( /*#__PURE__*/recurs(0))));
+const stop = /*#__PURE__*/schedule_asUnit( /*#__PURE__*/recurs(0));
 //# sourceMappingURL=schedule.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/effect/circular.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/effect/circular.mjs
 var circular_a, circular_b, circular_c;
+
 
 
 
@@ -39701,7 +39970,7 @@ const zipWithFiber = /*#__PURE__*/Function_dual(3, (self, that, f) => ({
   }
 }));
 //# sourceMappingURL=circular.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/opCodes/layer.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/opCodes/layer.mjs
 /** @internal */
 const OP_EXTEND_SCOPE = "ExtendScope";
 /** @internal */
@@ -39721,7 +39990,7 @@ const layer_OP_ZIP_WITH = "ZipWith";
 /** @internal */
 const OP_ZIP_WITH_PAR = "ZipWithPar";
 //# sourceMappingURL=layer.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/synchronizedRef.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/synchronizedRef.mjs
 
 
 
@@ -39766,7 +40035,7 @@ const updateSomeEffect = /*#__PURE__*/(/* unused pure expression or super */ nul
   }
 }))));
 //# sourceMappingURL=synchronizedRef.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/layer.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/layer.mjs
 
 
 
@@ -40214,7 +40483,7 @@ const provideLayer = /*#__PURE__*/Function_dual(2, (self, layer) => acquireUseRe
 /** @internal */
 const provideSomeLayer = /*#__PURE__*/Function_dual(2, (self, layer) => provideLayer(self, layer_merge(layer_context(), layer)));
 //# sourceMappingURL=layer.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/layer/circular.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/layer/circular.mjs
 
 
 
@@ -40274,7 +40543,7 @@ const setSpan = (name, options) => scopedDiscard(withSpanScoped(name, options));
 /** @internal */
 const setTracer = tracer => scopedDiscard(withTracerScoped(tracer));
 //# sourceMappingURL=circular.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.3/node_modules/@effect/data/mjs/MutableList.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/MutableList.mjs
 /**
  * @since 1.0.0
  */
@@ -40315,12 +40584,12 @@ const MutableListProto = {
     };
   },
   toString() {
-    return `MutableList(${Array.from(this).map(String).join(", ")})`;
+    return Inspectable_toString(this.toJSON());
   },
   toJSON() {
     return {
-      _tag: "MutableList",
-      values: Array.from(this)
+      _id: "MutableList",
+      values: Array.from(this).map(toJSON)
     };
   },
   [NodeInspectSymbol]() {
@@ -40517,7 +40786,7 @@ const MutableList_remove = (self, node) => {
   }
 };
 //# sourceMappingURL=MutableList.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.3/node_modules/@effect/data/mjs/MutableQueue.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/MutableQueue.mjs
 /**
  * @since 1.0.0
  */
@@ -40538,12 +40807,12 @@ const MutableQueueProto = {
     return Array.from(this.queue)[Symbol.iterator]();
   },
   toString() {
-    return `MutableQueue(${Array.from(this).map(String).join(", ")})`;
+    return Inspectable_toString(this.toJSON());
   },
   toJSON() {
     return {
-      _tag: "MutableQueue",
-      values: Array.from(this)
+      _id: "MutableQueue",
+      values: Array.from(this).map(toJSON)
     };
   },
   [NodeInspectSymbol]() {
@@ -40677,7 +40946,7 @@ const pollUpTo = /*#__PURE__*/(/* unused pure expression or super */ null && (Du
   return Chunk.reverse(result);
 })));
 //# sourceMappingURL=MutableQueue.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/cache.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/cache.mjs
 var cache_a, cache_b;
 
 
@@ -40963,7 +41232,7 @@ class CacheImpl {
                 return core_asUnit(this.get(key));
               }
               // Only trigger the lookup if we're still the current value, `completedResult`
-              return core_asUnit(when(() => {
+              return core_asUnit(effect_when(() => {
                 const current = getOrUndefined(MutableHashMap_get(this.cacheState.map, k));
                 if (equals(current, value)) {
                   const mapValue = refreshing(deferred, value);
@@ -41137,7 +41406,7 @@ const makeWith = options => core.map(fiberRuntime.all([core.context(), core.fibe
 /** @internal */
 const unsafeMakeWith = (capacity, lookup, timeToLive) => new CacheImpl(capacity, mjs_Context_empty(), fiberId_none, lookup, exit => decode(timeToLive(exit)));
 //# sourceMappingURL=cache.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/query.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/query.mjs
 
 
 
@@ -41231,7 +41500,7 @@ const withRequestCache = /*#__PURE__*/Function_dual(2,
 // @ts-expect-error
 (self, cache) => fiberRefLocally(self, currentCache, cache));
 //# sourceMappingURL=query.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/Fiber.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/Fiber.mjs
 
 
 
@@ -41572,7 +41841,8 @@ const Fiber_zipRight = zipRightFiber;
  */
 const Fiber_zipWith = zipWithFiber;
 //# sourceMappingURL=Fiber.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/internal/runtime.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/internal/runtime.mjs
+
 
 
 
@@ -41613,7 +41883,7 @@ const runtime_unsafeFork = runtime => (self, options) => {
   const supervisor = fiberRuntime._supervisor;
   if (supervisor !== supervisor_none) {
     supervisor.onStart(runtime.context, effect, Option_none(), fiberRuntime);
-    fiberRuntime.unsafeAddObserver(exit => supervisor.onEnd(exit, fiberRuntime));
+    fiberRuntime.addObserver(exit => supervisor.onEnd(exit, fiberRuntime));
   }
   globalScope.add(runtime.runtimeFlags, fiberRuntime);
   fiberRuntime.start(effect);
@@ -41623,7 +41893,7 @@ const runtime_unsafeFork = runtime => (self, options) => {
 const unsafeRunCallback = runtime => (effect, onExit) => {
   const fiberRuntime = runtime_unsafeFork(runtime)(effect);
   if (onExit) {
-    fiberRuntime.unsafeAddObserver(exit => {
+    fiberRuntime.addObserver(exit => {
       onExit(exit);
     });
   }
@@ -41661,7 +41931,7 @@ const asyncFiberException = fiber => {
         return () => message;
       }
     },
-    [NodePrint]: {
+    [NodeInspectSymbol]: {
       get() {
         return () => message;
       }
@@ -41676,26 +41946,31 @@ const FiberFailureId = /*#__PURE__*/Symbol.for("@effect/io/Runtime/FiberFailure"
 /** @internal */
 const FiberFailureCauseId = /*#__PURE__*/Symbol.for("@effect/io/Runtime/FiberFailure/Cause");
 /** @internal */
-const NodePrint = /*#__PURE__*/Symbol.for("nodejs.util.inspect.custom");
-/** @internal */
 const fiberFailure = cause => {
   const limit = Error.stackTraceLimit;
   Error.stackTraceLimit = 0;
   const error = new Error();
   Error.stackTraceLimit = limit;
-  const pretty = prettyErrors(cause);
-  if (pretty.length > 0) {
-    error.name = pretty[0].message.split(":")[0];
-    error.message = pretty[0].message.substring(error.name.length + 2);
-    error.stack = `${error.name}: ${error.message}\n${pretty[0].stack}`;
+  const prettyErrors = cause_prettyErrors(cause);
+  if (prettyErrors.length > 0) {
+    const head = prettyErrors[0];
+    error.name = head.message.split(":")[0];
+    error.message = head.message.substring(error.name.length + 2);
+    error.stack = `${error.name}: ${error.message}\n${head.stack}`;
   }
   error[FiberFailureId] = FiberFailureId;
   error[FiberFailureCauseId] = cause;
-  error.toString = () => {
-    return cause_pretty(cause);
+  error.toJSON = () => {
+    return {
+      _id: "FiberFailure",
+      cause: cause.toJSON()
+    };
   };
-  error[NodePrint] = () => {
-    return error.toString();
+  error.toString = () => {
+    return Inspectable_toString(error.toJSON());
+  };
+  error[NodeInspectSymbol] = () => {
+    return error.toJSON();
   };
   return error;
 };
@@ -41765,7 +42040,7 @@ const unsafeRunPromiseExit = runtime => effect => new Promise(resolve => {
   if (op) {
     resolve(op);
   }
-  runtime_unsafeFork(runtime)(effect).unsafeAddObserver(exit => {
+  runtime_unsafeFork(runtime)(effect).addObserver(exit => {
     resolve(exit);
   });
 });
@@ -41781,16 +42056,16 @@ class RuntimeImpl {
   }
 }
 /** @internal */
-const runtime_make = options => new RuntimeImpl(options.context, options.flags, options.fiberRefs);
+const runtime_make = options => new RuntimeImpl(options.context, options.runtimeFlags, options.fiberRefs);
 /** @internal */
-const runtime_runtime = () => withFiberRuntime((state, status) => succeed(new RuntimeImpl(state.getFiberRef(currentContext), status.runtimeFlags, state.unsafeGetFiberRefs())));
+const runtime_runtime = () => withFiberRuntime((state, status) => succeed(new RuntimeImpl(state.getFiberRef(currentContext), status.runtimeFlags, state.getFiberRefs())));
 /** @internal */
 const defaultRuntimeFlags = /*#__PURE__*/runtimeFlags_make(Interruption, CooperativeYielding, RuntimeMetrics);
 /** @internal */
 const defaultRuntime = /*#__PURE__*/runtime_make({
   context: /*#__PURE__*/mjs_Context_empty(),
-  flags: defaultRuntimeFlags,
-  fiberRefs: /*#__PURE__*/FiberRefs_unsafeMake( /*#__PURE__*/new Map())
+  runtimeFlags: defaultRuntimeFlags,
+  fiberRefs: /*#__PURE__*/FiberRefs_empty()
 });
 /** @internal */
 const unsafeRunEffect = /*#__PURE__*/unsafeRunCallback(defaultRuntime);
@@ -41808,7 +42083,8 @@ const unsafeRunSyncExitEffect = /*#__PURE__*/unsafeRunSyncExit(defaultRuntime);
 /** @internal */
 const asyncEffect = register => core_flatMap(deferredMake(), deferred => core_flatMap(runtime_runtime(), runtime => uninterruptibleMask(restore => core_zipRight(fork(restore(catchAllCause(register(cb => unsafeRunCallback(runtime)(intoDeferred(cb, deferred))), cause => deferredFailCause(deferred, cause)))), restore(deferredAwait(deferred))))));
 //# sourceMappingURL=runtime.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.39.1_@effect+data@0.18.3/node_modules/@effect/io/mjs/Effect.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/Effect.mjs
+
 
 
 
@@ -43097,14 +43373,7 @@ const Effect_withConcurrency = withConcurrency;
  * @since 1.0.0
  * @category scheduler
  */
-const setScheduler = scheduler => layer.scopedDiscard(fiberRuntime.fiberRefLocallyScoped(core.currentScheduler, scheduler));
-/**
- * Sets the child effect's maximum number of ops before yield
- *
- * @since 1.0.0
- * @category scheduler
- */
-const Effect_withMaxFiberOps = withMaxFiberOps;
+const setScheduler = scheduler => layer.scopedDiscard(fiberRuntime.fiberRefLocallyScoped(Scheduler.currentScheduler, scheduler));
 /**
  * Sets the provided scheduler for usage in the wrapped effect
  *
@@ -43119,6 +43388,13 @@ const Effect_withScheduler = withScheduler;
  * @category utils
  */
 const Effect_withSchedulingPriority = withSchedulingPriority;
+/**
+ * Sets the maximum number of operations before yield by the default schedulers
+ *
+ * @since 1.0.0
+ * @category utils
+ */
+const Effect_withMaxOpsBeforeYield = withMaxOpsBeforeYield;
 // ---------------------------------------------------------------------------------------
 // clock
 // ---------------------------------------------------------------------------------------
@@ -43524,7 +43800,7 @@ const Effect_unlessEffect = unlessEffect;
  * @since 1.0.0
  * @category filtering & conditionals
  */
-const Effect_when = when;
+const Effect_when = effect_when;
 /**
  * @since 1.0.0
  * @category filtering & conditionals
@@ -44502,7 +44778,7 @@ const Effect_optionFromOptional = optionFromOptional;
 const utils_logInfo = (message) => Effect_sync(() => lib_core.info(message));
 const utils_logDebug = (message) => Effect_sync(() => lib_core.debug(`-- ${message}`));
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.3/node_modules/@effect/data/mjs/Brand.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/Brand.mjs
 /**
  * This module provides types and utility functions to create and work with branded types,
  * which are TypeScript types with an added type tag to prevent accidental usage of a value in the wrong context.
@@ -44673,7 +44949,261 @@ const Brand_all = (...brands) => {
   });
 };
 //# sourceMappingURL=Brand.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+schema@0.33.2_@effect+data@0.18.3_@effect+io@0.39.1/node_modules/@effect/schema/mjs/internal/common.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/internal/Encoding/Common.mjs
+/** @internal */
+const DecodeExceptionTypeId = /*#__PURE__*/Symbol.for("@effect/data/Encoding/errors/Decode");
+/** @internal */
+const DecodeException = (input, message) => ({
+  _tag: "DecodeException",
+  [DecodeExceptionTypeId]: DecodeExceptionTypeId,
+  input,
+  message
+});
+/** @internal */
+const isDecodeException = u => typeof u === "object" && u != null && DecodeExceptionTypeId in u;
+/** @interal */
+const encoder = /*#__PURE__*/new TextEncoder();
+/** @interal */
+const decoder = /*#__PURE__*/new TextDecoder();
+//# sourceMappingURL=Common.mjs.map
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/internal/Encoding/Base64.mjs
+
+
+/** @internal */
+const encode = bytes => {
+  const length = bytes.length;
+  let result = "";
+  let i;
+  for (i = 2; i < length; i += 3) {
+    result += base64abc[bytes[i - 2] >> 2];
+    result += base64abc[(bytes[i - 2] & 0x03) << 4 | bytes[i - 1] >> 4];
+    result += base64abc[(bytes[i - 1] & 0x0f) << 2 | bytes[i] >> 6];
+    result += base64abc[bytes[i] & 0x3f];
+  }
+  if (i === length + 1) {
+    // 1 octet yet to write
+    result += base64abc[bytes[i - 2] >> 2];
+    result += base64abc[(bytes[i - 2] & 0x03) << 4];
+    result += "==";
+  }
+  if (i === length) {
+    // 2 octets yet to write
+    result += base64abc[bytes[i - 2] >> 2];
+    result += base64abc[(bytes[i - 2] & 0x03) << 4 | bytes[i - 1] >> 4];
+    result += base64abc[(bytes[i - 1] & 0x0f) << 2];
+    result += "=";
+  }
+  return result;
+};
+/** @internal */
+const Base64_decode = str => {
+  const length = str.length;
+  if (length % 4 !== 0) {
+    return Either_left(DecodeException(str, `Length must be a multiple of 4, but is ${length}`));
+  }
+  const index = str.indexOf("=");
+  if (index !== -1 && (index < length - 2 || index === length - 2 && str[length - 1] !== "=")) {
+    return Either_left(DecodeException(str, "Found a '=' character, but it is not at the end"));
+  }
+  try {
+    const missingOctets = str.endsWith("==") ? 2 : str.endsWith("=") ? 1 : 0;
+    const result = new Uint8Array(3 * (length / 4));
+    for (let i = 0, j = 0; i < length; i += 4, j += 3) {
+      const buffer = getBase64Code(str.charCodeAt(i)) << 18 | getBase64Code(str.charCodeAt(i + 1)) << 12 | getBase64Code(str.charCodeAt(i + 2)) << 6 | getBase64Code(str.charCodeAt(i + 3));
+      result[j] = buffer >> 16;
+      result[j + 1] = buffer >> 8 & 0xff;
+      result[j + 2] = buffer & 0xff;
+    }
+    return Either_right(result.subarray(0, result.length - missingOctets));
+  } catch (e) {
+    return Either_left(DecodeException(str, e instanceof Error ? e.message : "Invalid input"));
+  }
+};
+/** @internal */
+function getBase64Code(charCode) {
+  if (charCode >= base64codes.length) {
+    throw new TypeError(`Invalid character ${String.fromCharCode(charCode)}`);
+  }
+  const code = base64codes[charCode];
+  if (code === 255) {
+    throw new TypeError(`Invalid character ${String.fromCharCode(charCode)}`);
+  }
+  return code;
+}
+/** @internal */
+const base64abc = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "+", "/"];
+/** @internal */
+const base64codes = [255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 62, 255, 255, 255, 63, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 255, 255, 255, 0, 255, 255, 255, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 255, 255, 255, 255, 255, 255, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51];
+//# sourceMappingURL=Base64.mjs.map
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/internal/Encoding/Base64Url.mjs
+
+
+
+/** @internal */
+const Base64Url_encode = data => encode(data).replace(/=/g, "").replace(/\+/g, "-").replace(/\//g, "_");
+/** @internal */
+const Base64Url_decode = str => {
+  const length = str.length;
+  if (length % 4 === 1) {
+    return Either_left(DecodeException(str, `Length should be a multiple of 4, but is ${length}`));
+  }
+  if (!/^[-_A-Z0-9]*?={0,2}$/i.test(str)) {
+    return Either_left(DecodeException(str, "Invalid input"));
+  }
+  // Some variants allow or require omitting the padding '=' signs
+  let sanitized = length % 4 === 2 ? `${str}==` : length % 4 === 3 ? `${str}=` : str;
+  sanitized = sanitized.replace(/-/g, "+").replace(/_/g, "/");
+  return Base64_decode(sanitized);
+};
+//# sourceMappingURL=Base64Url.mjs.map
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/internal/Encoding/Hex.mjs
+
+
+/** @internal */
+const Hex_encode = bytes => {
+  let result = "";
+  for (let i = 0; i < bytes.length; ++i) {
+    result += bytesToHex[bytes[i]];
+  }
+  return result;
+};
+/** @internal */
+const Hex_decode = str => {
+  const bytes = new TextEncoder().encode(str);
+  if (bytes.length % 2 !== 0) {
+    return Either_left(DecodeException(str, `Length must be a multiple of 2, but is ${bytes.length}`));
+  }
+  try {
+    const length = bytes.length / 2;
+    const result = new Uint8Array(length);
+    for (let i = 0; i < length; i++) {
+      const a = fromHexChar(bytes[i * 2]);
+      const b = fromHexChar(bytes[i * 2 + 1]);
+      result[i] = a << 4 | b;
+    }
+    return Either_right(result);
+  } catch (e) {
+    return Either_left(DecodeException(str, e instanceof Error ? e.message : "Invalid input"));
+  }
+};
+/** @internal */
+const bytesToHex = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "0a", "0b", "0c", "0d", "0e", "0f", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "1a", "1b", "1c", "1d", "1e", "1f", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "2a", "2b", "2c", "2d", "2e", "2f", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "3a", "3b", "3c", "3d", "3e", "3f", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "4a", "4b", "4c", "4d", "4e", "4f", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "5a", "5b", "5c", "5d", "5e", "5f", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "6a", "6b", "6c", "6d", "6e", "6f", "70", "71", "72", "73", "74", "75", "76", "77", "78", "79", "7a", "7b", "7c", "7d", "7e", "7f", "80", "81", "82", "83", "84", "85", "86", "87", "88", "89", "8a", "8b", "8c", "8d", "8e", "8f", "90", "91", "92", "93", "94", "95", "96", "97", "98", "99", "9a", "9b", "9c", "9d", "9e", "9f", "a0", "a1", "a2", "a3", "a4", "a5", "a6", "a7", "a8", "a9", "aa", "ab", "ac", "ad", "ae", "af", "b0", "b1", "b2", "b3", "b4", "b5", "b6", "b7", "b8", "b9", "ba", "bb", "bc", "bd", "be", "bf", "c0", "c1", "c2", "c3", "c4", "c5", "c6", "c7", "c8", "c9", "ca", "cb", "cc", "cd", "ce", "cf", "d0", "d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8", "d9", "da", "db", "dc", "dd", "de", "df", "e0", "e1", "e2", "e3", "e4", "e5", "e6", "e7", "e8", "e9", "ea", "eb", "ec", "ed", "ee", "ef", "f0", "f1", "f2", "f3", "f4", "f5", "f6", "f7", "f8", "f9", "fa", "fb", "fc", "fd", "fe", "ff"];
+/** @internal */
+const fromHexChar = byte => {
+  // '0' <= byte && byte <= '9'
+  if (48 <= byte && byte <= 57) {
+    return byte - 48;
+  }
+  // 'a' <= byte && byte <= 'f'
+  if (97 <= byte && byte <= 102) {
+    return byte - 97 + 10;
+  }
+  // 'A' <= byte && byte <= 'F'
+  if (65 <= byte && byte <= 70) {
+    return byte - 65 + 10;
+  }
+  throw new TypeError("Invalid input");
+};
+//# sourceMappingURL=Hex.mjs.map
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+data@0.18.5/node_modules/@effect/data/mjs/Encoding.mjs
+/**
+ * This module provides encoding & decoding functionality for:
+ *
+ * - base64 (RFC4648)
+ * - base64 (URL)
+ * - hex
+ *
+ * @since 1.0.0
+ */
+
+
+
+
+
+/**
+ * Encodes the given value into a base64 (RFC4648) `string`.
+ *
+ * @category encoding
+ * @since 1.0.0
+ */
+const encodeBase64 = input => typeof input === "string" ? encode(encoder.encode(input)) : encode(input);
+/**
+ * Decodes a base64 (RFC4648) encoded `string` into a `Uint8Array`.
+ *
+ * @category decoding
+ * @since 1.0.0
+ */
+const decodeBase64 = str => Base64_decode(str);
+/**
+ * Decodes a base64 (RFC4648) encoded `string` into a UTF-8 `string`.
+ *
+ * @category decoding
+ * @since 1.0.0
+ */
+const decodeBase64String = str => Either.map(decodeBase64(str), _ => Common.decoder.decode(_));
+/**
+ * Encodes the given value into a base64 (URL) `string`.
+ *
+ * @category encoding
+ * @since 1.0.0
+ */
+const encodeBase64Url = input => typeof input === "string" ? Base64Url_encode(encoder.encode(input)) : Base64Url_encode(input);
+/**
+ * Decodes a base64 (URL) encoded `string` into a `Uint8Array`.
+ *
+ * @category decoding
+ * @since 1.0.0
+ */
+const decodeBase64Url = str => Base64Url_decode(str);
+/**
+ * Decodes a base64 (URL) encoded `string` into a UTF-8 `string`.
+ *
+ * @category decoding
+ * @since 1.0.0
+ */
+const decodeBase64UrlString = str => Either.map(decodeBase64Url(str), _ => Common.decoder.decode(_));
+/**
+ * Encodes the given value into a hex `string`.
+ *
+ * @category encoding
+ * @since 1.0.0
+ */
+const encodeHex = input => typeof input === "string" ? Hex_encode(encoder.encode(input)) : Hex_encode(input);
+/**
+ * Decodes a hex encoded `string` into a `Uint8Array`.
+ *
+ * @category decoding
+ * @since 1.0.0
+ */
+const decodeHex = str => Hex_decode(str);
+/**
+ * Decodes a hex encoded `string` into a UTF-8 `string`.
+ *
+ * @category decoding
+ * @since 1.0.0
+ */
+const decodeHexString = str => Either.map(decodeHex(str), _ => Common.decoder.decode(_));
+/**
+ * @since 1.0.0
+ * @category symbols
+ */
+const Encoding_DecodeExceptionTypeId = DecodeExceptionTypeId;
+/**
+ * Creates a checked exception which occurs when decoding fails.
+ *
+ * @since 1.0.0
+ * @category errors
+ */
+const Encoding_DecodeException = DecodeException;
+/**
+ * Returns `true` if the specified value is an `DecodeException`, `false` otherwise.
+ *
+ * @since 1.0.0
+ * @category refinements
+ */
+const Encoding_isDecodeException = isDecodeException;
+//# sourceMappingURL=Encoding.mjs.map
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+schema@0.36.2_@effect+data@0.18.5_@effect+io@0.40.3/node_modules/@effect/schema/mjs/internal/common.mjs
 /**
  * @since 1.0.0
  */
@@ -44681,9 +45211,9 @@ const Brand_all = (...brands) => {
 // hooks
 // ---------------------------------------------
 /** @internal */
-const ArbitraryHookId = "@effect/schema/ArbitraryHookId";
+const ArbitraryHookId = /*#__PURE__*/Symbol.for("@effect/schema/ArbitraryHookId");
 /** @internal */
-const PrettyHookId = "@effect/schema/PrettyHookId";
+const PrettyHookId = /*#__PURE__*/Symbol.for("@effect/schema/PrettyHookId");
 // ---------------------------------------------
 // Schema APIs
 // ---------------------------------------------
@@ -44703,6 +45233,10 @@ const getKeysForIndexSignature = (input, parameter) => {
 // general helpers
 // ---------------------------------------------
 /** @internal */
+const maxSafeInteger = /*#__PURE__*/BigInt(Number.MAX_SAFE_INTEGER);
+/** @internal */
+const minSafeInteger = /*#__PURE__*/BigInt(Number.MIN_SAFE_INTEGER);
+/** @internal */
 const common_ownKeys = o => Object.keys(o).concat(Object.getOwnPropertySymbols(o));
 /** @internal */
 const memoizeThunk = f => {
@@ -44718,138 +45252,10 @@ const memoizeThunk = f => {
   };
 };
 //# sourceMappingURL=common.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+schema@0.33.2_@effect+data@0.18.3_@effect+io@0.39.1/node_modules/@effect/schema/mjs/ParseResult.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+schema@0.36.2_@effect+data@0.18.5_@effect+io@0.40.3/node_modules/@effect/schema/mjs/AST.mjs
 /**
  * @since 1.0.0
  */
-
-
-
-/**
- * @since 1.0.0
- */
-const parseError = errors => ({
-  _tag: "ParseError",
-  errors
-});
-/**
- * @category constructors
- * @since 1.0.0
- */
-const type = (expected, actual, message) => ({
-  _tag: "Type",
-  expected,
-  actual,
-  message: fromNullable(message)
-});
-/**
- * @category constructors
- * @since 1.0.0
- */
-const forbidden = {
-  _tag: "Forbidden"
-};
-/**
- * @category constructors
- * @since 1.0.0
- */
-const ParseResult_index = (index, errors) => ({
-  _tag: "Index",
-  index,
-  errors
-});
-/**
- * @category constructors
- * @since 1.0.0
- */
-const ParseResult_key = (key, errors) => ({
-  _tag: "Key",
-  key,
-  errors
-});
-/**
- * @category constructors
- * @since 1.0.0
- */
-const missing = {
-  _tag: "Missing"
-};
-/**
- * @category constructors
- * @since 1.0.0
- */
-const unexpected = actual => ({
-  _tag: "Unexpected",
-  actual
-});
-/**
- * @category constructors
- * @since 1.0.0
- */
-const unionMember = errors => ({
-  _tag: "UnionMember",
-  errors
-});
-/**
- * @category constructors
- * @since 1.0.0
- */
-const success = Either_right;
-/**
- * @category constructors
- * @since 1.0.0
- */
-const failure = e => Either_left(parseError([e]));
-/**
- * @category constructors
- * @since 1.0.0
- */
-const ParseResult_failures = es => Either_left(parseError(es));
-/**
- * @category optimisation
- * @since 1.0.0
- */
-const eitherOrUndefined = self => {
-  const s = self;
-  if (s["_tag"] === "Left" || s["_tag"] === "Right") {
-    return s;
-  }
-};
-/**
- * @category optimisation
- * @since 1.0.0
- */
-const ParseResult_flatMap = (self, f) => {
-  const s = self;
-  if (s["_tag"] === "Left") {
-    return s;
-  }
-  if (s["_tag"] === "Right") {
-    return f(s.right);
-  }
-  return Effect_flatMap(self, f);
-};
-/**
- * @category optimisation
- * @since 1.0.0
- */
-const ParseResult_map = (self, f) => {
-  const s = self;
-  if (s["_tag"] === "Left") {
-    return s;
-  }
-  if (s["_tag"] === "Right") {
-    return Either_right(f(s.right));
-  }
-  return Effect_map(self, f);
-};
-//# sourceMappingURL=ParseResult.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+schema@0.33.2_@effect+data@0.18.3_@effect+io@0.39.1/node_modules/@effect/schema/mjs/AST.mjs
-/**
- * @since 1.0.0
- */
-
-
 
 
 
@@ -44861,48 +45267,49 @@ const ParseResult_map = (self, f) => {
  * @category annotations
  * @since 1.0.0
  */
-const BrandAnnotationId = "@effect/schema/BrandAnnotationId";
+const BrandAnnotationId = /*#__PURE__*/Symbol.for("@effect/schema/annotation/Brand");
 /**
  * @category annotations
  * @since 1.0.0
  */
-const TypeAnnotationId = "@effect/schema/TypeAnnotationId";
+const TypeAnnotationId = /*#__PURE__*/Symbol.for("@effect/schema/annotation/Type");
 /**
  * @category annotations
  * @since 1.0.0
  */
-const MessageAnnotationId = "@effect/schema/MessageAnnotationId";
+const MessageAnnotationId = /*#__PURE__*/Symbol.for("@effect/schema/annotation/Message");
 /**
  * @category annotations
  * @since 1.0.0
  */
-const IdentifierAnnotationId = "@effect/schema/IdentifierAnnotationId";
+const IdentifierAnnotationId = /*#__PURE__*/Symbol.for("@effect/schema/annotation/Identifier");
 /**
  * @category annotations
  * @since 1.0.0
  */
-const TitleAnnotationId = "@effect/schema/TitleAnnotationId";
+const TitleAnnotationId = /*#__PURE__*/Symbol.for("@effect/schema/annotation/Title");
 /**
  * @category annotations
  * @since 1.0.0
  */
-const DescriptionAnnotationId = "@effect/schema/DescriptionAnnotationId";
+const DescriptionAnnotationId = /*#__PURE__*/Symbol.for("@effect/schema/annotation/Description");
 /**
  * @category annotations
  * @since 1.0.0
  */
-const ExamplesAnnotationId = "@effect/schema/ExamplesAnnotationId";
+const ExamplesAnnotationId = /*#__PURE__*/Symbol.for("@effect/schema/annotation/Examples");
 /**
  * @category annotations
  * @since 1.0.0
  */
-const JSONSchemaAnnotationId = "@effect/schema/JSONSchemaAnnotationId";
+const JSONSchemaAnnotationId = /*#__PURE__*/Symbol.for("@effect/schema/annotation/JSONSchema");
 /**
  * @category annotations
  * @since 1.0.0
  */
-const DocumentationAnnotationId = "@effect/schema/DocumentationAnnotationId";
+const DocumentationAnnotationId = /*#__PURE__*/Symbol.for("@effect/schema/annotation/Documentation");
 /**
+ * @category annotations
  * @since 1.0.0
  */
 const getAnnotation = key => annotated => Object.prototype.hasOwnProperty.call(annotated.annotations, key) ? mjs_Option_some(annotated.annotations[key]) : Option_none();
@@ -45032,7 +45439,8 @@ const isAnyKeyword = ast => ast._tag === "AnyKeyword";
 const stringKeyword = {
   _tag: "StringKeyword",
   annotations: {
-    [TitleAnnotationId]: "string"
+    [TitleAnnotationId]: "string",
+    [DescriptionAnnotationId]: "a string"
   }
 };
 /**
@@ -45047,7 +45455,8 @@ const isStringKeyword = ast => ast._tag === "StringKeyword";
 const numberKeyword = {
   _tag: "NumberKeyword",
   annotations: {
-    [TitleAnnotationId]: "number"
+    [TitleAnnotationId]: "number",
+    [DescriptionAnnotationId]: "a number"
   }
 };
 /**
@@ -45062,7 +45471,8 @@ const isNumberKeyword = ast => ast._tag === "NumberKeyword";
 const booleanKeyword = {
   _tag: "BooleanKeyword",
   annotations: {
-    [TitleAnnotationId]: "boolean"
+    [TitleAnnotationId]: "boolean",
+    [DescriptionAnnotationId]: "a boolean"
   }
 };
 /**
@@ -45077,7 +45487,8 @@ const isBooleanKeyword = ast => ast._tag === "BooleanKeyword";
 const bigIntKeyword = {
   _tag: "BigIntKeyword",
   annotations: {
-    [TitleAnnotationId]: "bigint"
+    [TitleAnnotationId]: "bigint",
+    [DescriptionAnnotationId]: "a bigint"
   }
 };
 /**
@@ -45092,7 +45503,8 @@ const isBigIntKeyword = ast => ast._tag === "BigIntKeyword";
 const symbolKeyword = {
   _tag: "SymbolKeyword",
   annotations: {
-    [TitleAnnotationId]: "symbol"
+    [TitleAnnotationId]: "symbol",
+    [DescriptionAnnotationId]: "a symbol"
   }
 };
 /**
@@ -45107,7 +45519,8 @@ const isSymbolKeyword = ast => ast._tag === "SymbolKeyword";
 const objectKeyword = {
   _tag: "ObjectKeyword",
   annotations: {
-    [TitleAnnotationId]: "object"
+    [TitleAnnotationId]: "object",
+    [DescriptionAnnotationId]: "an object"
   }
 };
 /**
@@ -45133,7 +45546,7 @@ const isEnums = ast => ast._tag === "Enums";
  * @category constructors
  * @since 1.0.0
  */
-const createTemplateLiteral = (head, spans) => RA.isNonEmptyReadonlyArray(spans) ? {
+const createTemplateLiteral = (head, spans) => ReadonlyArray.isNonEmptyReadonlyArray(spans) ? {
   _tag: "TemplateLiteral",
   head,
   spans,
@@ -45250,26 +45663,24 @@ const createTypeLiteral = (propertySignatures, indexSignatures, annotations = {}
  * @since 1.0.0
  */
 const isTypeLiteral = ast => ast._tag === "TypeLiteral";
+const isMembers = as => as.length > 1;
 /**
  * @category constructors
  * @since 1.0.0
  */
 const createUnion = (candidates, annotations = {}) => {
   const types = unify(candidates);
-  switch (types.length) {
-    case 0:
-      return neverKeyword;
-    case 1:
-      return types[0];
-    default:
-      {
-        return {
-          _tag: "Union",
-          types: sortUnionMembers(types),
-          annotations
-        };
-      }
+  if (isMembers(types)) {
+    return {
+      _tag: "Union",
+      types: sortUnionMembers(types),
+      annotations
+    };
   }
+  if (isNonEmptyReadonlyArray(types)) {
+    return types[0];
+  }
+  return neverKeyword;
 };
 /**
  * @category guards
@@ -45294,77 +45705,112 @@ const isLazy = ast => ast._tag === "Lazy";
  * @category constructors
  * @since 1.0.0
  */
-const createRefinement = (from, decode, isReversed, annotations = {}) => ({
-  _tag: "Refinement",
-  from,
-  decode,
-  isReversed,
-  annotations
-});
+const createRefinement = (from, filter, annotations = {}) => {
+  if (isTransform(from)) {
+    // recurse right
+    return createTransform(from.from, createRefinement(from.to, filter, annotations), from.transformation, from.annotations);
+  }
+  return {
+    _tag: "Refinement",
+    from,
+    filter,
+    annotations
+  };
+};
 /**
  * @category guards
  * @since 1.0.0
  */
 const isRefinement = ast => ast._tag === "Refinement";
 /**
- * @category constructors
+ * @category model
  * @since 1.0.0
  */
-const createPropertySignatureTransformation = (from, to, decode, encode) => ({
-  from,
-  to,
-  decode,
-  encode
-});
-/** @internal */
-const _createTransform = (from, to, decode, encode, propertySignatureTransformations, annotations = {}) => ({
+const createTransform = (from, to, transformation, annotations = {}) => ({
   _tag: "Transform",
   from,
   to,
-  decode,
-  encode,
-  propertySignatureTransformations,
+  transformation,
   annotations
 });
-/**
- * @category constructors
- * @since 1.0.0
- */
-const createTransform = (from, to, decode, encode, annotations = {}) => _createTransform(from, to, decode, encode, [], annotations);
-/**
- * @category constructors
- * @since 1.0.0
- */
-const createTransformByPropertySignatureTransformations = (from, to, propertySignatureTransformations, annotations = {}) => _createTransform(from, to, input => {
-  for (let i = 0; i < propertySignatureTransformations.length; i++) {
-    const t = propertySignatureTransformations[i];
-    const name = t.from;
-    const from = Object.prototype.hasOwnProperty.call(input, name) ? mjs_Option_some(input[name]) : Option_none();
-    delete input[name];
-    const to = t.decode(from);
-    if (Option_isSome(to)) {
-      input[t.to] = to.value;
-    }
-  }
-  return success(input);
-}, input => {
-  for (let i = 0; i < propertySignatureTransformations.length; i++) {
-    const t = propertySignatureTransformations[i];
-    const name = t.to;
-    const from = Object.prototype.hasOwnProperty.call(input, name) ? mjs_Option_some(input[name]) : Option_none();
-    delete input[name];
-    const to = t.encode(from);
-    if (Option_isSome(to)) {
-      input[t.from] = to.value;
-    }
-  }
-  return success(input);
-}, propertySignatureTransformations, annotations);
 /**
  * @category guards
  * @since 1.0.0
  */
 const isTransform = ast => ast._tag === "Transform";
+/**
+ * @category constructors
+ * @since 1.0.0
+ */
+const createFinalTransformation = (decode, encode) => ({
+  _tag: "FinalTransformation",
+  decode,
+  encode
+});
+/**
+ * @category guard
+ * @since 1.0.0
+ */
+const isFinalTransformation = ast => ast._tag === "FinalTransformation";
+/**
+ * @category constructors
+ * @since 1.0.0
+ */
+const composeTransformation = {
+  _tag: "ComposeTransformation"
+};
+/**
+ * @category guard
+ * @since 1.0.0
+ */
+const isComposeTransformation = ast => ast._tag === "ComposeTransformation";
+/**
+ * @category constructors
+ * @since 1.0.0
+ */
+const createFinalPropertySignatureTransformation = (decode, encode) => ({
+  _tag: "FinalPropertySignatureTransformation",
+  decode,
+  encode
+});
+/**
+ * @category guard
+ * @since 1.0.0
+ */
+const isFinalPropertySignatureTransformation = ast => ast._tag === "FinalPropertySignatureTransformation";
+/**
+ * @category constructors
+ * @since 1.0.0
+ */
+const createPropertySignatureTransform = (from, to, propertySignatureTransformation) => ({
+  from,
+  to,
+  propertySignatureTransformation
+});
+/**
+ * @category constructors
+ * @since 1.0.0
+ */
+const createTypeLiteralTransformation = propertySignatureTransformations => {
+  // check for duplicate property signature transformations
+  const keys = {};
+  for (const pst of propertySignatureTransformations) {
+    const key = pst.from;
+    if (keys[key]) {
+      throw new Error(`Duplicate property signature transformation ${String(key)}`);
+    }
+    keys[key] = true;
+  }
+  return {
+    _tag: "TypeLiteralTransformation",
+    propertySignatureTransformations
+  };
+};
+/**
+ * @category guard
+ * @since 1.0.0
+ */
+const isTypeLiteralTransformation = ast => ast._tag === "TypeLiteralTransformation";
 // -------------------------------------------------------------------------------------
 // API
 // -------------------------------------------------------------------------------------
@@ -45385,11 +45831,11 @@ const mergeAnnotations = (ast, annotations) => ({
  *
  * @since 1.0.0
  */
-const setAnnotation = (ast, id, value) => ({
+const setAnnotation = (ast, sym, value) => ({
   ...ast,
   annotations: {
     ...ast.annotations,
-    [id]: value
+    [sym]: value
   }
 });
 /**
@@ -45398,11 +45844,11 @@ const setAnnotation = (ast, id, value) => ({
  * @since 1.0.0
  */
 const appendRestElement = (ast, restElement) => {
-  if (O.isSome(ast.rest)) {
+  if (Option.isSome(ast.rest)) {
     // example: `type A = [...string[], ...number[]]` is illegal
     throw new Error("A rest element cannot follow another rest element. ts(1265)");
   }
-  return createTuple(ast.elements, O.some([restElement]), ast.isReadonly);
+  return createTuple(ast.elements, Option.some([restElement]), ast.isReadonly);
 };
 /**
  * Appends an element to a tuple or throws an exception in the following cases:
@@ -45415,13 +45861,13 @@ const appendElement = (ast, newElement) => {
   if (ast.elements.some(e => e.isOptional) && !newElement.isOptional) {
     throw new Error("A required element cannot follow an optional element. ts(1257)");
   }
-  return pipe(ast.rest, O.match({
-    onNone: () => createTuple([...ast.elements, newElement], O.none(), ast.isReadonly),
+  return pipe(ast.rest, Option.match({
+    onNone: () => createTuple([...ast.elements, newElement], Option.none(), ast.isReadonly),
     onSome: rest => {
       if (newElement.isOptional) {
         throw new Error("An optional element cannot follow a rest element. ts(1266)");
       }
-      return createTuple(ast.elements, O.some([...rest, newElement.type]), ast.isReadonly);
+      return createTuple(ast.elements, Option.some([...rest, newElement.type]), ast.isReadonly);
     }
   }));
 };
@@ -45462,7 +45908,7 @@ const createRecord = (key, value, isReadonly) => {
         indexSignatures.push(createIndexSignature(key, value, isReadonly));
         break;
       case "Literal":
-        if (isString(key.literal) || isNumber(key.literal)) {
+        if (Predicate.isString(key.literal) || Predicate.isNumber(key.literal)) {
           propertySignatures.push(createPropertySignature(key.literal, value, false, isReadonly));
         } else {
           throw new Error(`createRecord: unsupported literal ${String(key.literal)}`);
@@ -45475,7 +45921,7 @@ const createRecord = (key, value, isReadonly) => {
         key.types.forEach(go);
         break;
       default:
-        throw new Error(`createRecord: unsupported key ${key._tag}`);
+        throw new Error(`createRecord: unsupported key schema (${key._tag})`);
     }
   };
   go(key);
@@ -45501,7 +45947,7 @@ const AST_omit = (ast, keys) => createTypeLiteral(getPropertySignatures(ast).fil
 const partial = ast => {
   switch (ast._tag) {
     case "Tuple":
-      return createTuple(ast.elements.map(e => createElement(e.type, true)), pipe(ast.rest, O.map(rest => [createUnion([...rest, undefinedKeyword])])), ast.isReadonly);
+      return createTuple(ast.elements.map(e => createElement(e.type, true)), pipe(ast.rest, Option.map(rest => [createUnion([...rest, undefinedKeyword])])), ast.isReadonly);
     case "TypeLiteral":
       return createTypeLiteral(ast.propertySignatures.map(f => createPropertySignature(f.name, f.type, true, f.isReadonly, f.annotations)), ast.indexSignatures);
     case "Union":
@@ -45526,9 +45972,9 @@ const partial = ast => {
 const required = ast => {
   switch (ast._tag) {
     case "Tuple":
-      return createTuple(ast.elements.map(e => createElement(e.type, false)), pipe(ast.rest, O.map(rest => {
+      return createTuple(ast.elements.map(e => createElement(e.type, false)), pipe(ast.rest, Option.map(rest => {
         const u = createUnion([...rest]);
-        return RA.mapNonEmpty(rest, () => u);
+        return ReadonlyArray.mapNonEmpty(rest, () => u);
       })), ast.isReadonly);
     case "TypeLiteral":
       return createTypeLiteral(ast.propertySignatures.map(f => createPropertySignature(f.name, f.type, false, f.isReadonly, f.annotations)), ast.indexSignatures);
@@ -45573,7 +46019,7 @@ const AST_to = ast => {
     case "Lazy":
       return createLazy(() => AST_to(ast.f()), ast.annotations);
     case "Refinement":
-      return createRefinement(AST_to(ast.from), ast.decode, false, ast.annotations);
+      return createRefinement(AST_to(ast.from), ast.filter, ast.annotations);
     case "Transform":
       return AST_to(ast.to);
   }
@@ -45725,7 +46171,7 @@ const _keyof = ast => {
     case "Declaration":
       return _keyof(ast.type);
     case "TypeLiteral":
-      return ast.propertySignatures.map(p => isSymbol(p.name) ? createUniqueSymbol(p.name) : createLiteral(p.name)).concat(ast.indexSignatures.map(is => getParameterBase(is.parameter)));
+      return ast.propertySignatures.map(p => Predicate.isSymbol(p.name) ? createUniqueSymbol(p.name) : createLiteral(p.name)).concat(ast.indexSignatures.map(is => getParameterBase(is.parameter)));
     case "Lazy":
       return _keyof(ast.f());
     default:
@@ -45733,7 +46179,169 @@ const _keyof = ast => {
   }
 };
 //# sourceMappingURL=AST.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+schema@0.33.2_@effect+data@0.18.3_@effect+io@0.39.1/node_modules/@effect/schema/mjs/TreeFormatter.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+schema@0.36.2_@effect+data@0.18.5_@effect+io@0.40.3/node_modules/@effect/schema/mjs/ParseResult.mjs
+/**
+ * @since 1.0.0
+ */
+
+
+
+/**
+ * @since 1.0.0
+ */
+const parseError = errors => ({
+  _tag: "ParseError",
+  errors
+});
+/**
+ * @category constructors
+ * @since 1.0.0
+ */
+const ParseResult_type = (expected, actual, message) => ({
+  _tag: "Type",
+  expected,
+  actual,
+  message: fromNullable(message)
+});
+/**
+ * @category constructors
+ * @since 1.0.0
+ */
+const forbidden = {
+  _tag: "Forbidden"
+};
+/**
+ * @category constructors
+ * @since 1.0.0
+ */
+const ParseResult_index = (index, errors) => ({
+  _tag: "Index",
+  index,
+  errors
+});
+/**
+ * @category constructors
+ * @since 1.0.0
+ */
+const ParseResult_key = (key, errors) => ({
+  _tag: "Key",
+  key,
+  errors
+});
+/**
+ * @category constructors
+ * @since 1.0.0
+ */
+const missing = {
+  _tag: "Missing"
+};
+/**
+ * @category constructors
+ * @since 1.0.0
+ */
+const unexpected = actual => ({
+  _tag: "Unexpected",
+  actual
+});
+/**
+ * @category constructors
+ * @since 1.0.0
+ */
+const unionMember = errors => ({
+  _tag: "UnionMember",
+  errors
+});
+/**
+ * @category constructors
+ * @since 1.0.0
+ */
+const success = Either_right;
+/**
+ * @category constructors
+ * @since 1.0.0
+ */
+const ParseResult_fail = Either_left;
+/**
+ * @category constructors
+ * @since 1.0.0
+ */
+const failure = e => ParseResult_fail(parseError([e]));
+/**
+ * @category constructors
+ * @since 1.0.0
+ */
+const failures = es => Either_left(parseError(es));
+/**
+ * @category optimisation
+ * @since 1.0.0
+ */
+const eitherOrUndefined = self => {
+  const s = self;
+  if (s["_tag"] === "Left" || s["_tag"] === "Right") {
+    return s;
+  }
+};
+/**
+ * @category optimisation
+ * @since 1.0.0
+ */
+const ParseResult_flatMap = (self, f) => {
+  const s = self;
+  if (s["_tag"] === "Left") {
+    return s;
+  }
+  if (s["_tag"] === "Right") {
+    return f(s.right);
+  }
+  return Effect_flatMap(self, f);
+};
+/**
+ * @category optimisation
+ * @since 1.0.0
+ */
+const ParseResult_map = (self, f) => {
+  const s = self;
+  if (s["_tag"] === "Left") {
+    return s;
+  }
+  if (s["_tag"] === "Right") {
+    return Either_right(f(s.right));
+  }
+  return Effect_map(self, f);
+};
+/**
+ * @category optimisation
+ * @since 1.0.0
+ */
+const ParseResult_mapLeft = (self, f) => {
+  const s = self;
+  if (s["_tag"] === "Left") {
+    return Either.left(f(s.left));
+  }
+  if (s["_tag"] === "Right") {
+    s;
+  }
+  return Effect.mapError(self, f);
+};
+/**
+ * @category optimisation
+ * @since 1.0.0
+ */
+const bimap = (self, f, g) => {
+  const s = self;
+  if (s["_tag"] === "Left") {
+    return Either.left(f(s.left));
+  }
+  if (s["_tag"] === "Right") {
+    return Either.right(g(s.right));
+  }
+  return Effect.mapBoth(self, {
+    onFailure: f,
+    onSuccess: g
+  });
+};
+//# sourceMappingURL=ParseResult.mjs.map
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+schema@0.36.2_@effect+data@0.18.5_@effect+io@0.40.3/node_modules/@effect/schema/mjs/TreeFormatter.mjs
 /**
  * @since 1.0.0
  */
@@ -45825,9 +46433,10 @@ const formatExpected = ast => {
     case "Refinement":
       return getOrElse(getExpected(ast), () => "<anonymous refinement schema>");
     case "Transform":
-      return getOrElse(getExpected(ast), () => `${formatExpected(ast.from)} -> ${formatExpected(ast.to)}`);
+      return getOrElse(getExpected(ast), () => `${formatExpected(ast.from)} <-> ${formatExpected(ast.to)}`);
   }
 };
+const isCollapsible = (es, errors) => es.length === 1 && es[0].forest.length !== 0 && errors[0]._tag !== "UnionMember";
 const go = e => {
   switch (e._tag) {
     case "Type":
@@ -45837,7 +46446,7 @@ const go = e => {
     case "Index":
       {
         const es = e.errors.map(go);
-        if (es.length === 1 && es[0].forest.length !== 0) {
+        if (isCollapsible(es, e.errors)) {
           return TreeFormatter_make(`[${e.index}]${es[0].value}`, es[0].forest);
         }
         return TreeFormatter_make(`[${e.index}]`, es);
@@ -45847,7 +46456,7 @@ const go = e => {
     case "Key":
       {
         const es = e.errors.map(go);
-        if (es.length === 1 && es[0].forest.length !== 0) {
+        if (isCollapsible(es, e.errors)) {
           return TreeFormatter_make(`[${formatActual(e.key)}]${es[0].value}`, es[0].forest);
         }
         return TreeFormatter_make(`[${formatActual(e.key)}]`, es);
@@ -45859,7 +46468,7 @@ const go = e => {
   }
 };
 //# sourceMappingURL=TreeFormatter.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+schema@0.33.2_@effect+data@0.18.3_@effect+io@0.39.1/node_modules/@effect/schema/mjs/Parser.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+schema@0.36.2_@effect+data@0.18.5_@effect+io@0.40.3/node_modules/@effect/schema/mjs/Parser.mjs
 /**
  * @since 1.0.0
  */
@@ -45873,8 +46482,8 @@ const go = e => {
 
 
 
-const getSync = ast => {
-  const parser = Parser_go(ast);
+const getSync = (ast, isDecoding) => {
+  const parser = Parser_go(ast, isDecoding);
   return (input, options) => {
     const result = parser(input, options);
     // @ts-expect-error
@@ -45885,23 +46494,23 @@ const getSync = ast => {
     return result.right;
   };
 };
-const Parser_getOption = ast => {
-  const parser = getEither(ast);
+const Parser_getOption = (ast, isDecoding) => {
+  const parser = getEither(ast, isDecoding);
   return (input, options) => Option_getRight(parser(input, options));
 };
-const getEither = ast => {
-  const parser = Parser_go(ast);
+const getEither = (ast, isDecoding) => {
+  const parser = Parser_go(ast, isDecoding);
   return (input, options) => parser(input, options);
 };
-const getPromise = ast => {
-  const parser = Parser_go(ast);
+const getPromise = (ast, isDecoding) => {
+  const parser = Parser_go(ast, isDecoding);
   return (input, options) => Effect.runPromise(parser(input, {
     ...options,
     isEffectAllowed: true
   }));
 };
-const getEffect = ast => {
-  const parser = Parser_go(ast);
+const getEffect = (ast, isDecoding) => {
+  const parser = Parser_go(ast, isDecoding);
   return (input, options) => parser(input, {
     ...options,
     isEffectAllowed: true
@@ -45911,32 +46520,32 @@ const getEffect = ast => {
  * @category parsing
  * @since 1.0.0
  */
-const parseSync = schema => getSync(schema.ast);
+const parseSync = schema => getSync(schema.ast, true);
 /**
  * @category parsing
  * @since 1.0.0
  */
-const parseOption = schema => Parser_getOption(schema.ast);
+const parseOption = schema => Parser_getOption(schema.ast, true);
 /**
  * @category parsing
  * @since 1.0.0
  */
-const parseEither = schema => getEither(schema.ast);
+const parseEither = schema => getEither(schema.ast, true);
 /**
  * @category parsing
  * @since 1.0.0
  */
-const parseResult = schema => Parser_go(schema.ast);
+const parseResult = schema => Parser_go(schema.ast, true);
 /**
  * @category parsing
  * @since 1.0.0
  */
-const parsePromise = schema => getPromise(schema.ast);
+const parsePromise = schema => getPromise(schema.ast, true);
 /**
  * @category parsing
  * @since 1.0.0
  */
-const parse = schema => getEffect(schema.ast);
+const parse = schema => getEffect(schema.ast, true);
 /**
  * @category decoding
  * @since 1.0.0
@@ -45971,32 +46580,32 @@ const Parser_decode = (/* unused pure expression or super */ null && (parse));
  * @category validation
  * @since 1.0.0
  */
-const validateSync = schema => getSync(AST_to(schema.ast));
+const Parser_validateSync = schema => getSync(AST_to(schema.ast), true);
 /**
  * @category validation
  * @since 1.0.0
  */
-const Parser_validateOption = schema => Parser_getOption(AST_to(schema.ast));
+const Parser_validateOption = schema => Parser_getOption(AST_to(schema.ast), true);
 /**
  * @category validation
  * @since 1.0.0
  */
-const Parser_validateEither = schema => getEither(AST_to(schema.ast));
+const Parser_validateEither = schema => getEither(AST_to(schema.ast), true);
 /**
  * @category validation
  * @since 1.0.0
  */
-const validateResult = schema => Parser_go(AST.to(schema.ast));
+const validateResult = schema => Parser_go(AST.to(schema.ast), true);
 /**
  * @category validation
  * @since 1.0.0
  */
-const validatePromise = schema => getPromise(AST.to(schema.ast));
+const validatePromise = schema => getPromise(AST.to(schema.ast), true);
 /**
  * @category validation
  * @since 1.0.0
  */
-const Parser_validate = schema => getEffect(AST.to(schema.ast));
+const Parser_validate = schema => getEffect(AST.to(schema.ast), true);
 /**
  * @category validation
  * @since 1.0.0
@@ -46010,7 +46619,7 @@ const Parser_is = schema => {
  * @since 1.0.0
  */
 const asserts = schema => {
-  const get = validateSync(schema);
+  const get = Parser_validateSync(schema);
   return (a, options) => {
     get(a, options);
   };
@@ -46019,55 +46628,63 @@ const asserts = schema => {
  * @category encoding
  * @since 1.0.0
  */
-const encodeSync = schema => getSync(Parser_reverse(schema.ast));
+const encodeSync = schema => getSync(schema.ast, false);
 /**
  * @category encoding
  * @since 1.0.0
  */
-const encodeOption = schema => Parser_getOption(Parser_reverse(schema.ast));
+const encodeOption = schema => Parser_getOption(schema.ast, false);
 /**
  * @category encoding
  * @since 1.0.0
  */
-const encodeEither = schema => getEither(Parser_reverse(schema.ast));
+const encodeEither = schema => getEither(schema.ast, false);
 /**
  * @category encoding
  * @since 1.0.0
  */
-const encodeResult = schema => Parser_go(Parser_reverse(schema.ast));
+const encodeResult = schema => Parser_go(schema.ast, false);
 /**
  * @category encoding
  * @since 1.0.0
  */
-const encodePromise = schema => getPromise(Parser_reverse(schema.ast));
+const encodePromise = schema => getPromise(schema.ast, false);
 /**
  * @category encoding
  * @since 1.0.0
  */
-const encode = schema => getEffect(Parser_reverse(schema.ast));
-const Parser_go = (ast, isBoundary = true) => {
+const Parser_encode = schema => getEffect(schema.ast, false);
+/**
+ * @since 1.0.0"
+ */
+const defaultParseOption = {};
+const Parser_go = (ast, isDecoding) => {
   switch (ast._tag) {
     case "Refinement":
       {
-        if (ast.isReversed) {
-          const from = Parser_go(AST_to(ast), isBoundary);
-          const to = Parser_go(Parser_reverse(dropRightRefinement(ast.from)), false);
-          return (i, options) => handleForbidden(ParseResult_flatMap(from(i, options), a => to(a, options)), options);
+        if (isDecoding) {
+          const from = Parser_go(ast.from, true);
+          return (i, options) => handleForbidden(ParseResult_flatMap(from(i, options), a => match(ast.filter(a, options ?? defaultParseOption, ast), {
+            onNone: () => success(a),
+            onSome: ParseResult_fail
+          })), options);
         } else {
-          const from = Parser_go(ast.from, isBoundary);
-          return (i, options) => handleForbidden(ParseResult_flatMap(from(i, options), a => ast.decode(a, options)), options);
+          const from = Parser_go(AST_to(ast), true);
+          const to = Parser_go(dropRightRefinement(ast.from), false);
+          return (i, options) => handleForbidden(ParseResult_flatMap(from(i, options), a => to(a, options)), options);
         }
       }
     case "Transform":
       {
-        const from = Parser_go(ast.from, isBoundary);
-        const to = Parser_go(ast.to, false);
-        return (i1, options) => handleForbidden(ParseResult_flatMap(from(i1, options), a => ParseResult_flatMap(ast.decode(a, options), i2 => to(i2, options))), options);
+        const transform = getFinalTransformation(ast.transformation, isDecoding);
+        const from = isDecoding ? Parser_go(ast.from, true) : Parser_go(ast.to, false);
+        const to = isDecoding ? Parser_go(ast.to, true) : Parser_go(ast.from, false);
+        return (i1, options) => handleForbidden(ParseResult_flatMap(from(i1, options), a => ParseResult_flatMap(transform(a, options ?? defaultParseOption, ast), i2 => to(i2, options))), options);
       }
     case "Declaration":
       {
-        const decode = ast.decode(...ast.typeParameters);
-        return (i, options) => handleForbidden(decode(i, options), options);
+        const parse = ast.decode(isDecoding, ...ast.typeParameters);
+        return (i, options) => handleForbidden(parse(i, options ?? defaultParseOption, ast), options);
       }
     case "Literal":
       return fromRefinement(ast, u => u === ast.literal);
@@ -46083,35 +46700,35 @@ const Parser_go = (ast, isBoundary = true) => {
     case "AnyKeyword":
       return success;
     case "StringKeyword":
-      return fromRefinement(ast, Predicate_isString);
+      return fromRefinement(ast, isString);
     case "NumberKeyword":
-      return fromRefinement(ast, Predicate_isNumber);
+      return fromRefinement(ast, isNumber);
     case "BooleanKeyword":
       return fromRefinement(ast, isBoolean);
     case "BigIntKeyword":
       return fromRefinement(ast, isBigint);
     case "SymbolKeyword":
-      return fromRefinement(ast, Predicate_isSymbol);
+      return fromRefinement(ast, isSymbol);
     case "ObjectKeyword":
-      return fromRefinement(ast, Predicate_isObject);
+      return fromRefinement(ast, isObject);
     case "Enums":
       return fromRefinement(ast, u => ast.enums.some(([_, value]) => value === u));
     case "TemplateLiteral":
       {
         const regex = getTemplateLiteralRegex(ast);
-        return fromRefinement(ast, u => Predicate_isString(u) && regex.test(u));
+        return fromRefinement(ast, u => isString(u) && regex.test(u));
       }
     case "Tuple":
       {
-        const elements = ast.elements.map(e => Parser_go(e.type, isBoundary));
-        const rest = Function_pipe(ast.rest, map(mapNonEmpty(ast => Parser_go(ast))));
+        const elements = ast.elements.map(e => Parser_go(e.type, isDecoding));
+        const rest = Function_pipe(ast.rest, map(mapNonEmpty(ast => Parser_go(ast, isDecoding))));
         let requiredLen = ast.elements.filter(e => !e.isOptional).length;
         if (Option_isSome(ast.rest)) {
           requiredLen += ast.rest.value.length - 1;
         }
         return (input, options) => {
           if (!Array.isArray(input)) {
-            return failure(type(unknownArray, input));
+            return failure(ParseResult_type(unknownArray, input));
           }
           const allErrors = options?.errors === "all";
           const es = [];
@@ -46139,7 +46756,7 @@ const Parser_go = (ast, isBoundary = true) => {
                 es.push([stepKey++, e]);
                 continue;
               } else {
-                return ParseResult_failures(mutableAppend(sortByIndex(es), e));
+                return failures(mutableAppend(sortByIndex(es), e));
               }
             }
           }
@@ -46167,7 +46784,7 @@ const Parser_go = (ast, isBoundary = true) => {
                     es.push([stepKey++, e]);
                     continue;
                   } else {
-                    return ParseResult_failures(mutableAppend(sortByIndex(es), e));
+                    return failures(mutableAppend(sortByIndex(es), e));
                   }
                 }
                 output.push([stepKey++, eu.right]);
@@ -46188,7 +46805,7 @@ const Parser_go = (ast, isBoundary = true) => {
                       es.push([nk, e]);
                       return Effect_unit;
                     } else {
-                      return ParseResult_failures(mutableAppend(sortByIndex(es), e));
+                      return failures(mutableAppend(sortByIndex(es), e));
                     }
                   }
                   output.push([nk, t.right]);
@@ -46213,7 +46830,7 @@ const Parser_go = (ast, isBoundary = true) => {
                     es.push([stepKey++, e]);
                     continue;
                   } else {
-                    return ParseResult_failures(mutableAppend(sortByIndex(es), e));
+                    return failures(mutableAppend(sortByIndex(es), e));
                   }
                 } else {
                   output.push([stepKey++, eu.right]);
@@ -46234,7 +46851,7 @@ const Parser_go = (ast, isBoundary = true) => {
                       es.push([nk, e]);
                       return Effect_unit;
                     } else {
-                      return ParseResult_failures(mutableAppend(sortByIndex(es), e));
+                      return failures(mutableAppend(sortByIndex(es), e));
                     }
                   } else {
                     output.push([nk, t.right]);
@@ -46261,7 +46878,7 @@ const Parser_go = (ast, isBoundary = true) => {
                       es.push([stepKey++, e]);
                       continue;
                     } else {
-                      return ParseResult_failures(mutableAppend(sortByIndex(es), e));
+                      return failures(mutableAppend(sortByIndex(es), e));
                     }
                   }
                   output.push([stepKey++, eu.right]);
@@ -46282,7 +46899,7 @@ const Parser_go = (ast, isBoundary = true) => {
                         es.push([nk, e]);
                         return Effect_unit;
                       } else {
-                        return ParseResult_failures(mutableAppend(sortByIndex(es), e));
+                        return failures(mutableAppend(sortByIndex(es), e));
                       }
                     }
                     output.push([nk, t.right]);
@@ -46298,7 +46915,7 @@ const Parser_go = (ast, isBoundary = true) => {
           const computeResult = ({
             es,
             output
-          }) => ReadonlyArray_isNonEmptyArray(es) ? ParseResult_failures(sortByIndex(es)) : success(sortByIndex(output));
+          }) => ReadonlyArray_isNonEmptyArray(es) ? failures(sortByIndex(es)) : success(sortByIndex(output));
           if (queue && queue.length > 0) {
             const cqueue = queue;
             return Effect_suspend(() => {
@@ -46323,16 +46940,26 @@ const Parser_go = (ast, isBoundary = true) => {
         if (ast.propertySignatures.length === 0 && ast.indexSignatures.length === 0) {
           return fromRefinement(ast, isNotNullable);
         }
-        const propertySignatures = ast.propertySignatures.map(ps => Parser_go(ps.type, isBoundary));
-        const indexSignatures = ast.indexSignatures.map(is => [Parser_go(is.parameter, isBoundary), Parser_go(is.type, isBoundary)]);
-        const parameter = Parser_go(createUnion(ast.indexSignatures.map(is => getParameterBase(is.parameter))));
+        const propertySignatures = [];
         const expectedKeys = {};
-        for (let i = 0; i < propertySignatures.length; i++) {
-          expectedKeys[ast.propertySignatures[i].name] = null;
+        for (const ps of ast.propertySignatures) {
+          propertySignatures.push(Parser_go(ps.type, isDecoding));
+          expectedKeys[ps.name] = null;
+        }
+        const indexSignatures = [];
+        const expectedKeyTypes = {};
+        for (const is of ast.indexSignatures) {
+          indexSignatures.push([Parser_go(is.parameter, isDecoding), Parser_go(is.type, isDecoding)]);
+          const base = getParameterBase(is.parameter);
+          if (isSymbolKeyword(base)) {
+            expectedKeyTypes.symbol = true;
+          } else {
+            expectedKeyTypes.string = true;
+          }
         }
         return (input, options) => {
           if (!isRecord(input)) {
-            return failure(type(unknownRecord, input));
+            return failure(ParseResult_type(unknownRecord, input));
           }
           const allErrors = options?.errors === "all";
           const es = [];
@@ -46344,15 +46971,13 @@ const Parser_go = (ast, isBoundary = true) => {
           if (onExcessPropertyError) {
             for (const key of common_ownKeys(input)) {
               if (!Object.prototype.hasOwnProperty.call(expectedKeys, key)) {
-                const te = parameter(key);
-                const eu = eitherOrUndefined(te);
-                if (eu && Either_isLeft(eu)) {
+                if (!(typeof key in expectedKeyTypes)) {
                   const e = ParseResult_key(key, [unexpected(input[key])]);
                   if (allErrors) {
                     es.push([stepKey++, e]);
                     continue;
                   } else {
-                    return ParseResult_failures(mutableAppend(sortByIndex(es), e));
+                    return failures(mutableAppend(sortByIndex(es), e));
                   }
                 }
               }
@@ -46378,7 +47003,7 @@ const Parser_go = (ast, isBoundary = true) => {
                     es.push([stepKey++, e]);
                     continue;
                   } else {
-                    return ParseResult_failures(mutableAppend(sortByIndex(es), e));
+                    return failures(mutableAppend(sortByIndex(es), e));
                   }
                 }
                 output[name] = eu.right;
@@ -46399,7 +47024,7 @@ const Parser_go = (ast, isBoundary = true) => {
                       es.push([nk, e]);
                       return Effect_unit;
                     } else {
-                      return ParseResult_failures(mutableAppend(sortByIndex(es), e));
+                      return failures(mutableAppend(sortByIndex(es), e));
                     }
                   }
                   output[index] = t.right;
@@ -46429,9 +47054,6 @@ const Parser_go = (ast, isBoundary = true) => {
             const type = indexSignatures[i][1];
             const keys = getKeysForIndexSignature(input, ast.indexSignatures[i].parameter);
             for (const key of keys) {
-              if (Object.prototype.hasOwnProperty.call(expectedKeys, key)) {
-                continue;
-              }
               // ---------------------------------------------
               // handle keys
               // ---------------------------------------------
@@ -46443,7 +47065,7 @@ const Parser_go = (ast, isBoundary = true) => {
                     es.push([stepKey++, e]);
                     continue;
                   } else {
-                    return ParseResult_failures(mutableAppend(sortByIndex(es), e));
+                    return failures(mutableAppend(sortByIndex(es), e));
                   }
                 }
               }
@@ -46460,10 +47082,12 @@ const Parser_go = (ast, isBoundary = true) => {
                     es.push([stepKey++, e]);
                     continue;
                   } else {
-                    return ParseResult_failures(mutableAppend(sortByIndex(es), e));
+                    return failures(mutableAppend(sortByIndex(es), e));
                   }
                 } else {
-                  output[key] = veu.right;
+                  if (!Object.prototype.hasOwnProperty.call(expectedKeys, key)) {
+                    output[key] = veu.right;
+                  }
                 }
               } else {
                 const nk = stepKey++;
@@ -46481,10 +47105,12 @@ const Parser_go = (ast, isBoundary = true) => {
                       es.push([nk, e]);
                       return Effect_unit;
                     } else {
-                      return ParseResult_failures(mutableAppend(sortByIndex(es), e));
+                      return failures(mutableAppend(sortByIndex(es), e));
                     }
                   } else {
-                    output[key] = tv.right;
+                    if (!Object.prototype.hasOwnProperty.call(expectedKeys, key)) {
+                      output[key] = tv.right;
+                    }
                     return Effect_unit;
                   }
                 }));
@@ -46497,7 +47123,7 @@ const Parser_go = (ast, isBoundary = true) => {
           const computeResult = ({
             es,
             output
-          }) => ReadonlyArray_isNonEmptyArray(es) ? ParseResult_failures(sortByIndex(es)) : success(output);
+          }) => ReadonlyArray_isNonEmptyArray(es) ? failures(sortByIndex(es)) : success(output);
           if (queue && queue.length > 0) {
             const cqueue = queue;
             return Effect_suspend(() => {
@@ -46524,9 +47150,8 @@ const Parser_go = (ast, isBoundary = true) => {
         const len = ownKeys.length;
         const map = new Map();
         for (let i = 0; i < ast.types.length; i++) {
-          map.set(ast.types[i], Parser_go(ast.types[i], true)); // <= this must be true
+          map.set(ast.types[i], Parser_go(ast.types[i], isDecoding));
         }
-
         return (input, options) => {
           const es = [];
           let stepKey = 0;
@@ -46545,14 +47170,14 @@ const Parser_go = (ast, isBoundary = true) => {
                     // retrive the minimal set of candidates for decoding
                     candidates = candidates.concat(buckets[literal]);
                   } else {
-                    es.push([stepKey++, ParseResult_key(name, [type(searchTree.keys[name].ast, input[name])])]);
+                    es.push([stepKey++, ParseResult_key(name, [ParseResult_type(searchTree.keys[name].ast, input[name])])]);
                   }
                 } else {
                   es.push([stepKey++, ParseResult_key(name, [missing])]);
                 }
               }
             } else {
-              es.push([stepKey++, type(unknownRecord, input)]);
+              es.push([stepKey++, ParseResult_type(unknownRecord, input)]);
             }
           }
           if (searchTree.otherwise.length > 0) {
@@ -46595,9 +47220,9 @@ const Parser_go = (ast, isBoundary = true) => {
           // ---------------------------------------------
           // compute output
           // ---------------------------------------------
-          const computeResult = es => ReadonlyArray_isNonEmptyArray(es) ? ParseResult_failures(sortByIndex(es)) :
+          const computeResult = es => ReadonlyArray_isNonEmptyArray(es) ? failures(sortByIndex(es)) :
           // this should never happen
-          failure(type(neverKeyword, input));
+          failure(ParseResult_type(neverKeyword, input));
           if (queue && queue.length > 0) {
             const cqueue = queue;
             return Effect_suspend(() => {
@@ -46620,12 +47245,12 @@ const Parser_go = (ast, isBoundary = true) => {
       }
     case "Lazy":
       {
-        const get = memoizeThunk(() => Parser_go(ast.f(), isBoundary));
+        const get = memoizeThunk(() => Parser_go(ast.f(), isDecoding));
         return (a, options) => get()(a, options);
       }
   }
 };
-const fromRefinement = (ast, refinement) => u => refinement(u) ? success(u) : failure(type(ast, u));
+const fromRefinement = (ast, refinement) => u => refinement(u) ? success(u) : failure(ParseResult_type(ast, u));
 /** @internal */
 const _getLiterals = ast => {
   switch (ast._tag) {
@@ -46730,28 +47355,48 @@ const getTemplateLiteralRegex = ast => {
 function sortByIndex(es) {
   return es.sort(([a], [b]) => a > b ? 1 : a < b ? -1 : 0).map(([_, a]) => a);
 }
-/** @internal */
-const Parser_reverse = ast => {
-  switch (ast._tag) {
-    case "Declaration":
-      return createDeclaration(ast.typeParameters.map(Parser_reverse), ast.type, ast.decode, ast.annotations);
-    case "Tuple":
-      return createTuple(ast.elements.map(e => createElement(Parser_reverse(e.type), e.isOptional)), map(ast.rest, mapNonEmpty(Parser_reverse)), ast.isReadonly);
-    case "TypeLiteral":
-      return createTypeLiteral(ast.propertySignatures.map(ps => createPropertySignature(ps.name, Parser_reverse(ps.type), ps.isOptional, ps.isReadonly, ps.annotations)), ast.indexSignatures.map(is => createIndexSignature(is.parameter, Parser_reverse(is.type), is.isReadonly)));
-    case "Union":
-      return createUnion(ast.types.map(Parser_reverse));
-    case "Lazy":
-      return createLazy(() => Parser_reverse(ast.f()));
-    case "Refinement":
-      return createRefinement(ast.from, ast.decode, !ast.isReversed, ast.annotations);
-    case "Transform":
-      return _createTransform(Parser_reverse(ast.to), Parser_reverse(ast.from), ast.encode, ast.decode, ast.propertySignatureTransformations.map(t => createPropertySignatureTransformation(t.to, t.from, t.encode, t.decode)));
+// -------------------------------------------------------------------------------------
+// transformations interpreter
+// -------------------------------------------------------------------------------------
+const getFinalPropertySignatureTransformation = (transformation, isDecoding) => {
+  switch (transformation._tag) {
+    case "FinalPropertySignatureTransformation":
+      return isDecoding ? transformation.decode : transformation.encode;
   }
-  return ast;
+};
+/** @internal */
+const getFinalTransformation = (transformation, isDecoding) => {
+  switch (transformation._tag) {
+    case "FinalTransformation":
+      return isDecoding ? transformation.decode : transformation.encode;
+    case "ComposeTransformation":
+      return success;
+    case "TypeLiteralTransformation":
+      return input => {
+        let out = Either_right(input);
+        // ---------------------------------------------
+        // handle property signature transformations
+        // ---------------------------------------------
+        for (const pst of transformation.propertySignatureTransformations) {
+          const [from, to] = isDecoding ? [pst.from, pst.to] : [pst.to, pst.from];
+          const transform = getFinalPropertySignatureTransformation(pst.propertySignatureTransformation, isDecoding);
+          const f = input => {
+            const o = transform(Object.prototype.hasOwnProperty.call(input, from) ? mjs_Option_some(input[from]) : Option_none());
+            if (Option_isSome(o)) {
+              input[to] = o.value;
+            } else {
+              delete input[from];
+            }
+            return input;
+          };
+          out = ParseResult_map(out, f);
+        }
+        return out;
+      };
+  }
 };
 //# sourceMappingURL=Parser.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+schema@0.33.2_@effect+data@0.18.3_@effect+io@0.39.1/node_modules/@effect/schema/mjs/Schema.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+schema@0.36.2_@effect+data@0.18.5_@effect+io@0.40.3/node_modules/@effect/schema/mjs/Schema.mjs
 /**
  * @since 1.0.0
  */
@@ -46773,6 +47418,10 @@ const Parser_reverse = ast => {
 
 
 
+
+// ---------------------------------------------
+// model
+// ---------------------------------------------
 const Schema_TypeId = /*#__PURE__*/Symbol.for("@effect/schema/Schema");
 /**
  * @since 1.0.0
@@ -46782,17 +47431,32 @@ const Schema_from = schema => Schema_make(AST.from(schema.ast));
  * @since 1.0.0
  */
 const to = schema => Schema_make(AST_to(schema.ast));
+// ---------------------------------------------
+// decoding / encoding / parsing / validating / asserts / guards
+// ---------------------------------------------
 /* c8 ignore start */
 
 /* c8 ignore end */
 // ---------------------------------------------
+// guards
+// ---------------------------------------------
+/**
+ * Tests if a value is a `Schema`.
+ *
+ * @category guards
+ * @since 1.0.0
+ */
+const isSchema = u => Predicate.isObject(u) && Schema_TypeId in u && "ast" in u && "pipe" in u;
+// ---------------------------------------------
 // constructors
 // ---------------------------------------------
+const Schema_variance = {
+  From: _ => _,
+  To: _ => _
+};
 class SchemaImpl {
   ast;
-  _id = Schema_TypeId;
-  From;
-  To;
+  [Schema_TypeId] = Schema_variance;
   constructor(ast) {
     this.ast = ast;
   }
@@ -46805,13 +47469,6 @@ class SchemaImpl {
  * @since 1.0.0
  */
 const Schema_make = ast => new SchemaImpl(ast);
-/**
- * Tests if a value is a `Schema`.
- *
- * @category guards
- * @since 1.0.0
- */
-const isSchema = input => isObject(input) && "_id" in input && input["_id"] === Schema_TypeId;
 const makeLiteral = value => Schema_make(createLiteral(value));
 /**
  * @category constructors
@@ -46835,7 +47492,7 @@ const enums = enums => Schema_make(AST.createEnums(Object.keys(enums).filter(key
 const templateLiteral = (...[head, ...tail]) => {
   let types = getTemplateLiterals(head.ast);
   for (const span of tail) {
-    types = RA.flatMap(types, a => getTemplateLiterals(span.ast).map(b => combineTemplateLiterals(a, b)));
+    types = ReadonlyArray.flatMap(types, a => getTemplateLiterals(span.ast).map(b => combineTemplateLiterals(a, b)));
   }
   return Schema_make(AST.createUnion(types));
 };
@@ -46844,12 +47501,12 @@ const combineTemplateLiterals = (a, b) => {
     return AST.isLiteral(b) ? AST.createLiteral(String(a.literal) + String(b.literal)) : AST.createTemplateLiteral(String(a.literal) + b.head, b.spans);
   }
   if (AST.isLiteral(b)) {
-    return AST.createTemplateLiteral(a.head, RA.modifyNonEmptyLast(a.spans, span => ({
+    return AST.createTemplateLiteral(a.head, ReadonlyArray.modifyNonEmptyLast(a.spans, span => ({
       ...span,
       literal: span.literal + String(b.literal)
     })));
   }
-  return AST.createTemplateLiteral(a.head, RA.appendAll(RA.modifyNonEmptyLast(a.spans, span => ({
+  return AST.createTemplateLiteral(a.head, ReadonlyArray.appendAll(ReadonlyArray.modifyNonEmptyLast(a.spans, span => ({
     ...span,
     literal: span.literal + String(b.head)
   })), b.spans));
@@ -46865,16 +47522,110 @@ const getTemplateLiterals = ast => {
         literal: ""
       }])];
     case "Union":
-      return RA.flatMap(ast.types, getTemplateLiterals);
+      return ReadonlyArray.flatMap(ast.types, getTemplateLiterals);
     default:
       throw new Error(`templateLiteral: unsupported template literal span ${ast._tag}`);
   }
 };
 /**
-  @category combinators
+  @category constructors
   @since 1.0.0
 */
-const declare = (typeParameters, type, decode, annotations) => Schema_make(createDeclaration(typeParameters.map(tp => tp.ast), type.ast, (...typeParameters) => decode(...typeParameters.map(Schema_make)), annotations));
+const declare = (typeParameters, type, decode, annotations) => Schema_make(createDeclaration(typeParameters.map(tp => tp.ast), type.ast, (isDecoding, ...typeParameters) => decode(isDecoding, ...typeParameters.map(Schema_make)), annotations));
+/**
+ * @category type id
+ * @since 1.0.0
+ */
+const Schema_BrandTypeId = /*#__PURE__*/(/* unused pure expression or super */ null && (Symbol.for("@effect/schema/TypeId/Brand")));
+/**
+ * @category constructors
+ * @since 1.0.0
+ */
+const fromBrand = (constructor, options) => self => {
+  return Schema_make(AST.createRefinement(self.ast, (a, _, ast) => {
+    const e = constructor.either(a);
+    return Either.isLeft(e) ? Option.some(ParseResult.parseError([ParseResult.type(ast, a, e.left.map(v => v.message).join(", "))])) : Option.none();
+  }, toAnnotations({
+    typeId: {
+      id: Schema_BrandTypeId,
+      params: {
+        constructor
+      }
+    },
+    ...options
+  })));
+};
+/**
+ * @category type id
+ * @since 1.0.0
+ */
+const InstanceOfTypeId = /*#__PURE__*/(/* unused pure expression or super */ null && (Symbol.for("@effect/schema/TypeId/InstanceOf")));
+/**
+ * @category constructors
+ * @since 1.0.0
+ */
+const Schema_instanceOf = (constructor, options) => {
+  return declare([], Schema_struct({}), () => (input, _, ast) => input instanceof constructor ? ParseResult.success(input) : ParseResult.failure(ParseResult.type(ast, input)), {
+    [AST.TypeAnnotationId]: InstanceOfTypeId,
+    [InstanceOfTypeId]: {
+      constructor
+    },
+    [AST.DescriptionAnnotationId]: `an instance of ${constructor.name}`,
+    ...toAnnotations(options)
+  });
+};
+// ---------------------------------------------
+// primitives
+// ---------------------------------------------
+const Schema_undefined = /*#__PURE__*/Schema_make(undefinedKeyword);
+const _void = /*#__PURE__*/Schema_make(voidKeyword);
+const Schema_null = /*#__PURE__*/(/* unused pure expression or super */ null && (Schema_make( /*#__PURE__*/AST.createLiteral(null))));
+
+/**
+ * @category primitives
+ * @since 1.0.0
+ */
+const Schema_never = /*#__PURE__*/Schema_make(neverKeyword);
+/**
+ * @category primitives
+ * @since 1.0.0
+ */
+const unknown = /*#__PURE__*/Schema_make(unknownKeyword);
+/**
+ * @category primitives
+ * @since 1.0.0
+ */
+const Schema_any = /*#__PURE__*/Schema_make(anyKeyword);
+/**
+ * @category primitives
+ * @since 1.0.0
+ */
+const Schema_string = /*#__PURE__*/Schema_make(stringKeyword);
+/**
+ * @category primitives
+ * @since 1.0.0
+ */
+const Schema_number = /*#__PURE__*/Schema_make(numberKeyword);
+/**
+ * @category primitives
+ * @since 1.0.0
+ */
+const Schema_boolean = /*#__PURE__*/Schema_make(booleanKeyword);
+/**
+ * @category primitives
+ * @since 1.0.0
+ */
+const bigintFromSelf = /*#__PURE__*/Schema_make(bigIntKeyword);
+/**
+ * @category primitives
+ * @since 1.0.0
+ */
+const symbolFromSelf = /*#__PURE__*/Schema_make(symbolKeyword);
+/**
+ * @category primitives
+ * @since 1.0.0
+ */
+const object = /*#__PURE__*/Schema_make(objectKeyword);
 // ---------------------------------------------
 // combinators
 // ---------------------------------------------
@@ -46887,7 +47638,7 @@ const Schema_union = (...members) => Schema_make(createUnion(members.map(m => m.
  * @category combinators
  * @since 1.0.0
  */
-const nullable = self => Schema_union(_null, self);
+const nullable = self => Schema_union(Schema_null, self);
 /**
  * @category combinators
  * @since 1.0.0
@@ -46897,7 +47648,7 @@ const Schema_keyof = schema => Schema_make(AST.keyof(schema.ast));
  * @category combinators
  * @since 1.0.0
  */
-const Schema_tuple = (...elements) => Schema_make(AST.createTuple(elements.map(schema => AST.createElement(schema.ast, false)), O.none(), true));
+const Schema_tuple = (...elements) => Schema_make(AST.createTuple(elements.map(schema => AST.createElement(schema.ast, false)), Option.none(), true));
 /**
  * @category combinators
  * @since 1.0.0
@@ -46932,115 +47683,103 @@ const optionalElement = element => self => {
  * @category combinators
  * @since 1.0.0
  */
-const Schema_array = item => Schema_make(AST.createTuple([], O.some([item.ast]), true));
+const Schema_array = item => Schema_make(createTuple([], mjs_Option_some([item.ast]), true));
 /**
  * @category combinators
  * @since 1.0.0
  */
 const nonEmptyArray = item => Schema_tuple(item).pipe(rest(item));
+/** @internal */
 class PropertySignatureImpl {
-  _from;
-  _annotations;
-  _optional;
-  From;
+  config;
+  [Schema_TypeId] = Schema_variance;
   FromIsOptional;
-  To;
   ToIsOptional;
-  constructor(_from, _annotations, _optional) {
-    this._from = _from;
-    this._annotations = _annotations;
-    this._optional = _optional;
-  }
-  optional() {
-    if (this._optional) {
-      throw new Error(`duplicate optional configuration`);
-    }
-    return new PropertySignatureImpl(this._from, this._annotations, {
-      to: "optional"
-    });
+  constructor(config) {
+    this.config = config;
   }
   withDefault(value) {
-    if (this._optional && this._optional.to !== "optional") {
-      throw new Error(`duplicate optional configuration`);
-    }
-    return new PropertySignatureImpl(this._from, this._annotations, {
-      to: "default",
-      value
+    return new PropertySignatureImpl({
+      _tag: "Default",
+      ast: this.config.ast,
+      value,
+      annotations: this.config.annotations
     });
   }
   toOption() {
-    if (this._optional && this._optional.to !== "optional") {
-      throw new Error(`duplicate optional configuration`);
-    }
-    return new PropertySignatureImpl(this._from, this._annotations, {
-      to: "Option"
+    return new PropertySignatureImpl({
+      _tag: "Option",
+      ast: this.config.ast,
+      annotations: this.config.annotations
     });
   }
 }
 /**
  * @since 1.0.0
- * @category constructors
  */
-const propertySignature = (schema, annotations) => new PropertySignatureImpl(schema.ast, annotations);
+const propertySignature = (schema, options) => new PropertySignatureImpl({
+  _tag: "PropertySignature",
+  ast: schema.ast,
+  annotations: toAnnotations(options)
+});
 /**
  * @since 1.0.0
  */
-const optional = (schema, annotations) => propertySignature(schema, annotations).optional();
+const optional = (schema, options) => new PropertySignatureImpl({
+  _tag: "Optional",
+  ast: schema.ast,
+  annotations: toAnnotations(options)
+});
 /**
  * @category combinators
  * @since 1.0.0
  */
 const Schema_struct = fields => {
   const ownKeys = common_ownKeys(fields);
-  const propertySignatures = [];
-  const fromPropertySignatures = [];
-  const toPropertySignatures = [];
+  const pss = [];
+  const froms = [];
+  const tos = [];
   const propertySignatureTransformations = [];
   for (let i = 0; i < ownKeys.length; i++) {
     const key = ownKeys[i];
     const field = fields[key];
-    if (field instanceof PropertySignatureImpl) {
-      const optional = field._optional;
-      if (optional) {
-        switch (optional.to) {
-          case "optional":
-            {
-              propertySignatures.push(createPropertySignature(key, field._from, true, true, field._annotations));
-              fromPropertySignatures.push(createPropertySignature(key, field._from, true, true));
-              toPropertySignatures.push(createPropertySignature(key, AST_to(field._from), true, true, field._annotations));
-              break;
-            }
-          case "default":
-            {
-              fromPropertySignatures.push(createPropertySignature(key, field._from, true, true));
-              toPropertySignatures.push(createPropertySignature(key, AST_to(field._from), false, true, field._annotations));
-              propertySignatureTransformations.push(createPropertySignatureTransformation(key, key, orElse(() => mjs_Option_some(optional.value())), Function_identity));
-              break;
-            }
-          case "Option":
-            {
-              fromPropertySignatures.push(createPropertySignature(key, field._from, true, true));
-              toPropertySignatures.push(createPropertySignature(key, optionFromSelf(Schema_make(AST_to(field._from))).ast, false, true, field._annotations));
-              propertySignatureTransformations.push(createPropertySignatureTransformation(key, key, mjs_Option_some, flatten));
-              break;
-            }
-        }
-      } else {
-        propertySignatures.push(createPropertySignature(key, field._from, false, true, field._annotations));
-        fromPropertySignatures.push(createPropertySignature(key, field._from, false, true));
-        toPropertySignatures.push(createPropertySignature(key, AST_to(field._from), false, true, field._annotations));
+    if ("config" in field) {
+      const config = field.config;
+      const from = config.ast;
+      const to = AST_to(from);
+      const annotations = config.annotations;
+      switch (config._tag) {
+        case "PropertySignature":
+          pss.push(createPropertySignature(key, from, false, true, annotations));
+          froms.push(createPropertySignature(key, from, false, true));
+          tos.push(createPropertySignature(key, to, false, true, annotations));
+          break;
+        case "Optional":
+          pss.push(createPropertySignature(key, from, true, true, annotations));
+          froms.push(createPropertySignature(key, from, true, true));
+          tos.push(createPropertySignature(key, to, true, true, annotations));
+          break;
+        case "Default":
+          froms.push(createPropertySignature(key, from, true, true));
+          tos.push(createPropertySignature(key, to, false, true, annotations));
+          propertySignatureTransformations.push(createPropertySignatureTransform(key, key, createFinalPropertySignatureTransformation(orElse(() => mjs_Option_some(config.value())), Function_identity)));
+          break;
+        case "Option":
+          froms.push(createPropertySignature(key, from, true, true));
+          tos.push(createPropertySignature(key, optionFromSelf(Schema_make(to)).ast, false, true, annotations));
+          propertySignatureTransformations.push(createPropertySignatureTransform(key, key, createFinalPropertySignatureTransformation(mjs_Option_some, flatten)));
+          break;
       }
     } else {
-      propertySignatures.push(createPropertySignature(key, field.ast, false, true));
-      fromPropertySignatures.push(createPropertySignature(key, field.ast, false, true));
-      toPropertySignatures.push(createPropertySignature(key, AST_to(field.ast), false, true));
+      pss.push(createPropertySignature(key, field.ast, false, true));
+      froms.push(createPropertySignature(key, field.ast, false, true));
+      tos.push(createPropertySignature(key, AST_to(field.ast), false, true));
     }
   }
-  if (propertySignatureTransformations.length > 0) {
-    return Schema_make(createTransformByPropertySignatureTransformations(createTypeLiteral(fromPropertySignatures, []), createTypeLiteral(toPropertySignatures, []), propertySignatureTransformations));
-  } else {
-    return Schema_make(createTypeLiteral(propertySignatures, []));
+  if (isNonEmptyReadonlyArray(propertySignatureTransformations)) {
+    return Schema_make(createTransform(createTypeLiteral(froms, []), createTypeLiteral(tos, []), createTypeLiteralTransformation(propertySignatureTransformations)));
   }
+  return Schema_make(createTypeLiteral(pss, []));
 };
 /**
  * @category combinators
@@ -47048,8 +47787,16 @@ const Schema_struct = fields => {
  */
 const Schema_pick = (...keys) => self => {
   const ast = self.ast;
-  if (AST.isTransform(ast) && ast.propertySignatureTransformations.length > 0) {
-    return Schema_make(AST.createTransformByPropertySignatureTransformations(AST.pick(ast.from, keys), AST.pick(ast.to, keys), ast.propertySignatureTransformations.filter(t => keys.includes(t.to))));
+  if (AST.isTransform(ast)) {
+    if (AST.isTypeLiteralTransformation(ast.transformation)) {
+      const propertySignatureTransformations = ast.transformation.propertySignatureTransformations.filter(t => keys.includes(t.to));
+      if (ReadonlyArray.isNonEmptyReadonlyArray(propertySignatureTransformations)) {
+        return Schema_make(AST.createTransform(AST.pick(ast.from, keys), AST.pick(ast.to, keys), AST.createTypeLiteralTransformation(propertySignatureTransformations)));
+      } else {
+        return Schema_make(AST.pick(ast.from, keys));
+      }
+    }
+    throw new Error(`pick: cannot handle this kind of transformation`);
   }
   return Schema_make(AST.pick(ast, keys));
 };
@@ -47059,10 +47806,26 @@ const Schema_pick = (...keys) => self => {
  */
 const Schema_omit = (...keys) => self => {
   const ast = self.ast;
-  if (AST.isTransform(ast) && ast.propertySignatureTransformations.length > 0) {
-    return Schema_make(AST.createTransformByPropertySignatureTransformations(AST.omit(ast.from, keys), AST.omit(ast.to, keys), ast.propertySignatureTransformations.filter(t => !keys.includes(t.to))));
+  if (AST.isTransform(ast)) {
+    if (AST.isTypeLiteralTransformation(ast.transformation)) {
+      const propertySignatureTransformations = ast.transformation.propertySignatureTransformations.filter(t => !keys.includes(t.to));
+      if (ReadonlyArray.isNonEmptyReadonlyArray(propertySignatureTransformations)) {
+        return Schema_make(AST.createTransform(AST.omit(ast.from, keys), AST.omit(ast.to, keys), AST.createTypeLiteralTransformation(propertySignatureTransformations)));
+      } else {
+        return Schema_make(AST.omit(ast.from, keys));
+      }
+    }
+    throw new Error(`omit: cannot handle this kind of transformation`);
   }
   return Schema_make(AST.omit(ast, keys));
+};
+const appendBrandAnnotation = (ast, brand, options) => {
+  if (isTransform(ast)) {
+    return createTransform(ast.from, appendBrandAnnotation(ast.to, brand, options), ast.transformation, ast.annotations);
+  }
+  const annotations = toAnnotations(options);
+  annotations[BrandAnnotationId] = [...getBrands(ast), brand];
+  return mergeAnnotations(ast, annotations);
 };
 /**
  * Returns a nominal branded schema by applying a brand to a given schema.
@@ -47075,33 +47838,31 @@ const Schema_omit = (...keys) => self => {
  * @param brand - The brand to apply.
  *
  * @example
- * import * as S from "@effect/schema/Schema"
+ * import * as Schema from "@effect/schema/Schema"
  *
- * const Int = S.number.pipe(S.int(), S.brand("Int"))
- * type Int = S.To<typeof Int> // number & Brand<"Int">
+ * const Int = Schema.number.pipe(Schema.int(), Schema.brand("Int"))
+ * type Int = Schema.Schema.To<typeof Int> // number & Brand<"Int">
  *
  * @category combinators
  * @since 1.0.0
  */
 const brand = (brand, options) => self => {
-  const annotations = toAnnotations(options);
-  annotations[BrandAnnotationId] = [...getBrands(self.ast), brand];
-  const ast = mergeAnnotations(self.ast, annotations);
+  const ast = appendBrandAnnotation(self.ast, brand, options);
   const schema = Schema_make(ast);
-  const validate = validateSync(schema);
+  const validateSync = Parser_validateSync(schema);
   const validateOption = Parser_validateOption(schema);
   const validateEither = Parser_validateEither(schema);
   const is = Parser_is(schema);
-  const out = Object.assign(input => validate(input), {
+  const out = Object.assign(input => validateSync(input), {
     [RefinedConstructorsTypeId]: RefinedConstructorsTypeId,
-    _id: Schema_TypeId,
+    [Schema_TypeId]: Schema_variance,
     ast,
     option: input => validateOption(input),
     either: input => mapLeft(validateEither(input), e => [{
       meta: input,
       message: formatErrors(e.errors)
     }]),
-    refine: input => is(input),
+    is: input => is(input),
     pipe() {
       return Pipeable_pipeArguments(this, arguments);
     }
@@ -47123,7 +47884,8 @@ const Schema_required = self => Schema_make(AST.required(self.ast));
  * @category combinators
  * @since 1.0.0
  */
-const record = (key, value) => Schema_make(AST.createRecord(key.ast, value.ast, true));
+const Schema_record = (key, value) => Schema_make(AST.createRecord(key.ast, value.ast, true));
+/** @internal */
 const intersectUnionMembers = (xs, ys) => {
   return AST.createUnion(xs.flatMap(x => {
     return ys.map(y => {
@@ -47131,24 +47893,23 @@ const intersectUnionMembers = (xs, ys) => {
         if (AST.isTypeLiteral(y)) {
           // isTypeLiteral(x) && isTypeLiteral(y)
           return AST.createTypeLiteral(x.propertySignatures.concat(y.propertySignatures), x.indexSignatures.concat(y.indexSignatures));
-        } else if (AST.isTransform(y) && y.propertySignatureTransformations.length > 0 && AST.isTypeLiteral(y.from) && AST.isTypeLiteral(y.to)) {
+        } else if (AST.isTransform(y) && AST.isTypeLiteralTransformation(y.transformation) && AST.isTypeLiteral(y.from) && AST.isTypeLiteral(y.to)) {
           // isTypeLiteral(x) && isTransform(y)
           const from = AST.createTypeLiteral(x.propertySignatures.concat(y.from.propertySignatures), x.indexSignatures.concat(y.from.indexSignatures));
           const to = AST.createTypeLiteral(AST.getToPropertySignatures(x.propertySignatures).concat(y.to.propertySignatures), AST.getToIndexSignatures(x.indexSignatures).concat(y.to.indexSignatures));
-          return AST.createTransformByPropertySignatureTransformations(from, to, y.propertySignatureTransformations);
+          return AST.createTransform(from, to, AST.createTypeLiteralTransformation(y.transformation.propertySignatureTransformations));
         }
-      } else if (AST.isTransform(x) && x.propertySignatureTransformations.length > 0 && AST.isTypeLiteral(x.from) && AST.isTypeLiteral(x.to)) {
+      } else if (AST.isTransform(x) && AST.isTypeLiteralTransformation(x.transformation) && AST.isTypeLiteral(x.from) && AST.isTypeLiteral(x.to)) {
         if (AST.isTypeLiteral(y)) {
           // isTransform(x) && isTypeLiteral(y)
           const from = AST.createTypeLiteral(x.from.propertySignatures.concat(y.propertySignatures), x.from.indexSignatures.concat(y.indexSignatures));
           const to = AST.createTypeLiteral(x.to.propertySignatures.concat(AST.getToPropertySignatures(y.propertySignatures)), x.to.indexSignatures.concat(AST.getToIndexSignatures(y.indexSignatures)));
-          return AST.createTransformByPropertySignatureTransformations(from, to, x.propertySignatureTransformations);
-        } else if (AST.isTransform(y) && y.propertySignatureTransformations.length > 0 && AST.isTypeLiteral(y.from) && AST.isTypeLiteral(y.to)) {
+          return AST.createTransform(from, to, AST.createTypeLiteralTransformation(x.transformation.propertySignatureTransformations));
+        } else if (AST.isTransform(y) && AST.isTypeLiteralTransformation(y.transformation) && AST.isTypeLiteral(y.from) && AST.isTypeLiteral(y.to)) {
           // isTransform(x) && isTransform(y)
           const from = AST.createTypeLiteral(x.from.propertySignatures.concat(y.from.propertySignatures), x.from.indexSignatures.concat(y.from.indexSignatures));
           const to = AST.createTypeLiteral(x.to.propertySignatures.concat(y.to.propertySignatures), x.to.indexSignatures.concat(y.to.indexSignatures));
-          const propertySignatureTransformations = x.propertySignatureTransformations.concat(y.propertySignatureTransformations);
-          return AST.createTransformByPropertySignatureTransformations(from, to, propertySignatureTransformations);
+          return AST.createTransform(from, to, AST.createTypeLiteralTransformation(x.transformation.propertySignatureTransformations.concat(y.transformation.propertySignatureTransformations)));
         }
       }
       throw new Error("`extend` can only handle type literals or unions of type literals");
@@ -47164,72 +47925,31 @@ const Schema_extend = /*#__PURE__*/(/* unused pure expression or super */ null &
  * @category combinators
  * @since 1.0.0
  */
-const Schema_compose = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (ab, cd) => Schema_transform(ab, cd, identity, identity))));
+const Schema_compose = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (ab, cd) => Schema_make(AST.createTransform(ab.ast, cd.ast, AST.composeTransformation)))));
 /**
  * @category combinators
  * @since 1.0.0
  */
 const lazy = (f, annotations) => Schema_make(AST.createLazy(() => f().ast, annotations));
-const toAnnotations = options => {
-  const annotations = {};
-  if (options?.typeId !== undefined) {
-    const typeId = options?.typeId;
-    if (typeof typeId === "object") {
-      annotations[TypeAnnotationId] = typeId.id;
-      annotations[typeId.id] = typeId.params;
-    } else {
-      annotations[TypeAnnotationId] = typeId;
-    }
-  }
-  if (options?.message !== undefined) {
-    annotations[MessageAnnotationId] = options?.message;
-  }
-  if (options?.identifier !== undefined) {
-    annotations[IdentifierAnnotationId] = options?.identifier;
-  }
-  if (options?.title !== undefined) {
-    annotations[TitleAnnotationId] = options?.title;
-  }
-  if (options?.description !== undefined) {
-    annotations[DescriptionAnnotationId] = options?.description;
-  }
-  if (options?.examples !== undefined) {
-    annotations[ExamplesAnnotationId] = options?.examples;
-  }
-  if (options?.documentation !== undefined) {
-    annotations[DocumentationAnnotationId] = options?.documentation;
-  }
-  if (options?.jsonSchema !== undefined) {
-    annotations[JSONSchemaAnnotationId] = options?.jsonSchema;
-  }
-  if (options?.arbitrary !== undefined) {
-    annotations[ArbitraryHookId] = options?.arbitrary;
-  }
-  return annotations;
-};
 function Schema_filter(predicate, options) {
-  return self => {
-    const decode = a => predicate(a) ? success(a) : failure(type(ast, a));
-    const ast = createRefinement(self.ast, decode, false, toAnnotations(options));
-    return Schema_make(ast);
-  };
+  return self => Schema_make(createRefinement(self.ast, (a, _, ast) => predicate(a) ? Option_none() : mjs_Option_some(parseError([ParseResult_type(ast, a)])), toAnnotations(options)));
 }
 /**
-  Create a new `Schema` by transforming the input and output of an existing `Schema`
-  using the provided decoding functions.
-
-  @category combinators
-  @since 1.0.0
+ * Create a new `Schema` by transforming the input and output of an existing `Schema`
+ * using the provided decoding functions.
+ *
+ * @category combinators
+ * @since 1.0.0
  */
-const transformResult = /*#__PURE__*/Function_dual(4, (from, to, decode, encode) => Schema_make(createTransform(from.ast, to.ast, decode, encode)));
+const transformOrFail = /*#__PURE__*/Function_dual(4, (from, to, decode, encode, annotations) => Schema_make(createTransform(from.ast, to.ast, createFinalTransformation(decode, encode), annotations)));
 /**
-  Create a new `Schema` by transforming the input and output of an existing `Schema`
-  using the provided mapping functions.
-
-  @category combinators
-  @since 1.0.0
-*/
-const Schema_transform = /*#__PURE__*/Function_dual(4, (from, to, decode, encode) => transformResult(from, to, a => Either_right(decode(a)), b => Either_right(encode(b))));
+ * Create a new `Schema` by transforming the input and output of an existing `Schema`
+ * using the provided mapping functions.
+ *
+ * @category combinators
+ * @since 1.0.0
+ */
+const Schema_transform = /*#__PURE__*/Function_dual(4, (from, to, decode, encode) => transformOrFail(from, to, a => Either_right(decode(a)), b => Either_right(encode(b))));
 /**
  * Attaches a property signature with the specified key and value to the schema.
  * This API is useful when you want to add a property to your schema which doesn't describe the shape of the input,
@@ -47258,14 +47978,49 @@ const Schema_transform = /*#__PURE__*/Function_dual(4, (from, to, decode, encode
  * @category combinators
  * @since 1.0.0
  */
-const attachPropertySignature = (key, value) => schema => Schema_make(AST.createTransformByPropertySignatureTransformations(schema.ast, to(schema).pipe(Schema_extend(Schema_struct({
+const attachPropertySignature = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(3, (schema, key, value) => Schema_make(AST.createTransform(schema.ast, to(schema).pipe(Schema_extend(Schema_struct({
   [key]: literal(value)
-}))).ast, [AST.createPropertySignatureTransformation(key, key, () => O.some(value), () => O.none())]));
+}))).ast, AST.createTypeLiteralTransformation([AST.createPropertySignatureTransform(key, key, AST.createFinalPropertySignatureTransformation(() => Option.some(value), () => Option.none()))]))))));
 // ---------------------------------------------
 // annotations
 // ---------------------------------------------
+const toAnnotations = options => {
+  if (!options) {
+    return {};
+  }
+  const out = {};
+  // symbols are reserved for custom annotations
+  const custom = Object.getOwnPropertySymbols(options);
+  for (const sym of custom) {
+    out[sym] = options[sym];
+  }
+  // string keys are reserved as /schema namespace
+  if (options.typeId !== undefined) {
+    const typeId = options.typeId;
+    if (typeof typeId === "object") {
+      out[TypeAnnotationId] = typeId.id;
+      out[typeId.id] = typeId.params;
+    } else {
+      out[TypeAnnotationId] = typeId;
+    }
+  }
+  const move = (from, to) => {
+    if (options[from] !== undefined) {
+      out[to] = options[from];
+    }
+  };
+  move("message", MessageAnnotationId);
+  move("identifier", IdentifierAnnotationId);
+  move("title", TitleAnnotationId);
+  move("description", DescriptionAnnotationId);
+  move("examples", ExamplesAnnotationId);
+  move("documentation", DocumentationAnnotationId);
+  move("jsonSchema", JSONSchemaAnnotationId);
+  move("arbitrary", ArbitraryHookId);
+  return out;
+};
 /**
- * @category combinators
+ * @category annotations
  * @since 1.0.0
  */
 const annotations = annotations => self => Schema_make(AST.mergeAnnotations(self.ast, annotations));
@@ -47299,952 +48054,21 @@ const examples = examples => self => Schema_make(AST.setAnnotation(self.ast, AST
  * @since 1.0.0
  */
 const documentation = documentation => self => Schema_make(AST.setAnnotation(self.ast, AST.DocumentationAnnotationId, documentation));
-const makeClass = (selfSchema, selfFields, base) => {
-  const validator = P.validateSync(selfSchema);
-  const fn = function (props) {
-    Object.assign(this, validator(props));
-  };
-  fn.prototype = Object.create(base);
-  fn.schemaStruct = function schemaStruct() {
-    return selfSchema;
-  };
-  fn.schema = function schema() {
-    return Schema_transform(selfSchema, instanceOf(this), input => Object.assign(Object.create(this.prototype), input), input => ({
-      ...input
-    }));
-  };
-  fn.extend = function extend(fields) {
-    const newFields = {
-      ...selfFields,
-      ...fields
-    };
-    return makeClass(Schema_struct(newFields), newFields, this.prototype);
-  };
-  fn.transform = function transform(fields, decode, encode) {
-    const newFields = {
-      ...selfFields,
-      ...fields
-    };
-    return makeClass(transformResult(selfSchema, to(Schema_struct(newFields)), decode, encode), newFields, this.prototype);
-  };
-  fn.transformFrom = function transform(fields, decode, encode) {
-    const newFields = {
-      ...selfFields,
-      ...fields
-    };
-    return makeClass(transformResult(Schema_from(selfSchema), Schema_struct(newFields), decode, encode), newFields, this.prototype);
-  };
-  return fn;
-};
-/**
- * @category classes
- * @since 1.0.0
- */
-const Schema_Class = fields => makeClass(Schema_struct(fields), fields, D.Class.prototype);
 // ---------------------------------------------
-// data
-// ---------------------------------------------
-const _undefined = /*#__PURE__*/Schema_make(undefinedKeyword);
-const _void = /*#__PURE__*/Schema_make(voidKeyword);
-const _null = /*#__PURE__*/(/* unused pure expression or super */ null && (Schema_make( /*#__PURE__*/AST.createLiteral(null))));
-
-/**
- * @category primitives
- * @since 1.0.0
- */
-const Schema_never = /*#__PURE__*/Schema_make(neverKeyword);
-/**
- * @category primitives
- * @since 1.0.0
- */
-const unknown = /*#__PURE__*/Schema_make(unknownKeyword);
-/**
- * @category primitives
- * @since 1.0.0
- */
-const any = /*#__PURE__*/Schema_make(anyKeyword);
-/**
- * @category primitives
- * @since 1.0.0
- */
-const Schema_string = /*#__PURE__*/Schema_make(stringKeyword);
-/**
- * @category primitives
- * @since 1.0.0
- */
-const Schema_number = /*#__PURE__*/Schema_make(numberKeyword);
-/**
- * @category primitives
- * @since 1.0.0
- */
-const Schema_boolean = /*#__PURE__*/Schema_make(booleanKeyword);
-/**
- * @category primitives
- * @since 1.0.0
- */
-const Schema_bigint = /*#__PURE__*/Schema_make(bigIntKeyword);
-/**
- * @category primitives
- * @since 1.0.0
- */
-const Schema_symbol = /*#__PURE__*/Schema_make(symbolKeyword);
-/**
- * @category primitives
- * @since 1.0.0
- */
-const object = /*#__PURE__*/Schema_make(objectKeyword);
-// ---------------------------------------------
-// data/Bigint
+// string filters
 // ---------------------------------------------
 /**
  * @category type id
  * @since 1.0.0
  */
-const GreaterThanBigintTypeId = "@effect/schema/GreaterThanBigintTypeId";
-/**
- * @category bigint
- * @since 1.0.0
- */
-const greaterThanBigint = (min, options) => self => self.pipe(Schema_filter(a => a > min, {
-  typeId: GreaterThanBigintTypeId,
-  description: `a bigint greater than ${min}n`,
-  jsonSchema: {
-    exclusiveMinimum: min
-  },
-  ...options
-}));
-/**
- * @category type id
- * @since 1.0.0
- */
-const GreaterThanOrEqualToBigintTypeId = "@effect/schema/GreaterThanOrEqualToBigintTypeId";
-/**
- * @category bigint
- * @since 1.0.0
- */
-const greaterThanOrEqualToBigint = (min, options) => self => self.pipe(Schema_filter(a => a >= min, {
-  typeId: GreaterThanOrEqualToBigintTypeId,
-  description: `a bigint greater than or equal to ${min}n`,
-  jsonSchema: {
-    minimum: min
-  },
-  ...options
-}));
-/**
- * @category type id
- * @since 1.0.0
- */
-const LessThanBigintTypeId = "@effect/schema/LessThanBigintTypeId";
-/**
- * @category bigint
- * @since 1.0.0
- */
-const lessThanBigint = (max, options) => self => self.pipe(Schema_filter(a => a < max, {
-  typeId: LessThanBigintTypeId,
-  description: `a bigint less than ${max}n`,
-  jsonSchema: {
-    exclusiveMaximum: max
-  },
-  ...options
-}));
-/**
- * @category type id
- * @since 1.0.0
- */
-const LessThanOrEqualToBigintTypeId = "@effect/schema/LessThanOrEqualToBigintTypeId";
-/**
- * @category bigint
- * @since 1.0.0
- */
-const lessThanOrEqualToBigint = (max, options) => self => self.pipe(Schema_filter(a => a <= max, {
-  typeId: LessThanOrEqualToBigintTypeId,
-  description: `a bigint less than or equal to ${max}n`,
-  jsonSchema: {
-    maximum: max
-  },
-  ...options
-}));
-/**
- * @category type id
- * @since 1.0.0
- */
-const BetweenBigintTypeId = "@effect/schema/BetweenBigintTypeId";
-/**
- * @category bigint
- * @since 1.0.0
- */
-const betweenBigint = (min, max, options) => self => self.pipe(Schema_filter(a => a >= min && a <= max, {
-  typeId: BetweenBigintTypeId,
-  description: `a bigint between ${min}n and ${max}n`,
-  jsonSchema: {
-    maximum: max,
-    minimum: min
-  },
-  ...options
-}));
-/**
- * @category type id
- * @since 1.0.0
- */
-const PositiveBigintTypeId = "@effect/schema/PositiveBigintTypeId";
-/**
- * @category bigint
- * @since 1.0.0
- */
-const positiveBigint = options => greaterThanBigint(0n, {
-  typeId: PositiveBigintTypeId,
-  description: "a positive bigint",
-  ...options
-});
-/**
- * @category type id
- * @since 1.0.0
- */
-const NegativeBigintTypeId = "@effect/schema/NegativeBigintTypeId";
-/**
- * @category bigint
- * @since 1.0.0
- */
-const negativeBigint = options => lessThanBigint(0n, {
-  typeId: NegativeBigintTypeId,
-  description: "a negative bigint",
-  ...options
-});
-/**
- * @category type id
- * @since 1.0.0
- */
-const NonNegativeBigintTypeId = "@effect/schema/NonNegativeBigintTypeId";
-/**
- * @category bigint
- * @since 1.0.0
- */
-const nonNegativeBigint = options => greaterThanOrEqualToBigint(0n, {
-  typeId: NonNegativeBigintTypeId,
-  description: "a non-negative bigint",
-  ...options
-});
-/**
- * @category type id
- * @since 1.0.0
- */
-const NonPositiveBigintTypeId = "@effect/schema/NonPositiveBigintTypeId";
-/**
- * @category bigint
- * @since 1.0.0
- */
-const nonPositiveBigint = options => lessThanOrEqualToBigint(0n, {
-  typeId: NonPositiveBigintTypeId,
-  description: "a non-positive bigint",
-  ...options
-});
-/**
- * Clamps a bigint between a minimum and a maximum value.
- *
- * @category bigint
- * @since 1.0.0
- */
-const clampBigint = (min, max) => self => Schema_transform(self, self.pipe(to, betweenBigint(min, max)), self => B.clamp(self, min, max),
-// this is safe because `self.pipe(to, betweenBigint(min, max))` will check its input anyway
-identity);
-/**
- * This combinator transforms a `string` into a `bigint` by parsing the string using the `BigInt` function.
- *
- * It returns an error if the value can't be converted (for example when non-numeric characters are provided).
- *
- * @param self - The schema representing the input string
- *
- * @category bigint
- * @since 1.0.0
- */
-const bigintFromString = self => {
-  const schema = transformResult(self, Schema_bigint, s => {
-    if (s.trim() === "") {
-      return PR.failure(PR.type(schema.ast, s));
-    }
-    try {
-      return PR.success(BigInt(s));
-    } catch (_) {
-      return PR.failure(PR.type(schema.ast, s));
-    }
-  }, n => PR.success(String(n)) // this is safe because `self` will check its input anyway
-  );
-
-  return schema;
-};
-/**
- * This schema transforms a `string` into a `bigint` by parsing the string using the `BigInt` function.
- *
- * It returns an error if the value can't be converted (for example when non-numeric characters are provided).
- *
- * @category bigint
- * @since 1.0.0
- */
-const BigintFromString = /*#__PURE__*/(/* unused pure expression or super */ null && (bigintFromString(Schema_string)));
-// ---------------------------------------------
-// data/Boolean
-// ---------------------------------------------
-/**
- * Negates a boolean value
- *
- * @category boolean
- * @since 1.0.0
- */
-const Schema_not = self => Schema_transform(self, to(self), self => !self, self => !self);
-// ---------------------------------------------
-// data/Brand
-// ---------------------------------------------
-/**
- * @category type id
- * @since 1.0.0
- */
-const Schema_BrandTypeId = "@effect/schema/BrandTypeId";
-/**
- * @category combinators
- * @since 1.0.0
- */
-const fromBrand = (constructor, options) => self => {
-  const decode = a => E.mapLeft(constructor.either(a), brandErrors => PR.parseError([PR.type(ast, a, brandErrors.map(v => v.message).join(", "))]));
-  const ast = AST.createRefinement(self.ast, decode, false, toAnnotations({
-    typeId: Schema_BrandTypeId,
-    ...options
-  }));
-  return Schema_make(ast);
-};
-// ---------------------------------------------
-// data/Chunk
-// ---------------------------------------------
-const chunkArbitrary = item => fc => fc.array(item(fc)).map(C.fromIterable);
-const chunkPretty = item => c => `Chunk(${C.toReadonlyArray(c).map(item).join(", ")})`;
-/**
- * @category constructors
- * @since 1.0.0
- */
-const chunkFromSelf = item => {
-  const schema = declare([item], Schema_struct({
-    _id: uniqueSymbol(Symbol.for("@effect/data/Chunk")),
-    length: Schema_number
-  }), item => {
-    const parse = P.parseResult(Schema_array(item));
-    return (u, options) => !C.isChunk(u) ? PR.failure(PR.type(schema.ast, u)) : PR.map(parse(C.toReadonlyArray(u), options), C.fromIterable);
-  }, {
-    [AST.IdentifierAnnotationId]: "Chunk",
-    [I.PrettyHookId]: chunkPretty,
-    [I.ArbitraryHookId]: chunkArbitrary
-  });
-  return schema;
-};
-/**
- * @category combinators
- * @since 1.0.0
- */
-const Schema_chunk = item => Schema_transform(Schema_array(item), to(chunkFromSelf(item)), C.fromIterable, C.toReadonlyArray);
-// ---------------------------------------------
-// data/Data
-// ---------------------------------------------
-const toData = a => Array.isArray(a) ? D.array(a) : D.struct(a);
-const dataArbitrary = item => fc => item(fc).map(toData);
-const dataPretty = item => d => `Data(${item(d)})`;
-/**
- * @category combinators
- * @since 1.0.0
- */
-const dataFromSelf = item => {
-  const schema = declare([item], item, item => {
-    const parse = P.parseResult(item);
-    return (u, options) => !Equal.isEqual(u) ? PR.failure(PR.type(schema.ast, u)) : PR.map(parse(u, options), toData);
-  }, {
-    [AST.IdentifierAnnotationId]: "Data",
-    [I.PrettyHookId]: dataPretty,
-    [I.ArbitraryHookId]: dataArbitrary
-  });
-  return schema;
-};
-/**
- * @category combinators
- * @since 1.0.0
- */
-const data = item => Schema_transform(item, to(dataFromSelf(item)), toData, a => Array.isArray(a) ? Array.from(a) : Object.assign({}, a));
-// ---------------------------------------------
-// data/Date
-// ---------------------------------------------
-const dateArbitrary = () => fc => fc.date();
-const datePretty = () => date => `new Date(${JSON.stringify(date)})`;
-/**
- * @category Date
- * @since 1.0.0
- */
-const DateFromSelf = /*#__PURE__*/declare([], /*#__PURE__*/Schema_struct({}), () => u => !isDate(u) ? failure(type(DateFromSelf.ast, u)) : success(u), {
-  [IdentifierAnnotationId]: "Date",
-  [PrettyHookId]: datePretty,
-  [ArbitraryHookId]: dateArbitrary
-});
-/**
- * @category type id
- * @since 1.0.0
- */
-const ValidDateTypeId = "@effect/schema/ValidDateTypeId";
-/**
- * A filter excluding invalid dates (e.g. `new Date("fail")`).
- *
- * @category Date
- * @since 1.0.0
- */
-const validDate = options => self => self.pipe(Schema_filter(a => !isNaN(a.getTime()), {
-  typeId: ValidDateTypeId,
-  description: "a valid Date",
-  ...options
-}));
-/**
- * A schema representing valid dates, e.g. `new Date("fail")` is excluded, even though it is an instance of `Date`.
- *
- * @category Date
- * @since 1.0.0
- */
-const ValidDateFromSelf = /*#__PURE__*/(/* unused pure expression or super */ null && (DateFromSelf.pipe( /*#__PURE__*/validDate())));
-/**
-  A combinator that transforms a `string` into a valid `Date`.
-
-  @category Date
-  @since 1.0.0
-*/
-const dateFromString = self => transformResult(self, ValidDateFromSelf, s => PR.success(new Date(s)), n => PR.success(n.toISOString()) // this is safe because `self` will check its input anyway
-);
-
-const _Date = /*#__PURE__*/(/* unused pure expression or super */ null && (dateFromString(Schema_string)));
-
-// ---------------------------------------------
-// data/Either
-// ---------------------------------------------
-const eitherArbitrary = (left, right) => fc => fc.oneof(left(fc).map(E.left), right(fc).map(E.right));
-const eitherPretty = (left, right) => E.match({
-  onLeft: e => `left(${left(e)})`,
-  onRight: a => `right(${right(a)})`
-});
-const eitherInline = (left, right) => Schema_union(Schema_struct({
-  _tag: literal("Left"),
-  left
-}), Schema_struct({
-  _tag: literal("Right"),
-  right
-}));
-/**
- * @category combinators
- * @since 1.0.0
- */
-const eitherFromSelf = (left, right) => {
-  const schema = declare([left, right], eitherInline(left, right), (left, right) => {
-    const parseLeft = P.parseResult(left);
-    const parseRight = P.parseResult(right);
-    return (u, options) => !E.isEither(u) ? PR.failure(PR.type(schema.ast, u)) : E.isLeft(u) ? PR.map(parseLeft(u.left, options), E.left) : PR.map(parseRight(u.right, options), E.right);
-  }, {
-    [AST.IdentifierAnnotationId]: "Either",
-    [I.PrettyHookId]: eitherPretty,
-    [I.ArbitraryHookId]: eitherArbitrary
-  });
-  return schema;
-};
-/**
- * @category combinators
- * @since 1.0.0
- */
-const Schema_either = (left, right) => Schema_transform(eitherInline(left, right), to(eitherFromSelf(left, right)), a => a._tag === "Left" ? E.left(a.left) : E.right(a.right), E.match({
-  onLeft: left => ({
-    _tag: "Left",
-    left
-  }),
-  onRight: right => ({
-    _tag: "Right",
-    right
-  })
-}));
-// ---------------------------------------------
-// data/Json
-// ---------------------------------------------
-/**
- * @category type id
- * @since 1.0.0
- */
-const JsonNumberTypeId = "@effect/schema/JsonNumberTypeId";
-/**
- * The `JsonNumber` is a schema for representing JSON numbers. It ensures that the provided value is a valid
- * number by filtering out `NaN` and `(+/-) Infinity`. This is useful when you want to validate and represent numbers in JSON
- * format.
- *
- * @example
- * import * as S from "@effect/schema/Schema"
- *
- * const is = S.is(S.JsonNumber)
- *
- * assert.deepStrictEqual(is(42), true)
- * assert.deepStrictEqual(is(Number.NaN), false)
- * assert.deepStrictEqual(is(Number.POSITIVE_INFINITY), false)
- * assert.deepStrictEqual(is(Number.NEGATIVE_INFINITY), false)
- *
- * @category constructors
- * @since 1.0.0
- */
-const JsonNumber = /*#__PURE__*/Schema_number.pipe( /*#__PURE__*/Schema_filter(n => !isNaN(n) && isFinite(n), {
-  typeId: JsonNumberTypeId,
-  description: "a JSON number"
-}));
-// ---------------------------------------------
-// data/Number
-// ---------------------------------------------
-/**
- * @category type id
- * @since 1.0.0
- */
-const FiniteTypeId = "@effect/schema/FiniteTypeId";
-/**
- * @category number
- * @since 1.0.0
- */
-const finite = options => self => self.pipe(Schema_filter(a => Number.isFinite(a), {
-  typeId: FiniteTypeId,
-  description: "a finite number",
-  ...options
-}));
-/**
- * @category type id
- * @since 1.0.0
- */
-const GreaterThanTypeId = "@effect/schema/GreaterThanTypeId";
-/**
- * @category number
- * @since 1.0.0
- */
-const Schema_greaterThan = (min, options) => self => self.pipe(Schema_filter(a => a > min, {
-  typeId: GreaterThanTypeId,
-  description: `a number greater than ${min}`,
-  jsonSchema: {
-    exclusiveMinimum: min
-  },
-  ...options
-}));
-/**
- * @category type id
- * @since 1.0.0
- */
-const GreaterThanOrEqualToTypeId = "@effect/schema/GreaterThanOrEqualToTypeId";
-/**
- * @category number
- * @since 1.0.0
- */
-const Schema_greaterThanOrEqualTo = (min, options) => self => self.pipe(Schema_filter(a => a >= min, {
-  typeId: GreaterThanOrEqualToTypeId,
-  description: `a number greater than or equal to ${min}`,
-  jsonSchema: {
-    minimum: min
-  },
-  ...options
-}));
-/**
- * @category type id
- * @since 1.0.0
- */
-const MultipleOfTypeId = "@effect/schema/MultipleOfTypeId";
-/**
- * @category number
- * @since 1.0.0
- */
-const multipleOf = (divisor, options) => self => self.pipe(Schema_filter(a => N.remainder(a, divisor) === 0, {
-  typeId: MultipleOfTypeId,
-  description: `a number divisible by ${divisor}`,
-  jsonSchema: {
-    multipleOf: Math.abs(divisor)
-  },
-  ...options
-}));
-/**
- * @category type id
- * @since 1.0.0
- */
-const IntTypeId = "@effect/schema/IntTypeId";
-/**
- * @category number
- * @since 1.0.0
- */
-const Schema_int = options => self => self.pipe(Schema_filter(a => Number.isInteger(a), {
-  typeId: IntTypeId,
-  description: "integer",
-  jsonSchema: {
-    type: "integer"
-  },
-  ...options
-}));
-/**
- * @category type id
- * @since 1.0.0
- */
-const LessThanTypeId = "@effect/schema/LessThanTypeId";
-/**
- * @category number
- * @since 1.0.0
- */
-const Schema_lessThan = (max, options) => self => self.pipe(Schema_filter(a => a < max, {
-  typeId: LessThanTypeId,
-  description: `a number less than ${max}`,
-  jsonSchema: {
-    exclusiveMaximum: max
-  },
-  ...options
-}));
-/**
- * @category type id
- * @since 1.0.0
- */
-const LessThanOrEqualToTypeId = "@effect/schema/LessThanOrEqualToTypeId";
-/**
- * @category number
- * @since 1.0.0
- */
-const Schema_lessThanOrEqualTo = (max, options) => self => self.pipe(Schema_filter(a => a <= max, {
-  typeId: LessThanOrEqualToTypeId,
-  description: `a number less than or equal to ${max}`,
-  jsonSchema: {
-    maximum: max
-  },
-  ...options
-}));
-/**
- * @category type id
- * @since 1.0.0
- */
-const BetweenTypeId = "@effect/schema/BetweenTypeId";
-/**
- * @category number
- * @since 1.0.0
- */
-const Schema_between = (min, max, options) => self => self.pipe(Schema_filter(a => a >= min && a <= max, {
-  typeId: BetweenTypeId,
-  description: `a number between ${min} and ${max}`,
-  jsonSchema: {
-    maximum: max,
-    minimum: min
-  },
-  ...options
-}));
-/**
- * @category type id
- * @since 1.0.0
- */
-const NonNaNTypeId = "@effect/schema/NonNaNTypeId";
-/**
- * @category number
- * @since 1.0.0
- */
-const nonNaN = options => self => self.pipe(Schema_filter(a => !Number.isNaN(a), {
-  typeId: NonNaNTypeId,
-  description: "a number NaN excluded",
-  ...options
-}));
-/**
- * @category type id
- * @since 1.0.0
- */
-const PositiveTypeId = "@effect/schema/PositiveTypeId";
-/**
- * @category number
- * @since 1.0.0
- */
-const positive = options => Schema_greaterThan(0, {
-  typeId: PositiveTypeId,
-  description: "a positive number",
-  ...options
-});
-/**
- * @category type id
- * @since 1.0.0
- */
-const NegativeTypeId = "@effect/schema/NegativeTypeId";
-/**
- * @category number
- * @since 1.0.0
- */
-const negative = options => Schema_lessThan(0, {
-  typeId: NegativeTypeId,
-  description: "a negative number",
-  ...options
-});
-/**
- * @category type id
- * @since 1.0.0
- */
-const NonNegativeTypeId = "@effect/schema/NonNegativeTypeId";
-/**
- * @category number
- * @since 1.0.0
- */
-const nonNegative = options => Schema_greaterThanOrEqualTo(0, {
-  typeId: NonNegativeTypeId,
-  description: "a non-negative number",
-  ...options
-});
-/**
- * @category type id
- * @since 1.0.0
- */
-const NonPositiveTypeId = "@effect/schema/NonPositiveTypeId";
-/**
- * @category number
- * @since 1.0.0
- */
-const nonPositive = options => Schema_lessThanOrEqualTo(0, {
-  typeId: NonPositiveTypeId,
-  description: "a non-positive number",
-  ...options
-});
-/**
- * Clamps a number between a minimum and a maximum value.
- *
- * @category number
- * @since 1.0.0
- */
-const Schema_clamp = (min, max) => self => Schema_transform(self, self.pipe(to, Schema_between(min, max)), self => N.clamp(self, min, max),
-// this is safe because `self.pipe(to, between(min, max))` will check its input anyway
-identity);
-/**
- * This combinator transforms a `string` into a `number` by parsing the string using the `Number` function.
- *
- * It returns an error if the value can't be converted (for example when non-numeric characters are provided).
- *
- * The following special string values are supported: "NaN", "Infinity", "-Infinity".
- *
- * @param self - The schema representing the input string
- *
- * @category number
- * @since 1.0.0
- */
-const numberFromString = self => {
-  const schema = transformResult(self, Schema_number, s => {
-    if (s === "NaN") {
-      return PR.success(NaN);
-    }
-    if (s === "Infinity") {
-      return PR.success(Infinity);
-    }
-    if (s === "-Infinity") {
-      return PR.success(-Infinity);
-    }
-    if (s.trim() === "") {
-      return PR.failure(PR.type(schema.ast, s));
-    }
-    const n = Number(s);
-    return isNaN(n) ? PR.failure(PR.type(schema.ast, s)) : PR.success(n);
-  }, n => PR.success(String(n)) // this is safe because `self` will check its input anyway
-  );
-
-  return schema;
-};
-/**
- * This schema transforms a `string` into a `number` by parsing the string using the `Number` function.
- *
- * It returns an error if the value can't be converted (for example when non-numeric characters are provided).
- *
- * The following special string values are supported: "NaN", "Infinity", "-Infinity".
- *
- * @category number
- * @since 1.0.0
- */
-const NumberFromString = /*#__PURE__*/(/* unused pure expression or super */ null && (numberFromString(Schema_string)));
-// ---------------------------------------------
-// data/Object
-// ---------------------------------------------
-/**
- * @category type id
- * @since 1.0.0
- */
-const InstanceOfTypeId = "@effect/schema/InstanceOfTypeId";
-/**
- * @category constructors
- * @since 1.0.0
- */
-const instanceOf = (constructor, options) => {
-  const annotations = toAnnotations(options);
-  const schema = declare([], Schema_struct({}), () => input => input instanceof constructor ? PR.success(input) : PR.failure(PR.type(schema.ast, input)), {
-    [AST.TypeAnnotationId]: InstanceOfTypeId,
-    [InstanceOfTypeId]: {
-      constructor
-    },
-    [AST.DescriptionAnnotationId]: `an instance of ${constructor.name}`,
-    ...annotations
-  });
-  return schema;
-};
-// ---------------------------------------------
-// data/Option
-// ---------------------------------------------
-const optionArbitrary = value => fc => fc.oneof(fc.constant(Option_none()), value(fc).map(mjs_Option_some));
-const optionPretty = value => match({
-  onNone: () => "none()",
-  onSome: a => `some(${value(a)})`
-});
-const optionInline = value => Schema_union(Schema_struct({
-  _tag: literal("None")
-}), Schema_struct({
-  _tag: literal("Some"),
-  value
-}));
-/**
- * @category combinators
- * @since 1.0.0
- */
-const optionFromSelf = value => {
-  const schema = declare([value], optionInline(value), value => {
-    const parse = parseResult(value);
-    return (u, options) => !Option_isOption(u) ? failure(type(schema.ast, u)) : Option_isNone(u) ? success(Option_none()) : ParseResult_map(parse(u.value, options), mjs_Option_some);
-  }, {
-    [IdentifierAnnotationId]: "Option",
-    [PrettyHookId]: optionPretty,
-    [ArbitraryHookId]: optionArbitrary
-  });
-  return schema;
-};
-/**
- * @category combinators
- * @since 1.0.0
- */
-const Schema_option = value => Schema_transform(optionInline(value), to(optionFromSelf(value)), a => a._tag === "None" ? O.none() : O.some(a.value), O.match({
-  onNone: () => ({
-    _tag: "None"
-  }),
-  onSome: value => ({
-    _tag: "Some",
-    value
-  })
-}));
-/**
- * @category option
- * @since 1.0.0
- */
-const optionFromNullable = value => Schema_transform(nullable(value), to(optionFromSelf(value)), O.fromNullable, O.getOrNull);
-// ---------------------------------------------
-// data/ReadonlyArray
-// ---------------------------------------------
-/**
- * @category type id
- * @since 1.0.0
- */
-const MinItemsTypeId = "@effect/schema/MinItemsTypeId";
-/**
- * @category array
- * @since 1.0.0
- */
-const minItems = (n, options) => self => self.pipe(Schema_filter(a => a.length >= n, {
-  typeId: MinItemsTypeId,
-  description: `an array of at least ${n} items`,
-  jsonSchema: {
-    minItems: n
-  },
-  ...options
-}));
-/**
- * @category type id
- * @since 1.0.0
- */
-const MaxItemsTypeId = "@effect/schema/MaxItemsTypeId";
-/**
- * @category array
- * @since 1.0.0
- */
-const maxItems = (n, options) => self => self.pipe(Schema_filter(a => a.length <= n, {
-  typeId: MaxItemsTypeId,
-  description: `an array of at most ${n} items`,
-  jsonSchema: {
-    maxItems: n
-  },
-  ...options
-}));
-/**
- * @category type id
- * @since 1.0.0
- */
-const ItemsCountTypeId = "@effect/schema/ItemsCountTypeId";
-/**
- * @category array
- * @since 1.0.0
- */
-const itemsCount = (n, options) => self => self.pipe(Schema_filter(a => a.length === n, {
-  typeId: ItemsCountTypeId,
-  description: `an array of exactly ${n} items`,
-  jsonSchema: {
-    minItems: n,
-    maxItems: n
-  },
-  ...options
-}));
-// ---------------------------------------------
-// data/ReadonlyMap
-// ---------------------------------------------
-const isMap = u => u instanceof Map;
-const readonlyMapArbitrary = (key, value) => fc => fc.array(fc.tuple(key(fc), value(fc))).map(as => new Map(as));
-const readonlyMapPretty = (key, value) => map => `new Map([${Array.from(map.entries()).map(([k, v]) => `[${key(k)}, ${value(v)}]`).join(", ")}])`;
-/**
- * @category constructors
- * @since 1.0.0
- */
-const readonlyMapFromSelf = (key, value) => {
-  const schema = declare([key, value], Schema_struct({
-    size: Schema_number
-  }), (key, value) => {
-    const parse = P.parseResult(Schema_array(Schema_tuple(key, value)));
-    return (u, options) => !isMap(u) ? PR.failure(PR.type(schema.ast, u)) : PR.map(parse(Array.from(u.entries()), options), as => new Map(as));
-  }, {
-    [AST.IdentifierAnnotationId]: "ReadonlyMap",
-    [I.PrettyHookId]: readonlyMapPretty,
-    [I.ArbitraryHookId]: readonlyMapArbitrary
-  });
-  return schema;
-};
-/**
- * @category combinators
- * @since 1.0.0
- */
-const readonlyMap = (key, value) => Schema_transform(Schema_array(Schema_tuple(key, value)), to(readonlyMapFromSelf(key, value)), as => new Map(as), map => Array.from(map.entries()));
-// ---------------------------------------------
-// data/ReadonlySet
-// ---------------------------------------------
-const isSet = u => u instanceof Set;
-const readonlySetArbitrary = item => fc => fc.array(item(fc)).map(as => new Set(as));
-const readonlySetPretty = item => set => `new Set([${Array.from(set.values()).map(a => item(a)).join(", ")}])`;
-/**
- * @category constructors
- * @since 1.0.0
- */
-const readonlySetFromSelf = item => {
-  const schema = declare([item], Schema_struct({
-    size: Schema_number
-  }), item => {
-    const parse = P.parseResult(Schema_array(item));
-    return (u, options) => !isSet(u) ? PR.failure(PR.type(schema.ast, u)) : PR.map(parse(Array.from(u.values()), options), as => new Set(as));
-  }, {
-    [AST.IdentifierAnnotationId]: "ReadonlySet",
-    [I.PrettyHookId]: readonlySetPretty,
-    [I.ArbitraryHookId]: readonlySetArbitrary
-  });
-  return schema;
-};
-/**
- * @category combinators
- * @since 1.0.0
- */
-const readonlySet = item => Schema_transform(Schema_array(item), to(readonlySetFromSelf(item)), as => new Set(as), set => Array.from(set));
-// ---------------------------------------------
-// data/String
-// ---------------------------------------------
-/**
- * @category type id
- * @since 1.0.0
- */
-const TrimmedTypeId = "@effect/schema/TrimmedTypeId";
+const TrimmedTypeId = /*#__PURE__*/Symbol.for("@effect/schema/TypeId/Trimmed");
 /**
  * Verifies that a string contains no leading or trailing whitespaces.
  *
  * Note. This combinator does not make any transformations, it only validates.
  * If what you were looking for was a combinator to trim strings, then check out the `trim` combinator.
  *
- * @category string
+ * @category string filters
  * @since 1.0.0
  */
 const trimmed = options => self => self.pipe(Schema_filter(a => a === a.trim(), {
@@ -48256,9 +48080,9 @@ const trimmed = options => self => self.pipe(Schema_filter(a => a === a.trim(), 
  * @category type id
  * @since 1.0.0
  */
-const MaxLengthTypeId = "@effect/schema/MaxLengthTypeId";
+const MaxLengthTypeId = /*#__PURE__*/(/* unused pure expression or super */ null && (Symbol.for("@effect/schema/TypeId/MaxLength")));
 /**
- * @category string
+ * @category string filters
  * @since 1.0.0
  */
 const maxLength = (maxLength, options) => self => self.pipe(Schema_filter(a => a.length <= maxLength, {
@@ -48273,9 +48097,9 @@ const maxLength = (maxLength, options) => self => self.pipe(Schema_filter(a => a
  * @category type id
  * @since 1.0.0
  */
-const MinLengthTypeId = "@effect/schema/MinLengthTypeId";
+const MinLengthTypeId = /*#__PURE__*/Symbol.for("@effect/schema/TypeId/MinLength");
 /**
- * @category string
+ * @category string filters
  * @since 1.0.0
  */
 const minLength = (minLength, options) => self => self.pipe(Schema_filter(a => a.length >= minLength, {
@@ -48290,9 +48114,9 @@ const minLength = (minLength, options) => self => self.pipe(Schema_filter(a => a
  * @category type id
  * @since 1.0.0
  */
-const PatternTypeId = "@effect/schema/PatternTypeId";
+const PatternTypeId = /*#__PURE__*/Symbol.for("@effect/schema/TypeId/Pattern");
 /**
- * @category string
+ * @category string filters
  * @since 1.0.0
  */
 const pattern = (regex, options) => self => {
@@ -48320,9 +48144,9 @@ const pattern = (regex, options) => self => {
  * @category type id
  * @since 1.0.0
  */
-const StartsWithTypeId = "@effect/schema/StartsWithTypeId";
+const StartsWithTypeId = /*#__PURE__*/(/* unused pure expression or super */ null && (Symbol.for("@effect/schema/TypeId/StartsWith")));
 /**
- * @category string
+ * @category string filters
  * @since 1.0.0
  */
 const startsWith = (startsWith, options) => self => self.pipe(Schema_filter(a => a.startsWith(startsWith), {
@@ -48342,9 +48166,9 @@ const startsWith = (startsWith, options) => self => self.pipe(Schema_filter(a =>
  * @category type id
  * @since 1.0.0
  */
-const EndsWithTypeId = "@effect/schema/EndsWithTypeId";
+const EndsWithTypeId = /*#__PURE__*/(/* unused pure expression or super */ null && (Symbol.for("@effect/schema/TypeId/EndsWith")));
 /**
- * @category string
+ * @category string filters
  * @since 1.0.0
  */
 const endsWith = (endsWith, options) => self => self.pipe(Schema_filter(a => a.endsWith(endsWith), {
@@ -48364,9 +48188,9 @@ const endsWith = (endsWith, options) => self => self.pipe(Schema_filter(a => a.e
  * @category type id
  * @since 1.0.0
  */
-const IncludesTypeId = "@effect/schema/IncludesTypeId";
+const IncludesTypeId = /*#__PURE__*/(/* unused pure expression or super */ null && (Symbol.for("@effect/schema/TypeId/Includes")));
 /**
- * @category string
+ * @category string filters
  * @since 1.0.0
  */
 const Schema_includes = (searchString, options) => self => self.pipe(Schema_filter(a => a.includes(searchString), {
@@ -48383,99 +48207,1163 @@ const Schema_includes = (searchString, options) => self => self.pipe(Schema_filt
   ...options
 }));
 /**
- * This combinator allows removing whitespaces from the beginning and end of a string.
- *
- * @category string
+ * @category type id
  * @since 1.0.0
  */
-const trim = self => Schema_transform(self, to(self).pipe(trimmed()), s => s.trim(),
-// this is safe because `pipe(to(self), trimmed())` will check its input anyway
-Function_identity);
+const LowercasedTypeId = /*#__PURE__*/(/* unused pure expression or super */ null && (Symbol.for("@effect/schema/TypeId/Lowercased")));
 /**
- * This schema allows removing whitespaces from the beginning and end of a string.
+ * Verifies that a string is lowercased
  *
- * @category string
+ * Note. This combinator does not make any transformations, it only validates.
+ * If what you were looking for was a combinator to lowercase strings, then check out the `lowercase` combinator.
+ *
+ * @category string filters
  * @since 1.0.0
  */
-const Trim = /*#__PURE__*/(/* unused pure expression or super */ null && (trim(Schema_string)));
-/**
- * This combinator allows splitting a string into an array of strings.
- *
- * @category string
- * @since 1.0.0
- */
-const Schema_split = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, separator) => Schema_transform(self, Schema_array(Schema_string), S.split(separator), RA.join(separator)))));
+const lowercased = options => self => self.pipe(Schema_filter(a => a === a.toLowerCase(), {
+  typeId: LowercasedTypeId,
+  description: "a lowercase string",
+  ...options
+}));
 /**
  * @category type id
  * @since 1.0.0
  */
-const UUIDTypeId = "@effect/schema/UUIDTypeId";
+const LengthTypeId = /*#__PURE__*/(/* unused pure expression or super */ null && (Symbol.for("@effect/schema/TypeId/Length")));
+/**
+ * @category string filters
+ * @since 1.0.0
+ */
+const Schema_length = (length, options) => self => self.pipe(Schema_filter(a => a.length === length, {
+  typeId: LengthTypeId,
+  description: length === 1 ? `a character` : `a string ${length} character(s) long`,
+  jsonSchema: {
+    minLength: length,
+    maxLength: length
+  },
+  ...options
+}));
+/**
+ * @category string filters
+ * @since 1.0.0
+ */
+const nonEmpty = options => minLength(1, {
+  description: "a non empty string",
+  ...options
+});
+// ---------------------------------------------
+// string transformations
+// ---------------------------------------------
+/**
+ * This combinator converts a string to lowercase
+ *
+ * @category string transformations
+ * @since 1.0.0
+ */
+const lowercase = self => Schema_transform(self, to(self).pipe(lowercased()), s => s.toLowerCase(), identity);
+/**
+ * This combinator converts a string to lowercase
+ *
+ * @category string transformations
+ * @since 1.0.0
+ */
+const Lowercase = /*#__PURE__*/(/* unused pure expression or super */ null && (lowercase(Schema_string)));
+/**
+ * This combinator allows removing whitespaces from the beginning and end of a string.
+ *
+ * @category string transformations
+ * @since 1.0.0
+ */
+const trim = self => Schema_transform(self, to(self).pipe(trimmed()), s => s.trim(), Function_identity);
+/**
+ * This combinator allows splitting a string into an array of strings.
+ *
+ * @category string transformations
+ * @since 1.0.0
+ */
+const Schema_split = /*#__PURE__*/(/* unused pure expression or super */ null && (dual(2, (self, separator) => Schema_transform(self, Schema_array(Schema_string), S.split(separator), ReadonlyArray.join(separator)))));
+/**
+ * The `parseJson` combinator offers a method to convert JSON strings into the `unknown` type using the underlying
+ * functionality of `JSON.parse`. It also employs `JSON.stringify` for encoding.
+ *
+ * @category string transformations
+ * @since 1.0.0
+ */
+const parseJson = (self, options) => {
+  return transformOrFail(self, unknown, (s, _, ast) => {
+    try {
+      return ParseResult.success(JSON.parse(s, options?.reviver));
+    } catch (e) {
+      return ParseResult.failure(ParseResult.type(ast, s, e.message));
+    }
+  }, (u, _, ast) => {
+    try {
+      return ParseResult.success(JSON.stringify(u, options?.replacer, options?.space));
+    } catch (e) {
+      return ParseResult.failure(ParseResult.type(ast, u, e.message));
+    }
+  });
+};
+// ---------------------------------------------
+// string constructors
+// ---------------------------------------------
+/**
+ * @category string constructors
+ * @since 1.0.0
+ */
+const NonEmpty = /*#__PURE__*/(/* unused pure expression or super */ null && (Schema_string.pipe( /*#__PURE__*/nonEmpty())));
+/**
+ * @category string constructors
+ * @since 1.0.0
+ */
+const Trimmed = /*#__PURE__*/(/* unused pure expression or super */ null && (Schema_string.pipe( /*#__PURE__*/trimmed())));
+/**
+ * @category type id
+ * @since 1.0.0
+ */
+const UUIDTypeId = /*#__PURE__*/Symbol.for("@effect/schema/TypeId/UUID");
 const uuidRegex = /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/i;
 /**
- * @category constructors
+ * @category string constructors
  * @since 1.0.0
  */
 const UUID = /*#__PURE__*/Schema_string.pipe( /*#__PURE__*/pattern(uuidRegex, {
   typeId: UUIDTypeId,
   title: "UUID",
+  description: "a UUID",
   arbitrary: () => fc => fc.uuid()
 }));
 /**
  * @category type id
  * @since 1.0.0
  */
-const ULIDTypeId = "@effect/schema/ULIDTypeId";
+const ULIDTypeId = /*#__PURE__*/Symbol.for("@effect/schema/TypeId/ULID");
 const ulidRegex = /^[0-7][0-9A-HJKMNP-TV-Z]{25}$/i;
 /**
- * @category constructors
+ * @category string constructors
  * @since 1.0.0
  */
 const ULID = /*#__PURE__*/Schema_string.pipe( /*#__PURE__*/pattern(ulidRegex, {
   typeId: ULIDTypeId,
   title: "ULID",
+  description: "a ULID",
   arbitrary: () => fc => fc.ulid()
 }));
 /**
- * @category string
- * @since 1.0.0
- */
-const Schema_length = (length, options) => self => minLength(length, options)(maxLength(length)(self));
-/**
- * @category string
- * @since 1.0.0
- */
-const nonEmpty = options => minLength(1, options);
-/**
- * The `parseJson` combinator offers a method to convert JSON strings into the `unknown` type using the underlying
- * functionality of `JSON.parse`. It also employs `JSON.stringify` for encoding.
+ * This schema allows removing whitespaces from the beginning and end of a string.
  *
- * @category string
+ * @category string constructors
  * @since 1.0.0
  */
-const parseJson = (self, options) => {
-  const schema = transformResult(self, unknown, s => {
-    try {
-      return PR.success(JSON.parse(s, options?.reviver));
-    } catch (e) {
-      return PR.failure(PR.type(schema.ast, s, e.message));
-    }
-  }, u => {
-    try {
-      return PR.success(JSON.stringify(u, options?.replacer, options?.space)); // this is safe because `self` will check its input anyway
-    } catch (e) {
-      return PR.failure(PR.type(schema.ast, u, e.message));
-    }
-  });
-  return schema;
-};
+const Trim = /*#__PURE__*/(/* unused pure expression or super */ null && (trim(Schema_string)));
 /**
  * The `ParseJson` schema offers a method to convert JSON strings into the `unknown` type using the underlying
  * functionality of `JSON.parse`. It also employs `JSON.stringify` for encoding.
  *
- * @category string
+ * @category string constructors
  * @since 1.0.0
  */
 const ParseJson = /*#__PURE__*/(/* unused pure expression or super */ null && (parseJson(Schema_string)));
+// ---------------------------------------------
+// number filters
+// ---------------------------------------------
+/**
+ * @category type id
+ * @since 1.0.0
+ */
+const FiniteTypeId = /*#__PURE__*/(/* unused pure expression or super */ null && (Symbol.for("@effect/schema/TypeId/Finite")));
+/**
+ * @category number filters
+ * @since 1.0.0
+ */
+const finite = options => self => self.pipe(Schema_filter(a => Number.isFinite(a), {
+  typeId: FiniteTypeId,
+  description: "a finite number",
+  ...options
+}));
+/**
+ * @category type id
+ * @since 1.0.0
+ */
+const GreaterThanTypeId = /*#__PURE__*/(/* unused pure expression or super */ null && (Symbol.for("@effect/schema/TypeId/GreaterThan")));
+/**
+ * @category number filters
+ * @since 1.0.0
+ */
+const Schema_greaterThan = (min, options) => self => self.pipe(Schema_filter(a => a > min, {
+  typeId: GreaterThanTypeId,
+  description: min === 0 ? "a positive number" : `a number greater than ${min}`,
+  jsonSchema: {
+    exclusiveMinimum: min
+  },
+  ...options
+}));
+/**
+ * @category type id
+ * @since 1.0.0
+ */
+const GreaterThanOrEqualToTypeId = /*#__PURE__*/(/* unused pure expression or super */ null && (Symbol.for("@effect/schema/TypeId/GreaterThanOrEqualTo")));
+/**
+ * @category number filters
+ * @since 1.0.0
+ */
+const Schema_greaterThanOrEqualTo = (min, options) => self => self.pipe(Schema_filter(a => a >= min, {
+  typeId: GreaterThanOrEqualToTypeId,
+  description: min === 0 ? "a non-negative number" : `a number greater than or equal to ${min}`,
+  jsonSchema: {
+    minimum: min
+  },
+  ...options
+}));
+/**
+ * @category type id
+ * @since 1.0.0
+ */
+const MultipleOfTypeId = /*#__PURE__*/(/* unused pure expression or super */ null && (Symbol.for("@effect/schema/TypeId/MultipleOf")));
+/**
+ * @category number filters
+ * @since 1.0.0
+ */
+const multipleOf = (divisor, options) => self => self.pipe(Schema_filter(a => N.remainder(a, divisor) === 0, {
+  typeId: MultipleOfTypeId,
+  description: `a number divisible by ${divisor}`,
+  jsonSchema: {
+    multipleOf: Math.abs(divisor)
+  },
+  ...options
+}));
+/**
+ * @category type id
+ * @since 1.0.0
+ */
+const IntTypeId = /*#__PURE__*/(/* unused pure expression or super */ null && (Symbol.for("@effect/schema/TypeId/Int")));
+/**
+ * @category number filters
+ * @since 1.0.0
+ */
+const Schema_int = options => self => self.pipe(Schema_filter(a => Number.isInteger(a), {
+  typeId: IntTypeId,
+  description: "integer",
+  jsonSchema: {
+    type: "integer"
+  },
+  ...options
+}));
+/**
+ * @category type id
+ * @since 1.0.0
+ */
+const LessThanTypeId = /*#__PURE__*/(/* unused pure expression or super */ null && (Symbol.for("@effect/schema/TypeId/LessThan")));
+/**
+ * @category number filters
+ * @since 1.0.0
+ */
+const Schema_lessThan = (max, options) => self => self.pipe(Schema_filter(a => a < max, {
+  typeId: LessThanTypeId,
+  description: max === 0 ? "a negative number" : `a number less than ${max}`,
+  jsonSchema: {
+    exclusiveMaximum: max
+  },
+  ...options
+}));
+/**
+ * @category type id
+ * @since 1.0.0
+ */
+const LessThanOrEqualToTypeId = /*#__PURE__*/(/* unused pure expression or super */ null && (Symbol.for("@effect/schema/TypeId/LessThanOrEqualTo")));
+/**
+ * @category number filters
+ * @since 1.0.0
+ */
+const Schema_lessThanOrEqualTo = (max, options) => self => self.pipe(Schema_filter(a => a <= max, {
+  typeId: LessThanOrEqualToTypeId,
+  description: max === 0 ? "a non-positive number" : `a number less than or equal to ${max}`,
+  jsonSchema: {
+    maximum: max
+  },
+  ...options
+}));
+/**
+ * @category type id
+ * @since 1.0.0
+ */
+const BetweenTypeId = /*#__PURE__*/Symbol.for("@effect/schema/TypeId/Between");
+/**
+ * @category number filters
+ * @since 1.0.0
+ */
+const Schema_between = (min, max, options) => self => self.pipe(Schema_filter(a => a >= min && a <= max, {
+  typeId: BetweenTypeId,
+  description: `a number between ${min} and ${max}`,
+  jsonSchema: {
+    maximum: max,
+    minimum: min
+  },
+  ...options
+}));
+/**
+ * @category type id
+ * @since 1.0.0
+ */
+const NonNaNTypeId = /*#__PURE__*/(/* unused pure expression or super */ null && (Symbol.for("@effect/schema/TypeId/NonNaN")));
+/**
+ * @category number filters
+ * @since 1.0.0
+ */
+const nonNaN = options => self => self.pipe(Schema_filter(a => !Number.isNaN(a), {
+  typeId: NonNaNTypeId,
+  description: "a number NaN excluded",
+  ...options
+}));
+/**
+ * @category number filters
+ * @since 1.0.0
+ */
+const positive = options => Schema_greaterThan(0, options);
+/**
+ * @category number filters
+ * @since 1.0.0
+ */
+const negative = options => Schema_lessThan(0, options);
+/**
+ * @category number filters
+ * @since 1.0.0
+ */
+const nonPositive = options => Schema_lessThanOrEqualTo(0, options);
+/**
+ * @category number filters
+ * @since 1.0.0
+ */
+const nonNegative = options => Schema_greaterThanOrEqualTo(0, options);
+// ---------------------------------------------
+// number transformations
+// ---------------------------------------------
+/**
+ * Clamps a number between a minimum and a maximum value.
+ *
+ * @category number transformations
+ * @since 1.0.0
+ */
+const Schema_clamp = (min, max) => self => Schema_transform(self, self.pipe(to, Schema_between(min, max)), self => N.clamp(self, min, max), identity);
+/**
+ * This combinator transforms a `string` into a `number` by parsing the string using the `Number` function.
+ *
+ * It returns an error if the value can't be converted (for example when non-numeric characters are provided).
+ *
+ * The following special string values are supported: "NaN", "Infinity", "-Infinity".
+ *
+ * @param self - The schema representing the input string
+ *
+ * @category number transformations
+ * @since 1.0.0
+ */
+const numberFromString = self => {
+  return transformOrFail(self, Schema_number, (s, _, ast) => {
+    if (s === "NaN") {
+      return ParseResult.success(NaN);
+    }
+    if (s === "Infinity") {
+      return ParseResult.success(Infinity);
+    }
+    if (s === "-Infinity") {
+      return ParseResult.success(-Infinity);
+    }
+    if (s.trim() === "") {
+      return ParseResult.failure(ParseResult.type(ast, s));
+    }
+    const n = Number(s);
+    return isNaN(n) ? ParseResult.failure(ParseResult.type(ast, s)) : ParseResult.success(n);
+  }, n => ParseResult.success(String(n)));
+};
+// ---------------------------------------------
+// number constructors
+// ---------------------------------------------
+/**
+ * @category number constructors
+ * @since 1.0.0
+ */
+const Finite = /*#__PURE__*/(/* unused pure expression or super */ null && (Schema_number.pipe( /*#__PURE__*/finite())));
+/**
+ * @category number constructors
+ * @since 1.0.0
+ */
+const Int = /*#__PURE__*/(/* unused pure expression or super */ null && (Schema_number.pipe( /*#__PURE__*/Schema_int())));
+/**
+ * @category number constructors
+ * @since 1.0.0
+ */
+const NonNaN = /*#__PURE__*/(/* unused pure expression or super */ null && (Schema_number.pipe( /*#__PURE__*/nonNaN())));
+/**
+ * @category number constructors
+ * @since 1.0.0
+ */
+const Positive = /*#__PURE__*/(/* unused pure expression or super */ null && (Schema_number.pipe( /*#__PURE__*/positive())));
+/**
+ * @category number constructors
+ * @since 1.0.0
+ */
+const Negative = /*#__PURE__*/(/* unused pure expression or super */ null && (Schema_number.pipe( /*#__PURE__*/negative())));
+/**
+ * @category number constructors
+ * @since 1.0.0
+ */
+const NonPositive = /*#__PURE__*/(/* unused pure expression or super */ null && (Schema_number.pipe( /*#__PURE__*/nonPositive())));
+/**
+ * @category number constructors
+ * @since 1.0.0
+ */
+const NonNegative = /*#__PURE__*/(/* unused pure expression or super */ null && (Schema_number.pipe( /*#__PURE__*/nonNegative())));
+/**
+ * This schema transforms a `string` into a `number` by parsing the string using the `Number` function.
+ *
+ * It returns an error if the value can't be converted (for example when non-numeric characters are provided).
+ *
+ * The following special string values are supported: "NaN", "Infinity", "-Infinity".
+ *
+ * @category number constructors
+ * @since 1.0.0
+ */
+const NumberFromString = /*#__PURE__*/(/* unused pure expression or super */ null && (numberFromString(Schema_string)));
+/**
+ * @category type id
+ * @since 1.0.0
+ */
+const JsonNumberTypeId = /*#__PURE__*/Symbol.for("@effect/schema/TypeId/JsonNumber");
+/**
+ * The `JsonNumber` is a schema for representing JSON numbers. It ensures that the provided value is a valid
+ * number by filtering out `NaN` and `(+/-) Infinity`. This is useful when you want to validate and represent numbers in JSON
+ * format.
+ *
+ * @example
+ * import * as S from "@effect/schema/Schema"
+ *
+ * const is = S.is(S.JsonNumber)
+ *
+ * assert.deepStrictEqual(is(42), true)
+ * assert.deepStrictEqual(is(Number.NaN), false)
+ * assert.deepStrictEqual(is(Number.POSITIVE_INFINITY), false)
+ * assert.deepStrictEqual(is(Number.NEGATIVE_INFINITY), false)
+ *
+ * @category number constructors
+ * @since 1.0.0
+ */
+const JsonNumber = /*#__PURE__*/Schema_number.pipe( /*#__PURE__*/Schema_filter(n => !isNaN(n) && isFinite(n), {
+  typeId: JsonNumberTypeId,
+  title: "JsonNumber",
+  description: "a JSON number"
+}));
+// ---------------------------------------------
+// boolean transformations
+// ---------------------------------------------
+/**
+ * Negates a boolean value
+ *
+ * @category boolean transformations
+ * @since 1.0.0
+ */
+const Schema_not = self => Schema_transform(self, to(self), self => !self, self => !self);
+// ---------------------------------------------
+// boolean constructors
+// ---------------------------------------------
+/**
+ * @category boolean constructors
+ * @since 1.0.0
+ */
+const Not = /*#__PURE__*/(/* unused pure expression or super */ null && (Schema_not(Schema_boolean)));
+// ---------------------------------------------
+// symbol transformations
+// ---------------------------------------------
+/**
+ * This combinator transforms a `string` into a `symbol`.
+ *
+ * @param self - The schema representing the input string
+ *
+ * @category symbol transformations
+ * @since 1.0.0
+ */
+const symbolFromString = self => {
+  return Schema_transform(self, symbolFromSelf, s => Symbol.for(s), sym => sym.description);
+};
+// ---------------------------------------------
+// symbol constructors
+// ---------------------------------------------
+/**
+ * This schema transforms a `string` into a `symbol`.
+ *
+ * @category symbol constructors
+ * @since 1.0.0
+ */
+const Schema_symbol = /*#__PURE__*/(/* unused pure expression or super */ null && (symbolFromString(Schema_string)));
+// ---------------------------------------------
+// bigint filters
+// ---------------------------------------------
+/**
+ * @category type id
+ * @since 1.0.0
+ */
+const GreaterThanBigintTypeId = /*#__PURE__*/(/* unused pure expression or super */ null && (Symbol.for("@effect/schema/TypeId/GreaterThanBigint")));
+/**
+ * @category bigint filters
+ * @since 1.0.0
+ */
+const greaterThanBigint = (min, options) => self => self.pipe(Schema_filter(a => a > min, {
+  typeId: GreaterThanBigintTypeId,
+  description: min === 0n ? "a positive bigint" : `a bigint greater than ${min}n`,
+  jsonSchema: {
+    exclusiveMinimum: min
+  },
+  ...options
+}));
+/**
+ * @category type id
+ * @since 1.0.0
+ */
+const GreaterThanOrEqualToBigintTypeId = /*#__PURE__*/(/* unused pure expression or super */ null && (Symbol.for("@effect/schema/TypeId/GreaterThanOrEqualToBigint")));
+/**
+ * @category bigint filters
+ * @since 1.0.0
+ */
+const greaterThanOrEqualToBigint = (min, options) => self => self.pipe(Schema_filter(a => a >= min, {
+  typeId: GreaterThanOrEqualToBigintTypeId,
+  description: min === 0n ? "a non-negative bigint" : `a bigint greater than or equal to ${min}n`,
+  jsonSchema: {
+    minimum: min
+  },
+  ...options
+}));
+/**
+ * @category type id
+ * @since 1.0.0
+ */
+const LessThanBigintTypeId = /*#__PURE__*/(/* unused pure expression or super */ null && (Symbol.for("@effect/schema/TypeId/LessThanBigint")));
+/**
+ * @category bigint filters
+ * @since 1.0.0
+ */
+const lessThanBigint = (max, options) => self => self.pipe(Schema_filter(a => a < max, {
+  typeId: LessThanBigintTypeId,
+  description: max === 0n ? "a negative bigint" : `a bigint less than ${max}n`,
+  jsonSchema: {
+    exclusiveMaximum: max
+  },
+  ...options
+}));
+/**
+ * @category type id
+ * @since 1.0.0
+ */
+const LessThanOrEqualToBigintTypeId = /*#__PURE__*/(/* unused pure expression or super */ null && (Symbol.for("@effect/schema/TypeId/LessThanOrEqualToBigint")));
+/**
+ * @category bigint filters
+ * @since 1.0.0
+ */
+const lessThanOrEqualToBigint = (max, options) => self => self.pipe(Schema_filter(a => a <= max, {
+  typeId: LessThanOrEqualToBigintTypeId,
+  description: max === 0n ? "a non-positive bigint" : `a bigint less than or equal to ${max}n`,
+  jsonSchema: {
+    maximum: max
+  },
+  ...options
+}));
+/**
+ * @category type id
+ * @since 1.0.0
+ */
+const BetweenBigintTypeId = /*#__PURE__*/(/* unused pure expression or super */ null && (Symbol.for("@effect/schema/TypeId/BetweenBigint")));
+/**
+ * @category bigint filters
+ * @since 1.0.0
+ */
+const betweenBigint = (min, max, options) => self => self.pipe(Schema_filter(a => a >= min && a <= max, {
+  typeId: BetweenBigintTypeId,
+  description: `a bigint between ${min}n and ${max}n`,
+  jsonSchema: {
+    maximum: max,
+    minimum: min
+  },
+  ...options
+}));
+/**
+ * @category bigint filters
+ * @since 1.0.0
+ */
+const positiveBigint = options => greaterThanBigint(0n, options);
+/**
+ * @category bigint filters
+ * @since 1.0.0
+ */
+const negativeBigint = options => lessThanBigint(0n, options);
+/**
+ * @category bigint filters
+ * @since 1.0.0
+ */
+const nonNegativeBigint = options => greaterThanOrEqualToBigint(0n, options);
+/**
+ * @category bigint filters
+ * @since 1.0.0
+ */
+const nonPositiveBigint = options => lessThanOrEqualToBigint(0n, options);
+// ---------------------------------------------
+// bigint transformations
+// ---------------------------------------------
+/**
+ * Clamps a bigint between a minimum and a maximum value.
+ *
+ * @category bigint transformations
+ * @since 1.0.0
+ */
+const clampBigint = (min, max) => self => Schema_transform(self, self.pipe(to, betweenBigint(min, max)), self => Bigint.clamp(self, min, max), identity);
+/**
+ * This combinator transforms a `string` into a `bigint` by parsing the string using the `BigInt` function.
+ *
+ * It returns an error if the value can't be converted (for example when non-numeric characters are provided).
+ *
+ * @param self - The schema representing the input string
+ *
+ * @category bigint transformations
+ * @since 1.0.0
+ */
+const bigintFromString = self => {
+  return transformOrFail(self, bigintFromSelf, (s, _, ast) => {
+    if (s.trim() === "") {
+      return ParseResult.failure(ParseResult.type(ast, s));
+    }
+    try {
+      return ParseResult.success(BigInt(s));
+    } catch (_) {
+      return ParseResult.failure(ParseResult.type(ast, s));
+    }
+  }, n => ParseResult.success(String(n)));
+};
+/**
+ * This combinator transforms a `number` into a `bigint` by parsing the number using the `BigInt` function.
+ *
+ * It returns an error if the value can't be safely encoded as a `number` due to being out of range.
+ *
+ * @param self - The schema representing the input number
+ *
+ * @category bigint transformations
+ * @since 1.0.0
+ */
+const bigintFromNumber = self => {
+  return transformOrFail(self, bigintFromSelf, (n, _, ast) => {
+    try {
+      return ParseResult.success(BigInt(n));
+    } catch (_) {
+      return ParseResult.failure(ParseResult.type(ast, n));
+    }
+  }, (b, _, ast) => {
+    if (b > Internal.maxSafeInteger || b < Internal.minSafeInteger) {
+      return ParseResult.failure(ParseResult.type(ast, b));
+    }
+    return ParseResult.success(Number(b));
+  });
+};
+// ---------------------------------------------
+// bigint constructors
+// ---------------------------------------------
+/**
+ * This schema transforms a `string` into a `bigint` by parsing the string using the `BigInt` function.
+ *
+ * It returns an error if the value can't be converted (for example when non-numeric characters are provided).
+ *
+ * @category bigint constructors
+ * @since 1.0.0
+ */
+const Schema_bigint = /*#__PURE__*/(/* unused pure expression or super */ null && (bigintFromString(Schema_string)));
+/**
+ * @category bigint constructors
+ * @since 1.0.0
+ */
+const PositiveBigintFromSelf = /*#__PURE__*/(/* unused pure expression or super */ null && (bigintFromSelf.pipe( /*#__PURE__*/positiveBigint())));
+/**
+ * @category bigint constructors
+ * @since 1.0.0
+ */
+const PositiveBigint = /*#__PURE__*/(/* unused pure expression or super */ null && (Schema_bigint.pipe( /*#__PURE__*/positiveBigint())));
+/**
+ * @category bigint constructors
+ * @since 1.0.0
+ */
+const NegativeBigintFromSelf = /*#__PURE__*/(/* unused pure expression or super */ null && (bigintFromSelf.pipe( /*#__PURE__*/negativeBigint())));
+/**
+ * @category bigint constructors
+ * @since 1.0.0
+ */
+const NegativeBigint = /*#__PURE__*/(/* unused pure expression or super */ null && (Schema_bigint.pipe( /*#__PURE__*/negativeBigint())));
+/**
+ * @category bigint constructors
+ * @since 1.0.0
+ */
+const NonPositiveBigintFromSelf = /*#__PURE__*/(/* unused pure expression or super */ null && (bigintFromSelf.pipe( /*#__PURE__*/nonPositiveBigint())));
+/**
+ * @category bigint constructors
+ * @since 1.0.0
+ */
+const NonPositiveBigint = /*#__PURE__*/(/* unused pure expression or super */ null && (Schema_bigint.pipe( /*#__PURE__*/nonPositiveBigint())));
+/**
+ * @category bigint constructors
+ * @since 1.0.0
+ */
+const NonNegativeBigintFromSelf = /*#__PURE__*/(/* unused pure expression or super */ null && (bigintFromSelf.pipe( /*#__PURE__*/nonNegativeBigint())));
+/**
+ * @category bigint constructors
+ * @since 1.0.0
+ */
+const NonNegativeBigint = /*#__PURE__*/(/* unused pure expression or super */ null && (Schema_bigint.pipe( /*#__PURE__*/nonNegativeBigint())));
+/**
+ * This schema transforms a `number` into a `bigint` by parsing the number using the `BigInt` function.
+ *
+ * It returns an error if the value can't be safely encoded as a `number` due to being out of range.
+ *
+ * @category bigint constructors
+ * @since 1.0.0
+ */
+const BigintFromNumber = /*#__PURE__*/(/* unused pure expression or super */ null && (bigintFromNumber(Schema_number)));
+// ---------------------------------------------
+// Uint8Array constructors
+// ---------------------------------------------
+/**
+ * @category Uint8Array constructors
+ * @since 1.0.0
+ */
+const Uint8ArrayFromSelf = /*#__PURE__*/declare([], /*#__PURE__*/Schema_struct({}), () => (u, _, ast) => !isUint8Array(u) ? failure(ParseResult_type(ast, u)) : success(u), {
+  [IdentifierAnnotationId]: "Uint8Array",
+  [PrettyHookId]: () => u8arr => `new Uint8Array(${JSON.stringify(Array.from(u8arr))})`,
+  [ArbitraryHookId]: () => fc => fc.uint8Array()
+});
+// ---------------------------------------------
+// Uint8Array transformations
+// ---------------------------------------------
+/**
+ * A combinator that transforms a `number` array into a `Uint8Array`.
+ *
+ * @category Uint8Array transformations
+ * @since 1.0.0
+ */
+const uint8ArrayFromNumbers = self => Schema_transform(self, Uint8ArrayFromSelf, a => Uint8Array.from(a), n => Array.from(n));
+const _Uint8Array = /*#__PURE__*/uint8ArrayFromNumbers( /*#__PURE__*/Schema_array( /*#__PURE__*/Schema_number.pipe( /*#__PURE__*/Schema_between(0, 255, {
+  title: "8-bit unsigned integer",
+  description: "a 8-bit unsigned integer"
+}))));
+
+// ---------------------------------------------
+// Encoding transformations
+// ---------------------------------------------
+const makeEncodingTransform = (id, decode, encode, arbitrary) => self => transformOrFail(self, Uint8ArrayFromSelf, (s, _, ast) => mapLeft(decode(s), decodeException => parseError([ParseResult_type(ast, s, decodeException.message)])), u => success(encode(u)), {
+  [IdentifierAnnotationId]: id,
+  [PrettyHookId]: () => u => `${id}(${encode(u)})`,
+  [ArbitraryHookId]: () => arbitrary
+});
+/**
+ * Transforms a base64 `string` into a `Uint8Array`.
+ *
+ * @category encoding transformations
+ * @since 1.0.0
+ */
+const base64 = /*#__PURE__*/makeEncodingTransform("Base64", decodeBase64, encodeBase64, fc => fc.base64String().map(s => Either_getOrThrow(decodeBase64(s))));
+/**
+ * Transforms a base64url `string` into a `Uint8Array`.
+ *
+ * @category encoding transformations
+ * @since 1.0.0
+ */
+const base64url = /*#__PURE__*/makeEncodingTransform("Base64Url", decodeBase64Url, encodeBase64Url, fc => fc.base64String().map(s => Either_getOrThrow(decodeBase64Url(s))));
+/**
+ * Transforms a hex `string` into a `Uint8Array`.
+ *
+ * @category encoding transformations
+ * @since 1.0.0
+ */
+const hex = /*#__PURE__*/makeEncodingTransform("Hex", decodeHex, encodeHex, fc => fc.hexaString().map(s => Either_getOrThrow(decodeHex(s))));
+// ---------------------------------------------
+// Encoding constructors
+// ---------------------------------------------
+/**
+ * @category encoding constructors
+ * @since 1.0.0
+ */
+const Base64 = /*#__PURE__*/(/* unused pure expression or super */ null && (base64(Schema_string)));
+/**
+ * @category encoding constructors
+ * @since 1.0.0
+ */
+const Base64Url = /*#__PURE__*/(/* unused pure expression or super */ null && (base64url(Schema_string)));
+/**
+ * @category encoding constructors
+ * @since 1.0.0
+ */
+const Hex = /*#__PURE__*/(/* unused pure expression or super */ null && (hex(Schema_string)));
+// ---------------------------------------------
+// ReadonlyArray filters
+// ---------------------------------------------
+/**
+ * @category type id
+ * @since 1.0.0
+ */
+const MinItemsTypeId = /*#__PURE__*/(/* unused pure expression or super */ null && (Symbol.for("@effect/schema/TypeId/MinItems")));
+/**
+ * @category ReadonlyArray filters
+ * @since 1.0.0
+ */
+const minItems = (n, options) => self => self.pipe(Schema_filter(a => a.length >= n, {
+  typeId: MinItemsTypeId,
+  description: `an array of at least ${n} items`,
+  jsonSchema: {
+    minItems: n
+  },
+  ...options
+}));
+/**
+ * @category type id
+ * @since 1.0.0
+ */
+const MaxItemsTypeId = /*#__PURE__*/(/* unused pure expression or super */ null && (Symbol.for("@effect/schema/TypeId/MaxItems")));
+/**
+ * @category ReadonlyArray filters
+ * @since 1.0.0
+ */
+const maxItems = (n, options) => self => self.pipe(Schema_filter(a => a.length <= n, {
+  typeId: MaxItemsTypeId,
+  description: `an array of at most ${n} items`,
+  jsonSchema: {
+    maxItems: n
+  },
+  ...options
+}));
+/**
+ * @category type id
+ * @since 1.0.0
+ */
+const ItemsCountTypeId = /*#__PURE__*/(/* unused pure expression or super */ null && (Symbol.for("@effect/schema/TypeId/ItemsCount")));
+/**
+ * @category ReadonlyArray filters
+ * @since 1.0.0
+ */
+const itemsCount = (n, options) => self => self.pipe(Schema_filter(a => a.length === n, {
+  typeId: ItemsCountTypeId,
+  description: `an array of exactly ${n} items`,
+  jsonSchema: {
+    minItems: n,
+    maxItems: n
+  },
+  ...options
+}));
+// ---------------------------------------------
+// Date filters
+// ---------------------------------------------
+/**
+ * @category type id
+ * @since 1.0.0
+ */
+const ValidDateTypeId = /*#__PURE__*/(/* unused pure expression or super */ null && (Symbol.for("@effect/schema/TypeId/ValidDate")));
+/**
+ * A filter excluding invalid dates (e.g. `new Date("fail")`).
+ *
+ * @category Date filters
+ * @since 1.0.0
+ */
+const validDate = options => self => self.pipe(Schema_filter(a => !isNaN(a.getTime()), {
+  typeId: ValidDateTypeId,
+  description: "a valid Date",
+  ...options
+}));
+// ---------------------------------------------
+// Date constructors
+// ---------------------------------------------
+const dateArbitrary = () => fc => fc.date();
+const datePretty = () => date => `new Date(${JSON.stringify(date)})`;
+/**
+ * @category Date constructors
+ * @since 1.0.0
+ */
+const DateFromSelf = /*#__PURE__*/declare([], /*#__PURE__*/Schema_struct({}), () => (u, _, ast) => !isDate(u) ? failure(ParseResult_type(ast, u)) : success(u), {
+  [IdentifierAnnotationId]: "Date",
+  [PrettyHookId]: datePretty,
+  [ArbitraryHookId]: dateArbitrary
+});
+/**
+ * A schema representing valid dates, e.g. `new Date("fail")` is excluded, even though it is an instance of `Date`.
+ *
+ * @category Date constructors
+ * @since 1.0.0
+ */
+const ValidDateFromSelf = /*#__PURE__*/(/* unused pure expression or super */ null && (DateFromSelf.pipe( /*#__PURE__*/validDate())));
+// ---------------------------------------------
+// Date transformations
+// ---------------------------------------------
+/**
+ * A combinator that transforms a `string` into a valid `Date`.
+ *
+ * @category Date transformations
+ * @since 1.0.0
+ */
+const dateFromString = self => Schema_transform(self, ValidDateFromSelf, s => new Date(s), n => n.toISOString());
+const _Date = /*#__PURE__*/(/* unused pure expression or super */ null && (dateFromString(Schema_string)));
+/**
+ * A schema representing valid dates, e.g. `new Date("fail")` is excluded, even though it is an instance of `Date`.
+ *
+ * @category Date constructors
+ * @since 1.0.0
+ */
+const ValidDate = /*#__PURE__*/(/* unused pure expression or super */ null && (_Date.pipe( /*#__PURE__*/validDate())));
+
+// ---------------------------------------------
+// Option transformations
+// ---------------------------------------------
+const optionArbitrary = value => fc => fc.oneof(fc.constant(Option_none()), value(fc).map(mjs_Option_some));
+const optionPretty = value => match({
+  onNone: () => "none()",
+  onSome: a => `some(${value(a)})`
+});
+const optionInline = value => Schema_union(Schema_struct({
+  _tag: literal("None")
+}), Schema_struct({
+  _tag: literal("Some"),
+  value
+}));
+/**
+ * @category Option transformations
+ * @since 1.0.0
+ */
+const optionFromSelf = value => {
+  return declare([value], optionInline(value), (isDecoding, value) => {
+    const parse = isDecoding ? parseResult(value) : encodeResult(value);
+    return (u, options, ast) => !Option_isOption(u) ? failure(ParseResult_type(ast, u)) : Option_isNone(u) ? success(Option_none()) : ParseResult_map(parse(u.value, options), mjs_Option_some);
+  }, {
+    [IdentifierAnnotationId]: "Option",
+    [PrettyHookId]: optionPretty,
+    [ArbitraryHookId]: optionArbitrary
+  });
+};
+/**
+ * @category Option transformations
+ * @since 1.0.0
+ */
+const Schema_option = value => Schema_transform(optionInline(value), to(optionFromSelf(value)), a => a._tag === "None" ? Option.none() : Option.some(a.value), Option.match({
+  onNone: () => ({
+    _tag: "None"
+  }),
+  onSome: value => ({
+    _tag: "Some",
+    value
+  })
+}));
+/**
+ * @category Option transformations
+ * @since 1.0.0
+ */
+const optionFromNullable = value => Schema_transform(nullable(value), to(optionFromSelf(value)), Option.fromNullable, Option.getOrNull);
+// ---------------------------------------------
+// Either transformations
+// ---------------------------------------------
+const eitherArbitrary = (left, right) => fc => fc.oneof(left(fc).map(Either.left), right(fc).map(Either.right));
+const eitherPretty = (left, right) => Either.match({
+  onLeft: e => `left(${left(e)})`,
+  onRight: a => `right(${right(a)})`
+});
+const eitherInline = (left, right) => Schema_union(Schema_struct({
+  _tag: literal("Left"),
+  left
+}), Schema_struct({
+  _tag: literal("Right"),
+  right
+}));
+/**
+ * @category Either transformations
+ * @since 1.0.0
+ */
+const eitherFromSelf = (left, right) => {
+  return declare([left, right], eitherInline(left, right), (isDecoding, left, right) => {
+    const parseLeft = isDecoding ? Parser.parseResult(left) : Parser.encodeResult(left);
+    const parseRight = isDecoding ? Parser.parseResult(right) : Parser.encodeResult(right);
+    return (u, options, ast) => !Either.isEither(u) ? ParseResult.failure(ParseResult.type(ast, u)) : Either.isLeft(u) ? ParseResult.map(parseLeft(u.left, options), Either.left) : ParseResult.map(parseRight(u.right, options), Either.right);
+  }, {
+    [AST.IdentifierAnnotationId]: "Either",
+    [Internal.PrettyHookId]: eitherPretty,
+    [Internal.ArbitraryHookId]: eitherArbitrary
+  });
+};
+/**
+ * @category Either transformations
+ * @since 1.0.0
+ */
+const Schema_either = (left, right) => Schema_transform(eitherInline(left, right), to(eitherFromSelf(left, right)), a => a._tag === "Left" ? Either.left(a.left) : Either.right(a.right), Either.match({
+  onLeft: left => ({
+    _tag: "Left",
+    left
+  }),
+  onRight: right => ({
+    _tag: "Right",
+    right
+  })
+}));
+// ---------------------------------------------
+// ReadonlyMap transformations
+// ---------------------------------------------
+const isMap = u => u instanceof Map;
+const readonlyMapArbitrary = (key, value) => fc => fc.array(fc.tuple(key(fc), value(fc))).map(as => new Map(as));
+const readonlyMapPretty = (key, value) => map => `new Map([${Array.from(map.entries()).map(([k, v]) => `[${key(k)}, ${value(v)}]`).join(", ")}])`;
+/**
+ * @category ReadonlyMap transformations
+ * @since 1.0.0
+ */
+const readonlyMapFromSelf = (key, value) => {
+  return declare([key, value], Schema_struct({
+    size: Schema_number
+  }), (isDecoding, key, value) => {
+    const parse = isDecoding ? Parser.parseResult(Schema_array(Schema_tuple(key, value))) : Parser.encodeResult(Schema_array(Schema_tuple(key, value)));
+    return (u, options, ast) => !isMap(u) ? ParseResult.failure(ParseResult.type(ast, u)) : ParseResult.map(parse(Array.from(u.entries()), options), as => new Map(as));
+  }, {
+    [AST.IdentifierAnnotationId]: "ReadonlyMap",
+    [Internal.PrettyHookId]: readonlyMapPretty,
+    [Internal.ArbitraryHookId]: readonlyMapArbitrary
+  });
+};
+/**
+ * @category ReadonlyMap transformations
+ * @since 1.0.0
+ */
+const readonlyMap = (key, value) => Schema_transform(Schema_array(Schema_tuple(key, value)), to(readonlyMapFromSelf(key, value)), as => new Map(as), map => Array.from(map.entries()));
+// ---------------------------------------------
+// ReadonlySet transformations
+// ---------------------------------------------
+const isSet = u => u instanceof Set;
+const readonlySetArbitrary = item => fc => fc.array(item(fc)).map(as => new Set(as));
+const readonlySetPretty = item => set => `new Set([${Array.from(set.values()).map(a => item(a)).join(", ")}])`;
+/**
+ * @category ReadonlySet transformations
+ * @since 1.0.0
+ */
+const readonlySetFromSelf = item => {
+  return declare([item], Schema_struct({
+    size: Schema_number
+  }), (isDecoding, item) => {
+    const parse = isDecoding ? Parser.parseResult(Schema_array(item)) : Parser.encodeResult(Schema_array(item));
+    return (u, options, ast) => !isSet(u) ? ParseResult.failure(ParseResult.type(ast, u)) : ParseResult.map(parse(Array.from(u.values()), options), as => new Set(as));
+  }, {
+    [AST.IdentifierAnnotationId]: "ReadonlySet",
+    [Internal.PrettyHookId]: readonlySetPretty,
+    [Internal.ArbitraryHookId]: readonlySetArbitrary
+  });
+};
+/**
+ * @category ReadonlySet transformations
+ * @since 1.0.0
+ */
+const readonlySet = item => Schema_transform(Schema_array(item), to(readonlySetFromSelf(item)), as => new Set(as), set => Array.from(set));
+// ---------------------------------------------
+// Chunk transformations
+// ---------------------------------------------
+const chunkArbitrary = item => fc => fc.array(item(fc)).map(Chunk.fromIterable);
+const chunkPretty = item => c => `Chunk(${Chunk.toReadonlyArray(c).map(item).join(", ")})`;
+/**
+ * @category Chunk transformations
+ * @since 1.0.0
+ */
+const chunkFromSelf = item => {
+  return declare([item], Schema_struct({
+    _id: uniqueSymbol(Symbol.for("@effect/data/Chunk")),
+    length: Schema_number
+  }), (isDecoding, item) => {
+    const parse = isDecoding ? Parser.parseResult(Schema_array(item)) : Parser.encodeResult(Schema_array(item));
+    return (u, options, ast) => !Chunk.isChunk(u) ? ParseResult.failure(ParseResult.type(ast, u)) : ParseResult.map(parse(Chunk.toReadonlyArray(u), options), Chunk.fromIterable);
+  }, {
+    [AST.IdentifierAnnotationId]: "Chunk",
+    [Internal.PrettyHookId]: chunkPretty,
+    [Internal.ArbitraryHookId]: chunkArbitrary
+  });
+};
+/**
+ * @category Chunk transformations
+ * @since 1.0.0
+ */
+const Schema_chunk = item => Schema_transform(Schema_array(item), to(chunkFromSelf(item)), Chunk.fromIterable, Chunk.toReadonlyArray);
+// ---------------------------------------------
+// Data transformations
+// ---------------------------------------------
+const toData = a => Array.isArray(a) ? Data.array(a) : Data.struct(a);
+const dataArbitrary = item => fc => item(fc).map(toData);
+const dataPretty = item => d => `Data(${item(d)})`;
+/**
+ * @category Data transformations
+ * @since 1.0.0
+ */
+const dataFromSelf = item => {
+  return declare([item], item, (isDecoding, item) => {
+    const parse = isDecoding ? Parser.parseResult(item) : Parser.encodeResult(item);
+    return (u, options, ast) => !Equal.isEqual(u) ? ParseResult.failure(ParseResult.type(ast, u)) : ParseResult.map(parse(u, options), toData);
+  }, {
+    [AST.IdentifierAnnotationId]: "Data",
+    [Internal.PrettyHookId]: dataPretty,
+    [Internal.ArbitraryHookId]: dataArbitrary
+  });
+};
+/**
+ * @category Data transformations
+ * @since 1.0.0
+ */
+const data = item => Schema_transform(item, to(dataFromSelf(item)), toData, a => Array.isArray(a) ? Array.from(a) : Object.assign({}, a));
+/**
+ * @category classes
+ * @since 1.0.0
+ */
+const Schema_Class = () => fields => makeClass(Schema_struct(fields), fields, Data.Class.prototype);
+const makeClass = (selfSchema, selfFields, base) => {
+  const validator = Parser.validateSync(selfSchema);
+  const fn = function (props) {
+    Object.assign(this, validator(props));
+  };
+  fn.prototype = Object.create(base);
+  fn[Schema_TypeId] = Schema_variance;
+  fn.pipe = function pipe() {
+    return pipeArguments(this, arguments);
+  };
+  Object.defineProperty(fn, "ast", {
+    get() {
+      if (this._ast) {
+        return this._ast;
+      }
+      const toSchema = to(selfSchema);
+      this._ast = Schema_transform(selfSchema, declare([toSchema], toSchema, () => (input, _, ast) => input instanceof this ? ParseResult.success(input) : ParseResult.failure(ParseResult.type(ast, input)), {
+        [AST.DescriptionAnnotationId]: `an instance of ${this.name}`,
+        [Internal.ArbitraryHookId]: struct => fc => struct(fc).map(props => new this(props))
+      }), input => Object.assign(Object.create(this.prototype), input), input => ({
+        ...input
+      })).ast;
+      return this._ast;
+    }
+  });
+  fn.struct = selfSchema;
+  fn.extend = function () {
+    return fields => {
+      const newFields = {
+        ...selfFields,
+        ...fields
+      };
+      return makeClass(Schema_struct(newFields), newFields, this.prototype);
+    };
+  };
+  fn.transform = function () {
+    return (fields, decode, encode) => {
+      const newFields = {
+        ...selfFields,
+        ...fields
+      };
+      return makeClass(transformOrFail(selfSchema, to(Schema_struct(newFields)), decode, encode), newFields, this.prototype);
+    };
+  };
+  fn.transformFrom = function () {
+    return (fields, decode, encode) => {
+      const newFields = {
+        ...selfFields,
+        ...fields
+      };
+      return makeClass(transformOrFail(Schema_from(selfSchema), Schema_struct(newFields), decode, encode), newFields, this.prototype);
+    };
+  };
+  return fn;
+};
 //# sourceMappingURL=Schema.mjs.map
 ;// CONCATENATED MODULE: ./src/envvars.ts
 
@@ -48522,7 +49410,6 @@ const RunnerArch = {
 //
 // Documentation of GitHub envvars: https://docs.github.com/en/actions/learn-github-actions/variables
 //
-const ZEKLIN_SERVER_URL = NES.unsafeFromString(process.env["ZEKLIN_SERVER_URL"] ?? "https://api.zeklin.io");
 /**
  * A unique number for each workflow run within a repository.
  * This number does not change if you re-run the workflow run.
@@ -48587,7 +49474,6 @@ const GITHUB_ACTOR = NES.unsafeFromString(process.env.GITHUB_ACTOR);
  */
 const GITHUB_ACTOR_ID = Number(process.env.GITHUB_ACTOR_ID);
 const debugVariables = () => {
-    lib_core.debug(`ZEKLIN_SERVER_URL: ${ZEKLIN_SERVER_URL}`);
     lib_core.debug(`GITHUB_RUN_ID: ${GITHUB_RUN_ID}`);
     lib_core.debug(`GITHUB_RUN_NUMBER: ${GITHUB_RUN_NUMBER}`);
     lib_core.debug(`GITHUB_RUNNER_NAME: ${RUNNER_NAME}`);
@@ -48601,8 +49487,816 @@ const debugVariables = () => {
     lib_core.debug(`GITHUB_ACTOR_ID: ${GITHUB_ACTOR_ID}`);
 };
 
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@effect+io@0.40.3_@effect+data@0.18.5/node_modules/@effect/io/mjs/Schedule.mjs
+
+/**
+ * @since 1.0.0
+ * @category symbols
+ */
+const Schedule_ScheduleTypeId = ScheduleTypeId;
+/**
+ * @since 1.0.0
+ * @category symbols
+ */
+const Schedule_ScheduleDriverTypeId = ScheduleDriverTypeId;
+/**
+ * Constructs a new `Schedule` with the specified `initial` state and the
+ * specified `step` function.
+ *
+ * @since 1.0.0
+ * @category constructors
+ */
+const Schedule_makeWithState = makeWithState;
+/**
+ * Returns a new schedule with the given delay added to every interval defined
+ * by this schedule.
+ *
+ * @since 1.0.0
+ * @category utils
+ */
+const Schedule_addDelay = addDelay;
+/**
+ * Returns a new schedule with the given effectfully computed delay added to
+ * every interval defined by this schedule.
+ *
+ * @since 1.0.0
+ * @category utils
+ */
+const Schedule_addDelayEffect = addDelayEffect;
+/**
+ * The same as `andThenEither`, but merges the output.
+ *
+ * @since 1.0.0
+ * @category sequencing
+ */
+const Schedule_andThen = schedule_andThen;
+/**
+ * Returns a new schedule that first executes this schedule to completion, and
+ * then executes the specified schedule to completion.
+ *
+ * @since 1.0.0
+ * @category sequencing
+ */
+const Schedule_andThenEither = andThenEither;
+/**
+ * Returns a new schedule that maps this schedule to a constant output.
+ *
+ * @since 1.0.0
+ * @category mapping
+ */
+const Schedule_as = schedule_as;
+/**
+ * Returns a new schedule that maps the output of this schedule to unit.
+ *
+ * @since 1.0.0
+ * @category constructors
+ */
+const Schedule_asUnit = schedule_asUnit;
+/**
+ * Returns a new schedule that has both the inputs and outputs of this and the
+ * specified schedule.
+ *
+ * @since 1.0.0
+ * @category utils
+ */
+const Schedule_bothInOut = bothInOut;
+/**
+ * Returns a new schedule that passes each input and output of this schedule
+ * to the specified function, and then determines whether or not to continue
+ * based on the return value of the function.
+ *
+ * @since 1.0.0
+ * @category utils
+ */
+const Schedule_check = check;
+/**
+ * Returns a new schedule that passes each input and output of this schedule
+ * to the specified function, and then determines whether or not to continue
+ * based on the return value of the function.
+ *
+ * @since 1.0.0
+ * @category utils
+ */
+const Schedule_checkEffect = checkEffect;
+/**
+ * A schedule that recurs anywhere, collecting all inputs into a `Chunk`.
+ *
+ * @since 1.0.0
+ * @category constructors
+ */
+const Schedule_collectAllInputs = collectAllInputs;
+/**
+ * Returns a new schedule that collects the outputs of this one into a chunk.
+ *
+ * @since 1.0.0
+ * @category utils
+ */
+const Schedule_collectAllOutputs = collectAllOutputs;
+/**
+ * A schedule that recurs until the condition f fails, collecting all inputs
+ * into a list.
+ *
+ * @since 1.0.0
+ * @category utils
+ */
+const Schedule_collectUntil = collectUntil;
+/**
+ * A schedule that recurs until the effectful condition f fails, collecting
+ * all inputs into a list.
+ *
+ * @since 1.0.0
+ * @category utils
+ */
+const Schedule_collectUntilEffect = collectUntilEffect;
+/**
+ * A schedule that recurs as long as the condition f holds, collecting all
+ * inputs into a list.
+ *
+ * @since 1.0.0
+ * @category utils
+ */
+const Schedule_collectWhile = collectWhile;
+/**
+ * A schedule that recurs as long as the effectful condition holds, collecting
+ * all inputs into a list.
+ *
+ * @category utils
+ * @since 1.0.0
+ */
+const Schedule_collectWhileEffect = collectWhileEffect;
+/**
+ * Returns the composition of this schedule and the specified schedule, by
+ * piping the output of this one into the input of the other. Effects
+ * described by this schedule will always be executed before the effects
+ * described by the second schedule.
+ *
+ * @since 1.0.0
+ * @category utils
+ */
+const Schedule_compose = schedule_compose;
+/**
+ * Returns a new schedule that deals with a narrower class of inputs than this
+ * schedule.
+ *
+ * @since 1.0.0
+ * @category mapping
+ */
+const Schedule_mapInput = schedule_mapInput;
+/**
+ * Transforms the context being provided to this schedule with the
+ * specified function.
+ *
+ * @since 1.0.0
+ * @category context
+ */
+const Schedule_mapInputContext = schedule_mapInputContext;
+/**
+ * Returns a new schedule that deals with a narrower class of inputs than this
+ * schedule.
+ *
+ * @since 1.0.0
+ * @category mapping
+ */
+const Schedule_mapInputEffect = mapInputEffect;
+/**
+ * A schedule that always recurs, which counts the number of recurrences.
+ *
+ * @since 1.0.0
+ * @category constructors
+ */
+const Schedule_count = count;
+/**
+ * Cron-like schedule that recurs every specified `day` of month. Won't recur
+ * on months containing less days than specified in `day` param.
+ *
+ * It triggers at zero hour of the day. Producing a count of repeats: 0, 1, 2.
+ *
+ * NOTE: `day` parameter is validated lazily. Must be in range 1...31.
+ *
+ * @since 1.0.0
+ * @category constructors
+ */
+const Schedule_dayOfMonth = dayOfMonth;
+/**
+ * Cron-like schedule that recurs every specified `day` of each week. It
+ * triggers at zero hour of the week. Producing a count of repeats: 0, 1, 2.
+ *
+ * NOTE: `day` parameter is validated lazily. Must be in range 1 (Monday)...7
+ * (Sunday).
+ *
+ * @since 1.0.0
+ * @category constructors
+ */
+const Schedule_dayOfWeek = dayOfWeek;
+/**
+ * Returns a new schedule with the specified effectfully computed delay added
+ * before the start of each interval produced by this schedule.
+ *
+ * @since 1.0.0
+ * @category utils
+ */
+const Schedule_delayed = delayed;
+/**
+ * Returns a new schedule with the specified effectfully computed delay added
+ * before the start of each interval produced by this schedule.
+ *
+ * @since 1.0.0
+ * @category constructors
+ */
+const Schedule_delayedEffect = delayedEffect;
+/**
+ * Takes a schedule that produces a delay, and returns a new schedule that
+ * uses this delay to further delay intervals in the resulting schedule.
+ *
+ * @since 1.0.0
+ * @category constructors
+ */
+const Schedule_delayedSchedule = delayedSchedule;
+/**
+ * Returns a new schedule that outputs the delay between each occurence.
+ *
+ * @since 1.0.0
+ * @category constructors
+ */
+const Schedule_delays = delays;
+/**
+ * Returns a new schedule that maps both the input and output.
+ *
+ * @since 1.0.0
+ * @category mapping
+ */
+const Schedule_mapBoth = schedule_mapBoth;
+/**
+ * Returns a new schedule that maps both the input and output.
+ *
+ * @since 1.0.0
+ * @category mapping
+ */
+const Schedule_mapBothEffect = mapBothEffect;
+/**
+ * Returns a driver that can be used to step the schedule, appropriately
+ * handling sleeping.
+ *
+ * @since 1.0.0
+ * @category getter
+ */
+const Schedule_driver = driver;
+/**
+ * A schedule that can recur one time, the specified amount of time into the
+ * future.
+ *
+ * @since 1.0.0
+ * @category constructors
+ */
+const Schedule_duration = duration;
+/**
+ * Returns a new schedule that performs a geometric union on the intervals
+ * defined by both schedules.
+ *
+ * @since 1.0.0
+ * @category alternatives
+ */
+const Schedule_either = schedule_either;
+/**
+ * The same as `either` followed by `map`.
+ *
+ * @since 1.0.0
+ * @category alternatives
+ */
+const Schedule_eitherWith = eitherWith;
+/**
+ * A schedule that occurs everywhere, which returns the total elapsed duration
+ * since the first step.
+ *
+ * @since 1.0.0
+ * @category constructors
+ */
+const Schedule_elapsed = elapsed;
+/**
+ * Returns a new schedule that will run the specified finalizer as soon as the
+ * schedule is complete. Note that unlike `Effect.ensuring`, this method does not
+ * guarantee the finalizer will be run. The `Schedule` may not initialize or
+ * the driver of the schedule may not run to completion. However, if the
+ * `Schedule` ever decides not to continue, then the finalizer will be run.
+ *
+ * @since 1.0.0
+ * @category finalization
+ */
+const Schedule_ensuring = schedule_ensuring;
+/**
+ * A schedule that always recurs, but will wait a certain amount between
+ * repetitions, given by `base * factor.pow(n)`, where `n` is the number of
+ * repetitions so far. Returns the current duration between recurrences.
+ *
+ * @since 1.0.0
+ * @category constructors
+ */
+const Schedule_exponential = schedule_exponential;
+/**
+ * A schedule that always recurs, increasing delays by summing the preceding
+ * two delays (similar to the fibonacci sequence). Returns the current
+ * duration between recurrences.
+ *
+ * @since 1.0.0
+ * @category constructors
+ */
+const Schedule_fibonacci = fibonacci;
+/**
+ * A schedule that recurs on a fixed interval. Returns the number of
+ * repetitions of the schedule so far.
+ *
+ * If the action run between updates takes longer than the interval, then the
+ * action will be run immediately, but re-runs will not "pile up".
+ *
+ * ```
+ * |-----interval-----|-----interval-----|-----interval-----|
+ * |---------action--------||action|-----|action|-----------|
+ * ```
+ *
+ * @since 1.0.0
+ * @category constructors
+ */
+const Schedule_fixed = fixed;
+/**
+ * A schedule that always recurs, producing a count of repeats: 0, 1, 2.
+ *
+ * @since 1.0.0
+ * @category constructors
+ */
+const Schedule_forever = schedule_forever;
+/**
+ * A schedule that recurs once with the specified delay.
+ *
+ * @since 1.0.0
+ * @category constructors
+ */
+const Schedule_fromDelay = fromDelay;
+/**
+ * A schedule that recurs once for each of the specified durations, delaying
+ * each time for the length of the specified duration. Returns the length of
+ * the current duration between recurrences.
+ *
+ * @since 1.0.0
+ * @category constructors
+ */
+const Schedule_fromDelays = fromDelays;
+/**
+ * A schedule that always recurs, mapping input values through the specified
+ * function.
+ *
+ * @since 1.0.0
+ * @category constructors
+ */
+const Schedule_fromFunction = fromFunction;
+/**
+ * Cron-like schedule that recurs every specified `hour` of each day. It
+ * triggers at zero minute of the hour. Producing a count of repeats: 0, 1, 2.
+ *
+ * NOTE: `hour` parameter is validated lazily. Must be in range 0...23.
+ *
+ * @since 1.0.0
+ * @category constructors
+ */
+const Schedule_hourOfDay = hourOfDay;
+/**
+ * A schedule that always recurs, which returns inputs as outputs.
+ *
+ * @since 1.0.0
+ * @category constructors
+ */
+const Schedule_identity = schedule_identity;
+/**
+ * Returns a new schedule that performs a geometric intersection on the
+ * intervals defined by both schedules.
+ *
+ * @since 1.0.0
+ * @category utils
+ */
+const Schedule_intersect = schedule_intersect;
+/**
+ * Returns a new schedule that combines this schedule with the specified
+ * schedule, continuing as long as both schedules want to continue and merging
+ * the next intervals according to the specified merge function.
+ *
+ * @since 1.0.0
+ * @category utils
+ */
+const Schedule_intersectWith = intersectWith;
+/**
+ * Returns a new schedule that randomly modifies the size of the intervals of
+ * this schedule.
+ *
+ * Defaults `min` to `0.8` and `max` to `1.2`.
+ *
+ * The new interval size is between `min * old interval size` and `max * old
+ * interval size`.
+ *
+ * @since 1.0.0
+ * @category constructors
+ */
+const Schedule_jittered = jittered;
+/**
+ * Returns a new schedule that randomly modifies the size of the intervals of
+ * this schedule.
+ *
+ * The new interval size is between `min * old interval size` and `max * old
+ * interval size`.
+ *
+ * @since 1.0.0
+ * @category constructors
+ */
+const Schedule_jitteredWith = jitteredWith;
+/**
+ * A schedule that always recurs, but will repeat on a linear time interval,
+ * given by `base * n` where `n` is the number of repetitions so far. Returns
+ * the current duration between recurrences.
+ *
+ * @since 1.0.0
+ * @category constructors
+ */
+const Schedule_linear = schedule_linear;
+/**
+ * Returns a new schedule that maps the output of this schedule through the
+ * specified function.
+ *
+ * @since 1.0.0
+ * @category mapping
+ */
+const Schedule_map = schedule_map;
+/**
+ * Returns a new schedule that maps the output of this schedule through the
+ * specified effectful function.
+ *
+ * @since 1.0.0
+ * @category mapping
+ */
+const Schedule_mapEffect = schedule_mapEffect;
+/**
+ * Cron-like schedule that recurs every specified `minute` of each hour. It
+ * triggers at zero second of the minute. Producing a count of repeats: 0, 1,
+ * 2.
+ *
+ * NOTE: `minute` parameter is validated lazily. Must be in range 0...59.
+ *
+ * @since 1.0.0
+ * @category constructors
+ */
+const Schedule_minuteOfHour = minuteOfHour;
+/**
+ * Returns a new schedule that modifies the delay using the specified
+ * function.
+ *
+ * @since 1.0.0
+ * @category utils
+ */
+const Schedule_modifyDelay = modifyDelay;
+/**
+ * Returns a new schedule that modifies the delay using the specified
+ * effectual function.
+ *
+ * @since 1.0.0
+ * @category utils
+ */
+const Schedule_modifyDelayEffect = modifyDelayEffect;
+/**
+ * Returns a new schedule that applies the current one but runs the specified
+ * effect for every decision of this schedule. This can be used to create
+ * schedules that log failures, decisions, or computed values.
+ *
+ * @since 1.0.0
+ * @category utils
+ */
+const Schedule_onDecision = onDecision;
+/**
+ * A schedule that recurs one time.
+ *
+ * @since 1.0.0
+ * @category constructors
+ */
+const Schedule_once = schedule_once;
+/**
+ * Returns a new schedule that passes through the inputs of this schedule.
+ *
+ * @since 1.0.0
+ * @category utils
+ */
+const Schedule_passthrough = passthrough;
+/**
+ * Returns a new schedule with its context provided to it, so the
+ * resulting schedule does not require any context.
+ *
+ * @since 1.0.0
+ * @category context
+ */
+const Schedule_provideContext = schedule_provideContext;
+/**
+ * Returns a new schedule with the single service it requires provided to it.
+ * If the schedule requires multiple services use `provideContext`
+ * instead.
+ *
+ * @since 1.0.0
+ * @category context
+ */
+const Schedule_provideService = schedule_provideService;
+/**
+ * A schedule that recurs for until the predicate evaluates to true.
+ *
+ * @since 1.0.0
+ * @category utils
+ */
+const Schedule_recurUntil = recurUntil;
+/**
+ * A schedule that recurs for until the predicate evaluates to true.
+ *
+ * @since 1.0.0
+ * @category utils
+ */
+const Schedule_recurUntilEffect = recurUntilEffect;
+/**
+ * A schedule that recurs for until the input value becomes applicable to
+ * partial function and then map that value with given function.
+ *
+ * @since 1.0.0
+ * @category utils
+ */
+const Schedule_recurUntilOption = recurUntilOption;
+/**
+ * A schedule that recurs during the given duration.
+ *
+ * @since 1.0.0
+ * @category utils
+ */
+const Schedule_recurUpTo = recurUpTo;
+/**
+ * A schedule that recurs for as long as the predicate evaluates to true.
+ *
+ * @since 1.0.0
+ * @category utils
+ */
+const Schedule_recurWhile = recurWhile;
+/**
+ * A schedule that recurs for as long as the effectful predicate evaluates to
+ * true.
+ *
+ * @since 1.0.0
+ * @category utils
+ */
+const Schedule_recurWhileEffect = recurWhileEffect;
+/**
+ * A schedule spanning all time, which can be stepped only the specified
+ * number of times before it terminates.
+ *
+ * @category constructors
+ * @since 1.0.0
+ */
+const Schedule_recurs = recurs;
+/**
+ * Returns a new schedule that folds over the outputs of this one.
+ *
+ * @since 1.0.0
+ * @category folding
+ */
+const Schedule_reduce = schedule_reduce;
+/**
+ * Returns a new schedule that effectfully folds over the outputs of this one.
+ *
+ * @since 1.0.0
+ * @category folding
+ */
+const Schedule_reduceEffect = schedule_reduceEffect;
+/**
+ * Returns a new schedule that loops this one continuously, resetting the
+ * state when this schedule is done.
+ *
+ * @since 1.0.0
+ * @category constructors
+ */
+const Schedule_repeatForever = schedule_forever;
+/**
+ * Returns a new schedule that outputs the number of repetitions of this one.
+ *
+ * @since 1.0.0
+ * @category utils
+ */
+const Schedule_repetitions = repetitions;
+/**
+ * Return a new schedule that automatically resets the schedule to its initial
+ * state after some time of inactivity defined by `duration`.
+ *
+ * @since 1.0.0
+ * @category utils
+ */
+const Schedule_resetAfter = resetAfter;
+/**
+ * Resets the schedule when the specified predicate on the schedule output
+ * evaluates to true.
+ *
+ * @since 1.0.0
+ * @category utils
+ */
+const Schedule_resetWhen = resetWhen;
+/**
+ * Runs a schedule using the provided inputs, and collects all outputs.
+ *
+ * @since 1.0.0
+ * @category destructors
+ */
+const Schedule_run = run;
+/**
+ * Cron-like schedule that recurs every specified `second` of each minute. It
+ * triggers at zero nanosecond of the second. Producing a count of repeats: 0,
+ * 1, 2.
+ *
+ * NOTE: `second` parameter is validated lazily. Must be in range 0...59.
+ *
+ * @since 1.0.0
+ * @category constructors
+ */
+const Schedule_secondOfMinute = secondOfMinute;
+/**
+ * Returns a schedule that recurs continuously, each repetition spaced the
+ * specified duration from the last run.
+ *
+ * @since 1.0.0
+ * @category constructors
+ */
+const Schedule_spaced = spaced;
+/**
+ * A schedule that does not recur, it just stops.
+ *
+ * @since 1.0.0
+ * @category constructors
+ */
+const Schedule_stop = stop;
+/**
+ * Returns a schedule that repeats one time, producing the specified constant
+ * value.
+ *
+ * @since 1.0.0
+ * @category constructors
+ */
+const Schedule_succeed = schedule_succeed;
+/**
+ * Returns a schedule that repeats one time, producing the specified constant
+ * value.
+ *
+ * @category constructors
+ * @since 1.0.0
+ */
+const Schedule_sync = schedule_sync;
+/**
+ * Returns a new schedule that effectfully processes every input to this
+ * schedule.
+ *
+ * @since 1.0.0
+ * @category sequencing
+ */
+const Schedule_tapInput = tapInput;
+/**
+ * Returns a new schedule that effectfully processes every output from this
+ * schedule.
+ *
+ * @since 1.0.0
+ * @category sequencing
+ */
+const Schedule_tapOutput = tapOutput;
+/**
+ * Unfolds a schedule that repeats one time from the specified state and
+ * iterator.
+ *
+ * @since 1.0.0
+ * @category constructors
+ */
+const Schedule_unfold = schedule_unfold;
+/**
+ * Returns a new schedule that performs a geometric union on the intervals
+ * defined by both schedules.
+ *
+ * @since 1.0.0
+ * @category utils
+ */
+const Schedule_union = schedule_union;
+/**
+ * Returns a new schedule that combines this schedule with the specified
+ * schedule, continuing as long as either schedule wants to continue and
+ * merging the next intervals according to the specified merge function.
+ *
+ * @since 1.0.0
+ * @category utils
+ */
+const Schedule_unionWith = schedule_unionWith;
+/**
+ * Returns a new schedule that continues until the specified predicate on the
+ * input evaluates to true.
+ *
+ * @since 1.0.0
+ * @category utils
+ */
+const Schedule_untilInput = untilInput;
+/**
+ * Returns a new schedule that continues until the specified effectful
+ * predicate on the input evaluates to true.
+ *
+ * @since 1.0.0
+ * @category utils
+ */
+const Schedule_untilInputEffect = untilInputEffect;
+/**
+ * Returns a new schedule that continues until the specified predicate on the
+ * output evaluates to true.
+ *
+ * @since 1.0.0
+ * @category utils
+ */
+const Schedule_untilOutput = untilOutput;
+/**
+ * Returns a new schedule that continues until the specified effectful
+ * predicate on the output evaluates to true.
+ *
+ * @since 1.0.0
+ * @category utils
+ */
+const Schedule_untilOutputEffect = untilOutputEffect;
+/**
+ * A schedule that recurs during the given duration.
+ *
+ * @since 1.0.0
+ * @category utils
+ */
+const Schedule_upTo = upTo;
+/**
+ * Returns a new schedule that continues for as long the specified predicate
+ * on the input evaluates to true.
+ *
+ * @since 1.0.0
+ * @category utils
+ */
+const Schedule_whileInput = whileInput;
+/**
+ * Returns a new schedule that continues for as long the specified effectful
+ * predicate on the input evaluates to true.
+ *
+ * @since 1.0.0
+ * @category utils
+ */
+const Schedule_whileInputEffect = whileInputEffect;
+/**
+ * Returns a new schedule that continues for as long the specified predicate
+ * on the output evaluates to true.
+ *
+ * @since 1.0.0
+ * @category utils
+ */
+const Schedule_whileOutput = whileOutput;
+/**
+ * Returns a new schedule that continues for as long the specified effectful
+ * predicate on the output evaluates to true.
+ *
+ * @since 1.0.0
+ * @category utils
+ */
+const Schedule_whileOutputEffect = whileOutputEffect;
+/**
+ * A schedule that divides the timeline to `interval`-long windows, and sleeps
+ * until the nearest window boundary every time it recurs.
+ *
+ * For example, `windowed(Duration.seconds(10))` would produce a schedule as
+ * follows:
+ *
+ * ```
+ *      10s        10s        10s       10s
+ * |----------|----------|----------|----------|
+ * |action------|sleep---|act|-sleep|action----|
+ * ```
+ *
+ * @since 1.0.0
+ * @category constructors
+ */
+const Schedule_windowed = windowed;
+/**
+ * The same as `intersect` but ignores the right output.
+ *
+ * @since 1.0.0
+ * @category zipping
+ */
+const Schedule_zipLeft = schedule_zipLeft;
+/**
+ * The same as `intersect` but ignores the left output.
+ *
+ * @since 1.0.0
+ * @category zipping
+ */
+const Schedule_zipRight = schedule_zipRight;
+/**
+ * Equivalent to `intersect` followed by `map`.
+ *
+ * @since 1.0.0
+ * @category zipping
+ */
+const Schedule_zipWith = schedule_zipWith;
+//# sourceMappingURL=Schedule.mjs.map
 // EXTERNAL MODULE: ./node_modules/.pnpm/@actions+exec@1.1.1/node_modules/@actions/exec/lib/exec.js
-var exec = __nccwpck_require__(1757);
+var exec = __nccwpck_require__(8445);
 ;// CONCATENATED MODULE: external "fs/promises"
 const promises_namespaceObject = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("fs/promises");
 // EXTERNAL MODULE: external "path"
@@ -48674,9 +50368,9 @@ function dataUriToBuffer(uri) {
 ;// CONCATENATED MODULE: external "node:util"
 const external_node_util_namespaceObject = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:util");
 // EXTERNAL MODULE: ./node_modules/.pnpm/fetch-blob@3.2.0/node_modules/fetch-blob/index.js
-var fetch_blob = __nccwpck_require__(8967);
+var fetch_blob = __nccwpck_require__(5797);
 // EXTERNAL MODULE: ./node_modules/.pnpm/formdata-polyfill@4.0.10/node_modules/formdata-polyfill/esm.min.js
-var esm_min = __nccwpck_require__(2000);
+var esm_min = __nccwpck_require__(4900);
 ;// CONCATENATED MODULE: ./node_modules/.pnpm/node-fetch@3.3.2/node_modules/node-fetch/src/errors/base.js
 class FetchBaseError extends Error {
 	constructor(message, type) {
@@ -48937,7 +50631,7 @@ class Body {
 			return formData;
 		}
 
-		const {toFormData} = await __nccwpck_require__.e(/* import() */ 795).then(__nccwpck_require__.bind(__nccwpck_require__, 795));
+		const {toFormData} = await __nccwpck_require__.e(/* import() */ 577).then(__nccwpck_require__.bind(__nccwpck_require__, 5577));
 		return toFormData(this.body, ct);
 	}
 
@@ -50339,7 +52033,7 @@ class AbortError extends FetchBaseError {
 }
 
 // EXTERNAL MODULE: ./node_modules/.pnpm/fetch-blob@3.2.0/node_modules/fetch-blob/from.js + 2 modules
-var fetch_blob_from = __nccwpck_require__(7253);
+var fetch_blob_from = __nccwpck_require__(4320);
 ;// CONCATENATED MODULE: ./node_modules/.pnpm/node-fetch@3.3.2/node_modules/node-fetch/src/index.js
 /**
  * Index.js
@@ -50753,7 +52447,7 @@ function fixResponseChunkedTransferBadEnding(request, errorCallback) {
 }
 
 // EXTERNAL MODULE: ./node_modules/.pnpm/@actions+github@5.1.1/node_modules/@actions/github/lib/github.js
-var github = __nccwpck_require__(3695);
+var github = __nccwpck_require__(5248);
 ;// CONCATENATED MODULE: ./src/run.ts
 
 
@@ -50794,8 +52488,10 @@ class PullRequest extends TaggedClass("PullRequest") {
 }
 // prettier-ignore
 class PostJmhResultBody extends TaggedClass("PostJmhResultBody") {
-    static unsafeFrom(context, data, computedAt) {
-        const r = new PostJmhResultBody({
+    static unsafeFrom(context, data, computedAt, commitMessage, before, after) {
+        // See https://stackoverflow.com/a/58035262/2431728
+        const branchName = NES.unsafeFromString(context.payload.pull_request?.head.ref ?? context.ref.replace("refs/heads/", ""));
+        return new PostJmhResultBody({
             workflowRunId: GITHUB_RUN_ID,
             workflowRunNumber: GITHUB_RUN_NUMBER,
             workflowRunnerName: RUNNER_NAME,
@@ -50805,16 +52501,17 @@ class PostJmhResultBody extends TaggedClass("PostJmhResultBody") {
             runnerArch: RUNNER_ARCH,
             orgId: GITHUB_REPOSITORY_OWNER_ID,
             projectId: GITHUB_REPOSITORY_ID,
-            commitHash: NES.unsafeFromString(context.payload.after),
-            previousCommitHash: NES.unsafeFromString(context.payload.before),
+            branchName: branchName,
+            commitMessage: commitMessage,
+            commitHash: after,
+            previousCommitHash: before,
             actor: GITHUB_ACTOR,
             actorId: GITHUB_ACTOR_ID,
             pr: PullRequest.unsafeFrom(context),
             data: data,
-            computedAt: computedAt
+            computedAt: computedAt,
+            context: context
         });
-        lib_core.debug(`-- PostJmhResultBody: ${JSON.stringify(r, null, 2)}`);
-        return r;
     }
 }
 const execCommands = (inputs) => {
@@ -50857,9 +52554,9 @@ const findResults = (inputs) => Function_pipe(Effect_tryPromise({
     try: () => JSON.parse(data),
     catch: (_) => _,
 })), Effect_tap((data) => utils_logDebug(`Found results: ${JSON.stringify(data, null, 2)}`)));
-const pingServer = Effect_tryPromise({
+const pingServer = (inputs) => Function_pipe(Effect_tryPromise({
     try: (signal) => {
-        return fetch(`${ZEKLIN_SERVER_URL}/ping`, {
+        return fetch(`${inputs.zeklinServerUrl}/ping`, {
             method: "GET",
             headers: {
                 "User-Agent": "zeklin-action",
@@ -50872,13 +52569,13 @@ const pingServer = Effect_tryPromise({
         });
     },
     catch: (_) => _,
-});
-const uploadResults = (inputs, results, computedAt) => Effect_tryPromise({
+}), Effect_retry(Schedule_intersect(Schedule_recurs(3), Schedule_spaced(seconds(1)))));
+const uploadResults = (inputs, results, computedAt, before, after, commitMessage) => Function_pipe(Effect_tryPromise({
     try: (signal) => {
-        const body = PostJmhResultBody.unsafeFrom(github.context, results, computedAt);
+        const body = PostJmhResultBody.unsafeFrom(github.context, results, computedAt, commitMessage, before, after);
         const buff = Buffer.from(JSON.stringify(body, null, 0), "utf-8");
         const credentials = Buffer.from(`${inputs.apikeyId}:${inputs.apikey}`).toString("base64");
-        return fetch(`${ZEKLIN_SERVER_URL}/api/runs/jmh`, {
+        return fetch(`${inputs.zeklinServerUrl}/api/runs/jmh`, {
             method: "POST",
             body: buff,
             headers: {
@@ -50894,15 +52591,17 @@ const uploadResults = (inputs, results, computedAt) => Effect_tryPromise({
         });
     },
     catch: (_) => _,
-});
+}), Effect_retry(Schedule_intersect(Schedule_recurs(3), Schedule_spaced(seconds(1)))));
 /**
  * The main function for the action.
  */
-const run_run = (inputs) => Function_pipe(execCommands(inputs), Effect_flatMap((exitCode) => exitCode === lib_core.ExitCode.Success
-    ? utils_logInfo(`🎉 '${inputs.cmd}' ran successfully!`).pipe(Effect_as(new Date()))
-    : Effect_fail(new Error(`❌ '${inputs.cmd}' exited with non-zero exit code: ${exitCode}`))), Effect_flatMap((computedAt) => findResults(inputs).pipe(Effect_map((_) => [_, computedAt]))), Effect_flatMap((data) => pingServer.pipe(Effect_as(data))), Effect_flatMap(([results, computedAt]) => uploadResults(inputs, results, computedAt)));
+const run_run = (inputs, before, after, commitMessage) => Function_pipe(execCommands(inputs), Effect_flatMap((exitCode) => exitCode === lib_core.ExitCode.Success
+    ? Effect_sync(() => new Date())
+    : Effect_fail(new Error(`❌ Your command exited with non-zero exit code: ${exitCode}`))), Effect_flatMap((computedAt) => findResults(inputs).pipe(Effect_map((_) => [_, computedAt]))), Effect_flatMap((data) => pingServer(inputs).pipe(Effect_as(data))), Effect_flatMap(([results, computedAt]) => uploadResults(inputs, results, computedAt, before, after, commitMessage)), Effect_tap(() => utils_logInfo(`🎉 zeklin-action ran successfully!`)));
 
 ;// CONCATENATED MODULE: ./src/index.ts
+
+
 
 
 
@@ -50953,16 +52652,44 @@ const unsafeParseInputs = () => {
             outputFilePath: unsafeRequiredInput("output-file-path"),
             cmd: unsafeRequiredMultilineInput("cmd"),
             workdir: optionalInput("workdir"),
+            zeklinServerUrl: getOrElse(optionalInput("zeklin-server-url"), () => NES.unsafe("https://api.zeklin.io")),
         }));
     }
     catch (error) {
         return Either_left(error);
     }
 };
+const unsafeGetBeforeAfter = (context) => Function_pipe(mjs_value({ before: context.payload.before, after: context.payload.after, action: context.payload.action }), mjs_when({
+    before: (_) => _ !== undefined,
+    after: (_) => _ !== undefined,
+}, () => {
+    const before = NES.unsafeFromString(context.payload.before);
+    const after = NES.unsafeFromString(context.payload.after);
+    return [before, after];
+}), mjs_when({ action: "opened" }, () => {
+    const after = NES.unsafeFromString(context.payload.pull_request.head.sha);
+    const before = NES.unsafeFromString(context.payload.pull_request.base.sha);
+    return [before, after];
+}), mjs_orElse((e) => {
+    throw new Error(`Unhandled 'payload.action' type: ${e.action}`);
+}));
+/**
+ * See https://github.com/orgs/community/discussions/28474#discussioncomment-6300866
+ *
+ * We need to fetch as the "after" commit is not the one we're on in GHA.
+ * GHA seems to create a merge commit between the "after" commit and the "before" commit and run from this merge commit.
+ */
+const getCommitMessage = (after) => Function_pipe(Effect_tryPromise(() => (0,exec.exec)("git", ["fetch", "--depth=2", "--quiet"], { silent: true, failOnStdErr: true })), Effect_flatMap(() => Effect_tryPromise(() => (0,exec.getExecOutput)("git", ["show", "-s", "--format=%s", after], {
+    silent: true,
+    failOnStdErr: true,
+}))), Effect_tap((commitMessage) => utils_logDebug(`Commit message - stdout: "${commitMessage.stdout.trim()}", stderr: "${commitMessage.stderr.trim()}", exitCode: ${commitMessage.exitCode}`)), Effect_mapBoth({
+    onFailure: (e) => new Error(`Failed to get commit message: ${e}`),
+    onSuccess: (_) => _.stdout,
+}));
 /**
  * The main function for the action.
  */
-const main = Function_pipe(utils_logInfo(banner), Effect_flatMap(() => Effect_suspend(unsafeParseInputs)), Effect_tap((inputs) => utils_logDebug(`Inputs: ${JSON.stringify(inputs)}`)), Effect_flatMap((inputs) => run_run(inputs)));
+const main = Function_pipe(utils_logInfo(banner), Effect_flatMap(() => Effect_suspend(unsafeParseInputs)), Effect_tap((inputs) => utils_logDebug(`Inputs: ${JSON.stringify(inputs)}`)), Effect_flatMap((inputs) => Function_pipe(Effect_sync(() => unsafeGetBeforeAfter(github.context)), Effect_map((beforeAfter) => [inputs, beforeAfter]))), Effect_flatMap(([inputs, [before, after]]) => Function_pipe(getCommitMessage(after), Effect_map((commitMessage) => [inputs, before, after, commitMessage]))), Effect_flatMap(([inputs, before, after, commitMessage]) => run_run(inputs, before, after, commitMessage)));
 if (process.env.GITHUB_ACTIONS !== "true") {
     (0,lib_core.setFailed)("The script must be run in GitHub Actions environment");
 }

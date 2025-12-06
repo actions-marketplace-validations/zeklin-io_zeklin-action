@@ -4,7 +4,7 @@ import * as core from "@actions/core"
 
 const NESBrand = Symbol.for("NonEmptyString")
 const NESSchema = pipe(S.string, S.trim, S.nonEmpty(), S.brand(NESBrand))
-export type NES = S.To<typeof NESSchema>
+export type NES = S.Schema.To<typeof NESSchema>
 export const NES = {
   unsafe: (s: string): NES => s as NES,
   fromString: (s: string): Option.Option<NES> => S.parseOption(NESSchema)(s),
@@ -49,8 +49,6 @@ const RunnerArch = {
 //
 // Documentation of GitHub envvars: https://docs.github.com/en/actions/learn-github-actions/variables
 //
-
-export const ZEKLIN_SERVER_URL: NES = NES.unsafeFromString(process.env["ZEKLIN_SERVER_URL"] ?? "https://api.zeklin.io")
 
 /**
  * A unique number for each workflow run within a repository.
@@ -126,7 +124,6 @@ export const GITHUB_ACTOR: NES = NES.unsafeFromString(process.env.GITHUB_ACTOR!)
 export const GITHUB_ACTOR_ID: number = Number(process.env.GITHUB_ACTOR_ID!)
 
 export const debugVariables = () => {
-  core.debug(`ZEKLIN_SERVER_URL: ${ZEKLIN_SERVER_URL}`)
   core.debug(`GITHUB_RUN_ID: ${GITHUB_RUN_ID}`)
   core.debug(`GITHUB_RUN_NUMBER: ${GITHUB_RUN_NUMBER}`)
   core.debug(`GITHUB_RUNNER_NAME: ${RUNNER_NAME}`)
